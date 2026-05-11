@@ -10,32 +10,32 @@ module FHIR
       }
       SEARCH_PARAMS = ['category', 'date', 'identifier', 'patient', 'requester', 'status', 'subject', 'supplier']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'SupplyRequest.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'SupplyRequest.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'SupplyRequest.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'SupplyRequest.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'SupplyRequest.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'SupplyRequest.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'SupplyRequest.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'SupplyRequest.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'SupplyRequest.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/supplyrequest-status'=>['draft', 'active', 'suspended', 'cancelled', 'completed', 'entered-in-error', 'unknown']}, 'type'=>'code', 'path'=>'SupplyRequest.status', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/supplyrequest-status'}},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'SupplyRequest.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'category' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/supply-kind'=>['central', 'nonstock']}, 'type'=>'CodeableConcept', 'path'=>'SupplyRequest.category', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/supplyrequest-kind'}},
-        'priority' => {'valid_codes'=>{'http://hl7.org/fhir/request-priority'=>['routine', 'urgent', 'asap', 'stat']}, 'type'=>'code', 'path'=>'SupplyRequest.priority', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/request-priority'}},
-        'deliverFor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'SupplyRequest.deliverFor', 'min'=>0, 'max'=>1},
-        'item' => {'type'=>'CodeableReference', 'path'=>'SupplyRequest.item', 'min'=>1, 'max'=>1},
-        'quantity' => {'type'=>'Quantity', 'path'=>'SupplyRequest.quantity', 'min'=>1, 'max'=>1},
-        'parameter' => {'type'=>'SupplyRequest::Parameter', 'path'=>'SupplyRequest.parameter', 'min'=>0, 'max'=>Float::INFINITY},
-        'occurrenceDateTime' => {'type'=>'dateTime', 'path'=>'SupplyRequest.occurrence[x]', 'min'=>0, 'max'=>1},
-        'occurrencePeriod' => {'type'=>'Period', 'path'=>'SupplyRequest.occurrence[x]', 'min'=>0, 'max'=>1},
-        'occurrenceTiming' => {'type'=>'Timing', 'path'=>'SupplyRequest.occurrence[x]', 'min'=>0, 'max'=>1},
-        'authoredOn' => {'type'=>'dateTime', 'path'=>'SupplyRequest.authoredOn', 'min'=>0, 'max'=>1},
-        'requester' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/CareTeam'], 'type'=>'Reference', 'path'=>'SupplyRequest.requester', 'min'=>0, 'max'=>1},
-        'supplier' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/HealthcareService'], 'type'=>'Reference', 'path'=>'SupplyRequest.supplier', 'min'=>0, 'max'=>Float::INFINITY},
-        'reason' => {'type'=>'CodeableReference', 'path'=>'SupplyRequest.reason', 'min'=>0, 'max'=>Float::INFINITY},
-        'deliverFrom' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'SupplyRequest.deliverFrom', 'min'=>0, 'max'=>1},
-        'deliverTo' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'SupplyRequest.deliverTo', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'SupplyRequest.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'SupplyRequest.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'SupplyRequest.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'SupplyRequest.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'SupplyRequest.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'SupplyRequest.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'SupplyRequest.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'SupplyRequest.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'SupplyRequest.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/supplyrequest-status'=>['draft', 'active', 'suspended', 'cancelled', 'completed', 'entered-in-error', 'unknown']}, 'path'=>'SupplyRequest.status', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/supplyrequest-status'}},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'SupplyRequest.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'category' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/supply-kind'=>['central', 'nonstock']}, 'path'=>'SupplyRequest.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/supplyrequest-kind'}},
+        'priority' => {'valid_codes'=>{'http://hl7.org/fhir/request-priority'=>['routine', 'urgent', 'asap', 'stat']}, 'path'=>'SupplyRequest.priority', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/request-priority'}},
+        'deliverFor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'SupplyRequest.deliverFor', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'item' => {'path'=>'SupplyRequest.item', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1},
+        'quantity' => {'path'=>'SupplyRequest.quantity', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+        'parameter' => {'path'=>'SupplyRequest.parameter', 'type'=>'SupplyRequest::Parameter', 'min'=>0, 'max'=>Float::INFINITY},
+        'occurrenceDateTime' => {'path'=>'SupplyRequest.occurrence[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'occurrencePeriod' => {'path'=>'SupplyRequest.occurrence[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'occurrenceTiming' => {'path'=>'SupplyRequest.occurrence[x]', 'type'=>'Timing', 'min'=>0, 'max'=>1},
+        'authoredOn' => {'path'=>'SupplyRequest.authoredOn', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'requester' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/CareTeam'], 'path'=>'SupplyRequest.requester', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'supplier' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/HealthcareService'], 'path'=>'SupplyRequest.supplier', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'reason' => {'path'=>'SupplyRequest.reason', 'type'=>'CodeableReference', 'min'=>0, 'max'=>Float::INFINITY},
+        'deliverFrom' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'SupplyRequest.deliverFrom', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'deliverTo' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'SupplyRequest.deliverTo', 'type'=>'Reference', 'min'=>0, 'max'=>1}
       }
 
       class Parameter < Model
@@ -47,14 +47,14 @@ module FHIR
           'value' => ['CodeableConcept', 'Quantity', 'Range', 'boolean']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Parameter.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Parameter.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Parameter.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'type'=>'CodeableConcept', 'path'=>'Parameter.code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example'}},
-          'valueCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Parameter.value[x]', 'min'=>0, 'max'=>1},
-          'valueQuantity' => {'type'=>'Quantity', 'path'=>'Parameter.value[x]', 'min'=>0, 'max'=>1},
-          'valueRange' => {'type'=>'Range', 'path'=>'Parameter.value[x]', 'min'=>0, 'max'=>1},
-          'valueBoolean' => {'type'=>'boolean', 'path'=>'Parameter.value[x]', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Parameter.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Parameter.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Parameter.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'path'=>'Parameter.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example'}},
+          'valueCodeableConcept' => {'path'=>'Parameter.value[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'valueQuantity' => {'path'=>'Parameter.value[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'valueRange' => {'path'=>'Parameter.value[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+          'valueBoolean' => {'path'=>'Parameter.value[x]', 'type'=>'boolean', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                   # 0-1 string

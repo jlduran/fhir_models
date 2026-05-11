@@ -10,26 +10,26 @@ module FHIR
       }
       SEARCH_PARAMS = ['active', 'address', 'address-city', 'address-country', 'address-postalcode', 'address-state', 'address-use', 'communication', 'death-date', 'deceased', 'email', 'family', 'gender', 'given', 'identifier', 'name', 'phone', 'phonetic', 'qualification-period', 'telecom']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Practitioner.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Practitioner.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Practitioner.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'Practitioner.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Practitioner.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Practitioner.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Practitioner.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Practitioner.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Practitioner.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'active' => {'type'=>'boolean', 'path'=>'Practitioner.active', 'min'=>0, 'max'=>1},
-        'name' => {'type'=>'HumanName', 'path'=>'Practitioner.name', 'min'=>0, 'max'=>Float::INFINITY},
-        'telecom' => {'type'=>'ContactPoint', 'path'=>'Practitioner.telecom', 'min'=>0, 'max'=>Float::INFINITY},
-        'gender' => {'valid_codes'=>{'http://hl7.org/fhir/administrative-gender'=>['male', 'female', 'other', 'unknown']}, 'type'=>'code', 'path'=>'Practitioner.gender', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/administrative-gender'}},
-        'birthDate' => {'type'=>'date', 'path'=>'Practitioner.birthDate', 'min'=>0, 'max'=>1},
-        'deceasedBoolean' => {'type'=>'boolean', 'path'=>'Practitioner.deceased[x]', 'min'=>0, 'max'=>1},
-        'deceasedDateTime' => {'type'=>'dateTime', 'path'=>'Practitioner.deceased[x]', 'min'=>0, 'max'=>1},
-        'address' => {'type'=>'Address', 'path'=>'Practitioner.address', 'min'=>0, 'max'=>Float::INFINITY},
-        'photo' => {'type'=>'Attachment', 'path'=>'Practitioner.photo', 'min'=>0, 'max'=>Float::INFINITY},
-        'qualification' => {'type'=>'Practitioner::Qualification', 'path'=>'Practitioner.qualification', 'min'=>0, 'max'=>Float::INFINITY},
-        'communication' => {'type'=>'Practitioner::Communication', 'path'=>'Practitioner.communication', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'Practitioner.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Practitioner.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Practitioner.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'Practitioner.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'Practitioner.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Practitioner.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Practitioner.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Practitioner.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'Practitioner.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'active' => {'path'=>'Practitioner.active', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'name' => {'path'=>'Practitioner.name', 'type'=>'HumanName', 'min'=>0, 'max'=>Float::INFINITY},
+        'telecom' => {'path'=>'Practitioner.telecom', 'type'=>'ContactPoint', 'min'=>0, 'max'=>Float::INFINITY},
+        'gender' => {'valid_codes'=>{'http://hl7.org/fhir/administrative-gender'=>['male', 'female', 'other', 'unknown']}, 'path'=>'Practitioner.gender', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/administrative-gender'}},
+        'birthDate' => {'path'=>'Practitioner.birthDate', 'type'=>'date', 'min'=>0, 'max'=>1},
+        'deceasedBoolean' => {'path'=>'Practitioner.deceased[x]', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'deceasedDateTime' => {'path'=>'Practitioner.deceased[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'address' => {'path'=>'Practitioner.address', 'type'=>'Address', 'min'=>0, 'max'=>Float::INFINITY},
+        'photo' => {'path'=>'Practitioner.photo', 'type'=>'Attachment', 'min'=>0, 'max'=>Float::INFINITY},
+        'qualification' => {'path'=>'Practitioner.qualification', 'type'=>'Practitioner::Qualification', 'min'=>0, 'max'=>Float::INFINITY},
+        'communication' => {'path'=>'Practitioner.communication', 'type'=>'Practitioner::Communication', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Qualification < Model
@@ -38,13 +38,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Qualification.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Qualification.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Qualification.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'identifier' => {'type'=>'Identifier', 'path'=>'Qualification.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v2-0360'=>['PN', 'AAS', 'AA', 'ABA', 'AE', 'AS', 'BA', 'BBA', 'BE', 'BFA', 'BN', 'BS', 'BSL', 'BSN', 'BT', 'CER', 'CANP', 'CMA', 'CNP', 'CNM', 'CRN', 'CNS', 'CPNP', 'CTR', 'DIP', 'DBA', 'DED', 'PharmD', 'PHE', 'PHD', 'PHS', 'MD', 'DO', 'EMT', 'EMTP', 'FPNP', 'HS', 'JD', 'MA', 'MBA', 'MCE', 'MDI', 'MED', 'MEE', 'ME', 'MFA', 'MME', 'MS', 'MSL', 'MSN', 'MTH', 'MDA', 'MT', 'NG', 'NP', 'PA', 'RMA', 'RN', 'RPH', 'SEC', 'TS']}, 'type'=>'CodeableConcept', 'path'=>'Qualification.code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v2-0360'}},
-          'period' => {'type'=>'Period', 'path'=>'Qualification.period', 'min'=>0, 'max'=>1},
-          'issuer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Qualification.issuer', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Qualification.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Qualification.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Qualification.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'identifier' => {'path'=>'Qualification.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v2-0360'=>['PN', 'AAS', 'AA', 'ABA', 'AE', 'AS', 'BA', 'BBA', 'BE', 'BFA', 'BN', 'BS', 'BSL', 'BSN', 'BT', 'CER', 'CANP', 'CMA', 'CNP', 'CNM', 'CRN', 'CNS', 'CPNP', 'CTR', 'DIP', 'DBA', 'DED', 'PharmD', 'PHE', 'PHD', 'PHS', 'MD', 'DO', 'EMT', 'EMTP', 'FPNP', 'HS', 'JD', 'MA', 'MBA', 'MCE', 'MDI', 'MED', 'MEE', 'ME', 'MFA', 'MME', 'MS', 'MSL', 'MSN', 'MTH', 'MDA', 'MT', 'NG', 'NP', 'PA', 'RMA', 'RN', 'RPH', 'SEC', 'TS']}, 'path'=>'Qualification.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v2-0360'}},
+          'period' => {'path'=>'Qualification.period', 'type'=>'Period', 'min'=>0, 'max'=>1},
+          'issuer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Qualification.issuer', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -62,11 +62,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Communication.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Communication.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Communication.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'language' => {'type'=>'CodeableConcept', 'path'=>'Communication.language', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-          'preferred' => {'type'=>'boolean', 'path'=>'Communication.preferred', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Communication.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Communication.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Communication.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'language' => {'path'=>'Communication.language', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+          'preferred' => {'path'=>'Communication.preferred', 'type'=>'boolean', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

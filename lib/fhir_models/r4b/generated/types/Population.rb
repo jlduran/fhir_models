@@ -10,14 +10,14 @@ module FHIR
       }
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Population.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Population.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Population.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'ageRange' => {'type'=>'Range', 'path'=>'Population.age[x]', 'min'=>0, 'max'=>1},
-        'ageCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Population.age[x]', 'min'=>0, 'max'=>1},
-        'gender' => {'type'=>'CodeableConcept', 'path'=>'Population.gender', 'min'=>0, 'max'=>1},
-        'race' => {'type'=>'CodeableConcept', 'path'=>'Population.race', 'min'=>0, 'max'=>1},
-        'physiologicalCondition' => {'type'=>'CodeableConcept', 'path'=>'Population.physiologicalCondition', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Population.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Population.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Population.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'ageRange' => {'path'=>'Population.age[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+        'ageCodeableConcept' => {'path'=>'Population.age[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'gender' => {'path'=>'Population.gender', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'race' => {'path'=>'Population.race', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'physiologicalCondition' => {'path'=>'Population.physiologicalCondition', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id                     # 0-1 string

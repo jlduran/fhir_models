@@ -10,28 +10,28 @@ module FHIR
       }
       SEARCH_PARAMS = ['activity', 'agent', 'agent-role', 'agent-type', 'based-on', 'encounter', 'entity', 'location', 'patient', 'recorded', 'signature-type', 'target', 'when']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Provenance.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Provenance.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Provenance.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'Provenance.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Provenance.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Provenance.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Provenance.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Provenance.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'target' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Provenance.target', 'min'=>1, 'max'=>Float::INFINITY},
-        'occurredPeriod' => {'type'=>'Period', 'path'=>'Provenance.occurred[x]', 'min'=>0, 'max'=>1},
-        'occurredDateTime' => {'type'=>'dateTime', 'path'=>'Provenance.occurred[x]', 'min'=>0, 'max'=>1},
-        'recorded' => {'type'=>'instant', 'path'=>'Provenance.recorded', 'min'=>0, 'max'=>1},
-        'policy' => {'type'=>'uri', 'path'=>'Provenance.policy', 'min'=>0, 'max'=>Float::INFINITY},
-        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'Provenance.location', 'min'=>0, 'max'=>1},
-        'authorization' => {'type'=>'CodeableReference', 'path'=>'Provenance.authorization', 'min'=>0, 'max'=>Float::INFINITY},
-        'activity' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle'=>['amend', 'originate', 'merge', 'deidentify', 'receive', 'transform', 'verify']}, 'type'=>'CodeableConcept', 'path'=>'Provenance.activity', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/provenance-activity-type'}},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan', 'http://hl7.org/fhir/StructureDefinition/DeviceRequest', 'http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation', 'http://hl7.org/fhir/StructureDefinition/MedicationRequest', 'http://hl7.org/fhir/StructureDefinition/NutritionOrder', 'http://hl7.org/fhir/StructureDefinition/ServiceRequest', 'http://hl7.org/fhir/StructureDefinition/Task'], 'type'=>'Reference', 'path'=>'Provenance.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'Provenance.patient', 'min'=>0, 'max'=>1},
-        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'type'=>'Reference', 'path'=>'Provenance.encounter', 'min'=>0, 'max'=>1},
-        'agent' => {'type'=>'Provenance::Agent', 'path'=>'Provenance.agent', 'min'=>1, 'max'=>Float::INFINITY},
-        'entity' => {'type'=>'Provenance::Entity', 'path'=>'Provenance.entity', 'min'=>0, 'max'=>Float::INFINITY},
-        'signature' => {'type'=>'Signature', 'path'=>'Provenance.signature', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'Provenance.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Provenance.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Provenance.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'Provenance.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'Provenance.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Provenance.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Provenance.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Provenance.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'target' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Provenance.target', 'type'=>'Reference', 'min'=>1, 'max'=>Float::INFINITY},
+        'occurredPeriod' => {'path'=>'Provenance.occurred[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'occurredDateTime' => {'path'=>'Provenance.occurred[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'recorded' => {'path'=>'Provenance.recorded', 'type'=>'instant', 'min'=>0, 'max'=>1},
+        'policy' => {'path'=>'Provenance.policy', 'type'=>'uri', 'min'=>0, 'max'=>Float::INFINITY},
+        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'Provenance.location', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'authorization' => {'path'=>'Provenance.authorization', 'type'=>'CodeableReference', 'min'=>0, 'max'=>Float::INFINITY},
+        'activity' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle'=>['amend', 'originate', 'merge', 'deidentify', 'receive', 'transform', 'verify']}, 'path'=>'Provenance.activity', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/provenance-activity-type'}},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan', 'http://hl7.org/fhir/StructureDefinition/DeviceRequest', 'http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation', 'http://hl7.org/fhir/StructureDefinition/MedicationRequest', 'http://hl7.org/fhir/StructureDefinition/NutritionOrder', 'http://hl7.org/fhir/StructureDefinition/ServiceRequest', 'http://hl7.org/fhir/StructureDefinition/Task'], 'path'=>'Provenance.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'Provenance.patient', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'path'=>'Provenance.encounter', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'agent' => {'path'=>'Provenance.agent', 'type'=>'Provenance::Agent', 'min'=>1, 'max'=>Float::INFINITY},
+        'entity' => {'path'=>'Provenance.entity', 'type'=>'Provenance::Entity', 'min'=>0, 'max'=>Float::INFINITY},
+        'signature' => {'path'=>'Provenance.signature', 'type'=>'Signature', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Agent < Model
@@ -40,13 +40,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Agent.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Agent.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Agent.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/provenance-participant-type'=>['enterer', 'performer', 'author', 'verifier', 'legal', 'attester', 'informant', 'custodian', 'assembler', 'composer'], 'http://dicom.nema.org/resources/ontology/DCM'=>['110150', '110151', '110152', '110153', '110154', '110155'], 'http://terminology.hl7.org/CodeSystem/extra-security-role-type'=>['authserver', 'datacollector', 'dataprocessor', 'datasubject', 'humanuser']}, 'type'=>'CodeableConcept', 'path'=>'Agent.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/participation-role-type'}},
-          'role' => {'valid_codes'=>{'sample-security-structural-roles'=>['regulated-health-professionals', 'general-medicine', 'general-nursing', 'dentist', 'veterinarian', 'pharmacy', 'dietician', 'pediatrics', 'non-regulated-health-professionals', 'receptionist', 'business-manager', 'transcriptionist', 'claims-adjudicator']}, 'type'=>'CodeableConcept', 'path'=>'Agent.role', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/security-role-type'}},
-          'who' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'Agent.who', 'min'=>1, 'max'=>1},
-          'onBehalfOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'Agent.onBehalfOf', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Agent.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Agent.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Agent.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/provenance-participant-type'=>['enterer', 'performer', 'author', 'verifier', 'legal', 'attester', 'informant', 'custodian', 'assembler', 'composer'], 'http://dicom.nema.org/resources/ontology/DCM'=>['110150', '110151', '110152', '110153', '110154', '110155'], 'http://terminology.hl7.org/CodeSystem/extra-security-role-type'=>['authserver', 'datacollector', 'dataprocessor', 'datasubject', 'humanuser']}, 'path'=>'Agent.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/participation-role-type'}},
+          'role' => {'valid_codes'=>{'sample-security-structural-roles'=>['regulated-health-professionals', 'general-medicine', 'general-nursing', 'dentist', 'veterinarian', 'pharmacy', 'dietician', 'pediatrics', 'non-regulated-health-professionals', 'receptionist', 'business-manager', 'transcriptionist', 'claims-adjudicator']}, 'path'=>'Agent.role', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/security-role-type'}},
+          'who' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'Agent.who', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'onBehalfOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'Agent.onBehalfOf', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -64,12 +64,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Entity.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Entity.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Entity.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'role' => {'valid_codes'=>{'http://hl7.org/fhir/provenance-entity-role'=>['revision', 'quotation', 'source', 'instantiates', 'removal']}, 'type'=>'code', 'path'=>'Entity.role', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/provenance-entity-role'}},
-          'what' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Entity.what', 'min'=>1, 'max'=>1},
-          'agent' => {'type'=>'Provenance::Agent', 'path'=>'Entity.agent', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Entity.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Entity.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Entity.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'role' => {'valid_codes'=>{'http://hl7.org/fhir/provenance-entity-role'=>['revision', 'quotation', 'source', 'instantiates', 'removal']}, 'path'=>'Entity.role', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/provenance-entity-role'}},
+          'what' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Entity.what', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'agent' => {'path'=>'Entity.agent', 'type'=>'Provenance::Agent', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string

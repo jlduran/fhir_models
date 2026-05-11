@@ -7,35 +7,35 @@ module FHIR
 
       SEARCH_PARAMS = ['code', 'identifier', 'patient', 'status', 'subject']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'DeviceDispense.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'DeviceDispense.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'DeviceDispense.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'DeviceDispense.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'DeviceDispense.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'DeviceDispense.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'DeviceDispense.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'DeviceDispense.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'DeviceDispense.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan', 'http://hl7.org/fhir/StructureDefinition/DeviceRequest'], 'type'=>'Reference', 'path'=>'DeviceDispense.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Procedure'], 'type'=>'Reference', 'path'=>'DeviceDispense.partOf', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/devicedispense-status'=>['preparation', 'in-progress', 'cancelled', 'on-hold', 'completed', 'entered-in-error', 'stopped', 'declined', 'unknown']}, 'type'=>'code', 'path'=>'DeviceDispense.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/devicedispense-status'}},
-        'statusReason' => {'type'=>'CodeableReference', 'path'=>'DeviceDispense.statusReason', 'min'=>0, 'max'=>1},
-        'category' => {'type'=>'CodeableConcept', 'path'=>'DeviceDispense.category', 'min'=>0, 'max'=>Float::INFINITY},
-        'device' => {'type'=>'CodeableReference', 'path'=>'DeviceDispense.device', 'min'=>1, 'max'=>1},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner'], 'type'=>'Reference', 'path'=>'DeviceDispense.subject', 'min'=>1, 'max'=>1},
-        'receiver' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'DeviceDispense.receiver', 'min'=>0, 'max'=>1},
-        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'type'=>'Reference', 'path'=>'DeviceDispense.encounter', 'min'=>0, 'max'=>1},
-        'supportingInformation' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'DeviceDispense.supportingInformation', 'min'=>0, 'max'=>Float::INFINITY},
-        'performer' => {'type'=>'DeviceDispense::Performer', 'path'=>'DeviceDispense.performer', 'min'=>0, 'max'=>Float::INFINITY},
-        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'DeviceDispense.location', 'min'=>0, 'max'=>1},
-        'type' => {'type'=>'CodeableConcept', 'path'=>'DeviceDispense.type', 'min'=>0, 'max'=>1},
-        'quantity' => {'type'=>'Quantity', 'path'=>'DeviceDispense.quantity', 'min'=>0, 'max'=>1},
-        'preparedDate' => {'type'=>'dateTime', 'path'=>'DeviceDispense.preparedDate', 'min'=>0, 'max'=>1},
-        'whenHandedOver' => {'type'=>'dateTime', 'path'=>'DeviceDispense.whenHandedOver', 'min'=>0, 'max'=>1},
-        'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'DeviceDispense.destination', 'min'=>0, 'max'=>1},
-        'note' => {'type'=>'Annotation', 'path'=>'DeviceDispense.note', 'min'=>0, 'max'=>Float::INFINITY},
-        'usageInstruction' => {'type'=>'markdown', 'path'=>'DeviceDispense.usageInstruction', 'min'=>0, 'max'=>1},
-        'eventHistory' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Provenance'], 'type'=>'Reference', 'path'=>'DeviceDispense.eventHistory', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'DeviceDispense.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'DeviceDispense.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'DeviceDispense.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'DeviceDispense.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'DeviceDispense.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'DeviceDispense.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'DeviceDispense.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'DeviceDispense.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'DeviceDispense.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan', 'http://hl7.org/fhir/StructureDefinition/DeviceRequest'], 'path'=>'DeviceDispense.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Procedure'], 'path'=>'DeviceDispense.partOf', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/devicedispense-status'=>['preparation', 'in-progress', 'cancelled', 'on-hold', 'completed', 'entered-in-error', 'stopped', 'declined', 'unknown']}, 'path'=>'DeviceDispense.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/devicedispense-status'}},
+        'statusReason' => {'path'=>'DeviceDispense.statusReason', 'type'=>'CodeableReference', 'min'=>0, 'max'=>1},
+        'category' => {'path'=>'DeviceDispense.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+        'device' => {'path'=>'DeviceDispense.device', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner'], 'path'=>'DeviceDispense.subject', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'receiver' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'DeviceDispense.receiver', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'path'=>'DeviceDispense.encounter', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'supportingInformation' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'DeviceDispense.supportingInformation', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'performer' => {'path'=>'DeviceDispense.performer', 'type'=>'DeviceDispense::Performer', 'min'=>0, 'max'=>Float::INFINITY},
+        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'DeviceDispense.location', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'type' => {'path'=>'DeviceDispense.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'quantity' => {'path'=>'DeviceDispense.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'preparedDate' => {'path'=>'DeviceDispense.preparedDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'whenHandedOver' => {'path'=>'DeviceDispense.whenHandedOver', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'DeviceDispense.destination', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'note' => {'path'=>'DeviceDispense.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+        'usageInstruction' => {'path'=>'DeviceDispense.usageInstruction', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'eventHistory' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Provenance'], 'path'=>'DeviceDispense.eventHistory', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Performer < Model
@@ -44,11 +44,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Performer.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Performer.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Performer.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'function' => {'type'=>'CodeableConcept', 'path'=>'Performer.function', 'min'=>0, 'max'=>1},
-          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/CareTeam'], 'type'=>'Reference', 'path'=>'Performer.actor', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Performer.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Performer.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Performer.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'function' => {'path'=>'Performer.function', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/CareTeam'], 'path'=>'Performer.actor', 'type'=>'Reference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

@@ -7,13 +7,13 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Distance.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Distance.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'value' => {'type'=>'decimal', 'path'=>'Distance.value', 'min'=>0, 'max'=>1},
-        'comparator' => {'valid_codes'=>{'http://hl7.org/fhir/quantity-comparator'=>['<', '<=', '>=', '>', 'ad']}, 'type'=>'code', 'path'=>'Distance.comparator', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/quantity-comparator'}},
-        'unit' => {'type'=>'string', 'path'=>'Distance.unit', 'min'=>0, 'max'=>1},
-        'system' => {'type'=>'uri', 'path'=>'Distance.system', 'min'=>0, 'max'=>1},
-        'code' => {'type'=>'code', 'path'=>'Distance.code', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Distance.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Distance.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'value' => {'path'=>'Distance.value', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+        'comparator' => {'valid_codes'=>{'http://hl7.org/fhir/quantity-comparator'=>['<', '<=', '>=', '>', 'ad']}, 'path'=>'Distance.comparator', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/quantity-comparator'}},
+        'unit' => {'path'=>'Distance.unit', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'system' => {'path'=>'Distance.system', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'code' => {'path'=>'Distance.code', 'type'=>'code', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id         # 0-1 string

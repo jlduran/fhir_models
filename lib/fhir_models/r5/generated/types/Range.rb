@@ -7,10 +7,10 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Range.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Range.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'low' => {'type'=>'Quantity', 'path'=>'Range.low', 'min'=>0, 'max'=>1},
-        'high' => {'type'=>'Quantity', 'path'=>'Range.high', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Range.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Range.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'low' => {'path'=>'Range.low', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'high' => {'path'=>'Range.high', 'type'=>'Quantity', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id        # 0-1 string

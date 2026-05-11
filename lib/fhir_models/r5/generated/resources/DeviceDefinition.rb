@@ -7,40 +7,40 @@ module FHIR
 
       SEARCH_PARAMS = ['device-name', 'identifier', 'manufacturer', 'organization', 'specification', 'specification-version', 'type']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'DeviceDefinition.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'DeviceDefinition.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'DeviceDefinition.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'DeviceDefinition.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'DeviceDefinition.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'DeviceDefinition.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'DeviceDefinition.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'DeviceDefinition.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'description' => {'type'=>'markdown', 'path'=>'DeviceDefinition.description', 'min'=>0, 'max'=>1},
-        'identifier' => {'type'=>'Identifier', 'path'=>'DeviceDefinition.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'udiDeviceIdentifier' => {'type'=>'DeviceDefinition::UdiDeviceIdentifier', 'path'=>'DeviceDefinition.udiDeviceIdentifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'regulatoryIdentifier' => {'type'=>'DeviceDefinition::RegulatoryIdentifier', 'path'=>'DeviceDefinition.regulatoryIdentifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'partNumber' => {'type'=>'string', 'path'=>'DeviceDefinition.partNumber', 'min'=>0, 'max'=>1},
-        'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'DeviceDefinition.manufacturer', 'min'=>0, 'max'=>1},
-        'deviceName' => {'type'=>'DeviceDefinition::DeviceName', 'path'=>'DeviceDefinition.deviceName', 'min'=>0, 'max'=>Float::INFINITY},
-        'modelNumber' => {'type'=>'string', 'path'=>'DeviceDefinition.modelNumber', 'min'=>0, 'max'=>1},
-        'classification' => {'type'=>'DeviceDefinition::Classification', 'path'=>'DeviceDefinition.classification', 'min'=>0, 'max'=>Float::INFINITY},
-        'conformsTo' => {'type'=>'DeviceDefinition::ConformsTo', 'path'=>'DeviceDefinition.conformsTo', 'min'=>0, 'max'=>Float::INFINITY},
-        'hasPart' => {'type'=>'DeviceDefinition::HasPart', 'path'=>'DeviceDefinition.hasPart', 'min'=>0, 'max'=>Float::INFINITY},
-        'packaging' => {'type'=>'DeviceDefinition::Packaging', 'path'=>'DeviceDefinition.packaging', 'min'=>0, 'max'=>Float::INFINITY},
-        'version' => {'type'=>'DeviceDefinition::Version', 'path'=>'DeviceDefinition.version', 'min'=>0, 'max'=>Float::INFINITY},
-        'safety' => {'valid_codes'=>{'urn:oid:2.16.840.1.113883.3.26.1.1'=>['C106046', 'C106045', 'C106047', 'C113844', 'C101673', 'C106038']}, 'type'=>'CodeableConcept', 'path'=>'DeviceDefinition.safety', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-safety'}},
-        'shelfLifeStorage' => {'type'=>'ProductShelfLife', 'path'=>'DeviceDefinition.shelfLifeStorage', 'min'=>0, 'max'=>Float::INFINITY},
-        'languageCode' => {'type'=>'CodeableConcept', 'path'=>'DeviceDefinition.languageCode', 'min'=>0, 'max'=>Float::INFINITY},
-        'property' => {'type'=>'DeviceDefinition::Property', 'path'=>'DeviceDefinition.property', 'min'=>0, 'max'=>Float::INFINITY},
-        'owner' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'DeviceDefinition.owner', 'min'=>0, 'max'=>1},
-        'contact' => {'type'=>'ContactPoint', 'path'=>'DeviceDefinition.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'link' => {'type'=>'DeviceDefinition::Link', 'path'=>'DeviceDefinition.link', 'min'=>0, 'max'=>Float::INFINITY},
-        'note' => {'type'=>'Annotation', 'path'=>'DeviceDefinition.note', 'min'=>0, 'max'=>Float::INFINITY},
-        'material' => {'type'=>'DeviceDefinition::Material', 'path'=>'DeviceDefinition.material', 'min'=>0, 'max'=>Float::INFINITY},
-        'productionIdentifierInUDI' => {'valid_codes'=>{'http://hl7.org/fhir/device-productidentifierinudi'=>['lot-number', 'manufactured-date', 'serial-number', 'expiration-date', 'biological-source', 'software-version']}, 'type'=>'code', 'path'=>'DeviceDefinition.productionIdentifierInUDI', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/device-productidentifierinudi'}},
-        'guideline' => {'type'=>'DeviceDefinition::Guideline', 'path'=>'DeviceDefinition.guideline', 'min'=>0, 'max'=>1},
-        'correctiveAction' => {'type'=>'DeviceDefinition::CorrectiveAction', 'path'=>'DeviceDefinition.correctiveAction', 'min'=>0, 'max'=>1},
-        'chargeItem' => {'type'=>'DeviceDefinition::ChargeItem', 'path'=>'DeviceDefinition.chargeItem', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'DeviceDefinition.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'DeviceDefinition.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'DeviceDefinition.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'DeviceDefinition.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'DeviceDefinition.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'DeviceDefinition.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'DeviceDefinition.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'DeviceDefinition.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'description' => {'path'=>'DeviceDefinition.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'identifier' => {'path'=>'DeviceDefinition.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'udiDeviceIdentifier' => {'path'=>'DeviceDefinition.udiDeviceIdentifier', 'type'=>'DeviceDefinition::UdiDeviceIdentifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'regulatoryIdentifier' => {'path'=>'DeviceDefinition.regulatoryIdentifier', 'type'=>'DeviceDefinition::RegulatoryIdentifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'partNumber' => {'path'=>'DeviceDefinition.partNumber', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'DeviceDefinition.manufacturer', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'deviceName' => {'path'=>'DeviceDefinition.deviceName', 'type'=>'DeviceDefinition::DeviceName', 'min'=>0, 'max'=>Float::INFINITY},
+        'modelNumber' => {'path'=>'DeviceDefinition.modelNumber', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'classification' => {'path'=>'DeviceDefinition.classification', 'type'=>'DeviceDefinition::Classification', 'min'=>0, 'max'=>Float::INFINITY},
+        'conformsTo' => {'path'=>'DeviceDefinition.conformsTo', 'type'=>'DeviceDefinition::ConformsTo', 'min'=>0, 'max'=>Float::INFINITY},
+        'hasPart' => {'path'=>'DeviceDefinition.hasPart', 'type'=>'DeviceDefinition::HasPart', 'min'=>0, 'max'=>Float::INFINITY},
+        'packaging' => {'path'=>'DeviceDefinition.packaging', 'type'=>'DeviceDefinition::Packaging', 'min'=>0, 'max'=>Float::INFINITY},
+        'version' => {'path'=>'DeviceDefinition.version', 'type'=>'DeviceDefinition::Version', 'min'=>0, 'max'=>Float::INFINITY},
+        'safety' => {'valid_codes'=>{'urn:oid:2.16.840.1.113883.3.26.1.1'=>['C106046', 'C106045', 'C106047', 'C113844', 'C101673', 'C106038']}, 'path'=>'DeviceDefinition.safety', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-safety'}},
+        'shelfLifeStorage' => {'path'=>'DeviceDefinition.shelfLifeStorage', 'type'=>'ProductShelfLife', 'min'=>0, 'max'=>Float::INFINITY},
+        'languageCode' => {'path'=>'DeviceDefinition.languageCode', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+        'property' => {'path'=>'DeviceDefinition.property', 'type'=>'DeviceDefinition::Property', 'min'=>0, 'max'=>Float::INFINITY},
+        'owner' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'DeviceDefinition.owner', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'contact' => {'path'=>'DeviceDefinition.contact', 'type'=>'ContactPoint', 'min'=>0, 'max'=>Float::INFINITY},
+        'link' => {'path'=>'DeviceDefinition.link', 'type'=>'DeviceDefinition::Link', 'min'=>0, 'max'=>Float::INFINITY},
+        'note' => {'path'=>'DeviceDefinition.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+        'material' => {'path'=>'DeviceDefinition.material', 'type'=>'DeviceDefinition::Material', 'min'=>0, 'max'=>Float::INFINITY},
+        'productionIdentifierInUDI' => {'valid_codes'=>{'http://hl7.org/fhir/device-productidentifierinudi'=>['lot-number', 'manufactured-date', 'serial-number', 'expiration-date', 'biological-source', 'software-version']}, 'path'=>'DeviceDefinition.productionIdentifierInUDI', 'type'=>'code', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/device-productidentifierinudi'}},
+        'guideline' => {'path'=>'DeviceDefinition.guideline', 'type'=>'DeviceDefinition::Guideline', 'min'=>0, 'max'=>1},
+        'correctiveAction' => {'path'=>'DeviceDefinition.correctiveAction', 'type'=>'DeviceDefinition::CorrectiveAction', 'min'=>0, 'max'=>1},
+        'chargeItem' => {'path'=>'DeviceDefinition.chargeItem', 'type'=>'DeviceDefinition::ChargeItem', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class UdiDeviceIdentifier < Model
@@ -49,13 +49,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'UdiDeviceIdentifier.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'UdiDeviceIdentifier.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'UdiDeviceIdentifier.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'deviceIdentifier' => {'type'=>'string', 'path'=>'UdiDeviceIdentifier.deviceIdentifier', 'min'=>1, 'max'=>1},
-          'issuer' => {'type'=>'uri', 'path'=>'UdiDeviceIdentifier.issuer', 'min'=>1, 'max'=>1},
-          'jurisdiction' => {'type'=>'uri', 'path'=>'UdiDeviceIdentifier.jurisdiction', 'min'=>1, 'max'=>1},
-          'marketDistribution' => {'type'=>'DeviceDefinition::UdiDeviceIdentifier::MarketDistribution', 'path'=>'UdiDeviceIdentifier.marketDistribution', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'UdiDeviceIdentifier.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'UdiDeviceIdentifier.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'UdiDeviceIdentifier.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'deviceIdentifier' => {'path'=>'UdiDeviceIdentifier.deviceIdentifier', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'issuer' => {'path'=>'UdiDeviceIdentifier.issuer', 'type'=>'uri', 'min'=>1, 'max'=>1},
+          'jurisdiction' => {'path'=>'UdiDeviceIdentifier.jurisdiction', 'type'=>'uri', 'min'=>1, 'max'=>1},
+          'marketDistribution' => {'path'=>'UdiDeviceIdentifier.marketDistribution', 'type'=>'DeviceDefinition::UdiDeviceIdentifier::MarketDistribution', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class MarketDistribution < Model
@@ -64,11 +64,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'MarketDistribution.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'MarketDistribution.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'MarketDistribution.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'marketPeriod' => {'type'=>'Period', 'path'=>'MarketDistribution.marketPeriod', 'min'=>1, 'max'=>1},
-            'subJurisdiction' => {'type'=>'uri', 'path'=>'MarketDistribution.subJurisdiction', 'min'=>1, 'max'=>1}
+            'id' => {'path'=>'MarketDistribution.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'MarketDistribution.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'MarketDistribution.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'marketPeriod' => {'path'=>'MarketDistribution.marketPeriod', 'type'=>'Period', 'min'=>1, 'max'=>1},
+            'subJurisdiction' => {'path'=>'MarketDistribution.subJurisdiction', 'type'=>'uri', 'min'=>1, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -93,13 +93,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'RegulatoryIdentifier.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'RegulatoryIdentifier.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'RegulatoryIdentifier.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/devicedefinition-regulatory-identifier-type'=>['basic', 'master', 'license']}, 'type'=>'code', 'path'=>'RegulatoryIdentifier.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/devicedefinition-regulatory-identifier-type'}},
-          'deviceIdentifier' => {'type'=>'string', 'path'=>'RegulatoryIdentifier.deviceIdentifier', 'min'=>1, 'max'=>1},
-          'issuer' => {'type'=>'uri', 'path'=>'RegulatoryIdentifier.issuer', 'min'=>1, 'max'=>1},
-          'jurisdiction' => {'type'=>'uri', 'path'=>'RegulatoryIdentifier.jurisdiction', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'RegulatoryIdentifier.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'RegulatoryIdentifier.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'RegulatoryIdentifier.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/devicedefinition-regulatory-identifier-type'=>['basic', 'master', 'license']}, 'path'=>'RegulatoryIdentifier.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/devicedefinition-regulatory-identifier-type'}},
+          'deviceIdentifier' => {'path'=>'RegulatoryIdentifier.deviceIdentifier', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'issuer' => {'path'=>'RegulatoryIdentifier.issuer', 'type'=>'uri', 'min'=>1, 'max'=>1},
+          'jurisdiction' => {'path'=>'RegulatoryIdentifier.jurisdiction', 'type'=>'uri', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -117,11 +117,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'DeviceName.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'DeviceName.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'DeviceName.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'name' => {'type'=>'string', 'path'=>'DeviceName.name', 'min'=>1, 'max'=>1},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/device-nametype'=>['registered-name', 'user-friendly-name', 'patient-reported-name']}, 'type'=>'code', 'path'=>'DeviceName.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/device-nametype'}}
+          'id' => {'path'=>'DeviceName.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'DeviceName.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'DeviceName.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'name' => {'path'=>'DeviceName.name', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/device-nametype'=>['registered-name', 'user-friendly-name', 'patient-reported-name']}, 'path'=>'DeviceName.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/device-nametype'}}
         }
 
         attr_accessor :id                # 0-1 string
@@ -137,11 +137,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Classification.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Classification.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Classification.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'urn:iso:std:iso:11073:10101'=>['528391', '528404', '528425', '528402', '528409', '528390', '528457', '528401', '528455', '528403', '528405', '528388', '528397', '528408', '528426', '528392', '528399'], 'urn:oid:2.16.840.1.113883.6.276'=>['38017', '38663', '42347', '46352', '47264', '62163', '62260', '62423', '62414', '64587', '64992']}, 'type'=>'CodeableConcept', 'path'=>'Classification.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-type'}},
-          'justification' => {'type'=>'RelatedArtifact', 'path'=>'Classification.justification', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Classification.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Classification.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Classification.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'urn:iso:std:iso:11073:10101'=>['528391', '528404', '528425', '528402', '528409', '528390', '528457', '528401', '528455', '528403', '528405', '528388', '528397', '528408', '528426', '528392', '528399'], 'urn:oid:2.16.840.1.113883.6.276'=>['38017', '38663', '42347', '46352', '47264', '62163', '62260', '62423', '62414', '64587', '64992']}, 'path'=>'Classification.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-type'}},
+          'justification' => {'path'=>'Classification.justification', 'type'=>'RelatedArtifact', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -157,13 +157,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'ConformsTo.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'ConformsTo.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'ConformsTo.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'category' => {'valid_codes'=>{'http://hl7.org/fhir/device-specification-category'=>['communication', 'performance', 'measurement', 'risk-class', 'electrical', 'material', 'exchange']}, 'type'=>'CodeableConcept', 'path'=>'ConformsTo.category', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-specification-category'}},
-          'specification' => {'valid_codes'=>{'urn:iso:std:iso:11073:10101'=>['528391', '528404', '528425', '528402', '528409', '528390', '528457', '528401', '528455', '528403', '528405', '528388', '528397', '528408', '528426', '528392', '528399']}, 'type'=>'CodeableConcept', 'path'=>'ConformsTo.specification', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-specification-type'}},
-          'version' => {'type'=>'string', 'path'=>'ConformsTo.version', 'min'=>0, 'max'=>Float::INFINITY},
-          'source' => {'type'=>'RelatedArtifact', 'path'=>'ConformsTo.source', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'ConformsTo.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'ConformsTo.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'ConformsTo.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'category' => {'valid_codes'=>{'http://hl7.org/fhir/device-specification-category'=>['communication', 'performance', 'measurement', 'risk-class', 'electrical', 'material', 'exchange']}, 'path'=>'ConformsTo.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-specification-category'}},
+          'specification' => {'valid_codes'=>{'urn:iso:std:iso:11073:10101'=>['528391', '528404', '528425', '528402', '528409', '528390', '528457', '528401', '528455', '528403', '528405', '528388', '528397', '528408', '528426', '528392', '528399']}, 'path'=>'ConformsTo.specification', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-specification-type'}},
+          'version' => {'path'=>'ConformsTo.version', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+          'source' => {'path'=>'ConformsTo.source', 'type'=>'RelatedArtifact', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -181,11 +181,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'HasPart.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'HasPart.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'HasPart.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'reference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DeviceDefinition'], 'type'=>'Reference', 'path'=>'HasPart.reference', 'min'=>1, 'max'=>1},
-          'count' => {'type'=>'integer', 'path'=>'HasPart.count', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'HasPart.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'HasPart.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'HasPart.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'reference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DeviceDefinition'], 'path'=>'HasPart.reference', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'count' => {'path'=>'HasPart.count', 'type'=>'integer', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -201,15 +201,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Packaging.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Packaging.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Packaging.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'identifier' => {'type'=>'Identifier', 'path'=>'Packaging.identifier', 'min'=>0, 'max'=>1},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'Packaging.type', 'min'=>0, 'max'=>1},
-          'count' => {'type'=>'integer', 'path'=>'Packaging.count', 'min'=>0, 'max'=>1},
-          'distributor' => {'type'=>'DeviceDefinition::Packaging::Distributor', 'path'=>'Packaging.distributor', 'min'=>0, 'max'=>Float::INFINITY},
-          'udiDeviceIdentifier' => {'type'=>'DeviceDefinition::UdiDeviceIdentifier', 'path'=>'Packaging.udiDeviceIdentifier', 'min'=>0, 'max'=>Float::INFINITY},
-          'packaging' => {'type'=>'DeviceDefinition::Packaging', 'path'=>'Packaging.packaging', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Packaging.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Packaging.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Packaging.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'identifier' => {'path'=>'Packaging.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'type' => {'path'=>'Packaging.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'count' => {'path'=>'Packaging.count', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'distributor' => {'path'=>'Packaging.distributor', 'type'=>'DeviceDefinition::Packaging::Distributor', 'min'=>0, 'max'=>Float::INFINITY},
+          'udiDeviceIdentifier' => {'path'=>'Packaging.udiDeviceIdentifier', 'type'=>'DeviceDefinition::UdiDeviceIdentifier', 'min'=>0, 'max'=>Float::INFINITY},
+          'packaging' => {'path'=>'Packaging.packaging', 'type'=>'DeviceDefinition::Packaging', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Distributor < Model
@@ -218,11 +218,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Distributor.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Distributor.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Distributor.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'name' => {'type'=>'string', 'path'=>'Distributor.name', 'min'=>0, 'max'=>1},
-            'organizationReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Distributor.organizationReference', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Distributor.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Distributor.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Distributor.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'name' => {'path'=>'Distributor.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'organizationReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Distributor.organizationReference', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           attr_accessor :id                    # 0-1 string
@@ -249,12 +249,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Version.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Version.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Version.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'Version.type', 'min'=>0, 'max'=>1},
-          'component' => {'type'=>'Identifier', 'path'=>'Version.component', 'min'=>0, 'max'=>1},
-          'value' => {'type'=>'string', 'path'=>'Version.value', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Version.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Version.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Version.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'path'=>'Version.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'component' => {'path'=>'Version.component', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'value' => {'path'=>'Version.value', 'type'=>'string', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -274,17 +274,17 @@ module FHIR
           'value' => ['Quantity', 'CodeableConcept', 'string', 'boolean', 'integer', 'Range', 'Attachment']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Property.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Property.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Property.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'urn:iso:std:iso:11073:10101'=>['528391', '528404', '528425', '528402', '528409', '528390', '528457', '528401', '528455', '528403', '528405', '528388', '528397', '528408', '528426', '528392', '528399'], 'urn:oid:2.16.840.1.113883.6.276'=>['38017', '38663', '42347', '46352', '47264', '62163', '62260', '62423', '62414', '64587', '64992']}, 'type'=>'CodeableConcept', 'path'=>'Property.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-property-type'}},
-          'valueQuantity' => {'type'=>'Quantity', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueString' => {'type'=>'string', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueBoolean' => {'type'=>'boolean', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueInteger' => {'type'=>'integer', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueRange' => {'type'=>'Range', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueAttachment' => {'type'=>'Attachment', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Property.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Property.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Property.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'urn:iso:std:iso:11073:10101'=>['528391', '528404', '528425', '528402', '528409', '528390', '528457', '528401', '528455', '528403', '528405', '528388', '528397', '528408', '528426', '528392', '528399'], 'urn:oid:2.16.840.1.113883.6.276'=>['38017', '38663', '42347', '46352', '47264', '62163', '62260', '62423', '62414', '64587', '64992']}, 'path'=>'Property.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/device-property-type'}},
+          'valueQuantity' => {'path'=>'Property.value[x]', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+          'valueCodeableConcept' => {'path'=>'Property.value[x]', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'valueString' => {'path'=>'Property.value[x]', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'valueBoolean' => {'path'=>'Property.value[x]', 'type'=>'boolean', 'min'=>1, 'max'=>1},
+          'valueInteger' => {'path'=>'Property.value[x]', 'type'=>'integer', 'min'=>1, 'max'=>1},
+          'valueRange' => {'path'=>'Property.value[x]', 'type'=>'Range', 'min'=>1, 'max'=>1},
+          'valueAttachment' => {'path'=>'Property.value[x]', 'type'=>'Attachment', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                   # 0-1 string
@@ -306,11 +306,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Link.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Link.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Link.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'relation' => {'valid_codes'=>{'http://hl7.org/fhir/devicedefinition-relationtype'=>['gateway', 'replaces', 'previous']}, 'type'=>'Coding', 'path'=>'Link.relation', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/devicedefinition-relationtype'}},
-          'relatedDevice' => {'type'=>'CodeableReference', 'path'=>'Link.relatedDevice', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Link.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Link.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Link.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'relation' => {'valid_codes'=>{'http://hl7.org/fhir/devicedefinition-relationtype'=>['gateway', 'replaces', 'previous']}, 'path'=>'Link.relation', 'type'=>'Coding', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/devicedefinition-relationtype'}},
+          'relatedDevice' => {'path'=>'Link.relatedDevice', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -326,12 +326,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Material.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Material.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Material.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'substance' => {'type'=>'CodeableConcept', 'path'=>'Material.substance', 'min'=>1, 'max'=>1},
-          'alternate' => {'type'=>'boolean', 'path'=>'Material.alternate', 'min'=>0, 'max'=>1},
-          'allergenicIndicator' => {'type'=>'boolean', 'path'=>'Material.allergenicIndicator', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Material.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Material.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Material.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'substance' => {'path'=>'Material.substance', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'alternate' => {'path'=>'Material.alternate', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'allergenicIndicator' => {'path'=>'Material.allergenicIndicator', 'type'=>'boolean', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                  # 0-1 string
@@ -348,16 +348,16 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Guideline.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Guideline.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Guideline.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'useContext' => {'type'=>'UsageContext', 'path'=>'Guideline.useContext', 'min'=>0, 'max'=>Float::INFINITY},
-          'usageInstruction' => {'type'=>'markdown', 'path'=>'Guideline.usageInstruction', 'min'=>0, 'max'=>1},
-          'relatedArtifact' => {'type'=>'RelatedArtifact', 'path'=>'Guideline.relatedArtifact', 'min'=>0, 'max'=>Float::INFINITY},
-          'indication' => {'type'=>'CodeableConcept', 'path'=>'Guideline.indication', 'min'=>0, 'max'=>Float::INFINITY},
-          'contraindication' => {'type'=>'CodeableConcept', 'path'=>'Guideline.contraindication', 'min'=>0, 'max'=>Float::INFINITY},
-          'warning' => {'type'=>'CodeableConcept', 'path'=>'Guideline.warning', 'min'=>0, 'max'=>Float::INFINITY},
-          'intendedUse' => {'type'=>'string', 'path'=>'Guideline.intendedUse', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Guideline.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Guideline.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Guideline.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'useContext' => {'path'=>'Guideline.useContext', 'type'=>'UsageContext', 'min'=>0, 'max'=>Float::INFINITY},
+          'usageInstruction' => {'path'=>'Guideline.usageInstruction', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+          'relatedArtifact' => {'path'=>'Guideline.relatedArtifact', 'type'=>'RelatedArtifact', 'min'=>0, 'max'=>Float::INFINITY},
+          'indication' => {'path'=>'Guideline.indication', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+          'contraindication' => {'path'=>'Guideline.contraindication', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+          'warning' => {'path'=>'Guideline.warning', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+          'intendedUse' => {'path'=>'Guideline.intendedUse', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -378,12 +378,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'CorrectiveAction.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'CorrectiveAction.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'CorrectiveAction.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'recall' => {'type'=>'boolean', 'path'=>'CorrectiveAction.recall', 'min'=>1, 'max'=>1},
-          'scope' => {'valid_codes'=>{'http://hl7.org/fhir/device-correctiveactionscope'=>['model', 'lot-numbers', 'serial-numbers']}, 'type'=>'code', 'path'=>'CorrectiveAction.scope', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/device-correctiveactionscope'}},
-          'period' => {'type'=>'Period', 'path'=>'CorrectiveAction.period', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'CorrectiveAction.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'CorrectiveAction.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'CorrectiveAction.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'recall' => {'path'=>'CorrectiveAction.recall', 'type'=>'boolean', 'min'=>1, 'max'=>1},
+          'scope' => {'valid_codes'=>{'http://hl7.org/fhir/device-correctiveactionscope'=>['model', 'lot-numbers', 'serial-numbers']}, 'path'=>'CorrectiveAction.scope', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/device-correctiveactionscope'}},
+          'period' => {'path'=>'CorrectiveAction.period', 'type'=>'Period', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -400,13 +400,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'ChargeItem.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'ChargeItem.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'ChargeItem.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'chargeItemCode' => {'type'=>'CodeableReference', 'path'=>'ChargeItem.chargeItemCode', 'min'=>1, 'max'=>1},
-          'count' => {'type'=>'Quantity', 'path'=>'ChargeItem.count', 'min'=>1, 'max'=>1},
-          'effectivePeriod' => {'type'=>'Period', 'path'=>'ChargeItem.effectivePeriod', 'min'=>0, 'max'=>1},
-          'useContext' => {'type'=>'UsageContext', 'path'=>'ChargeItem.useContext', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'ChargeItem.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'ChargeItem.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'ChargeItem.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'chargeItemCode' => {'path'=>'ChargeItem.chargeItemCode', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1},
+          'count' => {'path'=>'ChargeItem.count', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+          'effectivePeriod' => {'path'=>'ChargeItem.effectivePeriod', 'type'=>'Period', 'min'=>0, 'max'=>1},
+          'useContext' => {'path'=>'ChargeItem.useContext', 'type'=>'UsageContext', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string

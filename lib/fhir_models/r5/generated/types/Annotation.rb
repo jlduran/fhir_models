@@ -10,12 +10,12 @@ module FHIR
       }
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Annotation.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Annotation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'authorReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Annotation.author[x]', 'min'=>0, 'max'=>1},
-        'authorString' => {'type'=>'string', 'path'=>'Annotation.author[x]', 'min'=>0, 'max'=>1},
-        'time' => {'type'=>'dateTime', 'path'=>'Annotation.time', 'min'=>0, 'max'=>1},
-        'text' => {'type'=>'markdown', 'path'=>'Annotation.text', 'min'=>1, 'max'=>1}
+        'id' => {'path'=>'Annotation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Annotation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'authorReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Annotation.author[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'authorString' => {'path'=>'Annotation.author[x]', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'time' => {'path'=>'Annotation.time', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'text' => {'path'=>'Annotation.text', 'type'=>'markdown', 'min'=>1, 'max'=>1}
       }
 
       attr_accessor :id              # 0-1 string

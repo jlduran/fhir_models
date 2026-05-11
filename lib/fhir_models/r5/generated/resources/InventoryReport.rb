@@ -7,24 +7,24 @@ module FHIR
 
       SEARCH_PARAMS = ['identifier', 'item', 'item-reference', 'status']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'InventoryReport.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'InventoryReport.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'InventoryReport.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'InventoryReport.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'InventoryReport.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'InventoryReport.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'InventoryReport.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'InventoryReport.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'InventoryReport.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/inventoryreport-status'=>['draft', 'requested', 'active', 'entered-in-error']}, 'type'=>'code', 'path'=>'InventoryReport.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/inventoryreport-status'}},
-        'countType' => {'valid_codes'=>{'http://hl7.org/fhir/inventoryreport-counttype'=>['snapshot', 'difference']}, 'type'=>'code', 'path'=>'InventoryReport.countType', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/inventoryreport-counttype'}},
-        'operationType' => {'type'=>'CodeableConcept', 'path'=>'InventoryReport.operationType', 'min'=>0, 'max'=>1},
-        'operationTypeReason' => {'type'=>'CodeableConcept', 'path'=>'InventoryReport.operationTypeReason', 'min'=>0, 'max'=>1},
-        'reportedDateTime' => {'type'=>'dateTime', 'path'=>'InventoryReport.reportedDateTime', 'min'=>1, 'max'=>1},
-        'reporter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Device'], 'type'=>'Reference', 'path'=>'InventoryReport.reporter', 'min'=>0, 'max'=>1},
-        'reportingPeriod' => {'type'=>'Period', 'path'=>'InventoryReport.reportingPeriod', 'min'=>0, 'max'=>1},
-        'inventoryListing' => {'type'=>'InventoryReport::InventoryListing', 'path'=>'InventoryReport.inventoryListing', 'min'=>0, 'max'=>Float::INFINITY},
-        'note' => {'type'=>'Annotation', 'path'=>'InventoryReport.note', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'InventoryReport.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'InventoryReport.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'InventoryReport.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'InventoryReport.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'InventoryReport.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'InventoryReport.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'InventoryReport.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'InventoryReport.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'InventoryReport.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/inventoryreport-status'=>['draft', 'requested', 'active', 'entered-in-error']}, 'path'=>'InventoryReport.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/inventoryreport-status'}},
+        'countType' => {'valid_codes'=>{'http://hl7.org/fhir/inventoryreport-counttype'=>['snapshot', 'difference']}, 'path'=>'InventoryReport.countType', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/inventoryreport-counttype'}},
+        'operationType' => {'path'=>'InventoryReport.operationType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'operationTypeReason' => {'path'=>'InventoryReport.operationTypeReason', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'reportedDateTime' => {'path'=>'InventoryReport.reportedDateTime', 'type'=>'dateTime', 'min'=>1, 'max'=>1},
+        'reporter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Device'], 'path'=>'InventoryReport.reporter', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'reportingPeriod' => {'path'=>'InventoryReport.reportingPeriod', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'inventoryListing' => {'path'=>'InventoryReport.inventoryListing', 'type'=>'InventoryReport::InventoryListing', 'min'=>0, 'max'=>Float::INFINITY},
+        'note' => {'path'=>'InventoryReport.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class InventoryListing < Model
@@ -33,13 +33,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'InventoryListing.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'InventoryListing.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'InventoryListing.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'InventoryListing.location', 'min'=>0, 'max'=>1},
-          'itemStatus' => {'type'=>'CodeableConcept', 'path'=>'InventoryListing.itemStatus', 'min'=>0, 'max'=>1},
-          'countingDateTime' => {'type'=>'dateTime', 'path'=>'InventoryListing.countingDateTime', 'min'=>0, 'max'=>1},
-          'item' => {'type'=>'InventoryReport::InventoryListing::Item', 'path'=>'InventoryListing.item', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'InventoryListing.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'InventoryListing.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'InventoryListing.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'InventoryListing.location', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'itemStatus' => {'path'=>'InventoryListing.itemStatus', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'countingDateTime' => {'path'=>'InventoryListing.countingDateTime', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'item' => {'path'=>'InventoryListing.item', 'type'=>'InventoryReport::InventoryListing::Item', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Item < Model
@@ -48,12 +48,12 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Item.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Item.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Item.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'category' => {'type'=>'CodeableConcept', 'path'=>'Item.category', 'min'=>0, 'max'=>1},
-            'quantity' => {'type'=>'Quantity', 'path'=>'Item.quantity', 'min'=>1, 'max'=>1},
-            'item' => {'type'=>'CodeableReference', 'path'=>'Item.item', 'min'=>1, 'max'=>1}
+            'id' => {'path'=>'Item.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Item.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Item.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'category' => {'path'=>'Item.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'quantity' => {'path'=>'Item.quantity', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+            'item' => {'path'=>'Item.item', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string

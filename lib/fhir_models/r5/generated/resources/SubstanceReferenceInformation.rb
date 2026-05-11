@@ -7,18 +7,18 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'SubstanceReferenceInformation.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'SubstanceReferenceInformation.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'SubstanceReferenceInformation.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'SubstanceReferenceInformation.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'SubstanceReferenceInformation.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'SubstanceReferenceInformation.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'SubstanceReferenceInformation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'SubstanceReferenceInformation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'comment' => {'type'=>'string', 'path'=>'SubstanceReferenceInformation.comment', 'min'=>0, 'max'=>1},
-        'gene' => {'type'=>'SubstanceReferenceInformation::Gene', 'path'=>'SubstanceReferenceInformation.gene', 'min'=>0, 'max'=>Float::INFINITY},
-        'geneElement' => {'type'=>'SubstanceReferenceInformation::GeneElement', 'path'=>'SubstanceReferenceInformation.geneElement', 'min'=>0, 'max'=>Float::INFINITY},
-        'target' => {'type'=>'SubstanceReferenceInformation::Target', 'path'=>'SubstanceReferenceInformation.target', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'SubstanceReferenceInformation.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'SubstanceReferenceInformation.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'SubstanceReferenceInformation.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'SubstanceReferenceInformation.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'SubstanceReferenceInformation.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'SubstanceReferenceInformation.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'SubstanceReferenceInformation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'SubstanceReferenceInformation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'comment' => {'path'=>'SubstanceReferenceInformation.comment', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'gene' => {'path'=>'SubstanceReferenceInformation.gene', 'type'=>'SubstanceReferenceInformation::Gene', 'min'=>0, 'max'=>Float::INFINITY},
+        'geneElement' => {'path'=>'SubstanceReferenceInformation.geneElement', 'type'=>'SubstanceReferenceInformation::GeneElement', 'min'=>0, 'max'=>Float::INFINITY},
+        'target' => {'path'=>'SubstanceReferenceInformation.target', 'type'=>'SubstanceReferenceInformation::Target', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Gene < Model
@@ -27,12 +27,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Gene.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Gene.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Gene.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'geneSequenceOrigin' => {'type'=>'CodeableConcept', 'path'=>'Gene.geneSequenceOrigin', 'min'=>0, 'max'=>1},
-          'gene' => {'type'=>'CodeableConcept', 'path'=>'Gene.gene', 'min'=>0, 'max'=>1},
-          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'Gene.source', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Gene.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Gene.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Gene.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'geneSequenceOrigin' => {'path'=>'Gene.geneSequenceOrigin', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'gene' => {'path'=>'Gene.gene', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'Gene.source', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                 # 0-1 string
@@ -49,12 +49,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'GeneElement.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'GeneElement.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'GeneElement.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'GeneElement.type', 'min'=>0, 'max'=>1},
-          'element' => {'type'=>'Identifier', 'path'=>'GeneElement.element', 'min'=>0, 'max'=>1},
-          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'GeneElement.source', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'GeneElement.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'GeneElement.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'GeneElement.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'path'=>'GeneElement.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'element' => {'path'=>'GeneElement.element', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'GeneElement.source', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -74,19 +74,19 @@ module FHIR
           'amount' => ['Quantity', 'Range', 'string']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Target.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Target.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Target.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'target' => {'type'=>'Identifier', 'path'=>'Target.target', 'min'=>0, 'max'=>1},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'Target.type', 'min'=>0, 'max'=>1},
-          'interaction' => {'type'=>'CodeableConcept', 'path'=>'Target.interaction', 'min'=>0, 'max'=>1},
-          'organism' => {'type'=>'CodeableConcept', 'path'=>'Target.organism', 'min'=>0, 'max'=>1},
-          'organismType' => {'type'=>'CodeableConcept', 'path'=>'Target.organismType', 'min'=>0, 'max'=>1},
-          'amountQuantity' => {'type'=>'Quantity', 'path'=>'Target.amount[x]', 'min'=>0, 'max'=>1},
-          'amountRange' => {'type'=>'Range', 'path'=>'Target.amount[x]', 'min'=>0, 'max'=>1},
-          'amountString' => {'type'=>'string', 'path'=>'Target.amount[x]', 'min'=>0, 'max'=>1},
-          'amountType' => {'type'=>'CodeableConcept', 'path'=>'Target.amountType', 'min'=>0, 'max'=>1},
-          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'Target.source', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Target.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Target.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Target.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'target' => {'path'=>'Target.target', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'type' => {'path'=>'Target.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'interaction' => {'path'=>'Target.interaction', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'organism' => {'path'=>'Target.organism', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'organismType' => {'path'=>'Target.organismType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'amountQuantity' => {'path'=>'Target.amount[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'amountRange' => {'path'=>'Target.amount[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+          'amountString' => {'path'=>'Target.amount[x]', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'amountType' => {'path'=>'Target.amountType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'Target.source', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string

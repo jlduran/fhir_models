@@ -7,11 +7,11 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Contributor.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Contributor.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'valid_codes'=>{'http://hl7.org/fhir/contributor-type'=>['author', 'editor', 'reviewer', 'endorser']}, 'type'=>'code', 'path'=>'Contributor.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/contributor-type'}},
-        'name' => {'type'=>'string', 'path'=>'Contributor.name', 'min'=>1, 'max'=>1},
-        'contact' => {'type'=>'ContactDetail', 'path'=>'Contributor.contact', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'Contributor.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Contributor.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'valid_codes'=>{'http://hl7.org/fhir/contributor-type'=>['author', 'editor', 'reviewer', 'endorser']}, 'path'=>'Contributor.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/contributor-type'}},
+        'name' => {'path'=>'Contributor.name', 'type'=>'string', 'min'=>1, 'max'=>1},
+        'contact' => {'path'=>'Contributor.contact', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       attr_accessor :id        # 0-1 string

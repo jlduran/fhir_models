@@ -7,13 +7,13 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Age.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Age.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'value' => {'type'=>'decimal', 'path'=>'Age.value', 'min'=>0, 'max'=>1},
-        'comparator' => {'valid_codes'=>{'http://hl7.org/fhir/quantity-comparator'=>['<', '<=', '>=', '>', 'ad']}, 'type'=>'code', 'path'=>'Age.comparator', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/quantity-comparator'}},
-        'unit' => {'type'=>'string', 'path'=>'Age.unit', 'min'=>0, 'max'=>1},
-        'system' => {'type'=>'uri', 'path'=>'Age.system', 'min'=>0, 'max'=>1},
-        'code' => {'type'=>'code', 'path'=>'Age.code', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Age.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Age.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'value' => {'path'=>'Age.value', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+        'comparator' => {'valid_codes'=>{'http://hl7.org/fhir/quantity-comparator'=>['<', '<=', '>=', '>', 'ad']}, 'path'=>'Age.comparator', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/quantity-comparator'}},
+        'unit' => {'path'=>'Age.unit', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'system' => {'path'=>'Age.system', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'code' => {'path'=>'Age.code', 'type'=>'code', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id         # 0-1 string

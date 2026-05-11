@@ -7,27 +7,27 @@ module FHIR
 
       SEARCH_PARAMS = ['biological-source-event', 'code', 'collector', 'identifier', 'product-category', 'product-status', 'request', 'serial-number']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'BiologicallyDerivedProduct.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'BiologicallyDerivedProduct.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'BiologicallyDerivedProduct.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'BiologicallyDerivedProduct.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'BiologicallyDerivedProduct.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'BiologicallyDerivedProduct.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'BiologicallyDerivedProduct.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'BiologicallyDerivedProduct.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'productCategory' => {'valid_codes'=>{'http://hl7.org/fhir/product-category'=>['organ', 'tissue', 'fluid', 'cells', 'biologicalAgent']}, 'type'=>'Coding', 'path'=>'BiologicallyDerivedProduct.productCategory', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/product-category'}},
-        'productCode' => {'valid_codes'=>{'http://hl7.org/fhir/biologicallyderived-productcodes'=>['e0398', 's1128', 's1194', 's1195', 's1310', 's1398', 's2598', 'e4377', 't1396']}, 'type'=>'CodeableConcept', 'path'=>'BiologicallyDerivedProduct.productCode', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderived-productcodes'}},
-        'parent' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProduct.parent', 'min'=>0, 'max'=>Float::INFINITY},
-        'request' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ServiceRequest'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProduct.request', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'BiologicallyDerivedProduct.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'biologicalSourceEvent' => {'type'=>'Identifier', 'path'=>'BiologicallyDerivedProduct.biologicalSourceEvent', 'min'=>0, 'max'=>1},
-        'processingFacility' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProduct.processingFacility', 'min'=>0, 'max'=>Float::INFINITY},
-        'division' => {'type'=>'string', 'path'=>'BiologicallyDerivedProduct.division', 'min'=>0, 'max'=>1},
-        'productStatus' => {'valid_codes'=>{'http://hl7.org/fhir/biologicallyderived-product-status'=>['available', 'unavailable']}, 'type'=>'Coding', 'path'=>'BiologicallyDerivedProduct.productStatus', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderived-product-status'}},
-        'expirationDate' => {'type'=>'dateTime', 'path'=>'BiologicallyDerivedProduct.expirationDate', 'min'=>0, 'max'=>1},
-        'collection' => {'type'=>'BiologicallyDerivedProduct::Collection', 'path'=>'BiologicallyDerivedProduct.collection', 'min'=>0, 'max'=>1},
-        'storageTempRequirements' => {'type'=>'Range', 'path'=>'BiologicallyDerivedProduct.storageTempRequirements', 'min'=>0, 'max'=>1},
-        'property' => {'type'=>'BiologicallyDerivedProduct::Property', 'path'=>'BiologicallyDerivedProduct.property', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'BiologicallyDerivedProduct.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'BiologicallyDerivedProduct.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'BiologicallyDerivedProduct.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'BiologicallyDerivedProduct.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'BiologicallyDerivedProduct.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'BiologicallyDerivedProduct.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'BiologicallyDerivedProduct.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'BiologicallyDerivedProduct.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'productCategory' => {'valid_codes'=>{'http://hl7.org/fhir/product-category'=>['organ', 'tissue', 'fluid', 'cells', 'biologicalAgent']}, 'path'=>'BiologicallyDerivedProduct.productCategory', 'type'=>'Coding', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/product-category'}},
+        'productCode' => {'valid_codes'=>{'http://hl7.org/fhir/biologicallyderived-productcodes'=>['e0398', 's1128', 's1194', 's1195', 's1310', 's1398', 's2598', 'e4377', 't1396']}, 'path'=>'BiologicallyDerivedProduct.productCode', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderived-productcodes'}},
+        'parent' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct'], 'path'=>'BiologicallyDerivedProduct.parent', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'request' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ServiceRequest'], 'path'=>'BiologicallyDerivedProduct.request', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'BiologicallyDerivedProduct.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'biologicalSourceEvent' => {'path'=>'BiologicallyDerivedProduct.biologicalSourceEvent', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+        'processingFacility' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'BiologicallyDerivedProduct.processingFacility', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'division' => {'path'=>'BiologicallyDerivedProduct.division', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'productStatus' => {'valid_codes'=>{'http://hl7.org/fhir/biologicallyderived-product-status'=>['available', 'unavailable']}, 'path'=>'BiologicallyDerivedProduct.productStatus', 'type'=>'Coding', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderived-product-status'}},
+        'expirationDate' => {'path'=>'BiologicallyDerivedProduct.expirationDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'collection' => {'path'=>'BiologicallyDerivedProduct.collection', 'type'=>'BiologicallyDerivedProduct::Collection', 'min'=>0, 'max'=>1},
+        'storageTempRequirements' => {'path'=>'BiologicallyDerivedProduct.storageTempRequirements', 'type'=>'Range', 'min'=>0, 'max'=>1},
+        'property' => {'path'=>'BiologicallyDerivedProduct.property', 'type'=>'BiologicallyDerivedProduct::Property', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Collection < Model
@@ -39,13 +39,13 @@ module FHIR
           'collected' => ['dateTime', 'Period']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Collection.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Collection.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Collection.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'collector' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'Collection.collector', 'min'=>0, 'max'=>1},
-          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Collection.source', 'min'=>0, 'max'=>1},
-          'collectedDateTime' => {'type'=>'dateTime', 'path'=>'Collection.collected[x]', 'min'=>0, 'max'=>1},
-          'collectedPeriod' => {'type'=>'Period', 'path'=>'Collection.collected[x]', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Collection.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Collection.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Collection.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'collector' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'Collection.collector', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Collection.source', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'collectedDateTime' => {'path'=>'Collection.collected[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'collectedPeriod' => {'path'=>'Collection.collected[x]', 'type'=>'Period', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -66,19 +66,19 @@ module FHIR
           'value' => ['boolean', 'integer', 'CodeableConcept', 'Period', 'Quantity', 'Range', 'Ratio', 'string', 'Attachment']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Property.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Property.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Property.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/biologicallyderived-product-property-type-codes'=>['collectiontype', 'aborhd', 'singleeuropeancode', 'redcellantigen']}, 'type'=>'CodeableConcept', 'path'=>'Property.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderived-product-property-type-codes'}},
-          'valueBoolean' => {'type'=>'boolean', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueInteger' => {'type'=>'integer', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valuePeriod' => {'type'=>'Period', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueQuantity' => {'type'=>'Quantity', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueRange' => {'type'=>'Range', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueRatio' => {'type'=>'Ratio', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueString' => {'type'=>'string', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1},
-          'valueAttachment' => {'type'=>'Attachment', 'path'=>'Property.value[x]', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Property.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Property.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Property.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/biologicallyderived-product-property-type-codes'=>['collectiontype', 'aborhd', 'singleeuropeancode', 'redcellantigen']}, 'path'=>'Property.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderived-product-property-type-codes'}},
+          'valueBoolean' => {'path'=>'Property.value[x]', 'type'=>'boolean', 'min'=>1, 'max'=>1},
+          'valueInteger' => {'path'=>'Property.value[x]', 'type'=>'integer', 'min'=>1, 'max'=>1},
+          'valueCodeableConcept' => {'path'=>'Property.value[x]', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'valuePeriod' => {'path'=>'Property.value[x]', 'type'=>'Period', 'min'=>1, 'max'=>1},
+          'valueQuantity' => {'path'=>'Property.value[x]', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+          'valueRange' => {'path'=>'Property.value[x]', 'type'=>'Range', 'min'=>1, 'max'=>1},
+          'valueRatio' => {'path'=>'Property.value[x]', 'type'=>'Ratio', 'min'=>1, 'max'=>1},
+          'valueString' => {'path'=>'Property.value[x]', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'valueAttachment' => {'path'=>'Property.value[x]', 'type'=>'Attachment', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                   # 0-1 string

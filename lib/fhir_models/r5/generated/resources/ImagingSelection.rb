@@ -7,31 +7,31 @@ module FHIR
 
       SEARCH_PARAMS = ['based-on', 'body-site', 'body-structure', 'code', 'derived-from', 'identifier', 'issued', 'patient', 'status', 'study-uid', 'subject']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'ImagingSelection.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'ImagingSelection.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'ImagingSelection.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'ImagingSelection.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'ImagingSelection.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'ImagingSelection.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'ImagingSelection.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'ImagingSelection.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'ImagingSelection.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/imagingselection-status'=>['available', 'entered-in-error', 'unknown']}, 'type'=>'code', 'path'=>'ImagingSelection.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/imagingselection-status'}},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Procedure', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/Medication', 'http://hl7.org/fhir/StructureDefinition/Substance', 'http://hl7.org/fhir/StructureDefinition/Specimen'], 'type'=>'Reference', 'path'=>'ImagingSelection.subject', 'min'=>0, 'max'=>1},
-        'issued' => {'type'=>'instant', 'path'=>'ImagingSelection.issued', 'min'=>0, 'max'=>1},
-        'performer' => {'type'=>'ImagingSelection::Performer', 'path'=>'ImagingSelection.performer', 'min'=>0, 'max'=>Float::INFINITY},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan', 'http://hl7.org/fhir/StructureDefinition/ServiceRequest', 'http://hl7.org/fhir/StructureDefinition/Appointment', 'http://hl7.org/fhir/StructureDefinition/AppointmentResponse', 'http://hl7.org/fhir/StructureDefinition/Task'], 'type'=>'Reference', 'path'=>'ImagingSelection.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'category' => {'valid_codes'=>{'http://dicom.nema.org/resources/ontology/DCM'=>['113000', '113001', '113002', '113003', '113004', '128219', '128218', '128211', '128210', '128213', '128212', '128215', '128214', '128217', '128216', '113005', '113006', '113007', '113008', '113009', '113030', '113031', '113032', '113033', '113034', '113035', '113036', '113037', '128208', '128207', '128209', '128200', '128202', '128201', '128204', '128203', '128206', '128205', '113038', '113039', '113020', '113021', '113022', '128714', '128713', '128199', '128710', '128711', '128192', '128191', '128194', '128193', '128196', '128195', '128198', '128197', '113010', '113013', '128190', '130373', '130372', '130371', '130370', '128222', '128189', '128221', '128188', '128223', '128181', '128180', '113018', '128183', '128182', '128185', '128184', '128220', '128187', '128186']}, 'type'=>'CodeableConcept', 'path'=>'ImagingSelection.category', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7010.html'}},
-        'code' => {'valid_codes'=>{'http://dicom.nema.org/resources/ontology/DCM'=>['113000', '113001', '113002', '113003', '113004', '128219', '128218', '128211', '128210', '128213', '128212', '128215', '128214', '128217', '128216', '113005', '113006', '113007', '113008', '113009', '113030', '113031', '113032', '113033', '113034', '113035', '113036', '113037', '128208', '128207', '128209', '128200', '128202', '128201', '128204', '128203', '128206', '128205', '113038', '113039', '113020', '113021', '113022', '128714', '128713', '128199', '128710', '128711', '128192', '128191', '128194', '128193', '128196', '128195', '128198', '128197', '113010', '113013', '128190', '130373', '130372', '130371', '130370', '128222', '128189', '128221', '128188', '128223', '128181', '128180', '113018', '128183', '128182', '128185', '128184', '128220', '128187', '128186']}, 'type'=>'CodeableConcept', 'path'=>'ImagingSelection.code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7010.html'}},
-        'studyUid' => {'type'=>'id', 'path'=>'ImagingSelection.studyUid', 'min'=>0, 'max'=>1},
-        'derivedFrom' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ImagingStudy', 'http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'ImagingSelection.derivedFrom', 'min'=>0, 'max'=>Float::INFINITY},
-        'endpoint' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'type'=>'Reference', 'path'=>'ImagingSelection.endpoint', 'min'=>0, 'max'=>Float::INFINITY},
-        'seriesUid' => {'type'=>'id', 'path'=>'ImagingSelection.seriesUid', 'min'=>0, 'max'=>1},
-        'seriesNumber' => {'type'=>'unsignedInt', 'path'=>'ImagingSelection.seriesNumber', 'min'=>0, 'max'=>1},
-        'frameOfReferenceUid' => {'type'=>'id', 'path'=>'ImagingSelection.frameOfReferenceUid', 'min'=>0, 'max'=>1},
-        'bodySite' => {'type'=>'CodeableReference', 'path'=>'ImagingSelection.bodySite', 'min'=>0, 'max'=>1},
-        'focus' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ImagingSelection'], 'type'=>'Reference', 'path'=>'ImagingSelection.focus', 'min'=>0, 'max'=>Float::INFINITY},
-        'instance' => {'type'=>'ImagingSelection::Instance', 'path'=>'ImagingSelection.instance', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'ImagingSelection.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'ImagingSelection.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'ImagingSelection.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'ImagingSelection.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'ImagingSelection.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'ImagingSelection.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'ImagingSelection.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'ImagingSelection.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'ImagingSelection.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/imagingselection-status'=>['available', 'entered-in-error', 'unknown']}, 'path'=>'ImagingSelection.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/imagingselection-status'}},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Procedure', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/Medication', 'http://hl7.org/fhir/StructureDefinition/Substance', 'http://hl7.org/fhir/StructureDefinition/Specimen'], 'path'=>'ImagingSelection.subject', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'issued' => {'path'=>'ImagingSelection.issued', 'type'=>'instant', 'min'=>0, 'max'=>1},
+        'performer' => {'path'=>'ImagingSelection.performer', 'type'=>'ImagingSelection::Performer', 'min'=>0, 'max'=>Float::INFINITY},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan', 'http://hl7.org/fhir/StructureDefinition/ServiceRequest', 'http://hl7.org/fhir/StructureDefinition/Appointment', 'http://hl7.org/fhir/StructureDefinition/AppointmentResponse', 'http://hl7.org/fhir/StructureDefinition/Task'], 'path'=>'ImagingSelection.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'category' => {'valid_codes'=>{'http://dicom.nema.org/resources/ontology/DCM'=>['113000', '113001', '113002', '113003', '113004', '128219', '128218', '128211', '128210', '128213', '128212', '128215', '128214', '128217', '128216', '113005', '113006', '113007', '113008', '113009', '113030', '113031', '113032', '113033', '113034', '113035', '113036', '113037', '128208', '128207', '128209', '128200', '128202', '128201', '128204', '128203', '128206', '128205', '113038', '113039', '113020', '113021', '113022', '128714', '128713', '128199', '128710', '128711', '128192', '128191', '128194', '128193', '128196', '128195', '128198', '128197', '113010', '113013', '128190', '130373', '130372', '130371', '130370', '128222', '128189', '128221', '128188', '128223', '128181', '128180', '113018', '128183', '128182', '128185', '128184', '128220', '128187', '128186']}, 'path'=>'ImagingSelection.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7010.html'}},
+        'code' => {'valid_codes'=>{'http://dicom.nema.org/resources/ontology/DCM'=>['113000', '113001', '113002', '113003', '113004', '128219', '128218', '128211', '128210', '128213', '128212', '128215', '128214', '128217', '128216', '113005', '113006', '113007', '113008', '113009', '113030', '113031', '113032', '113033', '113034', '113035', '113036', '113037', '128208', '128207', '128209', '128200', '128202', '128201', '128204', '128203', '128206', '128205', '113038', '113039', '113020', '113021', '113022', '128714', '128713', '128199', '128710', '128711', '128192', '128191', '128194', '128193', '128196', '128195', '128198', '128197', '113010', '113013', '128190', '130373', '130372', '130371', '130370', '128222', '128189', '128221', '128188', '128223', '128181', '128180', '113018', '128183', '128182', '128185', '128184', '128220', '128187', '128186']}, 'path'=>'ImagingSelection.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7010.html'}},
+        'studyUid' => {'path'=>'ImagingSelection.studyUid', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'derivedFrom' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ImagingStudy', 'http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'ImagingSelection.derivedFrom', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'endpoint' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'path'=>'ImagingSelection.endpoint', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'seriesUid' => {'path'=>'ImagingSelection.seriesUid', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'seriesNumber' => {'path'=>'ImagingSelection.seriesNumber', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+        'frameOfReferenceUid' => {'path'=>'ImagingSelection.frameOfReferenceUid', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'bodySite' => {'path'=>'ImagingSelection.bodySite', 'type'=>'CodeableReference', 'min'=>0, 'max'=>1},
+        'focus' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ImagingSelection'], 'path'=>'ImagingSelection.focus', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'instance' => {'path'=>'ImagingSelection.instance', 'type'=>'ImagingSelection::Instance', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Performer < Model
@@ -40,11 +40,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Performer.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Performer.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Performer.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'function' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ParticipationType'=>['CON', 'VRF', 'PRF', 'SPRF', 'REF']}, 'type'=>'CodeableConcept', 'path'=>'Performer.function', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/series-performer-function'}},
-          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/HealthcareService'], 'type'=>'Reference', 'path'=>'Performer.actor', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Performer.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Performer.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Performer.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'function' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ParticipationType'=>['CON', 'VRF', 'PRF', 'SPRF', 'REF']}, 'path'=>'Performer.function', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/series-performer-function'}},
+          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/HealthcareService'], 'path'=>'Performer.actor', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -60,15 +60,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Instance.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Instance.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Instance.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'uid' => {'type'=>'id', 'path'=>'Instance.uid', 'min'=>1, 'max'=>1},
-          'number' => {'type'=>'unsignedInt', 'path'=>'Instance.number', 'min'=>0, 'max'=>1},
-          'sopClass' => {'type'=>'Coding', 'path'=>'Instance.sopClass', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1'}},
-          'subset' => {'type'=>'string', 'path'=>'Instance.subset', 'min'=>0, 'max'=>Float::INFINITY},
-          'imageRegion2D' => {'type'=>'ImagingSelection::Instance::ImageRegion2D', 'path'=>'Instance.imageRegion2D', 'min'=>0, 'max'=>Float::INFINITY},
-          'imageRegion3D' => {'type'=>'ImagingSelection::Instance::ImageRegion3D', 'path'=>'Instance.imageRegion3D', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Instance.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Instance.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Instance.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'uid' => {'path'=>'Instance.uid', 'type'=>'id', 'min'=>1, 'max'=>1},
+          'number' => {'path'=>'Instance.number', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+          'sopClass' => {'path'=>'Instance.sopClass', 'type'=>'Coding', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1'}},
+          'subset' => {'path'=>'Instance.subset', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+          'imageRegion2D' => {'path'=>'Instance.imageRegion2D', 'type'=>'ImagingSelection::Instance::ImageRegion2D', 'min'=>0, 'max'=>Float::INFINITY},
+          'imageRegion3D' => {'path'=>'Instance.imageRegion3D', 'type'=>'ImagingSelection::Instance::ImageRegion3D', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class ImageRegion2D < Model
@@ -77,11 +77,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'ImageRegion2D.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'ImageRegion2D.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'ImageRegion2D.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'regionType' => {'valid_codes'=>{'http://hl7.org/fhir/imagingselection-2dgraphictype'=>['point', 'polyline', 'interpolated', 'circle', 'ellipse']}, 'type'=>'code', 'path'=>'ImageRegion2D.regionType', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/imagingselection-2dgraphictype'}},
-            'coordinate' => {'type'=>'decimal', 'path'=>'ImageRegion2D.coordinate', 'min'=>1, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'ImageRegion2D.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'ImageRegion2D.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'ImageRegion2D.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'regionType' => {'valid_codes'=>{'http://hl7.org/fhir/imagingselection-2dgraphictype'=>['point', 'polyline', 'interpolated', 'circle', 'ellipse']}, 'path'=>'ImageRegion2D.regionType', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/imagingselection-2dgraphictype'}},
+            'coordinate' => {'path'=>'ImageRegion2D.coordinate', 'type'=>'decimal', 'min'=>1, 'max'=>Float::INFINITY}
           }
 
           attr_accessor :id                # 0-1 string
@@ -97,11 +97,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'ImageRegion3D.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'ImageRegion3D.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'ImageRegion3D.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'regionType' => {'valid_codes'=>{'http://hl7.org/fhir/imagingselection-3dgraphictype'=>['point', 'multipoint', 'polyline', 'polygon', 'ellipse', 'ellipsoid']}, 'type'=>'code', 'path'=>'ImageRegion3D.regionType', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/imagingselection-3dgraphictype'}},
-            'coordinate' => {'type'=>'decimal', 'path'=>'ImageRegion3D.coordinate', 'min'=>1, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'ImageRegion3D.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'ImageRegion3D.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'ImageRegion3D.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'regionType' => {'valid_codes'=>{'http://hl7.org/fhir/imagingselection-3dgraphictype'=>['point', 'multipoint', 'polyline', 'polygon', 'ellipse', 'ellipsoid']}, 'path'=>'ImageRegion3D.regionType', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/imagingselection-3dgraphictype'}},
+            'coordinate' => {'path'=>'ImageRegion3D.coordinate', 'type'=>'decimal', 'min'=>1, 'max'=>Float::INFINITY}
           }
 
           attr_accessor :id                # 0-1 string

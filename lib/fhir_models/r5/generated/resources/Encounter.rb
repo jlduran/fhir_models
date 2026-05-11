@@ -7,42 +7,42 @@ module FHIR
 
       SEARCH_PARAMS = ['account', 'appointment', 'based-on', 'careteam', 'class', 'date', 'date-start', 'diagnosis-code', 'diagnosis-reference', 'end-date', 'episode-of-care', 'identifier', 'length', 'location', 'location-period', 'part-of', 'participant', 'participant-type', 'patient', 'practitioner', 'reason-code', 'reason-reference', 'service-provider', 'special-arrangement', 'status', 'subject', 'subject-status', 'type']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Encounter.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Encounter.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Encounter.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'Encounter.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Encounter.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Encounter.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Encounter.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Encounter.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Encounter.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-status'=>['planned', 'in-progress', 'on-hold', 'discharged', 'completed', 'cancelled', 'discontinued', 'entered-in-error', 'unknown']}, 'type'=>'code', 'path'=>'Encounter.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-status'}},
-        'class' => {'local_name'=>'local_class', 'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['IMP', 'AMB', 'OBSENC', 'EMER', 'VR', 'HH']}, 'type'=>'CodeableConcept', 'path'=>'Encounter.class', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://terminology.hl7.org/ValueSet/encounter-class'}},
-        'priority' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActPriority'=>['A', 'CR', 'EL', 'EM', 'P', 'PRN', 'R', 'RR', 'S', 'T', 'UD', 'UR', 'CS', 'CSP', 'CSR']}, 'type'=>'CodeableConcept', 'path'=>'Encounter.priority', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-ActPriority'}},
-        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/encounter-type'=>['ADMS', 'BD/BM-clin', 'CCS60', 'OKI']}, 'type'=>'CodeableConcept', 'path'=>'Encounter.type', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-type'}},
-        'serviceType' => {'type'=>'CodeableReference', 'path'=>'Encounter.serviceType', 'min'=>0, 'max'=>Float::INFINITY},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group'], 'type'=>'Reference', 'path'=>'Encounter.subject', 'min'=>0, 'max'=>1},
-        'subjectStatus' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/encounter-subject-status'=>['arrived', 'triaged', 'receiving-care', 'on-leave', 'departed']}, 'type'=>'CodeableConcept', 'path'=>'Encounter.subjectStatus', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-subject-status'}},
-        'episodeOfCare' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/EpisodeOfCare'], 'type'=>'Reference', 'path'=>'Encounter.episodeOfCare', 'min'=>0, 'max'=>Float::INFINITY},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan', 'http://hl7.org/fhir/StructureDefinition/DeviceRequest', 'http://hl7.org/fhir/StructureDefinition/MedicationRequest', 'http://hl7.org/fhir/StructureDefinition/ServiceRequest'], 'type'=>'Reference', 'path'=>'Encounter.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'careTeam' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CareTeam'], 'type'=>'Reference', 'path'=>'Encounter.careTeam', 'min'=>0, 'max'=>Float::INFINITY},
-        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'type'=>'Reference', 'path'=>'Encounter.partOf', 'min'=>0, 'max'=>1},
-        'serviceProvider' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Encounter.serviceProvider', 'min'=>0, 'max'=>1},
-        'participant' => {'type'=>'Encounter::Participant', 'path'=>'Encounter.participant', 'min'=>0, 'max'=>Float::INFINITY},
-        'appointment' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Appointment'], 'type'=>'Reference', 'path'=>'Encounter.appointment', 'min'=>0, 'max'=>Float::INFINITY},
-        'virtualService' => {'type'=>'VirtualServiceDetail', 'path'=>'Encounter.virtualService', 'min'=>0, 'max'=>Float::INFINITY},
-        'actualPeriod' => {'type'=>'Period', 'path'=>'Encounter.actualPeriod', 'min'=>0, 'max'=>1},
-        'plannedStartDate' => {'type'=>'dateTime', 'path'=>'Encounter.plannedStartDate', 'min'=>0, 'max'=>1},
-        'plannedEndDate' => {'type'=>'dateTime', 'path'=>'Encounter.plannedEndDate', 'min'=>0, 'max'=>1},
-        'length' => {'type'=>'Duration', 'path'=>'Encounter.length', 'min'=>0, 'max'=>1},
-        'reason' => {'type'=>'Encounter::Reason', 'path'=>'Encounter.reason', 'min'=>0, 'max'=>Float::INFINITY},
-        'diagnosis' => {'type'=>'Encounter::Diagnosis', 'path'=>'Encounter.diagnosis', 'min'=>0, 'max'=>Float::INFINITY},
-        'account' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Account'], 'type'=>'Reference', 'path'=>'Encounter.account', 'min'=>0, 'max'=>Float::INFINITY},
-        'dietPreference' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/diet'=>['vegetarian', 'dairy-free', 'nut-free', 'gluten-free', 'vegan', 'halal', 'kosher']}, 'type'=>'CodeableConcept', 'path'=>'Encounter.dietPreference', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-diet'}},
-        'specialArrangement' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/encounter-special-arrangements'=>['wheel', 'add-bed', 'int', 'att', 'dog']}, 'type'=>'CodeableConcept', 'path'=>'Encounter.specialArrangement', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-special-arrangements'}},
-        'specialCourtesy' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy'=>['EXT', 'NRM', 'PRF', 'STF', 'VIP'], 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor'=>['UNK']}, 'type'=>'CodeableConcept', 'path'=>'Encounter.specialCourtesy', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-special-courtesy'}},
-        'admission' => {'type'=>'Encounter::Admission', 'path'=>'Encounter.admission', 'min'=>0, 'max'=>1},
-        'location' => {'type'=>'Encounter::Location', 'path'=>'Encounter.location', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'Encounter.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Encounter.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Encounter.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'Encounter.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'Encounter.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Encounter.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Encounter.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Encounter.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'Encounter.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-status'=>['planned', 'in-progress', 'on-hold', 'discharged', 'completed', 'cancelled', 'discontinued', 'entered-in-error', 'unknown']}, 'path'=>'Encounter.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-status'}},
+        'class' => {'local_name'=>'local_class', 'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['IMP', 'AMB', 'OBSENC', 'EMER', 'VR', 'HH']}, 'path'=>'Encounter.class', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://terminology.hl7.org/ValueSet/encounter-class'}},
+        'priority' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActPriority'=>['A', 'CR', 'EL', 'EM', 'P', 'PRN', 'R', 'RR', 'S', 'T', 'UD', 'UR', 'CS', 'CSP', 'CSR']}, 'path'=>'Encounter.priority', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-ActPriority'}},
+        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/encounter-type'=>['ADMS', 'BD/BM-clin', 'CCS60', 'OKI']}, 'path'=>'Encounter.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-type'}},
+        'serviceType' => {'path'=>'Encounter.serviceType', 'type'=>'CodeableReference', 'min'=>0, 'max'=>Float::INFINITY},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group'], 'path'=>'Encounter.subject', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'subjectStatus' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/encounter-subject-status'=>['arrived', 'triaged', 'receiving-care', 'on-leave', 'departed']}, 'path'=>'Encounter.subjectStatus', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-subject-status'}},
+        'episodeOfCare' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/EpisodeOfCare'], 'path'=>'Encounter.episodeOfCare', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan', 'http://hl7.org/fhir/StructureDefinition/DeviceRequest', 'http://hl7.org/fhir/StructureDefinition/MedicationRequest', 'http://hl7.org/fhir/StructureDefinition/ServiceRequest'], 'path'=>'Encounter.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'careTeam' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CareTeam'], 'path'=>'Encounter.careTeam', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'path'=>'Encounter.partOf', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'serviceProvider' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Encounter.serviceProvider', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'participant' => {'path'=>'Encounter.participant', 'type'=>'Encounter::Participant', 'min'=>0, 'max'=>Float::INFINITY},
+        'appointment' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Appointment'], 'path'=>'Encounter.appointment', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'virtualService' => {'path'=>'Encounter.virtualService', 'type'=>'VirtualServiceDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'actualPeriod' => {'path'=>'Encounter.actualPeriod', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'plannedStartDate' => {'path'=>'Encounter.plannedStartDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'plannedEndDate' => {'path'=>'Encounter.plannedEndDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'length' => {'path'=>'Encounter.length', 'type'=>'Duration', 'min'=>0, 'max'=>1},
+        'reason' => {'path'=>'Encounter.reason', 'type'=>'Encounter::Reason', 'min'=>0, 'max'=>Float::INFINITY},
+        'diagnosis' => {'path'=>'Encounter.diagnosis', 'type'=>'Encounter::Diagnosis', 'min'=>0, 'max'=>Float::INFINITY},
+        'account' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Account'], 'path'=>'Encounter.account', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'dietPreference' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/diet'=>['vegetarian', 'dairy-free', 'nut-free', 'gluten-free', 'vegan', 'halal', 'kosher']}, 'path'=>'Encounter.dietPreference', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-diet'}},
+        'specialArrangement' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/encounter-special-arrangements'=>['wheel', 'add-bed', 'int', 'att', 'dog']}, 'path'=>'Encounter.specialArrangement', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-special-arrangements'}},
+        'specialCourtesy' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy'=>['EXT', 'NRM', 'PRF', 'STF', 'VIP'], 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor'=>['UNK']}, 'path'=>'Encounter.specialCourtesy', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-special-courtesy'}},
+        'admission' => {'path'=>'Encounter.admission', 'type'=>'Encounter::Admission', 'min'=>0, 'max'=>1},
+        'location' => {'path'=>'Encounter.location', 'type'=>'Encounter::Location', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Participant < Model
@@ -51,12 +51,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Participant.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Participant.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Participant.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ParticipationType'=>['ADM', 'ATND', 'CALLBCK', 'CON', 'DIS', 'ESC', 'REF'], 'http://terminology.hl7.org/CodeSystem/participant-type'=>['translator', 'emergency']}, 'type'=>'CodeableConcept', 'path'=>'Participant.type', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-participant-type'}},
-          'period' => {'type'=>'Period', 'path'=>'Participant.period', 'min'=>0, 'max'=>1},
-          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/HealthcareService'], 'type'=>'Reference', 'path'=>'Participant.actor', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Participant.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Participant.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Participant.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ParticipationType'=>['ADM', 'ATND', 'CALLBCK', 'CON', 'DIS', 'ESC', 'REF'], 'http://terminology.hl7.org/CodeSystem/participant-type'=>['translator', 'emergency']}, 'path'=>'Participant.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-participant-type'}},
+          'period' => {'path'=>'Participant.period', 'type'=>'Period', 'min'=>0, 'max'=>1},
+          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/HealthcareService'], 'path'=>'Participant.actor', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -73,11 +73,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Reason.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Reason.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Reason.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'use' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-reason-use'=>['CC', 'HC', 'AD', 'RV', 'HM']}, 'type'=>'CodeableConcept', 'path'=>'Reason.use', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-reason-use'}},
-          'value' => {'type'=>'CodeableReference', 'path'=>'Reason.value', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Reason.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Reason.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Reason.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'use' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-reason-use'=>['CC', 'HC', 'AD', 'RV', 'HM']}, 'path'=>'Reason.use', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-reason-use'}},
+          'value' => {'path'=>'Reason.value', 'type'=>'CodeableReference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -93,11 +93,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Diagnosis.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Diagnosis.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Diagnosis.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'condition' => {'type'=>'CodeableReference', 'path'=>'Diagnosis.condition', 'min'=>0, 'max'=>Float::INFINITY},
-          'use' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-diagnosis-use'=>['working', 'final']}, 'type'=>'CodeableConcept', 'path'=>'Diagnosis.use', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-diagnosis-use'}}
+          'id' => {'path'=>'Diagnosis.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Diagnosis.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Diagnosis.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'condition' => {'path'=>'Diagnosis.condition', 'type'=>'CodeableReference', 'min'=>0, 'max'=>Float::INFINITY},
+          'use' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-diagnosis-use'=>['working', 'final']}, 'path'=>'Diagnosis.use', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-diagnosis-use'}}
         }
 
         attr_accessor :id                # 0-1 string
@@ -113,15 +113,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Admission.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Admission.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Admission.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'preAdmissionIdentifier' => {'type'=>'Identifier', 'path'=>'Admission.preAdmissionIdentifier', 'min'=>0, 'max'=>1},
-          'origin' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Admission.origin', 'min'=>0, 'max'=>1},
-          'admitSource' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/admit-source'=>['hosp-trans', 'emd', 'outp', 'born', 'gp', 'mp', 'nursing', 'psych', 'rehab', 'other']}, 'type'=>'CodeableConcept', 'path'=>'Admission.admitSource', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-admit-source'}},
-          'reAdmission' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v2-0092'=>['R']}, 'type'=>'CodeableConcept', 'path'=>'Admission.reAdmission', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v2-0092'}},
-          'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Admission.destination', 'min'=>0, 'max'=>1},
-          'dischargeDisposition' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/discharge-disposition'=>['home', 'alt-home', 'other-hcf', 'hosp', 'long', 'aadvice', 'exp', 'psy', 'rehab', 'snf', 'oth']}, 'type'=>'CodeableConcept', 'path'=>'Admission.dischargeDisposition', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-discharge-disposition'}}
+          'id' => {'path'=>'Admission.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Admission.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Admission.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'preAdmissionIdentifier' => {'path'=>'Admission.preAdmissionIdentifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'origin' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Admission.origin', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'admitSource' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/admit-source'=>['hosp-trans', 'emd', 'outp', 'born', 'gp', 'mp', 'nursing', 'psych', 'rehab', 'other']}, 'path'=>'Admission.admitSource', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-admit-source'}},
+          'reAdmission' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v2-0092'=>['R']}, 'path'=>'Admission.reAdmission', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v2-0092'}},
+          'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Admission.destination', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'dischargeDisposition' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/discharge-disposition'=>['home', 'alt-home', 'other-hcf', 'hosp', 'long', 'aadvice', 'exp', 'psy', 'rehab', 'snf', 'oth']}, 'path'=>'Admission.dischargeDisposition', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-discharge-disposition'}}
         }
 
         attr_accessor :id                     # 0-1 string
@@ -141,13 +141,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Location.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Location.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Location.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'Location.location', 'min'=>1, 'max'=>1},
-          'status' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-location-status'=>['planned', 'active', 'reserved', 'completed']}, 'type'=>'code', 'path'=>'Location.status', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-location-status'}},
-          'form' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/location-physical-type'=>['si', 'bu', 'wi', 'wa', 'lvl', 'co', 'ro', 'bd', 've', 'ho', 'ca', 'rd', 'area', 'jdn', 'vi']}, 'type'=>'CodeableConcept', 'path'=>'Location.form', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/location-form'}},
-          'period' => {'type'=>'Period', 'path'=>'Location.period', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Location.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Location.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Location.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'Location.location', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'status' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-location-status'=>['planned', 'active', 'reserved', 'completed']}, 'path'=>'Location.status', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-location-status'}},
+          'form' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/location-physical-type'=>['si', 'bu', 'wi', 'wa', 'lvl', 'co', 'ro', 'bd', 've', 'ho', 'ca', 'rd', 'area', 'jdn', 'vi']}, 'path'=>'Location.form', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/location-form'}},
+          'period' => {'path'=>'Location.period', 'type'=>'Period', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

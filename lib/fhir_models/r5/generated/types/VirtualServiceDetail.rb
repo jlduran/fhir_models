@@ -10,16 +10,16 @@ module FHIR
       }
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'VirtualServiceDetail.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'VirtualServiceDetail.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'channelType' => {'valid_codes'=>{'http://hl7.org/fhir/virtual-service-type'=>['zoom', 'ms-teams', 'whatsapp']}, 'type'=>'Coding', 'path'=>'VirtualServiceDetail.channelType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/virtual-service-type'}},
-        'addressUrl' => {'type'=>'url', 'path'=>'VirtualServiceDetail.address[x]', 'min'=>0, 'max'=>1},
-        'addressString' => {'type'=>'string', 'path'=>'VirtualServiceDetail.address[x]', 'min'=>0, 'max'=>1},
-        'addressContactPoint' => {'type'=>'ContactPoint', 'path'=>'VirtualServiceDetail.address[x]', 'min'=>0, 'max'=>1},
-        'addressExtendedContactDetail' => {'type'=>'ExtendedContactDetail', 'path'=>'VirtualServiceDetail.address[x]', 'min'=>0, 'max'=>1},
-        'additionalInfo' => {'type'=>'url', 'path'=>'VirtualServiceDetail.additionalInfo', 'min'=>0, 'max'=>Float::INFINITY},
-        'maxParticipants' => {'type'=>'positiveInt', 'path'=>'VirtualServiceDetail.maxParticipants', 'min'=>0, 'max'=>1},
-        'sessionKey' => {'type'=>'string', 'path'=>'VirtualServiceDetail.sessionKey', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'VirtualServiceDetail.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'VirtualServiceDetail.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'channelType' => {'valid_codes'=>{'http://hl7.org/fhir/virtual-service-type'=>['zoom', 'ms-teams', 'whatsapp']}, 'path'=>'VirtualServiceDetail.channelType', 'type'=>'Coding', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/virtual-service-type'}},
+        'addressUrl' => {'path'=>'VirtualServiceDetail.address[x]', 'type'=>'url', 'min'=>0, 'max'=>1},
+        'addressString' => {'path'=>'VirtualServiceDetail.address[x]', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'addressContactPoint' => {'path'=>'VirtualServiceDetail.address[x]', 'type'=>'ContactPoint', 'min'=>0, 'max'=>1},
+        'addressExtendedContactDetail' => {'path'=>'VirtualServiceDetail.address[x]', 'type'=>'ExtendedContactDetail', 'min'=>0, 'max'=>1},
+        'additionalInfo' => {'path'=>'VirtualServiceDetail.additionalInfo', 'type'=>'url', 'min'=>0, 'max'=>Float::INFINITY},
+        'maxParticipants' => {'path'=>'VirtualServiceDetail.maxParticipants', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+        'sessionKey' => {'path'=>'VirtualServiceDetail.sessionKey', 'type'=>'string', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id                           # 0-1 string

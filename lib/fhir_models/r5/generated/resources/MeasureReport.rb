@@ -7,31 +7,31 @@ module FHIR
 
       SEARCH_PARAMS = ['date', 'evaluated-resource', 'identifier', 'location', 'measure', 'patient', 'period', 'reporter', 'status', 'subject']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MeasureReport.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MeasureReport.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MeasureReport.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'MeasureReport.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MeasureReport.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MeasureReport.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MeasureReport.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MeasureReport.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'MeasureReport.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/measure-report-status'=>['complete', 'pending', 'error']}, 'type'=>'code', 'path'=>'MeasureReport.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-report-status'}},
-        'type' => {'valid_codes'=>{'http://hl7.org/fhir/measure-report-type'=>['individual', 'subject-list', 'summary', 'data-exchange']}, 'type'=>'code', 'path'=>'MeasureReport.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-report-type'}},
-        'dataUpdateType' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/submit-data-update-type'=>['incremental', 'snapshot']}, 'type'=>'code', 'path'=>'MeasureReport.dataUpdateType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/submit-data-update-type'}},
-        'measure' => {'type'=>'canonical', 'path'=>'MeasureReport.measure', 'min'=>0, 'max'=>1},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'MeasureReport.subject', 'min'=>0, 'max'=>1},
-        'date' => {'type'=>'dateTime', 'path'=>'MeasureReport.date', 'min'=>0, 'max'=>1},
-        'reporter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Group'], 'type'=>'Reference', 'path'=>'MeasureReport.reporter', 'min'=>0, 'max'=>1},
-        'reportingVendor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'MeasureReport.reportingVendor', 'min'=>0, 'max'=>1},
-        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'MeasureReport.location', 'min'=>0, 'max'=>1},
-        'period' => {'type'=>'Period', 'path'=>'MeasureReport.period', 'min'=>1, 'max'=>1},
-        'inputParameters' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Parameters'], 'type'=>'Reference', 'path'=>'MeasureReport.inputParameters', 'min'=>0, 'max'=>1},
-        'scoring' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/measure-scoring'=>['proportion', 'ratio', 'continuous-variable', 'cohort', 'composite']}, 'type'=>'CodeableConcept', 'path'=>'MeasureReport.scoring', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://terminology.hl7.org/ValueSet/measure-scoring'}},
-        'improvementNotation' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/measure-improvement-notation'=>['increase', 'decrease']}, 'type'=>'CodeableConcept', 'path'=>'MeasureReport.improvementNotation', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-improvement-notation'}},
-        'group' => {'type'=>'MeasureReport::Group', 'path'=>'MeasureReport.group', 'min'=>0, 'max'=>Float::INFINITY},
-        'supplementalData' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'MeasureReport.supplementalData', 'min'=>0, 'max'=>Float::INFINITY},
-        'evaluatedResource' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'MeasureReport.evaluatedResource', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'MeasureReport.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MeasureReport.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MeasureReport.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'MeasureReport.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'MeasureReport.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MeasureReport.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MeasureReport.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MeasureReport.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'MeasureReport.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/measure-report-status'=>['complete', 'pending', 'error']}, 'path'=>'MeasureReport.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-report-status'}},
+        'type' => {'valid_codes'=>{'http://hl7.org/fhir/measure-report-type'=>['individual', 'subject-list', 'summary', 'data-exchange']}, 'path'=>'MeasureReport.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-report-type'}},
+        'dataUpdateType' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/submit-data-update-type'=>['incremental', 'snapshot']}, 'path'=>'MeasureReport.dataUpdateType', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/submit-data-update-type'}},
+        'measure' => {'path'=>'MeasureReport.measure', 'type'=>'canonical', 'min'=>0, 'max'=>1},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'MeasureReport.subject', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'date' => {'path'=>'MeasureReport.date', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'reporter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Group'], 'path'=>'MeasureReport.reporter', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'reportingVendor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'MeasureReport.reportingVendor', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'MeasureReport.location', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'period' => {'path'=>'MeasureReport.period', 'type'=>'Period', 'min'=>1, 'max'=>1},
+        'inputParameters' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Parameters'], 'path'=>'MeasureReport.inputParameters', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'scoring' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/measure-scoring'=>['proportion', 'ratio', 'continuous-variable', 'cohort', 'composite']}, 'path'=>'MeasureReport.scoring', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://terminology.hl7.org/ValueSet/measure-scoring'}},
+        'improvementNotation' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/measure-improvement-notation'=>['increase', 'decrease']}, 'path'=>'MeasureReport.improvementNotation', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-improvement-notation'}},
+        'group' => {'path'=>'MeasureReport.group', 'type'=>'MeasureReport::Group', 'min'=>0, 'max'=>Float::INFINITY},
+        'supplementalData' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'MeasureReport.supplementalData', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'evaluatedResource' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'MeasureReport.evaluatedResource', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Group < Model
@@ -43,20 +43,20 @@ module FHIR
           'measureScore' => ['Quantity', 'dateTime', 'CodeableConcept', 'Period', 'Range', 'Duration']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Group.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Group.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Group.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'linkId' => {'type'=>'string', 'path'=>'Group.linkId', 'min'=>0, 'max'=>1},
-          'code' => {'valid_codes'=>{'http://hl7.org/fhir/measure-group-example'=>['primary-rate', 'secondary-rate']}, 'type'=>'CodeableConcept', 'path'=>'Group.code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-group-example'}},
-          'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'Group.subject', 'min'=>0, 'max'=>1},
-          'population' => {'type'=>'MeasureReport::Group::Population', 'path'=>'Group.population', 'min'=>0, 'max'=>Float::INFINITY},
-          'measureScoreQuantity' => {'type'=>'Quantity', 'path'=>'Group.measureScore[x]', 'min'=>0, 'max'=>1},
-          'measureScoreDateTime' => {'type'=>'dateTime', 'path'=>'Group.measureScore[x]', 'min'=>0, 'max'=>1},
-          'measureScoreCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Group.measureScore[x]', 'min'=>0, 'max'=>1},
-          'measureScorePeriod' => {'type'=>'Period', 'path'=>'Group.measureScore[x]', 'min'=>0, 'max'=>1},
-          'measureScoreRange' => {'type'=>'Range', 'path'=>'Group.measureScore[x]', 'min'=>0, 'max'=>1},
-          'measureScoreDuration' => {'type'=>'Duration', 'path'=>'Group.measureScore[x]', 'min'=>0, 'max'=>1},
-          'stratifier' => {'type'=>'MeasureReport::Group::Stratifier', 'path'=>'Group.stratifier', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Group.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Group.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Group.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'linkId' => {'path'=>'Group.linkId', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'code' => {'valid_codes'=>{'http://hl7.org/fhir/measure-group-example'=>['primary-rate', 'secondary-rate']}, 'path'=>'Group.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-group-example'}},
+          'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'Group.subject', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'population' => {'path'=>'Group.population', 'type'=>'MeasureReport::Group::Population', 'min'=>0, 'max'=>Float::INFINITY},
+          'measureScoreQuantity' => {'path'=>'Group.measureScore[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'measureScoreDateTime' => {'path'=>'Group.measureScore[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'measureScoreCodeableConcept' => {'path'=>'Group.measureScore[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'measureScorePeriod' => {'path'=>'Group.measureScore[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+          'measureScoreRange' => {'path'=>'Group.measureScore[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+          'measureScoreDuration' => {'path'=>'Group.measureScore[x]', 'type'=>'Duration', 'min'=>0, 'max'=>1},
+          'stratifier' => {'path'=>'Group.stratifier', 'type'=>'MeasureReport::Group::Stratifier', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Population < Model
@@ -65,15 +65,15 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Population.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Population.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Population.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'linkId' => {'type'=>'string', 'path'=>'Population.linkId', 'min'=>0, 'max'=>1},
-            'code' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/measure-population'=>['initial-population', 'numerator', 'numerator-exclusion', 'denominator', 'denominator-exclusion', 'denominator-exception', 'measure-population', 'measure-population-exclusion', 'measure-observation']}, 'type'=>'CodeableConcept', 'path'=>'Population.code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-population'}},
-            'count' => {'type'=>'integer', 'path'=>'Population.count', 'min'=>0, 'max'=>1},
-            'subjectResults' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/List'], 'type'=>'Reference', 'path'=>'Population.subjectResults', 'min'=>0, 'max'=>1},
-            'subjectReport' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MeasureReport'], 'type'=>'Reference', 'path'=>'Population.subjectReport', 'min'=>0, 'max'=>Float::INFINITY},
-            'subjects' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group'], 'type'=>'Reference', 'path'=>'Population.subjects', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Population.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Population.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Population.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'linkId' => {'path'=>'Population.linkId', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'code' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/measure-population'=>['initial-population', 'numerator', 'numerator-exclusion', 'denominator', 'denominator-exclusion', 'denominator-exception', 'measure-population', 'measure-population-exclusion', 'measure-observation']}, 'path'=>'Population.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-population'}},
+            'count' => {'path'=>'Population.count', 'type'=>'integer', 'min'=>0, 'max'=>1},
+            'subjectResults' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/List'], 'path'=>'Population.subjectResults', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+            'subjectReport' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MeasureReport'], 'path'=>'Population.subjectReport', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+            'subjects' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group'], 'path'=>'Population.subjects', 'type'=>'Reference', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -93,12 +93,12 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Stratifier.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Stratifier.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Stratifier.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'linkId' => {'type'=>'string', 'path'=>'Stratifier.linkId', 'min'=>0, 'max'=>1},
-            'code' => {'valid_codes'=>{'http://hl7.org/fhir/measure-stratifier-example'=>['age', 'gender', 'region']}, 'type'=>'CodeableConcept', 'path'=>'Stratifier.code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-stratifier-example'}},
-            'stratum' => {'type'=>'MeasureReport::Group::Stratifier::Stratum', 'path'=>'Stratifier.stratum', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Stratifier.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Stratifier.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Stratifier.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'linkId' => {'path'=>'Stratifier.linkId', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'code' => {'valid_codes'=>{'http://hl7.org/fhir/measure-stratifier-example'=>['age', 'gender', 'region']}, 'path'=>'Stratifier.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-stratifier-example'}},
+            'stratum' => {'path'=>'Stratifier.stratum', 'type'=>'MeasureReport::Group::Stratifier::Stratum', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Stratum < Model
@@ -111,22 +111,22 @@ module FHIR
               'measureScore' => ['Quantity', 'dateTime', 'CodeableConcept', 'Period', 'Range', 'Duration']
             }
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Stratum.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Stratum.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Stratum.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'valueCodeableConcept' => {'valid_codes'=>{'http://hl7.org/fhir/measurereport-stratifier-value-example'=>['northwest', 'northeast', 'southwest', 'southeast']}, 'type'=>'CodeableConcept', 'path'=>'Stratum.value[x]', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measurereport-stratifier-value-example'}},
-              'valueBoolean' => {'type'=>'boolean', 'path'=>'Stratum.value[x]', 'min'=>0, 'max'=>1},
-              'valueQuantity' => {'type'=>'Quantity', 'path'=>'Stratum.value[x]', 'min'=>0, 'max'=>1},
-              'valueRange' => {'type'=>'Range', 'path'=>'Stratum.value[x]', 'min'=>0, 'max'=>1},
-              'valueReference' => {'type'=>'Reference', 'path'=>'Stratum.value[x]', 'min'=>0, 'max'=>1},
-              'component' => {'type'=>'MeasureReport::Group::Stratifier::Stratum::Component', 'path'=>'Stratum.component', 'min'=>0, 'max'=>Float::INFINITY},
-              'population' => {'type'=>'MeasureReport::Group::Stratifier::Stratum::Population', 'path'=>'Stratum.population', 'min'=>0, 'max'=>Float::INFINITY},
-              'measureScoreQuantity' => {'type'=>'Quantity', 'path'=>'Stratum.measureScore[x]', 'min'=>0, 'max'=>1},
-              'measureScoreDateTime' => {'type'=>'dateTime', 'path'=>'Stratum.measureScore[x]', 'min'=>0, 'max'=>1},
-              'measureScoreCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Stratum.measureScore[x]', 'min'=>0, 'max'=>1},
-              'measureScorePeriod' => {'type'=>'Period', 'path'=>'Stratum.measureScore[x]', 'min'=>0, 'max'=>1},
-              'measureScoreRange' => {'type'=>'Range', 'path'=>'Stratum.measureScore[x]', 'min'=>0, 'max'=>1},
-              'measureScoreDuration' => {'type'=>'Duration', 'path'=>'Stratum.measureScore[x]', 'min'=>0, 'max'=>1}
+              'id' => {'path'=>'Stratum.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Stratum.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Stratum.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'valueCodeableConcept' => {'valid_codes'=>{'http://hl7.org/fhir/measurereport-stratifier-value-example'=>['northwest', 'northeast', 'southwest', 'southeast']}, 'path'=>'Stratum.value[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measurereport-stratifier-value-example'}},
+              'valueBoolean' => {'path'=>'Stratum.value[x]', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+              'valueQuantity' => {'path'=>'Stratum.value[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+              'valueRange' => {'path'=>'Stratum.value[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+              'valueReference' => {'path'=>'Stratum.value[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+              'component' => {'path'=>'Stratum.component', 'type'=>'MeasureReport::Group::Stratifier::Stratum::Component', 'min'=>0, 'max'=>Float::INFINITY},
+              'population' => {'path'=>'Stratum.population', 'type'=>'MeasureReport::Group::Stratifier::Stratum::Population', 'min'=>0, 'max'=>Float::INFINITY},
+              'measureScoreQuantity' => {'path'=>'Stratum.measureScore[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+              'measureScoreDateTime' => {'path'=>'Stratum.measureScore[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+              'measureScoreCodeableConcept' => {'path'=>'Stratum.measureScore[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+              'measureScorePeriod' => {'path'=>'Stratum.measureScore[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+              'measureScoreRange' => {'path'=>'Stratum.measureScore[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+              'measureScoreDuration' => {'path'=>'Stratum.measureScore[x]', 'type'=>'Duration', 'min'=>0, 'max'=>1}
             }
 
             class Component < Model
@@ -138,16 +138,16 @@ module FHIR
                 'value' => ['CodeableConcept', 'boolean', 'Quantity', 'Range', 'Reference']
               }
               METADATA = {
-                'id' => {'type'=>'string', 'path'=>'Component.id', 'min'=>0, 'max'=>1},
-                'extension' => {'type'=>'Extension', 'path'=>'Component.extension', 'min'=>0, 'max'=>Float::INFINITY},
-                'modifierExtension' => {'type'=>'Extension', 'path'=>'Component.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-                'linkId' => {'type'=>'string', 'path'=>'Component.linkId', 'min'=>0, 'max'=>1},
-                'code' => {'valid_codes'=>{'http://hl7.org/fhir/measure-stratifier-example'=>['age', 'gender', 'region']}, 'type'=>'CodeableConcept', 'path'=>'Component.code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-stratifier-example'}},
-                'valueCodeableConcept' => {'valid_codes'=>{'http://hl7.org/fhir/measurereport-stratifier-value-example'=>['northwest', 'northeast', 'southwest', 'southeast']}, 'type'=>'CodeableConcept', 'path'=>'Component.value[x]', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measurereport-stratifier-value-example'}},
-                'valueBoolean' => {'type'=>'boolean', 'path'=>'Component.value[x]', 'min'=>1, 'max'=>1},
-                'valueQuantity' => {'type'=>'Quantity', 'path'=>'Component.value[x]', 'min'=>1, 'max'=>1},
-                'valueRange' => {'type'=>'Range', 'path'=>'Component.value[x]', 'min'=>1, 'max'=>1},
-                'valueReference' => {'type'=>'Reference', 'path'=>'Component.value[x]', 'min'=>1, 'max'=>1}
+                'id' => {'path'=>'Component.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+                'extension' => {'path'=>'Component.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'modifierExtension' => {'path'=>'Component.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'linkId' => {'path'=>'Component.linkId', 'type'=>'string', 'min'=>0, 'max'=>1},
+                'code' => {'valid_codes'=>{'http://hl7.org/fhir/measure-stratifier-example'=>['age', 'gender', 'region']}, 'path'=>'Component.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-stratifier-example'}},
+                'valueCodeableConcept' => {'valid_codes'=>{'http://hl7.org/fhir/measurereport-stratifier-value-example'=>['northwest', 'northeast', 'southwest', 'southeast']}, 'path'=>'Component.value[x]', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measurereport-stratifier-value-example'}},
+                'valueBoolean' => {'path'=>'Component.value[x]', 'type'=>'boolean', 'min'=>1, 'max'=>1},
+                'valueQuantity' => {'path'=>'Component.value[x]', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+                'valueRange' => {'path'=>'Component.value[x]', 'type'=>'Range', 'min'=>1, 'max'=>1},
+                'valueReference' => {'path'=>'Component.value[x]', 'type'=>'Reference', 'min'=>1, 'max'=>1}
               }
 
               attr_accessor :id                   # 0-1 string
@@ -168,15 +168,15 @@ module FHIR
               include FHIR::Xml
 
               METADATA = {
-                'id' => {'type'=>'string', 'path'=>'Population.id', 'min'=>0, 'max'=>1},
-                'extension' => {'type'=>'Extension', 'path'=>'Population.extension', 'min'=>0, 'max'=>Float::INFINITY},
-                'modifierExtension' => {'type'=>'Extension', 'path'=>'Population.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-                'linkId' => {'type'=>'string', 'path'=>'Population.linkId', 'min'=>0, 'max'=>1},
-                'code' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/measure-population'=>['initial-population', 'numerator', 'numerator-exclusion', 'denominator', 'denominator-exclusion', 'denominator-exception', 'measure-population', 'measure-population-exclusion', 'measure-observation']}, 'type'=>'CodeableConcept', 'path'=>'Population.code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-population'}},
-                'count' => {'type'=>'integer', 'path'=>'Population.count', 'min'=>0, 'max'=>1},
-                'subjectResults' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/List'], 'type'=>'Reference', 'path'=>'Population.subjectResults', 'min'=>0, 'max'=>1},
-                'subjectReport' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MeasureReport'], 'type'=>'Reference', 'path'=>'Population.subjectReport', 'min'=>0, 'max'=>Float::INFINITY},
-                'subjects' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group'], 'type'=>'Reference', 'path'=>'Population.subjects', 'min'=>0, 'max'=>1}
+                'id' => {'path'=>'Population.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+                'extension' => {'path'=>'Population.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'modifierExtension' => {'path'=>'Population.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'linkId' => {'path'=>'Population.linkId', 'type'=>'string', 'min'=>0, 'max'=>1},
+                'code' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/measure-population'=>['initial-population', 'numerator', 'numerator-exclusion', 'denominator', 'denominator-exclusion', 'denominator-exception', 'measure-population', 'measure-population-exclusion', 'measure-observation']}, 'path'=>'Population.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/measure-population'}},
+                'count' => {'path'=>'Population.count', 'type'=>'integer', 'min'=>0, 'max'=>1},
+                'subjectResults' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/List'], 'path'=>'Population.subjectResults', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+                'subjectReport' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MeasureReport'], 'path'=>'Population.subjectReport', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+                'subjects' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group'], 'path'=>'Population.subjects', 'type'=>'Reference', 'min'=>0, 'max'=>1}
               }
 
               attr_accessor :id                # 0-1 string

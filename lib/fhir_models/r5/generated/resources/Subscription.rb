@@ -7,31 +7,31 @@ module FHIR
 
       SEARCH_PARAMS = ['contact', 'content-level', 'filter-value', 'identifier', 'name', 'owner', 'payload', 'status', 'topic', 'type', 'url']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Subscription.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Subscription.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Subscription.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'Subscription.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Subscription.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Subscription.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Subscription.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Subscription.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Subscription.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'name' => {'type'=>'string', 'path'=>'Subscription.name', 'min'=>0, 'max'=>1},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/subscription-status'=>['requested', 'active', 'error', 'off', 'entered-in-error']}, 'type'=>'code', 'path'=>'Subscription.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-status'}},
-        'topic' => {'type'=>'canonical', 'path'=>'Subscription.topic', 'min'=>1, 'max'=>1},
-        'contact' => {'type'=>'ContactPoint', 'path'=>'Subscription.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'end' => {'type'=>'instant', 'path'=>'Subscription.end', 'min'=>0, 'max'=>1},
-        'managingEntity' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'Subscription.managingEntity', 'min'=>0, 'max'=>1},
-        'reason' => {'type'=>'string', 'path'=>'Subscription.reason', 'min'=>0, 'max'=>1},
-        'filterBy' => {'type'=>'Subscription::FilterBy', 'path'=>'Subscription.filterBy', 'min'=>0, 'max'=>Float::INFINITY},
-        'channelType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/subscription-channel-type'=>['rest-hook', 'websocket', 'email', 'message']}, 'type'=>'Coding', 'path'=>'Subscription.channelType', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-channel-type'}},
-        'endpoint' => {'type'=>'url', 'path'=>'Subscription.endpoint', 'min'=>0, 'max'=>1},
-        'parameter' => {'type'=>'Subscription::Parameter', 'path'=>'Subscription.parameter', 'min'=>0, 'max'=>Float::INFINITY},
-        'heartbeatPeriod' => {'type'=>'unsignedInt', 'path'=>'Subscription.heartbeatPeriod', 'min'=>0, 'max'=>1},
-        'timeout' => {'type'=>'unsignedInt', 'path'=>'Subscription.timeout', 'min'=>0, 'max'=>1},
-        'contentType' => {'type'=>'code', 'path'=>'Subscription.contentType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/mimetypes'}},
-        'content' => {'valid_codes'=>{'http://hl7.org/fhir/subscription-payload-content'=>['empty', 'id-only', 'full-resource']}, 'type'=>'code', 'path'=>'Subscription.content', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-payload-content'}},
-        'maxCount' => {'type'=>'positiveInt', 'path'=>'Subscription.maxCount', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Subscription.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Subscription.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Subscription.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'Subscription.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'Subscription.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Subscription.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Subscription.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Subscription.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'Subscription.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'name' => {'path'=>'Subscription.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/subscription-status'=>['requested', 'active', 'error', 'off', 'entered-in-error']}, 'path'=>'Subscription.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-status'}},
+        'topic' => {'path'=>'Subscription.topic', 'type'=>'canonical', 'min'=>1, 'max'=>1},
+        'contact' => {'path'=>'Subscription.contact', 'type'=>'ContactPoint', 'min'=>0, 'max'=>Float::INFINITY},
+        'end' => {'path'=>'Subscription.end', 'type'=>'instant', 'min'=>0, 'max'=>1},
+        'managingEntity' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'Subscription.managingEntity', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'reason' => {'path'=>'Subscription.reason', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'filterBy' => {'path'=>'Subscription.filterBy', 'type'=>'Subscription::FilterBy', 'min'=>0, 'max'=>Float::INFINITY},
+        'channelType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/subscription-channel-type'=>['rest-hook', 'websocket', 'email', 'message']}, 'path'=>'Subscription.channelType', 'type'=>'Coding', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-channel-type'}},
+        'endpoint' => {'path'=>'Subscription.endpoint', 'type'=>'url', 'min'=>0, 'max'=>1},
+        'parameter' => {'path'=>'Subscription.parameter', 'type'=>'Subscription::Parameter', 'min'=>0, 'max'=>Float::INFINITY},
+        'heartbeatPeriod' => {'path'=>'Subscription.heartbeatPeriod', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+        'timeout' => {'path'=>'Subscription.timeout', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+        'contentType' => {'path'=>'Subscription.contentType', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/mimetypes'}},
+        'content' => {'valid_codes'=>{'http://hl7.org/fhir/subscription-payload-content'=>['empty', 'id-only', 'full-resource']}, 'path'=>'Subscription.content', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-payload-content'}},
+        'maxCount' => {'path'=>'Subscription.maxCount', 'type'=>'positiveInt', 'min'=>0, 'max'=>1}
       }
 
       class FilterBy < Model
@@ -40,14 +40,14 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'FilterBy.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'FilterBy.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'FilterBy.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'resourceType' => {'local_name'=>'local_resourceType', 'type'=>'uri', 'path'=>'FilterBy.resourceType', 'min'=>0, 'max'=>1},
-          'filterParameter' => {'type'=>'string', 'path'=>'FilterBy.filterParameter', 'min'=>1, 'max'=>1},
-          'comparator' => {'valid_codes'=>{'http://hl7.org/fhir/search-comparator'=>['eq', 'ne', 'gt', 'lt', 'ge', 'le', 'sa', 'eb', 'ap']}, 'type'=>'code', 'path'=>'FilterBy.comparator', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/search-comparator'}},
-          'modifier' => {'valid_codes'=>{'http://hl7.org/fhir/search-modifier-code'=>['missing', 'exact', 'contains', 'not', 'text', 'in', 'not-in', 'below', 'above', 'type', 'identifier', 'of-type', 'code-text', 'text-advanced', 'iterate']}, 'type'=>'code', 'path'=>'FilterBy.modifier', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/search-modifier-code'}},
-          'value' => {'type'=>'string', 'path'=>'FilterBy.value', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'FilterBy.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'FilterBy.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'FilterBy.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'resourceType' => {'local_name'=>'local_resourceType', 'path'=>'FilterBy.resourceType', 'type'=>'uri', 'min'=>0, 'max'=>1},
+          'filterParameter' => {'path'=>'FilterBy.filterParameter', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'comparator' => {'valid_codes'=>{'http://hl7.org/fhir/search-comparator'=>['eq', 'ne', 'gt', 'lt', 'ge', 'le', 'sa', 'eb', 'ap']}, 'path'=>'FilterBy.comparator', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/search-comparator'}},
+          'modifier' => {'valid_codes'=>{'http://hl7.org/fhir/search-modifier-code'=>['missing', 'exact', 'contains', 'not', 'text', 'in', 'not-in', 'below', 'above', 'type', 'identifier', 'of-type', 'code-text', 'text-advanced', 'iterate']}, 'path'=>'FilterBy.modifier', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/search-modifier-code'}},
+          'value' => {'path'=>'FilterBy.value', 'type'=>'string', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                 # 0-1 string
@@ -66,11 +66,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Parameter.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Parameter.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Parameter.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'name' => {'type'=>'string', 'path'=>'Parameter.name', 'min'=>1, 'max'=>1},
-          'value' => {'type'=>'string', 'path'=>'Parameter.value', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Parameter.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Parameter.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Parameter.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'name' => {'path'=>'Parameter.name', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'value' => {'path'=>'Parameter.value', 'type'=>'string', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

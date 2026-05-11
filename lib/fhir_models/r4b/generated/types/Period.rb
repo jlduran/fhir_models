@@ -7,10 +7,10 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Period.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Period.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'start' => {'type'=>'dateTime', 'path'=>'Period.start', 'min'=>0, 'max'=>1},
-        'end' => {'type'=>'dateTime', 'path'=>'Period.end', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Period.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Period.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'start' => {'path'=>'Period.start', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'end' => {'path'=>'Period.end', 'type'=>'dateTime', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id        # 0-1 string

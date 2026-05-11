@@ -7,15 +7,15 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'RelatedArtifact.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'RelatedArtifact.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'valid_codes'=>{'http://hl7.org/fhir/related-artifact-type'=>['documentation', 'justification', 'citation', 'predecessor', 'successor', 'derived-from', 'depends-on', 'composed-of']}, 'type'=>'code', 'path'=>'RelatedArtifact.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/related-artifact-type'}},
-        'label' => {'type'=>'string', 'path'=>'RelatedArtifact.label', 'min'=>0, 'max'=>1},
-        'display' => {'type'=>'string', 'path'=>'RelatedArtifact.display', 'min'=>0, 'max'=>1},
-        'citation' => {'type'=>'markdown', 'path'=>'RelatedArtifact.citation', 'min'=>0, 'max'=>1},
-        'url' => {'type'=>'url', 'path'=>'RelatedArtifact.url', 'min'=>0, 'max'=>1},
-        'document' => {'type'=>'Attachment', 'path'=>'RelatedArtifact.document', 'min'=>0, 'max'=>1},
-        'resource' => {'type'=>'canonical', 'path'=>'RelatedArtifact.resource', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'RelatedArtifact.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'RelatedArtifact.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'valid_codes'=>{'http://hl7.org/fhir/related-artifact-type'=>['documentation', 'justification', 'citation', 'predecessor', 'successor', 'derived-from', 'depends-on', 'composed-of']}, 'path'=>'RelatedArtifact.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/related-artifact-type'}},
+        'label' => {'path'=>'RelatedArtifact.label', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'display' => {'path'=>'RelatedArtifact.display', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'citation' => {'path'=>'RelatedArtifact.citation', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'url' => {'path'=>'RelatedArtifact.url', 'type'=>'url', 'min'=>0, 'max'=>1},
+        'document' => {'path'=>'RelatedArtifact.document', 'type'=>'Attachment', 'min'=>0, 'max'=>1},
+        'resource' => {'path'=>'RelatedArtifact.resource', 'type'=>'canonical', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id        # 0-1 string

@@ -7,22 +7,22 @@ module FHIR
 
       SEARCH_PARAMS = ['datewritten', 'encounter', 'identifier', 'patient', 'prescriber', 'status']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'VisionPrescription.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'VisionPrescription.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'VisionPrescription.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'VisionPrescription.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'VisionPrescription.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'VisionPrescription.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'VisionPrescription.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'VisionPrescription.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'VisionPrescription.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/fm-status'=>['active', 'cancelled', 'draft', 'entered-in-error']}, 'type'=>'code', 'path'=>'VisionPrescription.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/fm-status'}},
-        'created' => {'type'=>'dateTime', 'path'=>'VisionPrescription.created', 'min'=>1, 'max'=>1},
-        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'VisionPrescription.patient', 'min'=>1, 'max'=>1},
-        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'type'=>'Reference', 'path'=>'VisionPrescription.encounter', 'min'=>0, 'max'=>1},
-        'dateWritten' => {'type'=>'dateTime', 'path'=>'VisionPrescription.dateWritten', 'min'=>1, 'max'=>1},
-        'prescriber' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'VisionPrescription.prescriber', 'min'=>1, 'max'=>1},
-        'lensSpecification' => {'type'=>'VisionPrescription::LensSpecification', 'path'=>'VisionPrescription.lensSpecification', 'min'=>1, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'VisionPrescription.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'VisionPrescription.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'VisionPrescription.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'VisionPrescription.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'VisionPrescription.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'VisionPrescription.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'VisionPrescription.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'VisionPrescription.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'VisionPrescription.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/fm-status'=>['active', 'cancelled', 'draft', 'entered-in-error']}, 'path'=>'VisionPrescription.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/fm-status'}},
+        'created' => {'path'=>'VisionPrescription.created', 'type'=>'dateTime', 'min'=>1, 'max'=>1},
+        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'VisionPrescription.patient', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'path'=>'VisionPrescription.encounter', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'dateWritten' => {'path'=>'VisionPrescription.dateWritten', 'type'=>'dateTime', 'min'=>1, 'max'=>1},
+        'prescriber' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'VisionPrescription.prescriber', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'lensSpecification' => {'path'=>'VisionPrescription.lensSpecification', 'type'=>'VisionPrescription::LensSpecification', 'min'=>1, 'max'=>Float::INFINITY}
       }
 
       class LensSpecification < Model
@@ -31,23 +31,23 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'LensSpecification.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'LensSpecification.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'LensSpecification.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'product' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct'=>['lens', 'contact']}, 'type'=>'CodeableConcept', 'path'=>'LensSpecification.product', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/vision-product'}},
-          'eye' => {'valid_codes'=>{'http://hl7.org/fhir/vision-eye-codes'=>['right', 'left']}, 'type'=>'code', 'path'=>'LensSpecification.eye', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/vision-eye-codes'}},
-          'sphere' => {'type'=>'decimal', 'path'=>'LensSpecification.sphere', 'min'=>0, 'max'=>1},
-          'cylinder' => {'type'=>'decimal', 'path'=>'LensSpecification.cylinder', 'min'=>0, 'max'=>1},
-          'axis' => {'type'=>'integer', 'path'=>'LensSpecification.axis', 'min'=>0, 'max'=>1},
-          'prism' => {'type'=>'VisionPrescription::LensSpecification::Prism', 'path'=>'LensSpecification.prism', 'min'=>0, 'max'=>Float::INFINITY},
-          'add' => {'type'=>'decimal', 'path'=>'LensSpecification.add', 'min'=>0, 'max'=>1},
-          'power' => {'type'=>'decimal', 'path'=>'LensSpecification.power', 'min'=>0, 'max'=>1},
-          'backCurve' => {'type'=>'decimal', 'path'=>'LensSpecification.backCurve', 'min'=>0, 'max'=>1},
-          'diameter' => {'type'=>'decimal', 'path'=>'LensSpecification.diameter', 'min'=>0, 'max'=>1},
-          'duration' => {'type'=>'Quantity', 'path'=>'LensSpecification.duration', 'min'=>0, 'max'=>1},
-          'color' => {'type'=>'string', 'path'=>'LensSpecification.color', 'min'=>0, 'max'=>1},
-          'brand' => {'type'=>'string', 'path'=>'LensSpecification.brand', 'min'=>0, 'max'=>1},
-          'note' => {'type'=>'Annotation', 'path'=>'LensSpecification.note', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'LensSpecification.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'LensSpecification.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'LensSpecification.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'product' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct'=>['lens', 'contact']}, 'path'=>'LensSpecification.product', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/vision-product'}},
+          'eye' => {'valid_codes'=>{'http://hl7.org/fhir/vision-eye-codes'=>['right', 'left']}, 'path'=>'LensSpecification.eye', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/vision-eye-codes'}},
+          'sphere' => {'path'=>'LensSpecification.sphere', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'cylinder' => {'path'=>'LensSpecification.cylinder', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'axis' => {'path'=>'LensSpecification.axis', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'prism' => {'path'=>'LensSpecification.prism', 'type'=>'VisionPrescription::LensSpecification::Prism', 'min'=>0, 'max'=>Float::INFINITY},
+          'add' => {'path'=>'LensSpecification.add', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'power' => {'path'=>'LensSpecification.power', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'backCurve' => {'path'=>'LensSpecification.backCurve', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'diameter' => {'path'=>'LensSpecification.diameter', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'duration' => {'path'=>'LensSpecification.duration', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'color' => {'path'=>'LensSpecification.color', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'brand' => {'path'=>'LensSpecification.brand', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'note' => {'path'=>'LensSpecification.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Prism < Model
@@ -56,11 +56,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Prism.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Prism.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Prism.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'amount' => {'type'=>'decimal', 'path'=>'Prism.amount', 'min'=>1, 'max'=>1},
-            'base' => {'valid_codes'=>{'http://hl7.org/fhir/vision-base-codes'=>['up', 'down', 'in', 'out']}, 'type'=>'code', 'path'=>'Prism.base', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/vision-base-codes'}}
+            'id' => {'path'=>'Prism.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Prism.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Prism.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'amount' => {'path'=>'Prism.amount', 'type'=>'decimal', 'min'=>1, 'max'=>1},
+            'base' => {'valid_codes'=>{'http://hl7.org/fhir/vision-base-codes'=>['up', 'down', 'in', 'out']}, 'path'=>'Prism.base', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/vision-base-codes'}}
           }
 
           attr_accessor :id                # 0-1 string

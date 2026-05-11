@@ -10,33 +10,33 @@ module FHIR
       }
       SEARCH_PARAMS = ['device', 'identifier', 'patient', 'status']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'DeviceUsage.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'DeviceUsage.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'DeviceUsage.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'DeviceUsage.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'DeviceUsage.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'DeviceUsage.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'DeviceUsage.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'DeviceUsage.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'DeviceUsage.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ServiceRequest'], 'type'=>'Reference', 'path'=>'DeviceUsage.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/deviceusage-status'=>['active', 'completed', 'not-done', 'entered-in-error', 'intended', 'stopped', 'on-hold']}, 'type'=>'code', 'path'=>'DeviceUsage.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceusage-status'}},
-        'category' => {'type'=>'CodeableConcept', 'path'=>'DeviceUsage.category', 'min'=>0, 'max'=>Float::INFINITY},
-        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'DeviceUsage.patient', 'min'=>1, 'max'=>1},
-        'derivedFrom' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ServiceRequest', 'http://hl7.org/fhir/StructureDefinition/Procedure', 'http://hl7.org/fhir/StructureDefinition/Claim', 'http://hl7.org/fhir/StructureDefinition/Observation', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse', 'http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'DeviceUsage.derivedFrom', 'min'=>0, 'max'=>Float::INFINITY},
-        'context' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter', 'http://hl7.org/fhir/StructureDefinition/EpisodeOfCare'], 'type'=>'Reference', 'path'=>'DeviceUsage.context', 'min'=>0, 'max'=>1},
-        'timingTiming' => {'type'=>'Timing', 'path'=>'DeviceUsage.timing[x]', 'min'=>0, 'max'=>1},
-        'timingPeriod' => {'type'=>'Period', 'path'=>'DeviceUsage.timing[x]', 'min'=>0, 'max'=>1},
-        'timingDateTime' => {'type'=>'dateTime', 'path'=>'DeviceUsage.timing[x]', 'min'=>0, 'max'=>1},
-        'dateAsserted' => {'type'=>'dateTime', 'path'=>'DeviceUsage.dateAsserted', 'min'=>0, 'max'=>1},
-        'usageStatus' => {'valid_codes'=>{'http://hl7.org/fhir/deviceusage-status'=>['active', 'completed', 'not-done', 'entered-in-error', 'intended', 'stopped', 'on-hold']}, 'type'=>'CodeableConcept', 'path'=>'DeviceUsage.usageStatus', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceusage-status'}},
-        'usageReason' => {'type'=>'CodeableConcept', 'path'=>'DeviceUsage.usageReason', 'min'=>0, 'max'=>Float::INFINITY},
-        'adherence' => {'type'=>'DeviceUsage::Adherence', 'path'=>'DeviceUsage.adherence', 'min'=>0, 'max'=>1},
-        'informationSource' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'DeviceUsage.informationSource', 'min'=>0, 'max'=>1},
-        'device' => {'type'=>'CodeableReference', 'path'=>'DeviceUsage.device', 'min'=>1, 'max'=>1},
-        'reason' => {'type'=>'CodeableReference', 'path'=>'DeviceUsage.reason', 'min'=>0, 'max'=>Float::INFINITY},
-        'bodySite' => {'type'=>'CodeableReference', 'path'=>'DeviceUsage.bodySite', 'min'=>0, 'max'=>1},
-        'note' => {'type'=>'Annotation', 'path'=>'DeviceUsage.note', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'DeviceUsage.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'DeviceUsage.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'DeviceUsage.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'DeviceUsage.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'DeviceUsage.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'DeviceUsage.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'DeviceUsage.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'DeviceUsage.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'DeviceUsage.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ServiceRequest'], 'path'=>'DeviceUsage.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/deviceusage-status'=>['active', 'completed', 'not-done', 'entered-in-error', 'intended', 'stopped', 'on-hold']}, 'path'=>'DeviceUsage.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceusage-status'}},
+        'category' => {'path'=>'DeviceUsage.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'DeviceUsage.patient', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'derivedFrom' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ServiceRequest', 'http://hl7.org/fhir/StructureDefinition/Procedure', 'http://hl7.org/fhir/StructureDefinition/Claim', 'http://hl7.org/fhir/StructureDefinition/Observation', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse', 'http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'DeviceUsage.derivedFrom', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'context' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter', 'http://hl7.org/fhir/StructureDefinition/EpisodeOfCare'], 'path'=>'DeviceUsage.context', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'timingTiming' => {'path'=>'DeviceUsage.timing[x]', 'type'=>'Timing', 'min'=>0, 'max'=>1},
+        'timingPeriod' => {'path'=>'DeviceUsage.timing[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'timingDateTime' => {'path'=>'DeviceUsage.timing[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'dateAsserted' => {'path'=>'DeviceUsage.dateAsserted', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'usageStatus' => {'valid_codes'=>{'http://hl7.org/fhir/deviceusage-status'=>['active', 'completed', 'not-done', 'entered-in-error', 'intended', 'stopped', 'on-hold']}, 'path'=>'DeviceUsage.usageStatus', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceusage-status'}},
+        'usageReason' => {'path'=>'DeviceUsage.usageReason', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+        'adherence' => {'path'=>'DeviceUsage.adherence', 'type'=>'DeviceUsage::Adherence', 'min'=>0, 'max'=>1},
+        'informationSource' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'DeviceUsage.informationSource', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'device' => {'path'=>'DeviceUsage.device', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1},
+        'reason' => {'path'=>'DeviceUsage.reason', 'type'=>'CodeableReference', 'min'=>0, 'max'=>Float::INFINITY},
+        'bodySite' => {'path'=>'DeviceUsage.bodySite', 'type'=>'CodeableReference', 'min'=>0, 'max'=>1},
+        'note' => {'path'=>'DeviceUsage.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Adherence < Model
@@ -45,11 +45,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Adherence.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Adherence.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Adherence.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'valid_codes'=>{'http://hl7.org/fhir/deviceusage-adherence-code'=>['always', 'never', 'sometimes']}, 'type'=>'CodeableConcept', 'path'=>'Adherence.code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceusage-adherence-code'}},
-          'reason' => {'valid_codes'=>{'http://hl7.org/fhir/deviceusage-adherence-reason'=>['lost', 'stolen', 'prescribed', 'broken', 'burned', 'forgot']}, 'type'=>'CodeableConcept', 'path'=>'Adherence.reason', 'min'=>1, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceusage-adherence-reason'}}
+          'id' => {'path'=>'Adherence.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Adherence.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Adherence.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'valid_codes'=>{'http://hl7.org/fhir/deviceusage-adherence-code'=>['always', 'never', 'sometimes']}, 'path'=>'Adherence.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceusage-adherence-code'}},
+          'reason' => {'valid_codes'=>{'http://hl7.org/fhir/deviceusage-adherence-reason'=>['lost', 'stolen', 'prescribed', 'broken', 'burned', 'forgot']}, 'path'=>'Adherence.reason', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceusage-adherence-reason'}}
         }
 
         attr_accessor :id                # 0-1 string

@@ -10,29 +10,29 @@ module FHIR
       }
       SEARCH_PARAMS = ['created', 'enterer', 'facility', 'identifier', 'patient', 'provider', 'status']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'CoverageEligibilityRequest.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'CoverageEligibilityRequest.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'CoverageEligibilityRequest.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'CoverageEligibilityRequest.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'CoverageEligibilityRequest.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'CoverageEligibilityRequest.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'CoverageEligibilityRequest.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'CoverageEligibilityRequest.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'CoverageEligibilityRequest.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/fm-status'=>['active', 'cancelled', 'draft', 'entered-in-error']}, 'type'=>'code', 'path'=>'CoverageEligibilityRequest.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/fm-status'}},
-        'priority' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/processpriority'=>['stat', 'normal', 'deferred']}, 'type'=>'CodeableConcept', 'path'=>'CoverageEligibilityRequest.priority', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/process-priority'}},
-        'purpose' => {'valid_codes'=>{'http://hl7.org/fhir/eligibilityrequest-purpose'=>['auth-requirements', 'benefits', 'discovery', 'validation']}, 'type'=>'code', 'path'=>'CoverageEligibilityRequest.purpose', 'min'=>1, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/eligibilityrequest-purpose'}},
-        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'CoverageEligibilityRequest.patient', 'min'=>1, 'max'=>1},
-        'servicedDate' => {'type'=>'date', 'path'=>'CoverageEligibilityRequest.serviced[x]', 'min'=>0, 'max'=>1},
-        'servicedPeriod' => {'type'=>'Period', 'path'=>'CoverageEligibilityRequest.serviced[x]', 'min'=>0, 'max'=>1},
-        'created' => {'type'=>'dateTime', 'path'=>'CoverageEligibilityRequest.created', 'min'=>1, 'max'=>1},
-        'enterer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'CoverageEligibilityRequest.enterer', 'min'=>0, 'max'=>1},
-        'provider' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'CoverageEligibilityRequest.provider', 'min'=>0, 'max'=>1},
-        'insurer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'CoverageEligibilityRequest.insurer', 'min'=>1, 'max'=>1},
-        'facility' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'CoverageEligibilityRequest.facility', 'min'=>0, 'max'=>1},
-        'supportingInfo' => {'type'=>'CoverageEligibilityRequest::SupportingInfo', 'path'=>'CoverageEligibilityRequest.supportingInfo', 'min'=>0, 'max'=>Float::INFINITY},
-        'insurance' => {'type'=>'CoverageEligibilityRequest::Insurance', 'path'=>'CoverageEligibilityRequest.insurance', 'min'=>0, 'max'=>Float::INFINITY},
-        'item' => {'type'=>'CoverageEligibilityRequest::Item', 'path'=>'CoverageEligibilityRequest.item', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'CoverageEligibilityRequest.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'CoverageEligibilityRequest.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'CoverageEligibilityRequest.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'CoverageEligibilityRequest.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'CoverageEligibilityRequest.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'CoverageEligibilityRequest.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'CoverageEligibilityRequest.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'CoverageEligibilityRequest.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'CoverageEligibilityRequest.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/fm-status'=>['active', 'cancelled', 'draft', 'entered-in-error']}, 'path'=>'CoverageEligibilityRequest.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/fm-status'}},
+        'priority' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/processpriority'=>['stat', 'normal', 'deferred']}, 'path'=>'CoverageEligibilityRequest.priority', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/process-priority'}},
+        'purpose' => {'valid_codes'=>{'http://hl7.org/fhir/eligibilityrequest-purpose'=>['auth-requirements', 'benefits', 'discovery', 'validation']}, 'path'=>'CoverageEligibilityRequest.purpose', 'type'=>'code', 'min'=>1, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/eligibilityrequest-purpose'}},
+        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'CoverageEligibilityRequest.patient', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'servicedDate' => {'path'=>'CoverageEligibilityRequest.serviced[x]', 'type'=>'date', 'min'=>0, 'max'=>1},
+        'servicedPeriod' => {'path'=>'CoverageEligibilityRequest.serviced[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'created' => {'path'=>'CoverageEligibilityRequest.created', 'type'=>'dateTime', 'min'=>1, 'max'=>1},
+        'enterer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'CoverageEligibilityRequest.enterer', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'provider' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'CoverageEligibilityRequest.provider', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'insurer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'CoverageEligibilityRequest.insurer', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'facility' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'CoverageEligibilityRequest.facility', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'supportingInfo' => {'path'=>'CoverageEligibilityRequest.supportingInfo', 'type'=>'CoverageEligibilityRequest::SupportingInfo', 'min'=>0, 'max'=>Float::INFINITY},
+        'insurance' => {'path'=>'CoverageEligibilityRequest.insurance', 'type'=>'CoverageEligibilityRequest::Insurance', 'min'=>0, 'max'=>Float::INFINITY},
+        'item' => {'path'=>'CoverageEligibilityRequest.item', 'type'=>'CoverageEligibilityRequest::Item', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class SupportingInfo < Model
@@ -41,12 +41,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'SupportingInfo.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'SupportingInfo.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'SupportingInfo.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'sequence' => {'type'=>'positiveInt', 'path'=>'SupportingInfo.sequence', 'min'=>1, 'max'=>1},
-          'information' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'SupportingInfo.information', 'min'=>1, 'max'=>1},
-          'appliesToAll' => {'type'=>'boolean', 'path'=>'SupportingInfo.appliesToAll', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'SupportingInfo.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'SupportingInfo.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'SupportingInfo.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'sequence' => {'path'=>'SupportingInfo.sequence', 'type'=>'positiveInt', 'min'=>1, 'max'=>1},
+          'information' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'SupportingInfo.information', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'appliesToAll' => {'path'=>'SupportingInfo.appliesToAll', 'type'=>'boolean', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -63,12 +63,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Insurance.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Insurance.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Insurance.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'focal' => {'type'=>'boolean', 'path'=>'Insurance.focal', 'min'=>0, 'max'=>1},
-          'coverage' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Coverage'], 'type'=>'Reference', 'path'=>'Insurance.coverage', 'min'=>1, 'max'=>1},
-          'businessArrangement' => {'type'=>'string', 'path'=>'Insurance.businessArrangement', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Insurance.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Insurance.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Insurance.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'focal' => {'path'=>'Insurance.focal', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'coverage' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Coverage'], 'path'=>'Insurance.coverage', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'businessArrangement' => {'path'=>'Insurance.businessArrangement', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                  # 0-1 string
@@ -85,19 +85,19 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Item.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Item.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Item.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'supportingInfoSequence' => {'type'=>'positiveInt', 'path'=>'Item.supportingInfoSequence', 'min'=>0, 'max'=>Float::INFINITY},
-          'category' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-benefitcategory'=>['1', '2', '3', '4', '5', '14', '23', '24', '25', '26', '27', '28', '30', '35', '36', '37', '49', '55', '56', '61', '62', '63', '69', '76', 'F1', 'F3', 'F4', 'F6']}, 'type'=>'CodeableConcept', 'path'=>'Item.category', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/ex-benefitcategory'}},
-          'productOrService' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-USCLS'=>['1101', '1102', '1103', '1201', '1205', '2101', '2102', '2141', '2601', '11101', '11102', '11103', '11104', '21211', '21212', '27211', '67211', '99111', '99333', '99555']}, 'type'=>'CodeableConcept', 'path'=>'Item.productOrService', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/service-uscls'}},
-          'modifier' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/modifiers'=>['a', 'b', 'c', 'e', 'rooh', 'x']}, 'type'=>'CodeableConcept', 'path'=>'Item.modifier', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/claim-modifiers'}},
-          'provider' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'Item.provider', 'min'=>0, 'max'=>1},
-          'quantity' => {'type'=>'Quantity', 'path'=>'Item.quantity', 'min'=>0, 'max'=>1},
-          'unitPrice' => {'type'=>'Money', 'path'=>'Item.unitPrice', 'min'=>0, 'max'=>1},
-          'facility' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Item.facility', 'min'=>0, 'max'=>1},
-          'diagnosis' => {'type'=>'CoverageEligibilityRequest::Item::Diagnosis', 'path'=>'Item.diagnosis', 'min'=>0, 'max'=>Float::INFINITY},
-          'detail' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Item.detail', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Item.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Item.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Item.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'supportingInfoSequence' => {'path'=>'Item.supportingInfoSequence', 'type'=>'positiveInt', 'min'=>0, 'max'=>Float::INFINITY},
+          'category' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-benefitcategory'=>['1', '2', '3', '4', '5', '14', '23', '24', '25', '26', '27', '28', '30', '35', '36', '37', '49', '55', '56', '61', '62', '63', '69', '76', 'F1', 'F3', 'F4', 'F6']}, 'path'=>'Item.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/ex-benefitcategory'}},
+          'productOrService' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-USCLS'=>['1101', '1102', '1103', '1201', '1205', '2101', '2102', '2141', '2601', '11101', '11102', '11103', '11104', '21211', '21212', '27211', '67211', '99111', '99333', '99555']}, 'path'=>'Item.productOrService', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/service-uscls'}},
+          'modifier' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/modifiers'=>['a', 'b', 'c', 'e', 'rooh', 'x']}, 'path'=>'Item.modifier', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/claim-modifiers'}},
+          'provider' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'Item.provider', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'quantity' => {'path'=>'Item.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'unitPrice' => {'path'=>'Item.unitPrice', 'type'=>'Money', 'min'=>0, 'max'=>1},
+          'facility' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Item.facility', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'diagnosis' => {'path'=>'Item.diagnosis', 'type'=>'CoverageEligibilityRequest::Item::Diagnosis', 'min'=>0, 'max'=>Float::INFINITY},
+          'detail' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Item.detail', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Diagnosis < Model
@@ -109,11 +109,11 @@ module FHIR
             'diagnosis' => ['CodeableConcept', 'Reference']
           }
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Diagnosis.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Diagnosis.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Diagnosis.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'diagnosisCodeableConcept' => {'valid_codes'=>{'http://hl7.org/fhir/sid/icd-10'=>['123456', '123457', '987654', '123987', '112233', '997755', '321789']}, 'type'=>'CodeableConcept', 'path'=>'Diagnosis.diagnosis[x]', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/icd-10'}},
-            'diagnosisReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Condition'], 'type'=>'Reference', 'path'=>'Diagnosis.diagnosis[x]', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Diagnosis.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Diagnosis.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Diagnosis.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'diagnosisCodeableConcept' => {'valid_codes'=>{'http://hl7.org/fhir/sid/icd-10'=>['123456', '123457', '987654', '123987', '112233', '997755', '321789']}, 'path'=>'Diagnosis.diagnosis[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/icd-10'}},
+            'diagnosisReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Condition'], 'path'=>'Diagnosis.diagnosis[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                       # 0-1 string

@@ -7,20 +7,20 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MedicinalProductIngredient.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MedicinalProductIngredient.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MedicinalProductIngredient.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'MedicinalProductIngredient.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MedicinalProductIngredient.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MedicinalProductIngredient.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MedicinalProductIngredient.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MedicinalProductIngredient.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'MedicinalProductIngredient.identifier', 'min'=>0, 'max'=>1},
-        'role' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductIngredient.role', 'min'=>1, 'max'=>1},
-        'allergenicIndicator' => {'type'=>'boolean', 'path'=>'MedicinalProductIngredient.allergenicIndicator', 'min'=>0, 'max'=>1},
-        'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'MedicinalProductIngredient.manufacturer', 'min'=>0, 'max'=>Float::INFINITY},
-        'specifiedSubstance' => {'type'=>'MedicinalProductIngredient::SpecifiedSubstance', 'path'=>'MedicinalProductIngredient.specifiedSubstance', 'min'=>0, 'max'=>Float::INFINITY},
-        'substance' => {'type'=>'MedicinalProductIngredient::Substance', 'path'=>'MedicinalProductIngredient.substance', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'MedicinalProductIngredient.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MedicinalProductIngredient.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MedicinalProductIngredient.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'MedicinalProductIngredient.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'MedicinalProductIngredient.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MedicinalProductIngredient.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MedicinalProductIngredient.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MedicinalProductIngredient.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'MedicinalProductIngredient.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+        'role' => {'path'=>'MedicinalProductIngredient.role', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+        'allergenicIndicator' => {'path'=>'MedicinalProductIngredient.allergenicIndicator', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'MedicinalProductIngredient.manufacturer', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'specifiedSubstance' => {'path'=>'MedicinalProductIngredient.specifiedSubstance', 'type'=>'MedicinalProductIngredient::SpecifiedSubstance', 'min'=>0, 'max'=>Float::INFINITY},
+        'substance' => {'path'=>'MedicinalProductIngredient.substance', 'type'=>'MedicinalProductIngredient::Substance', 'min'=>0, 'max'=>1}
       }
 
       class SpecifiedSubstance < Model
@@ -29,13 +29,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'SpecifiedSubstance.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'SpecifiedSubstance.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'SpecifiedSubstance.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'type'=>'CodeableConcept', 'path'=>'SpecifiedSubstance.code', 'min'=>1, 'max'=>1},
-          'group' => {'type'=>'CodeableConcept', 'path'=>'SpecifiedSubstance.group', 'min'=>1, 'max'=>1},
-          'confidentiality' => {'type'=>'CodeableConcept', 'path'=>'SpecifiedSubstance.confidentiality', 'min'=>0, 'max'=>1},
-          'strength' => {'type'=>'MedicinalProductIngredient::SpecifiedSubstance::Strength', 'path'=>'SpecifiedSubstance.strength', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'SpecifiedSubstance.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'SpecifiedSubstance.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'SpecifiedSubstance.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'path'=>'SpecifiedSubstance.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'group' => {'path'=>'SpecifiedSubstance.group', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'confidentiality' => {'path'=>'SpecifiedSubstance.confidentiality', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'strength' => {'path'=>'SpecifiedSubstance.strength', 'type'=>'MedicinalProductIngredient::SpecifiedSubstance::Strength', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Strength < Model
@@ -44,16 +44,16 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Strength.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Strength.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Strength.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'presentation' => {'type'=>'Ratio', 'path'=>'Strength.presentation', 'min'=>1, 'max'=>1},
-            'presentationLowLimit' => {'type'=>'Ratio', 'path'=>'Strength.presentationLowLimit', 'min'=>0, 'max'=>1},
-            'concentration' => {'type'=>'Ratio', 'path'=>'Strength.concentration', 'min'=>0, 'max'=>1},
-            'concentrationLowLimit' => {'type'=>'Ratio', 'path'=>'Strength.concentrationLowLimit', 'min'=>0, 'max'=>1},
-            'measurementPoint' => {'type'=>'string', 'path'=>'Strength.measurementPoint', 'min'=>0, 'max'=>1},
-            'country' => {'type'=>'CodeableConcept', 'path'=>'Strength.country', 'min'=>0, 'max'=>Float::INFINITY},
-            'referenceStrength' => {'type'=>'MedicinalProductIngredient::SpecifiedSubstance::Strength::ReferenceStrength', 'path'=>'Strength.referenceStrength', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Strength.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Strength.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Strength.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'presentation' => {'path'=>'Strength.presentation', 'type'=>'Ratio', 'min'=>1, 'max'=>1},
+            'presentationLowLimit' => {'path'=>'Strength.presentationLowLimit', 'type'=>'Ratio', 'min'=>0, 'max'=>1},
+            'concentration' => {'path'=>'Strength.concentration', 'type'=>'Ratio', 'min'=>0, 'max'=>1},
+            'concentrationLowLimit' => {'path'=>'Strength.concentrationLowLimit', 'type'=>'Ratio', 'min'=>0, 'max'=>1},
+            'measurementPoint' => {'path'=>'Strength.measurementPoint', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'country' => {'path'=>'Strength.country', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+            'referenceStrength' => {'path'=>'Strength.referenceStrength', 'type'=>'MedicinalProductIngredient::SpecifiedSubstance::Strength::ReferenceStrength', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class ReferenceStrength < Model
@@ -62,14 +62,14 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'ReferenceStrength.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'ReferenceStrength.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'ReferenceStrength.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'substance' => {'type'=>'CodeableConcept', 'path'=>'ReferenceStrength.substance', 'min'=>0, 'max'=>1},
-              'strength' => {'type'=>'Ratio', 'path'=>'ReferenceStrength.strength', 'min'=>1, 'max'=>1},
-              'strengthLowLimit' => {'type'=>'Ratio', 'path'=>'ReferenceStrength.strengthLowLimit', 'min'=>0, 'max'=>1},
-              'measurementPoint' => {'type'=>'string', 'path'=>'ReferenceStrength.measurementPoint', 'min'=>0, 'max'=>1},
-              'country' => {'type'=>'CodeableConcept', 'path'=>'ReferenceStrength.country', 'min'=>0, 'max'=>Float::INFINITY}
+              'id' => {'path'=>'ReferenceStrength.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'ReferenceStrength.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'ReferenceStrength.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'substance' => {'path'=>'ReferenceStrength.substance', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+              'strength' => {'path'=>'ReferenceStrength.strength', 'type'=>'Ratio', 'min'=>1, 'max'=>1},
+              'strengthLowLimit' => {'path'=>'ReferenceStrength.strengthLowLimit', 'type'=>'Ratio', 'min'=>0, 'max'=>1},
+              'measurementPoint' => {'path'=>'ReferenceStrength.measurementPoint', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'country' => {'path'=>'ReferenceStrength.country', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY}
             }
 
             attr_accessor :id                # 0-1 string
@@ -109,11 +109,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Substance.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Substance.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Substance.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'type'=>'CodeableConcept', 'path'=>'Substance.code', 'min'=>1, 'max'=>1},
-          'strength' => {'type'=>'MedicinalProductIngredient::SpecifiedSubstance::Strength', 'path'=>'Substance.strength', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Substance.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Substance.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Substance.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'path'=>'Substance.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'strength' => {'path'=>'Substance.strength', 'type'=>'MedicinalProductIngredient::SpecifiedSubstance::Strength', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string

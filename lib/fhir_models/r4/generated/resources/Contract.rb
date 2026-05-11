@@ -11,49 +11,49 @@ module FHIR
       }
       SEARCH_PARAMS = ['authority', 'domain', 'identifier', 'instantiates', 'issued', 'patient', 'signer', 'status', 'subject', 'url']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Contract.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Contract.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Contract.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'Contract.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Contract.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Contract.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Contract.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Contract.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Contract.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'url' => {'type'=>'uri', 'path'=>'Contract.url', 'min'=>0, 'max'=>1},
-        'version' => {'type'=>'string', 'path'=>'Contract.version', 'min'=>0, 'max'=>1},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/contract-status'=>['amended', 'appended', 'cancelled', 'disputed', 'entered-in-error', 'executable', 'executed', 'negotiable', 'offered', 'policy', 'rejected', 'renewed', 'revoked', 'resolved', 'terminated']}, 'type'=>'code', 'path'=>'Contract.status', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-status'}},
-        'legalState' => {'valid_codes'=>{'http://hl7.org/fhir/contract-legalstate'=>['amended', 'appended', 'cancelled', 'disputed', 'entered-in-error', 'executable', 'executed', 'negotiable', 'offered', 'policy', 'rejected', 'renewed', 'revoked', 'resolved', 'terminated']}, 'type'=>'CodeableConcept', 'path'=>'Contract.legalState', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-legalstate'}},
-        'instantiatesCanonical' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Contract'], 'type'=>'Reference', 'path'=>'Contract.instantiatesCanonical', 'min'=>0, 'max'=>1},
-        'instantiatesUri' => {'type'=>'uri', 'path'=>'Contract.instantiatesUri', 'min'=>0, 'max'=>1},
-        'contentDerivative' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contract-content-derivative'=>['registration', 'retrieval', 'statement', 'shareable']}, 'type'=>'CodeableConcept', 'path'=>'Contract.contentDerivative', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-content-derivative'}},
-        'issued' => {'type'=>'dateTime', 'path'=>'Contract.issued', 'min'=>0, 'max'=>1},
-        'applies' => {'type'=>'Period', 'path'=>'Contract.applies', 'min'=>0, 'max'=>1},
-        'expirationType' => {'valid_codes'=>{'http://hl7.org/fhir/contract-expiration-type'=>['breach']}, 'type'=>'CodeableConcept', 'path'=>'Contract.expirationType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-expiration-type'}},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Contract.subject', 'min'=>0, 'max'=>Float::INFINITY},
-        'authority' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Contract.authority', 'min'=>0, 'max'=>Float::INFINITY},
-        'domain' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'Contract.domain', 'min'=>0, 'max'=>Float::INFINITY},
-        'site' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'Contract.site', 'min'=>0, 'max'=>Float::INFINITY},
-        'name' => {'type'=>'string', 'path'=>'Contract.name', 'min'=>0, 'max'=>1},
-        'title' => {'type'=>'string', 'path'=>'Contract.title', 'min'=>0, 'max'=>1},
-        'subtitle' => {'type'=>'string', 'path'=>'Contract.subtitle', 'min'=>0, 'max'=>1},
-        'alias' => {'type'=>'string', 'path'=>'Contract.alias', 'min'=>0, 'max'=>Float::INFINITY},
-        'author' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Contract.author', 'min'=>0, 'max'=>1},
-        'scope' => {'valid_codes'=>{'http://hl7.org/fhir/contract-scope'=>['policy']}, 'type'=>'CodeableConcept', 'path'=>'Contract.scope', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-scope'}},
-        'topicCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Contract.topic[x]', 'min'=>0, 'max'=>1},
-        'topicReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Contract.topic[x]', 'min'=>0, 'max'=>1},
-        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contract-type'=>['privacy', 'disclosure', 'healthinsurance', 'supply', 'consent']}, 'type'=>'CodeableConcept', 'path'=>'Contract.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-type'}},
-        'subType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contractsubtypecodes'=>['disclosure-ca', 'disclosure-us']}, 'type'=>'CodeableConcept', 'path'=>'Contract.subType', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-subtype'}},
-        'contentDefinition' => {'type'=>'Contract::ContentDefinition', 'path'=>'Contract.contentDefinition', 'min'=>0, 'max'=>1},
-        'term' => {'type'=>'Contract::Term', 'path'=>'Contract.term', 'min'=>0, 'max'=>Float::INFINITY},
-        'supportingInfo' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Contract.supportingInfo', 'min'=>0, 'max'=>Float::INFINITY},
-        'relevantHistory' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Provenance'], 'type'=>'Reference', 'path'=>'Contract.relevantHistory', 'min'=>0, 'max'=>Float::INFINITY},
-        'signer' => {'type'=>'Contract::Signer', 'path'=>'Contract.signer', 'min'=>0, 'max'=>Float::INFINITY},
-        'friendly' => {'type'=>'Contract::Friendly', 'path'=>'Contract.friendly', 'min'=>0, 'max'=>Float::INFINITY},
-        'legal' => {'type'=>'Contract::Legal', 'path'=>'Contract.legal', 'min'=>0, 'max'=>Float::INFINITY},
-        'rule' => {'type'=>'Contract::Rule', 'path'=>'Contract.rule', 'min'=>0, 'max'=>Float::INFINITY},
-        'legallyBindingAttachment' => {'type'=>'Attachment', 'path'=>'Contract.legallyBinding[x]', 'min'=>0, 'max'=>1},
-        'legallyBindingReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Composition', 'http://hl7.org/fhir/StructureDefinition/DocumentReference', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse', 'http://hl7.org/fhir/StructureDefinition/Contract'], 'type'=>'Reference', 'path'=>'Contract.legallyBinding[x]', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Contract.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Contract.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Contract.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'Contract.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'Contract.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Contract.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Contract.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Contract.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'Contract.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'url' => {'path'=>'Contract.url', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'version' => {'path'=>'Contract.version', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/contract-status'=>['amended', 'appended', 'cancelled', 'disputed', 'entered-in-error', 'executable', 'executed', 'negotiable', 'offered', 'policy', 'rejected', 'renewed', 'revoked', 'resolved', 'terminated']}, 'path'=>'Contract.status', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-status'}},
+        'legalState' => {'valid_codes'=>{'http://hl7.org/fhir/contract-legalstate'=>['amended', 'appended', 'cancelled', 'disputed', 'entered-in-error', 'executable', 'executed', 'negotiable', 'offered', 'policy', 'rejected', 'renewed', 'revoked', 'resolved', 'terminated']}, 'path'=>'Contract.legalState', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-legalstate'}},
+        'instantiatesCanonical' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Contract'], 'path'=>'Contract.instantiatesCanonical', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'instantiatesUri' => {'path'=>'Contract.instantiatesUri', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'contentDerivative' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contract-content-derivative'=>['registration', 'retrieval', 'statement', 'shareable']}, 'path'=>'Contract.contentDerivative', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-content-derivative'}},
+        'issued' => {'path'=>'Contract.issued', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'applies' => {'path'=>'Contract.applies', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'expirationType' => {'valid_codes'=>{'http://hl7.org/fhir/contract-expiration-type'=>['breach']}, 'path'=>'Contract.expirationType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-expiration-type'}},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Contract.subject', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'authority' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Contract.authority', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'domain' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'Contract.domain', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'site' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'Contract.site', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'name' => {'path'=>'Contract.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'title' => {'path'=>'Contract.title', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'subtitle' => {'path'=>'Contract.subtitle', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'alias' => {'path'=>'Contract.alias', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'author' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Contract.author', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'scope' => {'valid_codes'=>{'http://hl7.org/fhir/contract-scope'=>['policy']}, 'path'=>'Contract.scope', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-scope'}},
+        'topicCodeableConcept' => {'path'=>'Contract.topic[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'topicReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Contract.topic[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contract-type'=>['privacy', 'disclosure', 'healthinsurance', 'supply', 'consent']}, 'path'=>'Contract.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-type'}},
+        'subType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contractsubtypecodes'=>['disclosure-ca', 'disclosure-us']}, 'path'=>'Contract.subType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-subtype'}},
+        'contentDefinition' => {'path'=>'Contract.contentDefinition', 'type'=>'Contract::ContentDefinition', 'min'=>0, 'max'=>1},
+        'term' => {'path'=>'Contract.term', 'type'=>'Contract::Term', 'min'=>0, 'max'=>Float::INFINITY},
+        'supportingInfo' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Contract.supportingInfo', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'relevantHistory' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Provenance'], 'path'=>'Contract.relevantHistory', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'signer' => {'path'=>'Contract.signer', 'type'=>'Contract::Signer', 'min'=>0, 'max'=>Float::INFINITY},
+        'friendly' => {'path'=>'Contract.friendly', 'type'=>'Contract::Friendly', 'min'=>0, 'max'=>Float::INFINITY},
+        'legal' => {'path'=>'Contract.legal', 'type'=>'Contract::Legal', 'min'=>0, 'max'=>Float::INFINITY},
+        'rule' => {'path'=>'Contract.rule', 'type'=>'Contract::Rule', 'min'=>0, 'max'=>Float::INFINITY},
+        'legallyBindingAttachment' => {'path'=>'Contract.legallyBinding[x]', 'type'=>'Attachment', 'min'=>0, 'max'=>1},
+        'legallyBindingReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Composition', 'http://hl7.org/fhir/StructureDefinition/DocumentReference', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse', 'http://hl7.org/fhir/StructureDefinition/Contract'], 'path'=>'Contract.legallyBinding[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1}
       }
 
       class ContentDefinition < Model
@@ -62,15 +62,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'ContentDefinition.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'ContentDefinition.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'ContentDefinition.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/contract-definition-type'=>['temp']}, 'type'=>'CodeableConcept', 'path'=>'ContentDefinition.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-definition-type'}},
-          'subType' => {'valid_codes'=>{'http://hl7.org/fhir/contract-definition-subtype'=>['temp']}, 'type'=>'CodeableConcept', 'path'=>'ContentDefinition.subType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-definition-subtype'}},
-          'publisher' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'ContentDefinition.publisher', 'min'=>0, 'max'=>1},
-          'publicationDate' => {'type'=>'dateTime', 'path'=>'ContentDefinition.publicationDate', 'min'=>0, 'max'=>1},
-          'publicationStatus' => {'valid_codes'=>{'http://hl7.org/fhir/contract-publicationstatus'=>['amended', 'appended', 'cancelled', 'disputed', 'entered-in-error', 'executable', 'executed', 'negotiable', 'offered', 'policy', 'rejected', 'renewed', 'revoked', 'resolved', 'terminated']}, 'type'=>'code', 'path'=>'ContentDefinition.publicationStatus', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-publicationstatus'}},
-          'copyright' => {'type'=>'markdown', 'path'=>'ContentDefinition.copyright', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'ContentDefinition.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'ContentDefinition.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'ContentDefinition.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/contract-definition-type'=>['temp']}, 'path'=>'ContentDefinition.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-definition-type'}},
+          'subType' => {'valid_codes'=>{'http://hl7.org/fhir/contract-definition-subtype'=>['temp']}, 'path'=>'ContentDefinition.subType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-definition-subtype'}},
+          'publisher' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'ContentDefinition.publisher', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'publicationDate' => {'path'=>'ContentDefinition.publicationDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'publicationStatus' => {'valid_codes'=>{'http://hl7.org/fhir/contract-publicationstatus'=>['amended', 'appended', 'cancelled', 'disputed', 'entered-in-error', 'executable', 'executed', 'negotiable', 'offered', 'policy', 'rejected', 'renewed', 'revoked', 'resolved', 'terminated']}, 'path'=>'ContentDefinition.publicationStatus', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-publicationstatus'}},
+          'copyright' => {'path'=>'ContentDefinition.copyright', 'type'=>'markdown', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -93,22 +93,22 @@ module FHIR
           'topic' => ['CodeableConcept', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Term.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Term.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Term.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'identifier' => {'type'=>'Identifier', 'path'=>'Term.identifier', 'min'=>0, 'max'=>1},
-          'issued' => {'type'=>'dateTime', 'path'=>'Term.issued', 'min'=>0, 'max'=>1},
-          'applies' => {'type'=>'Period', 'path'=>'Term.applies', 'min'=>0, 'max'=>1},
-          'topicCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Term.topic[x]', 'min'=>0, 'max'=>1},
-          'topicReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Term.topic[x]', 'min'=>0, 'max'=>1},
-          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contracttermtypecodes'=>['statutory', 'subject-to']}, 'type'=>'CodeableConcept', 'path'=>'Term.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-term-type'}},
-          'subType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes'=>['condition', 'warranty', 'innominate']}, 'type'=>'CodeableConcept', 'path'=>'Term.subType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-term-subtype'}},
-          'text' => {'type'=>'string', 'path'=>'Term.text', 'min'=>0, 'max'=>1},
-          'securityLabel' => {'type'=>'Contract::Term::SecurityLabel', 'path'=>'Term.securityLabel', 'min'=>0, 'max'=>Float::INFINITY},
-          'offer' => {'type'=>'Contract::Term::Offer', 'path'=>'Term.offer', 'min'=>1, 'max'=>1},
-          'asset' => {'type'=>'Contract::Term::Asset', 'path'=>'Term.asset', 'min'=>0, 'max'=>Float::INFINITY},
-          'action' => {'type'=>'Contract::Term::Action', 'path'=>'Term.action', 'min'=>0, 'max'=>Float::INFINITY},
-          'group' => {'type'=>'Contract::Term', 'path'=>'Term.group', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Term.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Term.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Term.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'identifier' => {'path'=>'Term.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'issued' => {'path'=>'Term.issued', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'applies' => {'path'=>'Term.applies', 'type'=>'Period', 'min'=>0, 'max'=>1},
+          'topicCodeableConcept' => {'path'=>'Term.topic[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'topicReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Term.topic[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contracttermtypecodes'=>['statutory', 'subject-to']}, 'path'=>'Term.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-term-type'}},
+          'subType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes'=>['condition', 'warranty', 'innominate']}, 'path'=>'Term.subType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-term-subtype'}},
+          'text' => {'path'=>'Term.text', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'securityLabel' => {'path'=>'Term.securityLabel', 'type'=>'Contract::Term::SecurityLabel', 'min'=>0, 'max'=>Float::INFINITY},
+          'offer' => {'path'=>'Term.offer', 'type'=>'Contract::Term::Offer', 'min'=>1, 'max'=>1},
+          'asset' => {'path'=>'Term.asset', 'type'=>'Contract::Term::Asset', 'min'=>0, 'max'=>Float::INFINITY},
+          'action' => {'path'=>'Term.action', 'type'=>'Contract::Term::Action', 'min'=>0, 'max'=>Float::INFINITY},
+          'group' => {'path'=>'Term.group', 'type'=>'Contract::Term', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class SecurityLabel < Model
@@ -117,13 +117,13 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'SecurityLabel.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'SecurityLabel.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'SecurityLabel.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'number' => {'type'=>'unsignedInt', 'path'=>'SecurityLabel.number', 'min'=>0, 'max'=>Float::INFINITY},
-            'classification' => {'valid_codes'=>{'http://hl7.org/fhir/contract-security-classification'=>['policy']}, 'type'=>'Coding', 'path'=>'SecurityLabel.classification', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-security-classification'}},
-            'category' => {'valid_codes'=>{'http://hl7.org/fhir/contract-security-category'=>['policy']}, 'type'=>'Coding', 'path'=>'SecurityLabel.category', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-security-category'}},
-            'control' => {'valid_codes'=>{'http://hl7.org/fhir/contract-security-control'=>['policy']}, 'type'=>'Coding', 'path'=>'SecurityLabel.control', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-security-control'}}
+            'id' => {'path'=>'SecurityLabel.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'SecurityLabel.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'SecurityLabel.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'number' => {'path'=>'SecurityLabel.number', 'type'=>'unsignedInt', 'min'=>0, 'max'=>Float::INFINITY},
+            'classification' => {'valid_codes'=>{'http://hl7.org/fhir/contract-security-classification'=>['policy']}, 'path'=>'SecurityLabel.classification', 'type'=>'Coding', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-security-classification'}},
+            'category' => {'valid_codes'=>{'http://hl7.org/fhir/contract-security-category'=>['policy']}, 'path'=>'SecurityLabel.category', 'type'=>'Coding', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-security-category'}},
+            'control' => {'valid_codes'=>{'http://hl7.org/fhir/contract-security-control'=>['policy']}, 'path'=>'SecurityLabel.control', 'type'=>'Coding', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-security-control'}}
           }
 
           attr_accessor :id                # 0-1 string
@@ -141,19 +141,19 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Offer.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Offer.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Offer.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'identifier' => {'type'=>'Identifier', 'path'=>'Offer.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-            'party' => {'type'=>'Contract::Term::Offer::Party', 'path'=>'Offer.party', 'min'=>0, 'max'=>Float::INFINITY},
-            'topic' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Offer.topic', 'min'=>0, 'max'=>1},
-            'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contracttermtypecodes'=>['statutory', 'subject-to']}, 'type'=>'CodeableConcept', 'path'=>'Offer.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-term-type'}},
-            'decision' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['EMRGONLY', 'GRANTORCHOICE', 'IMPLIED', 'IMPLIEDD', 'NOCONSENT', 'NOPP', 'OPTIN', 'OPTINR', 'OPTOUT', 'OPTOUTE']}, 'type'=>'CodeableConcept', 'path'=>'Offer.decision', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-ActConsentDirective'}},
-            'decisionMode' => {'valid_codes'=>{'http://hl7.org/fhir/contract-decision-mode'=>['policy']}, 'type'=>'CodeableConcept', 'path'=>'Offer.decisionMode', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-decision-mode'}},
-            'answer' => {'type'=>'Contract::Term::Offer::Answer', 'path'=>'Offer.answer', 'min'=>0, 'max'=>Float::INFINITY},
-            'text' => {'type'=>'string', 'path'=>'Offer.text', 'min'=>0, 'max'=>1},
-            'linkId' => {'type'=>'string', 'path'=>'Offer.linkId', 'min'=>0, 'max'=>Float::INFINITY},
-            'securityLabelNumber' => {'type'=>'unsignedInt', 'path'=>'Offer.securityLabelNumber', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Offer.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Offer.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Offer.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'identifier' => {'path'=>'Offer.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+            'party' => {'path'=>'Offer.party', 'type'=>'Contract::Term::Offer::Party', 'min'=>0, 'max'=>Float::INFINITY},
+            'topic' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Offer.topic', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+            'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contracttermtypecodes'=>['statutory', 'subject-to']}, 'path'=>'Offer.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-term-type'}},
+            'decision' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['EMRGONLY', 'GRANTORCHOICE', 'IMPLIED', 'IMPLIEDD', 'NOCONSENT', 'NOPP', 'OPTIN', 'OPTINR', 'OPTOUT', 'OPTOUTE']}, 'path'=>'Offer.decision', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-ActConsentDirective'}},
+            'decisionMode' => {'valid_codes'=>{'http://hl7.org/fhir/contract-decision-mode'=>['policy']}, 'path'=>'Offer.decisionMode', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-decision-mode'}},
+            'answer' => {'path'=>'Offer.answer', 'type'=>'Contract::Term::Offer::Answer', 'min'=>0, 'max'=>Float::INFINITY},
+            'text' => {'path'=>'Offer.text', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'linkId' => {'path'=>'Offer.linkId', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+            'securityLabelNumber' => {'path'=>'Offer.securityLabelNumber', 'type'=>'unsignedInt', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Party < Model
@@ -162,11 +162,11 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Party.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Party.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Party.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'reference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Party.reference', 'min'=>1, 'max'=>Float::INFINITY},
-              'role' => {'valid_codes'=>{'http://hl7.org/fhir/contract-party-role'=>['flunky']}, 'type'=>'CodeableConcept', 'path'=>'Party.role', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-party-role'}}
+              'id' => {'path'=>'Party.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Party.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Party.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'reference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Party.reference', 'type'=>'Reference', 'min'=>1, 'max'=>Float::INFINITY},
+              'role' => {'valid_codes'=>{'http://hl7.org/fhir/contract-party-role'=>['flunky']}, 'path'=>'Party.role', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-party-role'}}
             }
 
             attr_accessor :id                # 0-1 string
@@ -185,21 +185,21 @@ module FHIR
               'value' => ['boolean', 'decimal', 'integer', 'date', 'dateTime', 'time', 'string', 'uri', 'Attachment', 'Coding', 'Quantity', 'Reference']
             }
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Answer.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Answer.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Answer.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'valueBoolean' => {'type'=>'boolean', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueDecimal' => {'type'=>'decimal', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueInteger' => {'type'=>'integer', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueDate' => {'type'=>'date', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueDateTime' => {'type'=>'dateTime', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueTime' => {'type'=>'time', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueString' => {'type'=>'string', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueUri' => {'type'=>'uri', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueAttachment' => {'type'=>'Attachment', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueCoding' => {'type'=>'Coding', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueQuantity' => {'type'=>'Quantity', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1},
-              'valueReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Answer.value[x]', 'min'=>1, 'max'=>1}
+              'id' => {'path'=>'Answer.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Answer.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Answer.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'valueBoolean' => {'path'=>'Answer.value[x]', 'type'=>'boolean', 'min'=>1, 'max'=>1},
+              'valueDecimal' => {'path'=>'Answer.value[x]', 'type'=>'decimal', 'min'=>1, 'max'=>1},
+              'valueInteger' => {'path'=>'Answer.value[x]', 'type'=>'integer', 'min'=>1, 'max'=>1},
+              'valueDate' => {'path'=>'Answer.value[x]', 'type'=>'date', 'min'=>1, 'max'=>1},
+              'valueDateTime' => {'path'=>'Answer.value[x]', 'type'=>'dateTime', 'min'=>1, 'max'=>1},
+              'valueTime' => {'path'=>'Answer.value[x]', 'type'=>'time', 'min'=>1, 'max'=>1},
+              'valueString' => {'path'=>'Answer.value[x]', 'type'=>'string', 'min'=>1, 'max'=>1},
+              'valueUri' => {'path'=>'Answer.value[x]', 'type'=>'uri', 'min'=>1, 'max'=>1},
+              'valueAttachment' => {'path'=>'Answer.value[x]', 'type'=>'Attachment', 'min'=>1, 'max'=>1},
+              'valueCoding' => {'path'=>'Answer.value[x]', 'type'=>'Coding', 'min'=>1, 'max'=>1},
+              'valueQuantity' => {'path'=>'Answer.value[x]', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+              'valueReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Answer.value[x]', 'type'=>'Reference', 'min'=>1, 'max'=>1}
             }
 
             attr_accessor :id                # 0-1 string
@@ -240,24 +240,24 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Asset.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Asset.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Asset.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'scope' => {'valid_codes'=>{'http://hl7.org/fhir/contract-asset-scope'=>['thing']}, 'type'=>'CodeableConcept', 'path'=>'Asset.scope', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-assetscope'}},
-            'type' => {'valid_codes'=>{'http://hl7.org/fhir/contract-asset-type'=>['participation']}, 'type'=>'CodeableConcept', 'path'=>'Asset.type', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-assettype'}},
-            'typeReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Asset.typeReference', 'min'=>0, 'max'=>Float::INFINITY},
-            'subtype' => {'valid_codes'=>{'http://hl7.org/fhir/contract-asset-subtype'=>['participation']}, 'type'=>'CodeableConcept', 'path'=>'Asset.subtype', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-assetsubtype'}},
-            'relationship' => {'valid_codes'=>{'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem'=>['urn:ihe:pcc:xphr:2007', 'urn:ihe:pcc:aps:2007', 'urn:ihe:pcc:xds-ms:2007', 'urn:ihe:pcc:edr:2007', 'urn:ihe:pcc:edes:2007', 'urn:ihe:pcc:apr:handp:2008', 'urn:ihe:pcc:apr:lab:2008', 'urn:ihe:pcc:apr:edu:2008', 'urn:ihe:pcc:crc:2008', 'urn:ihe:pcc:cm:2008', 'urn:ihe:pcc:ic:2008', 'urn:ihe:pcc:tn:2007', 'urn:ihe:pcc:nn:2007', 'urn:ihe:pcc:ctn:2007', 'urn:ihe:pcc:edpn:2007', 'urn:ihe:pcc:hp:2008', 'urn:ihe:pcc:ldhp:2009', 'urn:ihe:pcc:lds:2009', 'urn:ihe:pcc:mds:2009', 'urn:ihe:pcc:nds:2010', 'urn:ihe:pcc:ppvs:2010', 'urn:ihe:pcc:trs:2011', 'urn:ihe:pcc:ets:2011', 'urn:ihe:pcc:its:2011', 'urn:ihe:pcc:ript:2017', 'urn:ihe:iti:bppc:2007', 'urn:ihe:iti:bppc-sd:2007', 'urn:ihe:iti:xds-sd:pdf:2008', 'urn:ihe:iti:xds-sd:text:2008', 'urn:ihe:iti:xdw:2011:workflowDoc', 'urn:ihe:iti:dsg:detached:2014', 'urn:ihe:iti:dsg:enveloping:2014', 'urn:ihe:iti:appc:2016:consent', 'urn:ihe:iti:xds:2017:mimeTypeSufficient', 'urn:ihe:lab:xd-lab:2008', 'urn:ihe:rad:TEXT', 'urn:ihe:rad:PDF', 'urn:ihe:rad:CDA:ImagingReportStructuredHeadings:2013', 'urn:ihe:card:imaging:2011', 'urn:ihe:card:CRC:2012', 'urn:ihe:card:EPRC-IE:2014', 'urn:ihe:dent:TEXT', 'urn:ihe:dent:PDF', 'urn:ihe:dent:CDA:ImagingReportStructuredHeadings:2013', 'urn:ihe:pat:apsr:all:2010', 'urn:ihe:pat:apsr:cancer:all:2010', 'urn:ihe:pat:apsr:cancer:breast:2010', 'urn:ihe:pat:apsr:cancer:colon:2010', 'urn:ihe:pat:apsr:cancer:prostate:2010', 'urn:ihe:pat:apsr:cancer:thyroid:2010', 'urn:ihe:pat:apsr:cancer:lung:2010', 'urn:ihe:pat:apsr:cancer:skin:2010', 'urn:ihe:pat:apsr:cancer:kidney:2010', 'urn:ihe:pat:apsr:cancer:cervix:2010', 'urn:ihe:pat:apsr:cancer:endometrium:2010', 'urn:ihe:pat:apsr:cancer:ovary:2010', 'urn:ihe:pat:apsr:cancer:esophagus:2010', 'urn:ihe:pat:apsr:cancer:stomach:2010', 'urn:ihe:pat:apsr:cancer:liver:2010', 'urn:ihe:pat:apsr:cancer:pancreas:2010', 'urn:ihe:pat:apsr:cancer:testis:2010', 'urn:ihe:pat:apsr:cancer:urinary_bladder:2010', 'urn:ihe:pat:apsr:cancer:lip_oral_cavity:2010', 'urn:ihe:pat:apsr:cancer:pharynx:2010', 'urn:ihe:pat:apsr:cancer:salivary_gland:2010', 'urn:ihe:pat:apsr:cancer:larynx:2010', 'urn:ihe:pharm:pre:2010', 'urn:ihe:pharm:padv:2010', 'urn:ihe:pharm:dis:2010', 'urn:ihe:pharm:pml:2013', 'urn:hl7-org:sdwg:ccda-structuredBody:1.1', 'urn:hl7-org:sdwg:ccda-nonXMLBody:1.1', 'urn:hl7-org:sdwg:ccda-structuredBody:2.1', 'urn:hl7-org:sdwg:ccda-nonXMLBody:2.1'], 'http://hl7.org/fhir/resource-types'=>['Account', 'ActivityDefinition', 'AdverseEvent', 'AllergyIntolerance', 'Appointment', 'AppointmentResponse', 'AuditEvent', 'Basic', 'Binary', 'BiologicallyDerivedProduct', 'BodyStructure', 'Bundle', 'CapabilityStatement', 'CarePlan', 'CareTeam', 'CatalogEntry', 'ChargeItem', 'ChargeItemDefinition', 'Claim', 'ClaimResponse', 'ClinicalImpression', 'CodeSystem', 'Communication', 'CommunicationRequest', 'CompartmentDefinition', 'Composition', 'ConceptMap', 'Condition', 'Consent', 'Contract', 'Coverage', 'CoverageEligibilityRequest', 'CoverageEligibilityResponse', 'DetectedIssue', 'Device', 'DeviceDefinition', 'DeviceMetric', 'DeviceRequest', 'DeviceUseStatement', 'DiagnosticReport', 'DocumentManifest', 'DocumentReference', 'DomainResource', 'EffectEvidenceSynthesis', 'Encounter', 'Endpoint', 'EnrollmentRequest', 'EnrollmentResponse', 'EpisodeOfCare', 'EventDefinition', 'Evidence', 'EvidenceVariable', 'ExampleScenario', 'ExplanationOfBenefit', 'FamilyMemberHistory', 'Flag', 'Goal', 'GraphDefinition', 'Group', 'GuidanceResponse', 'HealthcareService', 'ImagingStudy', 'Immunization', 'ImmunizationEvaluation', 'ImmunizationRecommendation', 'ImplementationGuide', 'InsurancePlan', 'Invoice', 'Library', 'Linkage', 'List', 'Location', 'Measure', 'MeasureReport', 'Media', 'Medication', 'MedicationAdministration', 'MedicationDispense', 'MedicationKnowledge', 'MedicationRequest', 'MedicationStatement', 'MedicinalProduct', 'MedicinalProductAuthorization', 'MedicinalProductContraindication', 'MedicinalProductIndication', 'MedicinalProductIngredient', 'MedicinalProductInteraction', 'MedicinalProductManufactured', 'MedicinalProductPackaged', 'MedicinalProductPharmaceutical', 'MedicinalProductUndesirableEffect', 'MessageDefinition', 'MessageHeader', 'MolecularSequence', 'NamingSystem', 'NutritionOrder', 'Observation', 'ObservationDefinition', 'OperationDefinition', 'OperationOutcome', 'Organization', 'OrganizationAffiliation', 'Parameters', 'Patient', 'PaymentNotice', 'PaymentReconciliation', 'Person', 'PlanDefinition', 'Practitioner', 'PractitionerRole', 'Procedure', 'Provenance', 'Questionnaire', 'QuestionnaireResponse', 'RelatedPerson', 'RequestGroup', 'ResearchDefinition', 'ResearchElementDefinition', 'ResearchStudy', 'ResearchSubject', 'Resource', 'RiskAssessment', 'RiskEvidenceSynthesis', 'Schedule', 'SearchParameter', 'ServiceRequest', 'Slot', 'Specimen', 'SpecimenDefinition', 'StructureDefinition', 'StructureMap', 'Subscription', 'Substance', 'SubstanceNucleicAcid', 'SubstancePolymer', 'SubstanceProtein', 'SubstanceReferenceInformation', 'SubstanceSourceMaterial', 'SubstanceSpecification', 'SupplyDelivery', 'SupplyRequest', 'Task', 'TerminologyCapabilities', 'TestReport', 'TestScript', 'ValueSet', 'VerificationResult', 'VisionPrescription'], 'urn:ietf:rfc:3986'=>['http://hl7.org/fhir/StructureDefinition/lipidprofile'], 'urn:ietf:bcp:13'=>['application/hl7-cda+xml']}, 'type'=>'Coding', 'path'=>'Asset.relationship', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/consent-content-class'}},
-            'context' => {'type'=>'Contract::Term::Asset::Context', 'path'=>'Asset.context', 'min'=>0, 'max'=>Float::INFINITY},
-            'condition' => {'type'=>'string', 'path'=>'Asset.condition', 'min'=>0, 'max'=>1},
-            'periodType' => {'valid_codes'=>{'http://hl7.org/fhir/asset-availability'=>['lease']}, 'type'=>'CodeableConcept', 'path'=>'Asset.periodType', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/asset-availability'}},
-            'period' => {'type'=>'Period', 'path'=>'Asset.period', 'min'=>0, 'max'=>Float::INFINITY},
-            'usePeriod' => {'type'=>'Period', 'path'=>'Asset.usePeriod', 'min'=>0, 'max'=>Float::INFINITY},
-            'text' => {'type'=>'string', 'path'=>'Asset.text', 'min'=>0, 'max'=>1},
-            'linkId' => {'type'=>'string', 'path'=>'Asset.linkId', 'min'=>0, 'max'=>Float::INFINITY},
-            'answer' => {'type'=>'Contract::Term::Offer::Answer', 'path'=>'Asset.answer', 'min'=>0, 'max'=>Float::INFINITY},
-            'securityLabelNumber' => {'type'=>'unsignedInt', 'path'=>'Asset.securityLabelNumber', 'min'=>0, 'max'=>Float::INFINITY},
-            'valuedItem' => {'type'=>'Contract::Term::Asset::ValuedItem', 'path'=>'Asset.valuedItem', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Asset.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Asset.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Asset.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'scope' => {'valid_codes'=>{'http://hl7.org/fhir/contract-asset-scope'=>['thing']}, 'path'=>'Asset.scope', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-assetscope'}},
+            'type' => {'valid_codes'=>{'http://hl7.org/fhir/contract-asset-type'=>['participation']}, 'path'=>'Asset.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-assettype'}},
+            'typeReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Asset.typeReference', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+            'subtype' => {'valid_codes'=>{'http://hl7.org/fhir/contract-asset-subtype'=>['participation']}, 'path'=>'Asset.subtype', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-assetsubtype'}},
+            'relationship' => {'valid_codes'=>{'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem'=>['urn:ihe:pcc:xphr:2007', 'urn:ihe:pcc:aps:2007', 'urn:ihe:pcc:xds-ms:2007', 'urn:ihe:pcc:edr:2007', 'urn:ihe:pcc:edes:2007', 'urn:ihe:pcc:apr:handp:2008', 'urn:ihe:pcc:apr:lab:2008', 'urn:ihe:pcc:apr:edu:2008', 'urn:ihe:pcc:crc:2008', 'urn:ihe:pcc:cm:2008', 'urn:ihe:pcc:ic:2008', 'urn:ihe:pcc:tn:2007', 'urn:ihe:pcc:nn:2007', 'urn:ihe:pcc:ctn:2007', 'urn:ihe:pcc:edpn:2007', 'urn:ihe:pcc:hp:2008', 'urn:ihe:pcc:ldhp:2009', 'urn:ihe:pcc:lds:2009', 'urn:ihe:pcc:mds:2009', 'urn:ihe:pcc:nds:2010', 'urn:ihe:pcc:ppvs:2010', 'urn:ihe:pcc:trs:2011', 'urn:ihe:pcc:ets:2011', 'urn:ihe:pcc:its:2011', 'urn:ihe:pcc:ript:2017', 'urn:ihe:iti:bppc:2007', 'urn:ihe:iti:bppc-sd:2007', 'urn:ihe:iti:xds-sd:pdf:2008', 'urn:ihe:iti:xds-sd:text:2008', 'urn:ihe:iti:xdw:2011:workflowDoc', 'urn:ihe:iti:dsg:detached:2014', 'urn:ihe:iti:dsg:enveloping:2014', 'urn:ihe:iti:appc:2016:consent', 'urn:ihe:iti:xds:2017:mimeTypeSufficient', 'urn:ihe:lab:xd-lab:2008', 'urn:ihe:rad:TEXT', 'urn:ihe:rad:PDF', 'urn:ihe:rad:CDA:ImagingReportStructuredHeadings:2013', 'urn:ihe:card:imaging:2011', 'urn:ihe:card:CRC:2012', 'urn:ihe:card:EPRC-IE:2014', 'urn:ihe:dent:TEXT', 'urn:ihe:dent:PDF', 'urn:ihe:dent:CDA:ImagingReportStructuredHeadings:2013', 'urn:ihe:pat:apsr:all:2010', 'urn:ihe:pat:apsr:cancer:all:2010', 'urn:ihe:pat:apsr:cancer:breast:2010', 'urn:ihe:pat:apsr:cancer:colon:2010', 'urn:ihe:pat:apsr:cancer:prostate:2010', 'urn:ihe:pat:apsr:cancer:thyroid:2010', 'urn:ihe:pat:apsr:cancer:lung:2010', 'urn:ihe:pat:apsr:cancer:skin:2010', 'urn:ihe:pat:apsr:cancer:kidney:2010', 'urn:ihe:pat:apsr:cancer:cervix:2010', 'urn:ihe:pat:apsr:cancer:endometrium:2010', 'urn:ihe:pat:apsr:cancer:ovary:2010', 'urn:ihe:pat:apsr:cancer:esophagus:2010', 'urn:ihe:pat:apsr:cancer:stomach:2010', 'urn:ihe:pat:apsr:cancer:liver:2010', 'urn:ihe:pat:apsr:cancer:pancreas:2010', 'urn:ihe:pat:apsr:cancer:testis:2010', 'urn:ihe:pat:apsr:cancer:urinary_bladder:2010', 'urn:ihe:pat:apsr:cancer:lip_oral_cavity:2010', 'urn:ihe:pat:apsr:cancer:pharynx:2010', 'urn:ihe:pat:apsr:cancer:salivary_gland:2010', 'urn:ihe:pat:apsr:cancer:larynx:2010', 'urn:ihe:pharm:pre:2010', 'urn:ihe:pharm:padv:2010', 'urn:ihe:pharm:dis:2010', 'urn:ihe:pharm:pml:2013', 'urn:hl7-org:sdwg:ccda-structuredBody:1.1', 'urn:hl7-org:sdwg:ccda-nonXMLBody:1.1', 'urn:hl7-org:sdwg:ccda-structuredBody:2.1', 'urn:hl7-org:sdwg:ccda-nonXMLBody:2.1'], 'http://hl7.org/fhir/resource-types'=>['Account', 'ActivityDefinition', 'AdverseEvent', 'AllergyIntolerance', 'Appointment', 'AppointmentResponse', 'AuditEvent', 'Basic', 'Binary', 'BiologicallyDerivedProduct', 'BodyStructure', 'Bundle', 'CapabilityStatement', 'CarePlan', 'CareTeam', 'CatalogEntry', 'ChargeItem', 'ChargeItemDefinition', 'Claim', 'ClaimResponse', 'ClinicalImpression', 'CodeSystem', 'Communication', 'CommunicationRequest', 'CompartmentDefinition', 'Composition', 'ConceptMap', 'Condition', 'Consent', 'Contract', 'Coverage', 'CoverageEligibilityRequest', 'CoverageEligibilityResponse', 'DetectedIssue', 'Device', 'DeviceDefinition', 'DeviceMetric', 'DeviceRequest', 'DeviceUseStatement', 'DiagnosticReport', 'DocumentManifest', 'DocumentReference', 'DomainResource', 'EffectEvidenceSynthesis', 'Encounter', 'Endpoint', 'EnrollmentRequest', 'EnrollmentResponse', 'EpisodeOfCare', 'EventDefinition', 'Evidence', 'EvidenceVariable', 'ExampleScenario', 'ExplanationOfBenefit', 'FamilyMemberHistory', 'Flag', 'Goal', 'GraphDefinition', 'Group', 'GuidanceResponse', 'HealthcareService', 'ImagingStudy', 'Immunization', 'ImmunizationEvaluation', 'ImmunizationRecommendation', 'ImplementationGuide', 'InsurancePlan', 'Invoice', 'Library', 'Linkage', 'List', 'Location', 'Measure', 'MeasureReport', 'Media', 'Medication', 'MedicationAdministration', 'MedicationDispense', 'MedicationKnowledge', 'MedicationRequest', 'MedicationStatement', 'MedicinalProduct', 'MedicinalProductAuthorization', 'MedicinalProductContraindication', 'MedicinalProductIndication', 'MedicinalProductIngredient', 'MedicinalProductInteraction', 'MedicinalProductManufactured', 'MedicinalProductPackaged', 'MedicinalProductPharmaceutical', 'MedicinalProductUndesirableEffect', 'MessageDefinition', 'MessageHeader', 'MolecularSequence', 'NamingSystem', 'NutritionOrder', 'Observation', 'ObservationDefinition', 'OperationDefinition', 'OperationOutcome', 'Organization', 'OrganizationAffiliation', 'Parameters', 'Patient', 'PaymentNotice', 'PaymentReconciliation', 'Person', 'PlanDefinition', 'Practitioner', 'PractitionerRole', 'Procedure', 'Provenance', 'Questionnaire', 'QuestionnaireResponse', 'RelatedPerson', 'RequestGroup', 'ResearchDefinition', 'ResearchElementDefinition', 'ResearchStudy', 'ResearchSubject', 'Resource', 'RiskAssessment', 'RiskEvidenceSynthesis', 'Schedule', 'SearchParameter', 'ServiceRequest', 'Slot', 'Specimen', 'SpecimenDefinition', 'StructureDefinition', 'StructureMap', 'Subscription', 'Substance', 'SubstanceNucleicAcid', 'SubstancePolymer', 'SubstanceProtein', 'SubstanceReferenceInformation', 'SubstanceSourceMaterial', 'SubstanceSpecification', 'SupplyDelivery', 'SupplyRequest', 'Task', 'TerminologyCapabilities', 'TestReport', 'TestScript', 'ValueSet', 'VerificationResult', 'VisionPrescription'], 'urn:ietf:rfc:3986'=>['http://hl7.org/fhir/StructureDefinition/lipidprofile'], 'urn:ietf:bcp:13'=>['application/hl7-cda+xml']}, 'path'=>'Asset.relationship', 'type'=>'Coding', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/consent-content-class'}},
+            'context' => {'path'=>'Asset.context', 'type'=>'Contract::Term::Asset::Context', 'min'=>0, 'max'=>Float::INFINITY},
+            'condition' => {'path'=>'Asset.condition', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'periodType' => {'valid_codes'=>{'http://hl7.org/fhir/asset-availability'=>['lease']}, 'path'=>'Asset.periodType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/asset-availability'}},
+            'period' => {'path'=>'Asset.period', 'type'=>'Period', 'min'=>0, 'max'=>Float::INFINITY},
+            'usePeriod' => {'path'=>'Asset.usePeriod', 'type'=>'Period', 'min'=>0, 'max'=>Float::INFINITY},
+            'text' => {'path'=>'Asset.text', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'linkId' => {'path'=>'Asset.linkId', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+            'answer' => {'path'=>'Asset.answer', 'type'=>'Contract::Term::Offer::Answer', 'min'=>0, 'max'=>Float::INFINITY},
+            'securityLabelNumber' => {'path'=>'Asset.securityLabelNumber', 'type'=>'unsignedInt', 'min'=>0, 'max'=>Float::INFINITY},
+            'valuedItem' => {'path'=>'Asset.valuedItem', 'type'=>'Contract::Term::Asset::ValuedItem', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Context < Model
@@ -266,12 +266,12 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Context.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Context.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Context.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'reference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'Context.reference', 'min'=>0, 'max'=>1},
-              'code' => {'valid_codes'=>{'http://hl7.org/fhir/contract-asset-context'=>['custodian']}, 'type'=>'CodeableConcept', 'path'=>'Context.code', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-assetcontext'}},
-              'text' => {'type'=>'string', 'path'=>'Context.text', 'min'=>0, 'max'=>1}
+              'id' => {'path'=>'Context.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Context.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Context.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'reference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'Context.reference', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+              'code' => {'valid_codes'=>{'http://hl7.org/fhir/contract-asset-context'=>['custodian']}, 'path'=>'Context.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-assetcontext'}},
+              'text' => {'path'=>'Context.text', 'type'=>'string', 'min'=>0, 'max'=>1}
             }
 
             attr_accessor :id                # 0-1 string
@@ -291,24 +291,24 @@ module FHIR
               'entity' => ['CodeableConcept', 'Reference']
             }
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'ValuedItem.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'ValuedItem.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'ValuedItem.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'entityCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'ValuedItem.entity[x]', 'min'=>0, 'max'=>1},
-              'entityReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'ValuedItem.entity[x]', 'min'=>0, 'max'=>1},
-              'identifier' => {'type'=>'Identifier', 'path'=>'ValuedItem.identifier', 'min'=>0, 'max'=>1},
-              'effectiveTime' => {'type'=>'dateTime', 'path'=>'ValuedItem.effectiveTime', 'min'=>0, 'max'=>1},
-              'quantity' => {'type'=>'Quantity', 'path'=>'ValuedItem.quantity', 'min'=>0, 'max'=>1},
-              'unitPrice' => {'type'=>'Money', 'path'=>'ValuedItem.unitPrice', 'min'=>0, 'max'=>1},
-              'factor' => {'type'=>'decimal', 'path'=>'ValuedItem.factor', 'min'=>0, 'max'=>1},
-              'points' => {'type'=>'decimal', 'path'=>'ValuedItem.points', 'min'=>0, 'max'=>1},
-              'net' => {'type'=>'Money', 'path'=>'ValuedItem.net', 'min'=>0, 'max'=>1},
-              'payment' => {'type'=>'string', 'path'=>'ValuedItem.payment', 'min'=>0, 'max'=>1},
-              'paymentDate' => {'type'=>'dateTime', 'path'=>'ValuedItem.paymentDate', 'min'=>0, 'max'=>1},
-              'responsible' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'ValuedItem.responsible', 'min'=>0, 'max'=>1},
-              'recipient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'ValuedItem.recipient', 'min'=>0, 'max'=>1},
-              'linkId' => {'type'=>'string', 'path'=>'ValuedItem.linkId', 'min'=>0, 'max'=>Float::INFINITY},
-              'securityLabelNumber' => {'type'=>'unsignedInt', 'path'=>'ValuedItem.securityLabelNumber', 'min'=>0, 'max'=>Float::INFINITY}
+              'id' => {'path'=>'ValuedItem.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'ValuedItem.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'ValuedItem.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'entityCodeableConcept' => {'path'=>'ValuedItem.entity[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+              'entityReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'ValuedItem.entity[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+              'identifier' => {'path'=>'ValuedItem.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+              'effectiveTime' => {'path'=>'ValuedItem.effectiveTime', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+              'quantity' => {'path'=>'ValuedItem.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+              'unitPrice' => {'path'=>'ValuedItem.unitPrice', 'type'=>'Money', 'min'=>0, 'max'=>1},
+              'factor' => {'path'=>'ValuedItem.factor', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+              'points' => {'path'=>'ValuedItem.points', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+              'net' => {'path'=>'ValuedItem.net', 'type'=>'Money', 'min'=>0, 'max'=>1},
+              'payment' => {'path'=>'ValuedItem.payment', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'paymentDate' => {'path'=>'ValuedItem.paymentDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+              'responsible' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'ValuedItem.responsible', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+              'recipient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'ValuedItem.recipient', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+              'linkId' => {'path'=>'ValuedItem.linkId', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+              'securityLabelNumber' => {'path'=>'ValuedItem.securityLabelNumber', 'type'=>'unsignedInt', 'min'=>0, 'max'=>Float::INFINITY}
             }
 
             attr_accessor :id                    # 0-1 string
@@ -360,32 +360,32 @@ module FHIR
             'occurrence' => ['dateTime', 'Period', 'Timing']
           }
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Action.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Action.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Action.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'doNotPerform' => {'type'=>'boolean', 'path'=>'Action.doNotPerform', 'min'=>0, 'max'=>1},
-            'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contractaction'=>['action-a', 'action-b']}, 'type'=>'CodeableConcept', 'path'=>'Action.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-action'}},
-            'subject' => {'type'=>'Contract::Term::Action::Subject', 'path'=>'Action.subject', 'min'=>0, 'max'=>Float::INFINITY},
-            'intent' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActReason'=>['PurposeOfUse', 'HMARKT', 'HOPERAT', 'CAREMGT', 'DONAT', 'FRAUD', 'GOV', 'HACCRED', 'HCOMPL', 'HDECD', 'HDIRECT', 'HDM', 'HLEGAL', 'HOUTCOMS', 'HPRGRP', 'HQUALIMP', 'HSYSADMIN', 'LABELING', 'METAMGT', 'MEMADMIN', 'MILCDM', 'PATADMIN', 'PATSFTY', 'PERFMSR', 'RECORDMGT', 'SYSDEV', 'HTEST', 'TRAIN', 'HPAYMT', 'CLMATTCH', 'COVAUTH', 'COVERAGE', 'ELIGDTRM', 'ELIGVER', 'ENROLLM', 'MILDCRG', 'REMITADV', 'HRESCH', 'BIORCH', 'CLINTRCH', 'CLINTRCHNPC', 'CLINTRCHPC', 'PRECLINTRCH', 'DSRCH', 'POARCH', 'TRANSRCH', 'PATRQT', 'FAMRQT', 'PWATRNY', 'SUPNWK', 'PUBHLTH', 'DISASTER', 'THREAT', 'TREAT', 'CLINTRL', 'COC', 'ETREAT', 'BTG', 'ERTREAT', 'POPHLTH']}, 'type'=>'CodeableConcept', 'path'=>'Action.intent', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-PurposeOfUse'}},
-            'linkId' => {'type'=>'string', 'path'=>'Action.linkId', 'min'=>0, 'max'=>Float::INFINITY},
-            'status' => {'valid_codes'=>{'http://hl7.org/fhir/contract-action-status'=>['complete']}, 'type'=>'CodeableConcept', 'path'=>'Action.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-actionstatus'}},
-            'context' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter', 'http://hl7.org/fhir/StructureDefinition/EpisodeOfCare'], 'type'=>'Reference', 'path'=>'Action.context', 'min'=>0, 'max'=>1},
-            'contextLinkId' => {'type'=>'string', 'path'=>'Action.contextLinkId', 'min'=>0, 'max'=>Float::INFINITY},
-            'occurrenceDateTime' => {'type'=>'dateTime', 'path'=>'Action.occurrence[x]', 'min'=>0, 'max'=>1},
-            'occurrencePeriod' => {'type'=>'Period', 'path'=>'Action.occurrence[x]', 'min'=>0, 'max'=>1},
-            'occurrenceTiming' => {'type'=>'Timing', 'path'=>'Action.occurrence[x]', 'min'=>0, 'max'=>1},
-            'requester' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Action.requester', 'min'=>0, 'max'=>Float::INFINITY},
-            'requesterLinkId' => {'type'=>'string', 'path'=>'Action.requesterLinkId', 'min'=>0, 'max'=>Float::INFINITY},
-            'performerType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/provenance-participant-type'=>['enterer', 'performer', 'author', 'verifier', 'legal', 'attester', 'informant', 'custodian', 'assembler', 'composer']}, 'type'=>'CodeableConcept', 'path'=>'Action.performerType', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/provenance-agent-type'}},
-            'performerRole' => {'valid_codes'=>{'http://hl7.org/fhir/provenance-participant-role'=>['enterer', 'performer', 'author', 'verifier', 'legal', 'attester', 'informant', 'custodian', 'assembler', 'composer']}, 'type'=>'CodeableConcept', 'path'=>'Action.performerRole', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/provenance-agent-role'}},
-            'performer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Substance', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'Action.performer', 'min'=>0, 'max'=>1},
-            'performerLinkId' => {'type'=>'string', 'path'=>'Action.performerLinkId', 'min'=>0, 'max'=>Float::INFINITY},
-            'reasonCode' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActReason'=>['PurposeOfUse', 'HMARKT', 'HOPERAT', 'CAREMGT', 'DONAT', 'FRAUD', 'GOV', 'HACCRED', 'HCOMPL', 'HDECD', 'HDIRECT', 'HDM', 'HLEGAL', 'HOUTCOMS', 'HPRGRP', 'HQUALIMP', 'HSYSADMIN', 'LABELING', 'METAMGT', 'MEMADMIN', 'MILCDM', 'PATADMIN', 'PATSFTY', 'PERFMSR', 'RECORDMGT', 'SYSDEV', 'HTEST', 'TRAIN', 'HPAYMT', 'CLMATTCH', 'COVAUTH', 'COVERAGE', 'ELIGDTRM', 'ELIGVER', 'ENROLLM', 'MILDCRG', 'REMITADV', 'HRESCH', 'BIORCH', 'CLINTRCH', 'CLINTRCHNPC', 'CLINTRCHPC', 'PRECLINTRCH', 'DSRCH', 'POARCH', 'TRANSRCH', 'PATRQT', 'FAMRQT', 'PWATRNY', 'SUPNWK', 'PUBHLTH', 'DISASTER', 'THREAT', 'TREAT', 'CLINTRL', 'COC', 'ETREAT', 'BTG', 'ERTREAT', 'POPHLTH']}, 'type'=>'CodeableConcept', 'path'=>'Action.reasonCode', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-PurposeOfUse'}},
-            'reasonReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Condition', 'http://hl7.org/fhir/StructureDefinition/Observation', 'http://hl7.org/fhir/StructureDefinition/DiagnosticReport', 'http://hl7.org/fhir/StructureDefinition/DocumentReference', 'http://hl7.org/fhir/StructureDefinition/Questionnaire', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse'], 'type'=>'Reference', 'path'=>'Action.reasonReference', 'min'=>0, 'max'=>Float::INFINITY},
-            'reason' => {'type'=>'string', 'path'=>'Action.reason', 'min'=>0, 'max'=>Float::INFINITY},
-            'reasonLinkId' => {'type'=>'string', 'path'=>'Action.reasonLinkId', 'min'=>0, 'max'=>Float::INFINITY},
-            'note' => {'type'=>'Annotation', 'path'=>'Action.note', 'min'=>0, 'max'=>Float::INFINITY},
-            'securityLabelNumber' => {'type'=>'unsignedInt', 'path'=>'Action.securityLabelNumber', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Action.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Action.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Action.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'doNotPerform' => {'path'=>'Action.doNotPerform', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+            'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contractaction'=>['action-a', 'action-b']}, 'path'=>'Action.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-action'}},
+            'subject' => {'path'=>'Action.subject', 'type'=>'Contract::Term::Action::Subject', 'min'=>0, 'max'=>Float::INFINITY},
+            'intent' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActReason'=>['PurposeOfUse', 'HMARKT', 'HOPERAT', 'CAREMGT', 'DONAT', 'FRAUD', 'GOV', 'HACCRED', 'HCOMPL', 'HDECD', 'HDIRECT', 'HDM', 'HLEGAL', 'HOUTCOMS', 'HPRGRP', 'HQUALIMP', 'HSYSADMIN', 'LABELING', 'METAMGT', 'MEMADMIN', 'MILCDM', 'PATADMIN', 'PATSFTY', 'PERFMSR', 'RECORDMGT', 'SYSDEV', 'HTEST', 'TRAIN', 'HPAYMT', 'CLMATTCH', 'COVAUTH', 'COVERAGE', 'ELIGDTRM', 'ELIGVER', 'ENROLLM', 'MILDCRG', 'REMITADV', 'HRESCH', 'BIORCH', 'CLINTRCH', 'CLINTRCHNPC', 'CLINTRCHPC', 'PRECLINTRCH', 'DSRCH', 'POARCH', 'TRANSRCH', 'PATRQT', 'FAMRQT', 'PWATRNY', 'SUPNWK', 'PUBHLTH', 'DISASTER', 'THREAT', 'TREAT', 'CLINTRL', 'COC', 'ETREAT', 'BTG', 'ERTREAT', 'POPHLTH']}, 'path'=>'Action.intent', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-PurposeOfUse'}},
+            'linkId' => {'path'=>'Action.linkId', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+            'status' => {'valid_codes'=>{'http://hl7.org/fhir/contract-action-status'=>['complete']}, 'path'=>'Action.status', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-actionstatus'}},
+            'context' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter', 'http://hl7.org/fhir/StructureDefinition/EpisodeOfCare'], 'path'=>'Action.context', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+            'contextLinkId' => {'path'=>'Action.contextLinkId', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+            'occurrenceDateTime' => {'path'=>'Action.occurrence[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+            'occurrencePeriod' => {'path'=>'Action.occurrence[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+            'occurrenceTiming' => {'path'=>'Action.occurrence[x]', 'type'=>'Timing', 'min'=>0, 'max'=>1},
+            'requester' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Action.requester', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+            'requesterLinkId' => {'path'=>'Action.requesterLinkId', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+            'performerType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/provenance-participant-type'=>['enterer', 'performer', 'author', 'verifier', 'legal', 'attester', 'informant', 'custodian', 'assembler', 'composer']}, 'path'=>'Action.performerType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/provenance-agent-type'}},
+            'performerRole' => {'valid_codes'=>{'http://hl7.org/fhir/provenance-participant-role'=>['enterer', 'performer', 'author', 'verifier', 'legal', 'attester', 'informant', 'custodian', 'assembler', 'composer']}, 'path'=>'Action.performerRole', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/provenance-agent-role'}},
+            'performer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/CareTeam', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Substance', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'Action.performer', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+            'performerLinkId' => {'path'=>'Action.performerLinkId', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+            'reasonCode' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActReason'=>['PurposeOfUse', 'HMARKT', 'HOPERAT', 'CAREMGT', 'DONAT', 'FRAUD', 'GOV', 'HACCRED', 'HCOMPL', 'HDECD', 'HDIRECT', 'HDM', 'HLEGAL', 'HOUTCOMS', 'HPRGRP', 'HQUALIMP', 'HSYSADMIN', 'LABELING', 'METAMGT', 'MEMADMIN', 'MILCDM', 'PATADMIN', 'PATSFTY', 'PERFMSR', 'RECORDMGT', 'SYSDEV', 'HTEST', 'TRAIN', 'HPAYMT', 'CLMATTCH', 'COVAUTH', 'COVERAGE', 'ELIGDTRM', 'ELIGVER', 'ENROLLM', 'MILDCRG', 'REMITADV', 'HRESCH', 'BIORCH', 'CLINTRCH', 'CLINTRCHNPC', 'CLINTRCHPC', 'PRECLINTRCH', 'DSRCH', 'POARCH', 'TRANSRCH', 'PATRQT', 'FAMRQT', 'PWATRNY', 'SUPNWK', 'PUBHLTH', 'DISASTER', 'THREAT', 'TREAT', 'CLINTRL', 'COC', 'ETREAT', 'BTG', 'ERTREAT', 'POPHLTH']}, 'path'=>'Action.reasonCode', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-PurposeOfUse'}},
+            'reasonReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Condition', 'http://hl7.org/fhir/StructureDefinition/Observation', 'http://hl7.org/fhir/StructureDefinition/DiagnosticReport', 'http://hl7.org/fhir/StructureDefinition/DocumentReference', 'http://hl7.org/fhir/StructureDefinition/Questionnaire', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse'], 'path'=>'Action.reasonReference', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+            'reason' => {'path'=>'Action.reason', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+            'reasonLinkId' => {'path'=>'Action.reasonLinkId', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+            'note' => {'path'=>'Action.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+            'securityLabelNumber' => {'path'=>'Action.securityLabelNumber', 'type'=>'unsignedInt', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Subject < Model
@@ -394,11 +394,11 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Subject.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Subject.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Subject.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'reference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Subject.reference', 'min'=>1, 'max'=>Float::INFINITY},
-              'role' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contractactorrole'=>['practitioner', 'patient']}, 'type'=>'CodeableConcept', 'path'=>'Subject.role', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-actorrole'}}
+              'id' => {'path'=>'Subject.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Subject.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Subject.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'reference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Subject.reference', 'type'=>'Reference', 'min'=>1, 'max'=>Float::INFINITY},
+              'role' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contractactorrole'=>['practitioner', 'patient']}, 'path'=>'Subject.role', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-actorrole'}}
             }
 
             attr_accessor :id                # 0-1 string
@@ -460,12 +460,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Signer.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Signer.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Signer.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contractsignertypecodes'=>['AMENDER', 'AUTHN', 'AUT', 'AFFL', 'AGNT', 'ASSIGNED', 'CIT', 'CLAIMANT', 'COAUTH', 'CONSENTER', 'CONSWIT', 'CONT', 'COPART', 'COVPTY', 'DELEGATEE', 'delegator', 'DEPEND', 'DPOWATT', 'EMGCON', 'EVTWIT', 'EXCEST', 'GRANTEE', 'GRANTOR', 'GUAR', 'GUARD', 'GUADLTM', 'INF', 'INTPRT', 'INSBJ', 'HPOWATT', 'HPROV', 'LEGAUTHN', 'NMDINS', 'NOK', 'NOTARY', 'PAT', 'POWATT', 'PRIMAUTH', 'PRIRECIP', 'RECIP', 'RESPRSN', 'REVIEWER', 'TRANS', 'SOURCE', 'SPOWATT', 'VALID', 'VERF', 'WIT']}, 'type'=>'Coding', 'path'=>'Signer.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-signer-type'}},
-          'party' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'Signer.party', 'min'=>1, 'max'=>1},
-          'signature' => {'type'=>'Signature', 'path'=>'Signer.signature', 'min'=>1, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Signer.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Signer.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Signer.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/contractsignertypecodes'=>['AMENDER', 'AUTHN', 'AUT', 'AFFL', 'AGNT', 'ASSIGNED', 'CIT', 'CLAIMANT', 'COAUTH', 'CONSENTER', 'CONSWIT', 'CONT', 'COPART', 'COVPTY', 'DELEGATEE', 'delegator', 'DEPEND', 'DPOWATT', 'EMGCON', 'EVTWIT', 'EXCEST', 'GRANTEE', 'GRANTOR', 'GUAR', 'GUARD', 'GUADLTM', 'INF', 'INTPRT', 'INSBJ', 'HPOWATT', 'HPROV', 'LEGAUTHN', 'NMDINS', 'NOK', 'NOTARY', 'PAT', 'POWATT', 'PRIMAUTH', 'PRIRECIP', 'RECIP', 'RESPRSN', 'REVIEWER', 'TRANS', 'SOURCE', 'SPOWATT', 'VALID', 'VERF', 'WIT']}, 'path'=>'Signer.type', 'type'=>'Coding', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/contract-signer-type'}},
+          'party' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'Signer.party', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'signature' => {'path'=>'Signer.signature', 'type'=>'Signature', 'min'=>1, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -485,11 +485,11 @@ module FHIR
           'content' => ['Attachment', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Friendly.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Friendly.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Friendly.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'contentAttachment' => {'type'=>'Attachment', 'path'=>'Friendly.content[x]', 'min'=>1, 'max'=>1},
-          'contentReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Composition', 'http://hl7.org/fhir/StructureDefinition/DocumentReference', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse'], 'type'=>'Reference', 'path'=>'Friendly.content[x]', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Friendly.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Friendly.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Friendly.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'contentAttachment' => {'path'=>'Friendly.content[x]', 'type'=>'Attachment', 'min'=>1, 'max'=>1},
+          'contentReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Composition', 'http://hl7.org/fhir/StructureDefinition/DocumentReference', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse'], 'path'=>'Friendly.content[x]', 'type'=>'Reference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -508,11 +508,11 @@ module FHIR
           'content' => ['Attachment', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Legal.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Legal.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Legal.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'contentAttachment' => {'type'=>'Attachment', 'path'=>'Legal.content[x]', 'min'=>1, 'max'=>1},
-          'contentReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Composition', 'http://hl7.org/fhir/StructureDefinition/DocumentReference', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse'], 'type'=>'Reference', 'path'=>'Legal.content[x]', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Legal.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Legal.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Legal.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'contentAttachment' => {'path'=>'Legal.content[x]', 'type'=>'Attachment', 'min'=>1, 'max'=>1},
+          'contentReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Composition', 'http://hl7.org/fhir/StructureDefinition/DocumentReference', 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse'], 'path'=>'Legal.content[x]', 'type'=>'Reference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -531,11 +531,11 @@ module FHIR
           'content' => ['Attachment', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Rule.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Rule.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Rule.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'contentAttachment' => {'type'=>'Attachment', 'path'=>'Rule.content[x]', 'min'=>1, 'max'=>1},
-          'contentReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'Rule.content[x]', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Rule.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Rule.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Rule.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'contentAttachment' => {'path'=>'Rule.content[x]', 'type'=>'Attachment', 'min'=>1, 'max'=>1},
+          'contentReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'Rule.content[x]', 'type'=>'Reference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

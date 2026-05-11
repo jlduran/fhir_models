@@ -7,28 +7,28 @@ module FHIR
 
       SEARCH_PARAMS = ['attestation-method', 'attestation-onbehalfof', 'attestation-who', 'primarysource-date', 'primarysource-type', 'primarysource-who', 'status', 'status-date', 'target', 'validator-organization']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'VerificationResult.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'VerificationResult.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'VerificationResult.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'VerificationResult.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'VerificationResult.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'VerificationResult.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'VerificationResult.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'VerificationResult.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'target' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'VerificationResult.target', 'min'=>0, 'max'=>Float::INFINITY},
-        'targetLocation' => {'type'=>'string', 'path'=>'VerificationResult.targetLocation', 'min'=>0, 'max'=>Float::INFINITY},
-        'need' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/need'=>['none', 'initial', 'periodic']}, 'type'=>'CodeableConcept', 'path'=>'VerificationResult.need', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-need'}},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/verificationresult-status'=>['attested', 'validated', 'in-process', 'req-revalid', 'val-fail', 'reval-fail', 'entered-in-error']}, 'type'=>'code', 'path'=>'VerificationResult.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-status'}},
-        'statusDate' => {'type'=>'dateTime', 'path'=>'VerificationResult.statusDate', 'min'=>0, 'max'=>1},
-        'validationType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/validation-type'=>['nothing', 'primary', 'multiple']}, 'type'=>'CodeableConcept', 'path'=>'VerificationResult.validationType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-validation-type'}},
-        'validationProcess' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/validation-process'=>['edit-check', 'valueset', 'primary', 'multi', 'standalone', 'in-context']}, 'type'=>'CodeableConcept', 'path'=>'VerificationResult.validationProcess', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-validation-process'}},
-        'frequency' => {'type'=>'Timing', 'path'=>'VerificationResult.frequency', 'min'=>0, 'max'=>1},
-        'lastPerformed' => {'type'=>'dateTime', 'path'=>'VerificationResult.lastPerformed', 'min'=>0, 'max'=>1},
-        'nextScheduled' => {'type'=>'date', 'path'=>'VerificationResult.nextScheduled', 'min'=>0, 'max'=>1},
-        'failureAction' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/failure-action'=>['fatal', 'warn', 'rec-only', 'none']}, 'type'=>'CodeableConcept', 'path'=>'VerificationResult.failureAction', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-failure-action'}},
-        'primarySource' => {'type'=>'VerificationResult::PrimarySource', 'path'=>'VerificationResult.primarySource', 'min'=>0, 'max'=>Float::INFINITY},
-        'attestation' => {'type'=>'VerificationResult::Attestation', 'path'=>'VerificationResult.attestation', 'min'=>0, 'max'=>1},
-        'validator' => {'type'=>'VerificationResult::Validator', 'path'=>'VerificationResult.validator', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'VerificationResult.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'VerificationResult.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'VerificationResult.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'VerificationResult.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'VerificationResult.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'VerificationResult.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'VerificationResult.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'VerificationResult.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'target' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'VerificationResult.target', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'targetLocation' => {'path'=>'VerificationResult.targetLocation', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'need' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/need'=>['none', 'initial', 'periodic']}, 'path'=>'VerificationResult.need', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-need'}},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/verificationresult-status'=>['attested', 'validated', 'in-process', 'req-revalid', 'val-fail', 'reval-fail', 'entered-in-error']}, 'path'=>'VerificationResult.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-status'}},
+        'statusDate' => {'path'=>'VerificationResult.statusDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'validationType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/validation-type'=>['nothing', 'primary', 'multiple']}, 'path'=>'VerificationResult.validationType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-validation-type'}},
+        'validationProcess' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/validation-process'=>['edit-check', 'valueset', 'primary', 'multi', 'standalone', 'in-context']}, 'path'=>'VerificationResult.validationProcess', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-validation-process'}},
+        'frequency' => {'path'=>'VerificationResult.frequency', 'type'=>'Timing', 'min'=>0, 'max'=>1},
+        'lastPerformed' => {'path'=>'VerificationResult.lastPerformed', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'nextScheduled' => {'path'=>'VerificationResult.nextScheduled', 'type'=>'date', 'min'=>0, 'max'=>1},
+        'failureAction' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/failure-action'=>['fatal', 'warn', 'rec-only', 'none']}, 'path'=>'VerificationResult.failureAction', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-failure-action'}},
+        'primarySource' => {'path'=>'VerificationResult.primarySource', 'type'=>'VerificationResult::PrimarySource', 'min'=>0, 'max'=>Float::INFINITY},
+        'attestation' => {'path'=>'VerificationResult.attestation', 'type'=>'VerificationResult::Attestation', 'min'=>0, 'max'=>1},
+        'validator' => {'path'=>'VerificationResult.validator', 'type'=>'VerificationResult::Validator', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class PrimarySource < Model
@@ -37,16 +37,16 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'PrimarySource.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'PrimarySource.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'PrimarySource.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'who' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'PrimarySource.who', 'min'=>0, 'max'=>1},
-          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/primary-source-type'=>['lic-board', 'prim', 'cont-ed', 'post-serv', 'rel-own', 'reg-auth', 'legal', 'issuer', 'auth-source']}, 'type'=>'CodeableConcept', 'path'=>'PrimarySource.type', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type'}},
-          'communicationMethod' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/verificationresult-communication-method'=>['manual', 'portal', 'pull', 'push']}, 'type'=>'CodeableConcept', 'path'=>'PrimarySource.communicationMethod', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-communication-method'}},
-          'validationStatus' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/validation-status'=>['successful', 'failed', 'unknown']}, 'type'=>'CodeableConcept', 'path'=>'PrimarySource.validationStatus', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-validation-status'}},
-          'validationDate' => {'type'=>'dateTime', 'path'=>'PrimarySource.validationDate', 'min'=>0, 'max'=>1},
-          'canPushUpdates' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/can-push-updates'=>['yes', 'no', 'undetermined']}, 'type'=>'CodeableConcept', 'path'=>'PrimarySource.canPushUpdates', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-can-push-updates'}},
-          'pushTypeAvailable' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/push-type-available'=>['specific', 'any', 'source']}, 'type'=>'CodeableConcept', 'path'=>'PrimarySource.pushTypeAvailable', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-push-type-available'}}
+          'id' => {'path'=>'PrimarySource.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'PrimarySource.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'PrimarySource.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'who' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'PrimarySource.who', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/primary-source-type'=>['lic-board', 'prim', 'cont-ed', 'post-serv', 'rel-own', 'reg-auth', 'legal', 'issuer', 'auth-source']}, 'path'=>'PrimarySource.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type'}},
+          'communicationMethod' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/verificationresult-communication-method'=>['manual', 'portal', 'pull', 'push']}, 'path'=>'PrimarySource.communicationMethod', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-communication-method'}},
+          'validationStatus' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/validation-status'=>['successful', 'failed', 'unknown']}, 'path'=>'PrimarySource.validationStatus', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-validation-status'}},
+          'validationDate' => {'path'=>'PrimarySource.validationDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'canPushUpdates' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/can-push-updates'=>['yes', 'no', 'undetermined']}, 'path'=>'PrimarySource.canPushUpdates', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-can-push-updates'}},
+          'pushTypeAvailable' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/push-type-available'=>['specific', 'any', 'source']}, 'path'=>'PrimarySource.pushTypeAvailable', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-push-type-available'}}
         }
 
         attr_accessor :id                  # 0-1 string
@@ -67,17 +67,17 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Attestation.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Attestation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Attestation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'who' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Attestation.who', 'min'=>0, 'max'=>1},
-          'onBehalfOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'Attestation.onBehalfOf', 'min'=>0, 'max'=>1},
-          'communicationMethod' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/verificationresult-communication-method'=>['manual', 'portal', 'pull', 'push']}, 'type'=>'CodeableConcept', 'path'=>'Attestation.communicationMethod', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-communication-method'}},
-          'date' => {'type'=>'date', 'path'=>'Attestation.date', 'min'=>0, 'max'=>1},
-          'sourceIdentityCertificate' => {'type'=>'string', 'path'=>'Attestation.sourceIdentityCertificate', 'min'=>0, 'max'=>1},
-          'proxyIdentityCertificate' => {'type'=>'string', 'path'=>'Attestation.proxyIdentityCertificate', 'min'=>0, 'max'=>1},
-          'proxySignature' => {'type'=>'Signature', 'path'=>'Attestation.proxySignature', 'min'=>0, 'max'=>1},
-          'sourceSignature' => {'type'=>'Signature', 'path'=>'Attestation.sourceSignature', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Attestation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Attestation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Attestation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'who' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Attestation.who', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'onBehalfOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'Attestation.onBehalfOf', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'communicationMethod' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/verificationresult-communication-method'=>['manual', 'portal', 'pull', 'push']}, 'path'=>'Attestation.communicationMethod', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/verificationresult-communication-method'}},
+          'date' => {'path'=>'Attestation.date', 'type'=>'date', 'min'=>0, 'max'=>1},
+          'sourceIdentityCertificate' => {'path'=>'Attestation.sourceIdentityCertificate', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'proxyIdentityCertificate' => {'path'=>'Attestation.proxyIdentityCertificate', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'proxySignature' => {'path'=>'Attestation.proxySignature', 'type'=>'Signature', 'min'=>0, 'max'=>1},
+          'sourceSignature' => {'path'=>'Attestation.sourceSignature', 'type'=>'Signature', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                        # 0-1 string
@@ -99,12 +99,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Validator.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Validator.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Validator.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'organization' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Validator.organization', 'min'=>1, 'max'=>1},
-          'identityCertificate' => {'type'=>'string', 'path'=>'Validator.identityCertificate', 'min'=>0, 'max'=>1},
-          'attestationSignature' => {'type'=>'Signature', 'path'=>'Validator.attestationSignature', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Validator.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Validator.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Validator.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'organization' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Validator.organization', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'identityCertificate' => {'path'=>'Validator.identityCertificate', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'attestationSignature' => {'path'=>'Validator.attestationSignature', 'type'=>'Signature', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                   # 0-1 string

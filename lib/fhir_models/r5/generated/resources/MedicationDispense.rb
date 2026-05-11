@@ -7,41 +7,41 @@ module FHIR
 
       SEARCH_PARAMS = ['code', 'destination', 'encounter', 'identifier', 'location', 'medication', 'patient', 'performer', 'prescription', 'receiver', 'recorded', 'responsibleparty', 'status', 'subject', 'type', 'whenhandedover', 'whenprepared']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MedicationDispense.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MedicationDispense.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MedicationDispense.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'MedicationDispense.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MedicationDispense.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MedicationDispense.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MedicationDispense.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MedicationDispense.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'MedicationDispense.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan'], 'type'=>'Reference', 'path'=>'MedicationDispense.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Procedure', 'http://hl7.org/fhir/StructureDefinition/MedicationAdministration'], 'type'=>'Reference', 'path'=>'MedicationDispense.partOf', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/medicationdispense-status'=>['preparation', 'in-progress', 'cancelled', 'on-hold', 'completed', 'entered-in-error', 'stopped', 'declined', 'unknown']}, 'type'=>'code', 'path'=>'MedicationDispense.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/medicationdispense-status'}},
-        'notPerformedReason' => {'type'=>'CodeableReference', 'path'=>'MedicationDispense.notPerformedReason', 'min'=>0, 'max'=>1},
-        'statusChanged' => {'type'=>'dateTime', 'path'=>'MedicationDispense.statusChanged', 'min'=>0, 'max'=>1},
-        'category' => {'valid_codes'=>{'http://hl7.org/fhir/medicationdispense-admin-location'=>['inpatient', 'outpatient', 'community']}, 'type'=>'CodeableConcept', 'path'=>'MedicationDispense.category', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/medicationdispense-admin-location'}},
-        'medication' => {'type'=>'CodeableReference', 'path'=>'MedicationDispense.medication', 'min'=>1, 'max'=>1},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group'], 'type'=>'Reference', 'path'=>'MedicationDispense.subject', 'min'=>1, 'max'=>1},
-        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'type'=>'Reference', 'path'=>'MedicationDispense.encounter', 'min'=>0, 'max'=>1},
-        'supportingInformation' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'MedicationDispense.supportingInformation', 'min'=>0, 'max'=>Float::INFINITY},
-        'performer' => {'type'=>'MedicationDispense::Performer', 'path'=>'MedicationDispense.performer', 'min'=>0, 'max'=>Float::INFINITY},
-        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'MedicationDispense.location', 'min'=>0, 'max'=>1},
-        'authorizingPrescription' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicationRequest'], 'type'=>'Reference', 'path'=>'MedicationDispense.authorizingPrescription', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['DF', 'EM', 'SO', 'FF', 'FFS', 'FFPS', 'FFCS', 'TFS', 'FFC', 'FFP', 'FFSS', 'TF', 'FS', 'MS', 'RF', 'UD', 'RFC', 'RFCS', 'RFF', 'RFFS', 'RFP', 'RFPS', 'RFS', 'TB', 'TBS', 'UDE']}, 'type'=>'CodeableConcept', 'path'=>'MedicationDispense.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType'}},
-        'quantity' => {'type'=>'Quantity', 'path'=>'MedicationDispense.quantity', 'min'=>0, 'max'=>1},
-        'daysSupply' => {'type'=>'Quantity', 'path'=>'MedicationDispense.daysSupply', 'min'=>0, 'max'=>1},
-        'recorded' => {'type'=>'dateTime', 'path'=>'MedicationDispense.recorded', 'min'=>0, 'max'=>1},
-        'whenPrepared' => {'type'=>'dateTime', 'path'=>'MedicationDispense.whenPrepared', 'min'=>0, 'max'=>1},
-        'whenHandedOver' => {'type'=>'dateTime', 'path'=>'MedicationDispense.whenHandedOver', 'min'=>0, 'max'=>1},
-        'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'MedicationDispense.destination', 'min'=>0, 'max'=>1},
-        'receiver' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'MedicationDispense.receiver', 'min'=>0, 'max'=>Float::INFINITY},
-        'note' => {'type'=>'Annotation', 'path'=>'MedicationDispense.note', 'min'=>0, 'max'=>Float::INFINITY},
-        'renderedDosageInstruction' => {'type'=>'markdown', 'path'=>'MedicationDispense.renderedDosageInstruction', 'min'=>0, 'max'=>1},
-        'dosageInstruction' => {'type'=>'Dosage', 'path'=>'MedicationDispense.dosageInstruction', 'min'=>0, 'max'=>Float::INFINITY},
-        'substitution' => {'type'=>'MedicationDispense::Substitution', 'path'=>'MedicationDispense.substitution', 'min'=>0, 'max'=>1},
-        'eventHistory' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Provenance'], 'type'=>'Reference', 'path'=>'MedicationDispense.eventHistory', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'MedicationDispense.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MedicationDispense.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MedicationDispense.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'MedicationDispense.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'MedicationDispense.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MedicationDispense.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MedicationDispense.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MedicationDispense.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'MedicationDispense.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/CarePlan'], 'path'=>'MedicationDispense.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Procedure', 'http://hl7.org/fhir/StructureDefinition/MedicationAdministration'], 'path'=>'MedicationDispense.partOf', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/medicationdispense-status'=>['preparation', 'in-progress', 'cancelled', 'on-hold', 'completed', 'entered-in-error', 'stopped', 'declined', 'unknown']}, 'path'=>'MedicationDispense.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/medicationdispense-status'}},
+        'notPerformedReason' => {'path'=>'MedicationDispense.notPerformedReason', 'type'=>'CodeableReference', 'min'=>0, 'max'=>1},
+        'statusChanged' => {'path'=>'MedicationDispense.statusChanged', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'category' => {'valid_codes'=>{'http://hl7.org/fhir/medicationdispense-admin-location'=>['inpatient', 'outpatient', 'community']}, 'path'=>'MedicationDispense.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/medicationdispense-admin-location'}},
+        'medication' => {'path'=>'MedicationDispense.medication', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group'], 'path'=>'MedicationDispense.subject', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'path'=>'MedicationDispense.encounter', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'supportingInformation' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'MedicationDispense.supportingInformation', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'performer' => {'path'=>'MedicationDispense.performer', 'type'=>'MedicationDispense::Performer', 'min'=>0, 'max'=>Float::INFINITY},
+        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'MedicationDispense.location', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'authorizingPrescription' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicationRequest'], 'path'=>'MedicationDispense.authorizingPrescription', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['DF', 'EM', 'SO', 'FF', 'FFS', 'FFPS', 'FFCS', 'TFS', 'FFC', 'FFP', 'FFSS', 'TF', 'FS', 'MS', 'RF', 'UD', 'RFC', 'RFCS', 'RFF', 'RFFS', 'RFP', 'RFPS', 'RFS', 'TB', 'TBS', 'UDE']}, 'path'=>'MedicationDispense.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType'}},
+        'quantity' => {'path'=>'MedicationDispense.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'daysSupply' => {'path'=>'MedicationDispense.daysSupply', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'recorded' => {'path'=>'MedicationDispense.recorded', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'whenPrepared' => {'path'=>'MedicationDispense.whenPrepared', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'whenHandedOver' => {'path'=>'MedicationDispense.whenHandedOver', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'MedicationDispense.destination', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'receiver' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'MedicationDispense.receiver', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'note' => {'path'=>'MedicationDispense.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+        'renderedDosageInstruction' => {'path'=>'MedicationDispense.renderedDosageInstruction', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'dosageInstruction' => {'path'=>'MedicationDispense.dosageInstruction', 'type'=>'Dosage', 'min'=>0, 'max'=>Float::INFINITY},
+        'substitution' => {'path'=>'MedicationDispense.substitution', 'type'=>'MedicationDispense::Substitution', 'min'=>0, 'max'=>1},
+        'eventHistory' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Provenance'], 'path'=>'MedicationDispense.eventHistory', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Performer < Model
@@ -50,11 +50,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Performer.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Performer.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Performer.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'function' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function'=>['dataenterer', 'packager', 'checker', 'finalchecker', 'counsellor']}, 'type'=>'CodeableConcept', 'path'=>'Performer.function', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/medicationdispense-performer-function'}},
-          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/CareTeam'], 'type'=>'Reference', 'path'=>'Performer.actor', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Performer.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Performer.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Performer.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'function' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function'=>['dataenterer', 'packager', 'checker', 'finalchecker', 'counsellor']}, 'path'=>'Performer.function', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/medicationdispense-performer-function'}},
+          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/CareTeam'], 'path'=>'Performer.actor', 'type'=>'Reference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -70,13 +70,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Substitution.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Substitution.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Substitution.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'wasSubstituted' => {'type'=>'boolean', 'path'=>'Substitution.wasSubstituted', 'min'=>1, 'max'=>1},
-          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution'=>['E', 'EC', 'BC', 'G', 'TE', 'TB', 'TG', 'F', 'N']}, 'type'=>'CodeableConcept', 'path'=>'Substitution.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode'}},
-          'reason' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActReason'=>['CT', 'FP', 'OS', 'RR']}, 'type'=>'CodeableConcept', 'path'=>'Substitution.reason', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason'}},
-          'responsibleParty' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Substitution.responsibleParty', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Substitution.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Substitution.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Substitution.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'wasSubstituted' => {'path'=>'Substitution.wasSubstituted', 'type'=>'boolean', 'min'=>1, 'max'=>1},
+          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution'=>['E', 'EC', 'BC', 'G', 'TE', 'TB', 'TG', 'F', 'N']}, 'path'=>'Substitution.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode'}},
+          'reason' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActReason'=>['CT', 'FP', 'OS', 'RR']}, 'path'=>'Substitution.reason', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason'}},
+          'responsibleParty' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Substitution.responsibleParty', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

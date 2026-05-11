@@ -7,26 +7,26 @@ module FHIR
 
       SEARCH_PARAMS = ['identifier', 'issued', 'participant', 'result', 'tester', 'testscript']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'TestReport.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'TestReport.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'TestReport.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'TestReport.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'TestReport.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'TestReport.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'TestReport.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'TestReport.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'TestReport.identifier', 'min'=>0, 'max'=>1},
-        'name' => {'type'=>'string', 'path'=>'TestReport.name', 'min'=>0, 'max'=>1},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/report-status-codes'=>['completed', 'in-progress', 'waiting', 'stopped', 'entered-in-error']}, 'type'=>'code', 'path'=>'TestReport.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-status-codes'}},
-        'testScript' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/TestScript'], 'type'=>'Reference', 'path'=>'TestReport.testScript', 'min'=>1, 'max'=>1},
-        'result' => {'valid_codes'=>{'http://hl7.org/fhir/report-result-codes'=>['pass', 'fail', 'pending']}, 'type'=>'code', 'path'=>'TestReport.result', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-result-codes'}},
-        'score' => {'type'=>'decimal', 'path'=>'TestReport.score', 'min'=>0, 'max'=>1},
-        'tester' => {'type'=>'string', 'path'=>'TestReport.tester', 'min'=>0, 'max'=>1},
-        'issued' => {'type'=>'dateTime', 'path'=>'TestReport.issued', 'min'=>0, 'max'=>1},
-        'participant' => {'type'=>'TestReport::Participant', 'path'=>'TestReport.participant', 'min'=>0, 'max'=>Float::INFINITY},
-        'setup' => {'type'=>'TestReport::Setup', 'path'=>'TestReport.setup', 'min'=>0, 'max'=>1},
-        'test' => {'type'=>'TestReport::Test', 'path'=>'TestReport.test', 'min'=>0, 'max'=>Float::INFINITY},
-        'teardown' => {'type'=>'TestReport::Teardown', 'path'=>'TestReport.teardown', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'TestReport.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'TestReport.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'TestReport.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'TestReport.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'TestReport.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'TestReport.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'TestReport.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'TestReport.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'TestReport.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+        'name' => {'path'=>'TestReport.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/report-status-codes'=>['completed', 'in-progress', 'waiting', 'stopped', 'entered-in-error']}, 'path'=>'TestReport.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-status-codes'}},
+        'testScript' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/TestScript'], 'path'=>'TestReport.testScript', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'result' => {'valid_codes'=>{'http://hl7.org/fhir/report-result-codes'=>['pass', 'fail', 'pending']}, 'path'=>'TestReport.result', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-result-codes'}},
+        'score' => {'path'=>'TestReport.score', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+        'tester' => {'path'=>'TestReport.tester', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'issued' => {'path'=>'TestReport.issued', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'participant' => {'path'=>'TestReport.participant', 'type'=>'TestReport::Participant', 'min'=>0, 'max'=>Float::INFINITY},
+        'setup' => {'path'=>'TestReport.setup', 'type'=>'TestReport::Setup', 'min'=>0, 'max'=>1},
+        'test' => {'path'=>'TestReport.test', 'type'=>'TestReport::Test', 'min'=>0, 'max'=>Float::INFINITY},
+        'teardown' => {'path'=>'TestReport.teardown', 'type'=>'TestReport::Teardown', 'min'=>0, 'max'=>1}
       }
 
       class Participant < Model
@@ -35,12 +35,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Participant.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Participant.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Participant.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/report-participant-type'=>['test-engine', 'client', 'server']}, 'type'=>'code', 'path'=>'Participant.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-participant-type'}},
-          'uri' => {'type'=>'uri', 'path'=>'Participant.uri', 'min'=>1, 'max'=>1},
-          'display' => {'type'=>'string', 'path'=>'Participant.display', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Participant.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Participant.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Participant.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/report-participant-type'=>['test-engine', 'client', 'server']}, 'path'=>'Participant.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-participant-type'}},
+          'uri' => {'path'=>'Participant.uri', 'type'=>'uri', 'min'=>1, 'max'=>1},
+          'display' => {'path'=>'Participant.display', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -57,10 +57,10 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Setup.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Setup.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Setup.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'action' => {'type'=>'TestReport::Setup::Action', 'path'=>'Setup.action', 'min'=>1, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Setup.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Setup.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Setup.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'action' => {'path'=>'Setup.action', 'type'=>'TestReport::Setup::Action', 'min'=>1, 'max'=>Float::INFINITY}
         }
 
         class Action < Model
@@ -69,11 +69,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Action.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Action.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Action.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'operation' => {'type'=>'TestReport::Setup::Action::Operation', 'path'=>'Action.operation', 'min'=>0, 'max'=>1},
-            'assert' => {'type'=>'TestReport::Setup::Action::Assert', 'path'=>'Action.assert', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Action.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Action.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Action.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'operation' => {'path'=>'Action.operation', 'type'=>'TestReport::Setup::Action::Operation', 'min'=>0, 'max'=>1},
+            'assert' => {'path'=>'Action.assert', 'type'=>'TestReport::Setup::Action::Assert', 'min'=>0, 'max'=>1}
           }
 
           class Operation < Model
@@ -82,12 +82,12 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Operation.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Operation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Operation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'result' => {'valid_codes'=>{'http://hl7.org/fhir/report-action-result-codes'=>['pass', 'skip', 'fail', 'warning', 'error']}, 'type'=>'code', 'path'=>'Operation.result', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-action-result-codes'}},
-              'message' => {'type'=>'markdown', 'path'=>'Operation.message', 'min'=>0, 'max'=>1},
-              'detail' => {'type'=>'uri', 'path'=>'Operation.detail', 'min'=>0, 'max'=>1}
+              'id' => {'path'=>'Operation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Operation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Operation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'result' => {'valid_codes'=>{'http://hl7.org/fhir/report-action-result-codes'=>['pass', 'skip', 'fail', 'warning', 'error']}, 'path'=>'Operation.result', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-action-result-codes'}},
+              'message' => {'path'=>'Operation.message', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+              'detail' => {'path'=>'Operation.detail', 'type'=>'uri', 'min'=>0, 'max'=>1}
             }
 
             attr_accessor :id                # 0-1 string
@@ -104,12 +104,12 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Assert.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Assert.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Assert.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'result' => {'valid_codes'=>{'http://hl7.org/fhir/report-action-result-codes'=>['pass', 'skip', 'fail', 'warning', 'error']}, 'type'=>'code', 'path'=>'Assert.result', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-action-result-codes'}},
-              'message' => {'type'=>'markdown', 'path'=>'Assert.message', 'min'=>0, 'max'=>1},
-              'detail' => {'type'=>'string', 'path'=>'Assert.detail', 'min'=>0, 'max'=>1}
+              'id' => {'path'=>'Assert.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Assert.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Assert.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'result' => {'valid_codes'=>{'http://hl7.org/fhir/report-action-result-codes'=>['pass', 'skip', 'fail', 'warning', 'error']}, 'path'=>'Assert.result', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/report-action-result-codes'}},
+              'message' => {'path'=>'Assert.message', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+              'detail' => {'path'=>'Assert.detail', 'type'=>'string', 'min'=>0, 'max'=>1}
             }
 
             attr_accessor :id                # 0-1 string
@@ -139,12 +139,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Test.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Test.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Test.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'name' => {'type'=>'string', 'path'=>'Test.name', 'min'=>0, 'max'=>1},
-          'description' => {'type'=>'string', 'path'=>'Test.description', 'min'=>0, 'max'=>1},
-          'action' => {'type'=>'TestReport::Test::Action', 'path'=>'Test.action', 'min'=>1, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Test.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Test.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Test.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'name' => {'path'=>'Test.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'description' => {'path'=>'Test.description', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'action' => {'path'=>'Test.action', 'type'=>'TestReport::Test::Action', 'min'=>1, 'max'=>Float::INFINITY}
         }
 
         class Action < Model
@@ -153,11 +153,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Action.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Action.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Action.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'operation' => {'type'=>'TestReport::Setup::Action::Operation', 'path'=>'Action.operation', 'min'=>0, 'max'=>1},
-            'assert' => {'type'=>'TestReport::Setup::Action::Assert', 'path'=>'Action.assert', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Action.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Action.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Action.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'operation' => {'path'=>'Action.operation', 'type'=>'TestReport::Setup::Action::Operation', 'min'=>0, 'max'=>1},
+            'assert' => {'path'=>'Action.assert', 'type'=>'TestReport::Setup::Action::Assert', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -181,10 +181,10 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Teardown.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Teardown.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Teardown.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'action' => {'type'=>'TestReport::Teardown::Action', 'path'=>'Teardown.action', 'min'=>1, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Teardown.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Teardown.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Teardown.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'action' => {'path'=>'Teardown.action', 'type'=>'TestReport::Teardown::Action', 'min'=>1, 'max'=>Float::INFINITY}
         }
 
         class Action < Model
@@ -193,10 +193,10 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Action.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Action.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Action.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'operation' => {'type'=>'TestReport::Setup::Action::Operation', 'path'=>'Action.operation', 'min'=>1, 'max'=>1}
+            'id' => {'path'=>'Action.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Action.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Action.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'operation' => {'path'=>'Action.operation', 'type'=>'TestReport::Setup::Action::Operation', 'min'=>1, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string

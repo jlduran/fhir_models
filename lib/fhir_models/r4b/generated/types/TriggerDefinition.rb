@@ -10,16 +10,16 @@ module FHIR
       }
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'TriggerDefinition.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'TriggerDefinition.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'valid_codes'=>{'http://hl7.org/fhir/trigger-type'=>['named-event', 'periodic', 'data-changed', 'data-added', 'data-modified', 'data-removed', 'data-accessed', 'data-access-ended']}, 'type'=>'code', 'path'=>'TriggerDefinition.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/trigger-type'}},
-        'name' => {'type'=>'string', 'path'=>'TriggerDefinition.name', 'min'=>0, 'max'=>1},
-        'timingTiming' => {'type'=>'Timing', 'path'=>'TriggerDefinition.timing[x]', 'min'=>0, 'max'=>1},
-        'timingReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Schedule'], 'type'=>'Reference', 'path'=>'TriggerDefinition.timing[x]', 'min'=>0, 'max'=>1},
-        'timingDate' => {'type'=>'date', 'path'=>'TriggerDefinition.timing[x]', 'min'=>0, 'max'=>1},
-        'timingDateTime' => {'type'=>'dateTime', 'path'=>'TriggerDefinition.timing[x]', 'min'=>0, 'max'=>1},
-        'data' => {'type'=>'DataRequirement', 'path'=>'TriggerDefinition.data', 'min'=>0, 'max'=>Float::INFINITY},
-        'condition' => {'type'=>'Expression', 'path'=>'TriggerDefinition.condition', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'TriggerDefinition.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'TriggerDefinition.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'valid_codes'=>{'http://hl7.org/fhir/trigger-type'=>['named-event', 'periodic', 'data-changed', 'data-added', 'data-modified', 'data-removed', 'data-accessed', 'data-access-ended']}, 'path'=>'TriggerDefinition.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/trigger-type'}},
+        'name' => {'path'=>'TriggerDefinition.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'timingTiming' => {'path'=>'TriggerDefinition.timing[x]', 'type'=>'Timing', 'min'=>0, 'max'=>1},
+        'timingReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Schedule'], 'path'=>'TriggerDefinition.timing[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'timingDate' => {'path'=>'TriggerDefinition.timing[x]', 'type'=>'date', 'min'=>0, 'max'=>1},
+        'timingDateTime' => {'path'=>'TriggerDefinition.timing[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'data' => {'path'=>'TriggerDefinition.data', 'type'=>'DataRequirement', 'min'=>0, 'max'=>Float::INFINITY},
+        'condition' => {'path'=>'TriggerDefinition.condition', 'type'=>'Expression', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id              # 0-1 string

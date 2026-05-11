@@ -7,12 +7,12 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Reference.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Reference.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'reference' => {'type'=>'string', 'path'=>'Reference.reference', 'min'=>0, 'max'=>1},
-        'type' => {'type'=>'uri', 'path'=>'Reference.type', 'min'=>0, 'max'=>1},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Reference.identifier', 'min'=>0, 'max'=>1},
-        'display' => {'type'=>'string', 'path'=>'Reference.display', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Reference.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Reference.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'reference' => {'path'=>'Reference.reference', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'type' => {'path'=>'Reference.type', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'identifier' => {'path'=>'Reference.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+        'display' => {'path'=>'Reference.display', 'type'=>'string', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id         # 0-1 string

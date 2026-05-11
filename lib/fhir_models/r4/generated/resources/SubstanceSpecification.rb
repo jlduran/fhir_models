@@ -7,33 +7,33 @@ module FHIR
 
       SEARCH_PARAMS = ['code']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'SubstanceSpecification.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'SubstanceSpecification.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'SubstanceSpecification.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'SubstanceSpecification.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'SubstanceSpecification.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'SubstanceSpecification.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'SubstanceSpecification.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'SubstanceSpecification.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'SubstanceSpecification.identifier', 'min'=>0, 'max'=>1},
-        'type' => {'type'=>'CodeableConcept', 'path'=>'SubstanceSpecification.type', 'min'=>0, 'max'=>1},
-        'status' => {'type'=>'CodeableConcept', 'path'=>'SubstanceSpecification.status', 'min'=>0, 'max'=>1},
-        'domain' => {'type'=>'CodeableConcept', 'path'=>'SubstanceSpecification.domain', 'min'=>0, 'max'=>1},
-        'description' => {'type'=>'string', 'path'=>'SubstanceSpecification.description', 'min'=>0, 'max'=>1},
-        'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'SubstanceSpecification.source', 'min'=>0, 'max'=>Float::INFINITY},
-        'comment' => {'type'=>'string', 'path'=>'SubstanceSpecification.comment', 'min'=>0, 'max'=>1},
-        'moiety' => {'type'=>'SubstanceSpecification::Moiety', 'path'=>'SubstanceSpecification.moiety', 'min'=>0, 'max'=>Float::INFINITY},
-        'property' => {'type'=>'SubstanceSpecification::Property', 'path'=>'SubstanceSpecification.property', 'min'=>0, 'max'=>Float::INFINITY},
-        'referenceInformation' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceReferenceInformation'], 'type'=>'Reference', 'path'=>'SubstanceSpecification.referenceInformation', 'min'=>0, 'max'=>1},
-        'structure' => {'type'=>'SubstanceSpecification::Structure', 'path'=>'SubstanceSpecification.structure', 'min'=>0, 'max'=>1},
-        'code' => {'type'=>'SubstanceSpecification::Code', 'path'=>'SubstanceSpecification.code', 'min'=>0, 'max'=>Float::INFINITY},
-        'name' => {'type'=>'SubstanceSpecification::Name', 'path'=>'SubstanceSpecification.name', 'min'=>0, 'max'=>Float::INFINITY},
-        'molecularWeight' => {'type'=>'SubstanceSpecification::Structure::Isotope::MolecularWeight', 'path'=>'SubstanceSpecification.molecularWeight', 'min'=>0, 'max'=>Float::INFINITY},
-        'relationship' => {'type'=>'SubstanceSpecification::Relationship', 'path'=>'SubstanceSpecification.relationship', 'min'=>0, 'max'=>Float::INFINITY},
-        'nucleicAcid' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceNucleicAcid'], 'type'=>'Reference', 'path'=>'SubstanceSpecification.nucleicAcid', 'min'=>0, 'max'=>1},
-        'polymer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstancePolymer'], 'type'=>'Reference', 'path'=>'SubstanceSpecification.polymer', 'min'=>0, 'max'=>1},
-        'protein' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceProtein'], 'type'=>'Reference', 'path'=>'SubstanceSpecification.protein', 'min'=>0, 'max'=>1},
-        'sourceMaterial' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceSourceMaterial'], 'type'=>'Reference', 'path'=>'SubstanceSpecification.sourceMaterial', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'SubstanceSpecification.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'SubstanceSpecification.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'SubstanceSpecification.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'SubstanceSpecification.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'SubstanceSpecification.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'SubstanceSpecification.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'SubstanceSpecification.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'SubstanceSpecification.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'SubstanceSpecification.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+        'type' => {'path'=>'SubstanceSpecification.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'status' => {'path'=>'SubstanceSpecification.status', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'domain' => {'path'=>'SubstanceSpecification.domain', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'description' => {'path'=>'SubstanceSpecification.description', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'SubstanceSpecification.source', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'comment' => {'path'=>'SubstanceSpecification.comment', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'moiety' => {'path'=>'SubstanceSpecification.moiety', 'type'=>'SubstanceSpecification::Moiety', 'min'=>0, 'max'=>Float::INFINITY},
+        'property' => {'path'=>'SubstanceSpecification.property', 'type'=>'SubstanceSpecification::Property', 'min'=>0, 'max'=>Float::INFINITY},
+        'referenceInformation' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceReferenceInformation'], 'path'=>'SubstanceSpecification.referenceInformation', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'structure' => {'path'=>'SubstanceSpecification.structure', 'type'=>'SubstanceSpecification::Structure', 'min'=>0, 'max'=>1},
+        'code' => {'path'=>'SubstanceSpecification.code', 'type'=>'SubstanceSpecification::Code', 'min'=>0, 'max'=>Float::INFINITY},
+        'name' => {'path'=>'SubstanceSpecification.name', 'type'=>'SubstanceSpecification::Name', 'min'=>0, 'max'=>Float::INFINITY},
+        'molecularWeight' => {'path'=>'SubstanceSpecification.molecularWeight', 'type'=>'SubstanceSpecification::Structure::Isotope::MolecularWeight', 'min'=>0, 'max'=>Float::INFINITY},
+        'relationship' => {'path'=>'SubstanceSpecification.relationship', 'type'=>'SubstanceSpecification::Relationship', 'min'=>0, 'max'=>Float::INFINITY},
+        'nucleicAcid' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceNucleicAcid'], 'path'=>'SubstanceSpecification.nucleicAcid', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'polymer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstancePolymer'], 'path'=>'SubstanceSpecification.polymer', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'protein' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceProtein'], 'path'=>'SubstanceSpecification.protein', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'sourceMaterial' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceSourceMaterial'], 'path'=>'SubstanceSpecification.sourceMaterial', 'type'=>'Reference', 'min'=>0, 'max'=>1}
       }
 
       class Moiety < Model
@@ -45,17 +45,17 @@ module FHIR
           'amount' => ['Quantity', 'string']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Moiety.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Moiety.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Moiety.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'role' => {'type'=>'CodeableConcept', 'path'=>'Moiety.role', 'min'=>0, 'max'=>1},
-          'identifier' => {'type'=>'Identifier', 'path'=>'Moiety.identifier', 'min'=>0, 'max'=>1},
-          'name' => {'type'=>'string', 'path'=>'Moiety.name', 'min'=>0, 'max'=>1},
-          'stereochemistry' => {'type'=>'CodeableConcept', 'path'=>'Moiety.stereochemistry', 'min'=>0, 'max'=>1},
-          'opticalActivity' => {'type'=>'CodeableConcept', 'path'=>'Moiety.opticalActivity', 'min'=>0, 'max'=>1},
-          'molecularFormula' => {'type'=>'string', 'path'=>'Moiety.molecularFormula', 'min'=>0, 'max'=>1},
-          'amountQuantity' => {'type'=>'Quantity', 'path'=>'Moiety.amount[x]', 'min'=>0, 'max'=>1},
-          'amountString' => {'type'=>'string', 'path'=>'Moiety.amount[x]', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Moiety.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Moiety.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Moiety.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'role' => {'path'=>'Moiety.role', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'identifier' => {'path'=>'Moiety.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'name' => {'path'=>'Moiety.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'stereochemistry' => {'path'=>'Moiety.stereochemistry', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'opticalActivity' => {'path'=>'Moiety.opticalActivity', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'molecularFormula' => {'path'=>'Moiety.molecularFormula', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'amountQuantity' => {'path'=>'Moiety.amount[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'amountString' => {'path'=>'Moiety.amount[x]', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -81,16 +81,16 @@ module FHIR
           'amount' => ['Quantity', 'string']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Property.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Property.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Property.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'category' => {'type'=>'CodeableConcept', 'path'=>'Property.category', 'min'=>0, 'max'=>1},
-          'code' => {'type'=>'CodeableConcept', 'path'=>'Property.code', 'min'=>0, 'max'=>1},
-          'parameters' => {'type'=>'string', 'path'=>'Property.parameters', 'min'=>0, 'max'=>1},
-          'definingSubstanceReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceSpecification', 'http://hl7.org/fhir/StructureDefinition/Substance'], 'type'=>'Reference', 'path'=>'Property.definingSubstance[x]', 'min'=>0, 'max'=>1},
-          'definingSubstanceCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Property.definingSubstance[x]', 'min'=>0, 'max'=>1},
-          'amountQuantity' => {'type'=>'Quantity', 'path'=>'Property.amount[x]', 'min'=>0, 'max'=>1},
-          'amountString' => {'type'=>'string', 'path'=>'Property.amount[x]', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Property.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Property.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Property.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'category' => {'path'=>'Property.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'code' => {'path'=>'Property.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'parameters' => {'path'=>'Property.parameters', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'definingSubstanceReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceSpecification', 'http://hl7.org/fhir/StructureDefinition/Substance'], 'path'=>'Property.definingSubstance[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'definingSubstanceCodeableConcept' => {'path'=>'Property.definingSubstance[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'amountQuantity' => {'path'=>'Property.amount[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'amountString' => {'path'=>'Property.amount[x]', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                               # 0-1 string
@@ -111,17 +111,17 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Structure.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Structure.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Structure.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'stereochemistry' => {'type'=>'CodeableConcept', 'path'=>'Structure.stereochemistry', 'min'=>0, 'max'=>1},
-          'opticalActivity' => {'type'=>'CodeableConcept', 'path'=>'Structure.opticalActivity', 'min'=>0, 'max'=>1},
-          'molecularFormula' => {'type'=>'string', 'path'=>'Structure.molecularFormula', 'min'=>0, 'max'=>1},
-          'molecularFormulaByMoiety' => {'type'=>'string', 'path'=>'Structure.molecularFormulaByMoiety', 'min'=>0, 'max'=>1},
-          'isotope' => {'type'=>'SubstanceSpecification::Structure::Isotope', 'path'=>'Structure.isotope', 'min'=>0, 'max'=>Float::INFINITY},
-          'molecularWeight' => {'type'=>'SubstanceSpecification::Structure::Isotope::MolecularWeight', 'path'=>'Structure.molecularWeight', 'min'=>0, 'max'=>1},
-          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'Structure.source', 'min'=>0, 'max'=>Float::INFINITY},
-          'representation' => {'type'=>'SubstanceSpecification::Structure::Representation', 'path'=>'Structure.representation', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Structure.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Structure.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Structure.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'stereochemistry' => {'path'=>'Structure.stereochemistry', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'opticalActivity' => {'path'=>'Structure.opticalActivity', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'molecularFormula' => {'path'=>'Structure.molecularFormula', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'molecularFormulaByMoiety' => {'path'=>'Structure.molecularFormulaByMoiety', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'isotope' => {'path'=>'Structure.isotope', 'type'=>'SubstanceSpecification::Structure::Isotope', 'min'=>0, 'max'=>Float::INFINITY},
+          'molecularWeight' => {'path'=>'Structure.molecularWeight', 'type'=>'SubstanceSpecification::Structure::Isotope::MolecularWeight', 'min'=>0, 'max'=>1},
+          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'Structure.source', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+          'representation' => {'path'=>'Structure.representation', 'type'=>'SubstanceSpecification::Structure::Representation', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Isotope < Model
@@ -130,14 +130,14 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Isotope.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Isotope.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Isotope.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'identifier' => {'type'=>'Identifier', 'path'=>'Isotope.identifier', 'min'=>0, 'max'=>1},
-            'name' => {'type'=>'CodeableConcept', 'path'=>'Isotope.name', 'min'=>0, 'max'=>1},
-            'substitution' => {'type'=>'CodeableConcept', 'path'=>'Isotope.substitution', 'min'=>0, 'max'=>1},
-            'halfLife' => {'type'=>'Quantity', 'path'=>'Isotope.halfLife', 'min'=>0, 'max'=>1},
-            'molecularWeight' => {'type'=>'SubstanceSpecification::Structure::Isotope::MolecularWeight', 'path'=>'Isotope.molecularWeight', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Isotope.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Isotope.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Isotope.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'identifier' => {'path'=>'Isotope.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+            'name' => {'path'=>'Isotope.name', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'substitution' => {'path'=>'Isotope.substitution', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'halfLife' => {'path'=>'Isotope.halfLife', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+            'molecularWeight' => {'path'=>'Isotope.molecularWeight', 'type'=>'SubstanceSpecification::Structure::Isotope::MolecularWeight', 'min'=>0, 'max'=>1}
           }
 
           class MolecularWeight < Model
@@ -146,12 +146,12 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'MolecularWeight.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'MolecularWeight.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'MolecularWeight.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'method' => {'local_name'=>'local_method', 'type'=>'CodeableConcept', 'path'=>'MolecularWeight.method', 'min'=>0, 'max'=>1},
-              'type' => {'type'=>'CodeableConcept', 'path'=>'MolecularWeight.type', 'min'=>0, 'max'=>1},
-              'amount' => {'type'=>'Quantity', 'path'=>'MolecularWeight.amount', 'min'=>0, 'max'=>1}
+              'id' => {'path'=>'MolecularWeight.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'MolecularWeight.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'MolecularWeight.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'method' => {'local_name'=>'local_method', 'path'=>'MolecularWeight.method', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+              'type' => {'path'=>'MolecularWeight.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+              'amount' => {'path'=>'MolecularWeight.amount', 'type'=>'Quantity', 'min'=>0, 'max'=>1}
             }
 
             attr_accessor :id                # 0-1 string
@@ -178,12 +178,12 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Representation.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Representation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Representation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'type' => {'type'=>'CodeableConcept', 'path'=>'Representation.type', 'min'=>0, 'max'=>1},
-            'representation' => {'type'=>'string', 'path'=>'Representation.representation', 'min'=>0, 'max'=>1},
-            'attachment' => {'type'=>'Attachment', 'path'=>'Representation.attachment', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Representation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Representation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Representation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'type' => {'path'=>'Representation.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'representation' => {'path'=>'Representation.representation', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'attachment' => {'path'=>'Representation.attachment', 'type'=>'Attachment', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -213,14 +213,14 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Code.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Code.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Code.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'type'=>'CodeableConcept', 'path'=>'Code.code', 'min'=>0, 'max'=>1},
-          'status' => {'type'=>'CodeableConcept', 'path'=>'Code.status', 'min'=>0, 'max'=>1},
-          'statusDate' => {'type'=>'dateTime', 'path'=>'Code.statusDate', 'min'=>0, 'max'=>1},
-          'comment' => {'type'=>'string', 'path'=>'Code.comment', 'min'=>0, 'max'=>1},
-          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'Code.source', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Code.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Code.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Code.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'path'=>'Code.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'status' => {'path'=>'Code.status', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'statusDate' => {'path'=>'Code.statusDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'comment' => {'path'=>'Code.comment', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'Code.source', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -239,20 +239,20 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Name.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Name.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Name.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'name' => {'type'=>'string', 'path'=>'Name.name', 'min'=>1, 'max'=>1},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'Name.type', 'min'=>0, 'max'=>1},
-          'status' => {'type'=>'CodeableConcept', 'path'=>'Name.status', 'min'=>0, 'max'=>1},
-          'preferred' => {'type'=>'boolean', 'path'=>'Name.preferred', 'min'=>0, 'max'=>1},
-          'language' => {'type'=>'CodeableConcept', 'path'=>'Name.language', 'min'=>0, 'max'=>Float::INFINITY},
-          'domain' => {'type'=>'CodeableConcept', 'path'=>'Name.domain', 'min'=>0, 'max'=>Float::INFINITY},
-          'jurisdiction' => {'type'=>'CodeableConcept', 'path'=>'Name.jurisdiction', 'min'=>0, 'max'=>Float::INFINITY},
-          'synonym' => {'type'=>'SubstanceSpecification::Name', 'path'=>'Name.synonym', 'min'=>0, 'max'=>Float::INFINITY},
-          'translation' => {'type'=>'SubstanceSpecification::Name', 'path'=>'Name.translation', 'min'=>0, 'max'=>Float::INFINITY},
-          'official' => {'type'=>'SubstanceSpecification::Name::Official', 'path'=>'Name.official', 'min'=>0, 'max'=>Float::INFINITY},
-          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'Name.source', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Name.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Name.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Name.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'name' => {'path'=>'Name.name', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'type' => {'path'=>'Name.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'status' => {'path'=>'Name.status', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'preferred' => {'path'=>'Name.preferred', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'language' => {'path'=>'Name.language', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+          'domain' => {'path'=>'Name.domain', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+          'jurisdiction' => {'path'=>'Name.jurisdiction', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+          'synonym' => {'path'=>'Name.synonym', 'type'=>'SubstanceSpecification::Name', 'min'=>0, 'max'=>Float::INFINITY},
+          'translation' => {'path'=>'Name.translation', 'type'=>'SubstanceSpecification::Name', 'min'=>0, 'max'=>Float::INFINITY},
+          'official' => {'path'=>'Name.official', 'type'=>'SubstanceSpecification::Name::Official', 'min'=>0, 'max'=>Float::INFINITY},
+          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'Name.source', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Official < Model
@@ -261,12 +261,12 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Official.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Official.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Official.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'authority' => {'type'=>'CodeableConcept', 'path'=>'Official.authority', 'min'=>0, 'max'=>1},
-            'status' => {'type'=>'CodeableConcept', 'path'=>'Official.status', 'min'=>0, 'max'=>1},
-            'date' => {'type'=>'dateTime', 'path'=>'Official.date', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Official.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Official.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Official.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'authority' => {'path'=>'Official.authority', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'status' => {'path'=>'Official.status', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'date' => {'path'=>'Official.date', 'type'=>'dateTime', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -303,20 +303,20 @@ module FHIR
           'amount' => ['Quantity', 'Range', 'Ratio', 'string']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Relationship.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Relationship.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Relationship.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'substanceReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceSpecification'], 'type'=>'Reference', 'path'=>'Relationship.substance[x]', 'min'=>0, 'max'=>1},
-          'substanceCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Relationship.substance[x]', 'min'=>0, 'max'=>1},
-          'relationship' => {'type'=>'CodeableConcept', 'path'=>'Relationship.relationship', 'min'=>0, 'max'=>1},
-          'isDefining' => {'type'=>'boolean', 'path'=>'Relationship.isDefining', 'min'=>0, 'max'=>1},
-          'amountQuantity' => {'type'=>'Quantity', 'path'=>'Relationship.amount[x]', 'min'=>0, 'max'=>1},
-          'amountRange' => {'type'=>'Range', 'path'=>'Relationship.amount[x]', 'min'=>0, 'max'=>1},
-          'amountRatio' => {'type'=>'Ratio', 'path'=>'Relationship.amount[x]', 'min'=>0, 'max'=>1},
-          'amountString' => {'type'=>'string', 'path'=>'Relationship.amount[x]', 'min'=>0, 'max'=>1},
-          'amountRatioLowLimit' => {'type'=>'Ratio', 'path'=>'Relationship.amountRatioLowLimit', 'min'=>0, 'max'=>1},
-          'amountType' => {'type'=>'CodeableConcept', 'path'=>'Relationship.amountType', 'min'=>0, 'max'=>1},
-          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'Relationship.source', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Relationship.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Relationship.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Relationship.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'substanceReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SubstanceSpecification'], 'path'=>'Relationship.substance[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'substanceCodeableConcept' => {'path'=>'Relationship.substance[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'relationship' => {'path'=>'Relationship.relationship', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'isDefining' => {'path'=>'Relationship.isDefining', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'amountQuantity' => {'path'=>'Relationship.amount[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'amountRange' => {'path'=>'Relationship.amount[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+          'amountRatio' => {'path'=>'Relationship.amount[x]', 'type'=>'Ratio', 'min'=>0, 'max'=>1},
+          'amountString' => {'path'=>'Relationship.amount[x]', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'amountRatioLowLimit' => {'path'=>'Relationship.amountRatioLowLimit', 'type'=>'Ratio', 'min'=>0, 'max'=>1},
+          'amountType' => {'path'=>'Relationship.amountType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'source' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'Relationship.source', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                       # 0-1 string

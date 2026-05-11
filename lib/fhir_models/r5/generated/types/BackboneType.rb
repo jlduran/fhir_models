@@ -7,9 +7,9 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'BackboneType.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'BackboneType.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'BackboneType.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'BackboneType.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'BackboneType.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'BackboneType.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       attr_accessor :id                # 0-1 string

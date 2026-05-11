@@ -10,31 +10,31 @@ module FHIR
       }
       SEARCH_PARAMS = ['condition', 'date', 'encounter', 'identifier', 'method', 'patient', 'performer', 'probability', 'risk', 'subject']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'RiskAssessment.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'RiskAssessment.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'RiskAssessment.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'RiskAssessment.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'RiskAssessment.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'RiskAssessment.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'RiskAssessment.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'RiskAssessment.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'RiskAssessment.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'RiskAssessment.basedOn', 'min'=>0, 'max'=>1},
-        'parent' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'RiskAssessment.parent', 'min'=>0, 'max'=>1},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/observation-status'=>['registered', 'preliminary', 'final', 'amended', 'corrected', 'cancelled', 'entered-in-error', 'unknown']}, 'type'=>'code', 'path'=>'RiskAssessment.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/observation-status'}},
-        'method' => {'local_name'=>'local_method', 'type'=>'CodeableConcept', 'path'=>'RiskAssessment.method', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example'}},
-        'code' => {'type'=>'CodeableConcept', 'path'=>'RiskAssessment.code', 'min'=>0, 'max'=>1},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group'], 'type'=>'Reference', 'path'=>'RiskAssessment.subject', 'min'=>1, 'max'=>1},
-        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'type'=>'Reference', 'path'=>'RiskAssessment.encounter', 'min'=>0, 'max'=>1},
-        'occurrenceDateTime' => {'type'=>'dateTime', 'path'=>'RiskAssessment.occurrence[x]', 'min'=>0, 'max'=>1},
-        'occurrencePeriod' => {'type'=>'Period', 'path'=>'RiskAssessment.occurrence[x]', 'min'=>0, 'max'=>1},
-        'condition' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Condition'], 'type'=>'Reference', 'path'=>'RiskAssessment.condition', 'min'=>0, 'max'=>1},
-        'performer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Device'], 'type'=>'Reference', 'path'=>'RiskAssessment.performer', 'min'=>0, 'max'=>1},
-        'reason' => {'type'=>'CodeableReference', 'path'=>'RiskAssessment.reason', 'min'=>0, 'max'=>Float::INFINITY},
-        'basis' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'RiskAssessment.basis', 'min'=>0, 'max'=>Float::INFINITY},
-        'prediction' => {'type'=>'RiskAssessment::Prediction', 'path'=>'RiskAssessment.prediction', 'min'=>0, 'max'=>Float::INFINITY},
-        'mitigation' => {'type'=>'string', 'path'=>'RiskAssessment.mitigation', 'min'=>0, 'max'=>1},
-        'note' => {'type'=>'Annotation', 'path'=>'RiskAssessment.note', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'RiskAssessment.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'RiskAssessment.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'RiskAssessment.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'RiskAssessment.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'RiskAssessment.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'RiskAssessment.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'RiskAssessment.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'RiskAssessment.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'RiskAssessment.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'RiskAssessment.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'parent' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'RiskAssessment.parent', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/observation-status'=>['registered', 'preliminary', 'final', 'amended', 'corrected', 'cancelled', 'entered-in-error', 'unknown']}, 'path'=>'RiskAssessment.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/observation-status'}},
+        'method' => {'local_name'=>'local_method', 'path'=>'RiskAssessment.method', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example'}},
+        'code' => {'path'=>'RiskAssessment.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group'], 'path'=>'RiskAssessment.subject', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'encounter' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Encounter'], 'path'=>'RiskAssessment.encounter', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'occurrenceDateTime' => {'path'=>'RiskAssessment.occurrence[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'occurrencePeriod' => {'path'=>'RiskAssessment.occurrence[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'condition' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Condition'], 'path'=>'RiskAssessment.condition', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'performer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Device'], 'path'=>'RiskAssessment.performer', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'reason' => {'path'=>'RiskAssessment.reason', 'type'=>'CodeableReference', 'min'=>0, 'max'=>Float::INFINITY},
+        'basis' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'RiskAssessment.basis', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'prediction' => {'path'=>'RiskAssessment.prediction', 'type'=>'RiskAssessment::Prediction', 'min'=>0, 'max'=>Float::INFINITY},
+        'mitigation' => {'path'=>'RiskAssessment.mitigation', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'note' => {'path'=>'RiskAssessment.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Prediction < Model
@@ -47,17 +47,17 @@ module FHIR
           'when' => ['Period', 'Range']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Prediction.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Prediction.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Prediction.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'outcome' => {'type'=>'CodeableConcept', 'path'=>'Prediction.outcome', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example'}},
-          'probabilityDecimal' => {'type'=>'decimal', 'path'=>'Prediction.probability[x]', 'min'=>0, 'max'=>1},
-          'probabilityRange' => {'type'=>'Range', 'path'=>'Prediction.probability[x]', 'min'=>0, 'max'=>1},
-          'qualitativeRisk' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/risk-probability'=>['negligible', 'low', 'moderate', 'high', 'certain']}, 'type'=>'CodeableConcept', 'path'=>'Prediction.qualitativeRisk', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/risk-probability'}},
-          'relativeRisk' => {'type'=>'decimal', 'path'=>'Prediction.relativeRisk', 'min'=>0, 'max'=>1},
-          'whenPeriod' => {'type'=>'Period', 'path'=>'Prediction.when[x]', 'min'=>0, 'max'=>1},
-          'whenRange' => {'type'=>'Range', 'path'=>'Prediction.when[x]', 'min'=>0, 'max'=>1},
-          'rationale' => {'type'=>'string', 'path'=>'Prediction.rationale', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Prediction.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Prediction.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Prediction.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'outcome' => {'path'=>'Prediction.outcome', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example'}},
+          'probabilityDecimal' => {'path'=>'Prediction.probability[x]', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'probabilityRange' => {'path'=>'Prediction.probability[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+          'qualitativeRisk' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/risk-probability'=>['negligible', 'low', 'moderate', 'high', 'certain']}, 'path'=>'Prediction.qualitativeRisk', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/risk-probability'}},
+          'relativeRisk' => {'path'=>'Prediction.relativeRisk', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'whenPeriod' => {'path'=>'Prediction.when[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+          'whenRange' => {'path'=>'Prediction.when[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+          'rationale' => {'path'=>'Prediction.rationale', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                 # 0-1 string

@@ -7,10 +7,10 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Availability.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Availability.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'availableTime' => {'type'=>'Availability::AvailableTime', 'path'=>'Availability.availableTime', 'min'=>0, 'max'=>Float::INFINITY},
-        'notAvailableTime' => {'type'=>'Availability::NotAvailableTime', 'path'=>'Availability.notAvailableTime', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'Availability.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Availability.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'availableTime' => {'path'=>'Availability.availableTime', 'type'=>'Availability::AvailableTime', 'min'=>0, 'max'=>Float::INFINITY},
+        'notAvailableTime' => {'path'=>'Availability.notAvailableTime', 'type'=>'Availability::NotAvailableTime', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class AvailableTime < Model
@@ -19,12 +19,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'AvailableTime.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'AvailableTime.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'daysOfWeek' => {'valid_codes'=>{'http://hl7.org/fhir/days-of-week'=>['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']}, 'type'=>'code', 'path'=>'AvailableTime.daysOfWeek', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/days-of-week'}},
-          'allDay' => {'type'=>'boolean', 'path'=>'AvailableTime.allDay', 'min'=>0, 'max'=>1},
-          'availableStartTime' => {'type'=>'time', 'path'=>'AvailableTime.availableStartTime', 'min'=>0, 'max'=>1},
-          'availableEndTime' => {'type'=>'time', 'path'=>'AvailableTime.availableEndTime', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'AvailableTime.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'AvailableTime.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'daysOfWeek' => {'valid_codes'=>{'http://hl7.org/fhir/days-of-week'=>['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']}, 'path'=>'AvailableTime.daysOfWeek', 'type'=>'code', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/days-of-week'}},
+          'allDay' => {'path'=>'AvailableTime.allDay', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'availableStartTime' => {'path'=>'AvailableTime.availableStartTime', 'type'=>'time', 'min'=>0, 'max'=>1},
+          'availableEndTime' => {'path'=>'AvailableTime.availableEndTime', 'type'=>'time', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                 # 0-1 string
@@ -41,10 +41,10 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'NotAvailableTime.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'NotAvailableTime.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'description' => {'type'=>'string', 'path'=>'NotAvailableTime.description', 'min'=>0, 'max'=>1},
-          'during' => {'type'=>'Period', 'path'=>'NotAvailableTime.during', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'NotAvailableTime.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'NotAvailableTime.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'description' => {'path'=>'NotAvailableTime.description', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'during' => {'path'=>'NotAvailableTime.during', 'type'=>'Period', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id          # 0-1 string

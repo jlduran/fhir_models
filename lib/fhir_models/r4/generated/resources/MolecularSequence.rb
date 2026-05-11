@@ -7,30 +7,30 @@ module FHIR
 
       SEARCH_PARAMS = ['chromosome', 'chromosome-variant-coordinate', 'chromosome-window-coordinate', 'identifier', 'patient', 'referenceseqid', 'referenceseqid-variant-coordinate', 'referenceseqid-window-coordinate', 'type', 'variant-end', 'variant-start', 'window-end', 'window-start']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MolecularSequence.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MolecularSequence.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MolecularSequence.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'MolecularSequence.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MolecularSequence.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MolecularSequence.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MolecularSequence.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MolecularSequence.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'MolecularSequence.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'valid_codes'=>{'http://hl7.org/fhir/sequence-type'=>['aa', 'dna', 'rna']}, 'type'=>'code', 'path'=>'MolecularSequence.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/sequence-type'}},
-        'coordinateSystem' => {'type'=>'integer', 'path'=>'MolecularSequence.coordinateSystem', 'min'=>1, 'max'=>1},
-        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'MolecularSequence.patient', 'min'=>0, 'max'=>1},
-        'specimen' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Specimen'], 'type'=>'Reference', 'path'=>'MolecularSequence.specimen', 'min'=>0, 'max'=>1},
-        'device' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Device'], 'type'=>'Reference', 'path'=>'MolecularSequence.device', 'min'=>0, 'max'=>1},
-        'performer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'MolecularSequence.performer', 'min'=>0, 'max'=>1},
-        'quantity' => {'type'=>'Quantity', 'path'=>'MolecularSequence.quantity', 'min'=>0, 'max'=>1},
-        'referenceSeq' => {'type'=>'MolecularSequence::ReferenceSeq', 'path'=>'MolecularSequence.referenceSeq', 'min'=>0, 'max'=>1},
-        'variant' => {'type'=>'MolecularSequence::Variant', 'path'=>'MolecularSequence.variant', 'min'=>0, 'max'=>Float::INFINITY},
-        'observedSeq' => {'type'=>'string', 'path'=>'MolecularSequence.observedSeq', 'min'=>0, 'max'=>1},
-        'quality' => {'type'=>'MolecularSequence::Quality', 'path'=>'MolecularSequence.quality', 'min'=>0, 'max'=>Float::INFINITY},
-        'readCoverage' => {'type'=>'integer', 'path'=>'MolecularSequence.readCoverage', 'min'=>0, 'max'=>1},
-        'repository' => {'type'=>'MolecularSequence::Repository', 'path'=>'MolecularSequence.repository', 'min'=>0, 'max'=>Float::INFINITY},
-        'pointer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MolecularSequence'], 'type'=>'Reference', 'path'=>'MolecularSequence.pointer', 'min'=>0, 'max'=>Float::INFINITY},
-        'structureVariant' => {'type'=>'MolecularSequence::StructureVariant', 'path'=>'MolecularSequence.structureVariant', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'MolecularSequence.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MolecularSequence.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MolecularSequence.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'MolecularSequence.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'MolecularSequence.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MolecularSequence.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MolecularSequence.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MolecularSequence.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'MolecularSequence.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'valid_codes'=>{'http://hl7.org/fhir/sequence-type'=>['aa', 'dna', 'rna']}, 'path'=>'MolecularSequence.type', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/sequence-type'}},
+        'coordinateSystem' => {'path'=>'MolecularSequence.coordinateSystem', 'type'=>'integer', 'min'=>1, 'max'=>1},
+        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'MolecularSequence.patient', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'specimen' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Specimen'], 'path'=>'MolecularSequence.specimen', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'device' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Device'], 'path'=>'MolecularSequence.device', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'performer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'MolecularSequence.performer', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'quantity' => {'path'=>'MolecularSequence.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'referenceSeq' => {'path'=>'MolecularSequence.referenceSeq', 'type'=>'MolecularSequence::ReferenceSeq', 'min'=>0, 'max'=>1},
+        'variant' => {'path'=>'MolecularSequence.variant', 'type'=>'MolecularSequence::Variant', 'min'=>0, 'max'=>Float::INFINITY},
+        'observedSeq' => {'path'=>'MolecularSequence.observedSeq', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'quality' => {'path'=>'MolecularSequence.quality', 'type'=>'MolecularSequence::Quality', 'min'=>0, 'max'=>Float::INFINITY},
+        'readCoverage' => {'path'=>'MolecularSequence.readCoverage', 'type'=>'integer', 'min'=>0, 'max'=>1},
+        'repository' => {'path'=>'MolecularSequence.repository', 'type'=>'MolecularSequence::Repository', 'min'=>0, 'max'=>Float::INFINITY},
+        'pointer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MolecularSequence'], 'path'=>'MolecularSequence.pointer', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'structureVariant' => {'path'=>'MolecularSequence.structureVariant', 'type'=>'MolecularSequence::StructureVariant', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class ReferenceSeq < Model
@@ -39,18 +39,18 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'ReferenceSeq.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'ReferenceSeq.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'ReferenceSeq.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'chromosome' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/chromosome-human'=>['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', 'X', 'Y']}, 'type'=>'CodeableConcept', 'path'=>'ReferenceSeq.chromosome', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/chromosome-human'}},
-          'genomeBuild' => {'type'=>'string', 'path'=>'ReferenceSeq.genomeBuild', 'min'=>0, 'max'=>1},
-          'orientation' => {'valid_codes'=>{'http://hl7.org/fhir/orientation-type'=>['sense', 'antisense']}, 'type'=>'code', 'path'=>'ReferenceSeq.orientation', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/orientation-type'}},
-          'referenceSeqId' => {'type'=>'CodeableConcept', 'path'=>'ReferenceSeq.referenceSeqId', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/sequence-referenceSeq'}},
-          'referenceSeqPointer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MolecularSequence'], 'type'=>'Reference', 'path'=>'ReferenceSeq.referenceSeqPointer', 'min'=>0, 'max'=>1},
-          'referenceSeqString' => {'type'=>'string', 'path'=>'ReferenceSeq.referenceSeqString', 'min'=>0, 'max'=>1},
-          'strand' => {'valid_codes'=>{'http://hl7.org/fhir/strand-type'=>['watson', 'crick']}, 'type'=>'code', 'path'=>'ReferenceSeq.strand', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/strand-type'}},
-          'windowStart' => {'type'=>'integer', 'path'=>'ReferenceSeq.windowStart', 'min'=>0, 'max'=>1},
-          'windowEnd' => {'type'=>'integer', 'path'=>'ReferenceSeq.windowEnd', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'ReferenceSeq.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'ReferenceSeq.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'ReferenceSeq.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'chromosome' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/chromosome-human'=>['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', 'X', 'Y']}, 'path'=>'ReferenceSeq.chromosome', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/chromosome-human'}},
+          'genomeBuild' => {'path'=>'ReferenceSeq.genomeBuild', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'orientation' => {'valid_codes'=>{'http://hl7.org/fhir/orientation-type'=>['sense', 'antisense']}, 'path'=>'ReferenceSeq.orientation', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/orientation-type'}},
+          'referenceSeqId' => {'path'=>'ReferenceSeq.referenceSeqId', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/sequence-referenceSeq'}},
+          'referenceSeqPointer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MolecularSequence'], 'path'=>'ReferenceSeq.referenceSeqPointer', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'referenceSeqString' => {'path'=>'ReferenceSeq.referenceSeqString', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'strand' => {'valid_codes'=>{'http://hl7.org/fhir/strand-type'=>['watson', 'crick']}, 'path'=>'ReferenceSeq.strand', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/strand-type'}},
+          'windowStart' => {'path'=>'ReferenceSeq.windowStart', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'windowEnd' => {'path'=>'ReferenceSeq.windowEnd', 'type'=>'integer', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                  # 0-1 string
@@ -73,15 +73,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Variant.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Variant.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Variant.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'start' => {'type'=>'integer', 'path'=>'Variant.start', 'min'=>0, 'max'=>1},
-          'end' => {'type'=>'integer', 'path'=>'Variant.end', 'min'=>0, 'max'=>1},
-          'observedAllele' => {'type'=>'string', 'path'=>'Variant.observedAllele', 'min'=>0, 'max'=>1},
-          'referenceAllele' => {'type'=>'string', 'path'=>'Variant.referenceAllele', 'min'=>0, 'max'=>1},
-          'cigar' => {'type'=>'string', 'path'=>'Variant.cigar', 'min'=>0, 'max'=>1},
-          'variantPointer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Observation'], 'type'=>'Reference', 'path'=>'Variant.variantPointer', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Variant.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Variant.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Variant.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'start' => {'path'=>'Variant.start', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'end' => {'path'=>'Variant.end', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'observedAllele' => {'path'=>'Variant.observedAllele', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'referenceAllele' => {'path'=>'Variant.referenceAllele', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'cigar' => {'path'=>'Variant.cigar', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'variantPointer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Observation'], 'path'=>'Variant.variantPointer', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -101,24 +101,24 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Quality.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Quality.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Quality.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/quality-type'=>['indel', 'snp', 'unknown']}, 'type'=>'code', 'path'=>'Quality.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/quality-type'}},
-          'standardSequence' => {'type'=>'CodeableConcept', 'path'=>'Quality.standardSequence', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/sequence-quality-standardSequence'}},
-          'start' => {'type'=>'integer', 'path'=>'Quality.start', 'min'=>0, 'max'=>1},
-          'end' => {'type'=>'integer', 'path'=>'Quality.end', 'min'=>0, 'max'=>1},
-          'score' => {'type'=>'Quantity', 'path'=>'Quality.score', 'min'=>0, 'max'=>1},
-          'method' => {'local_name'=>'local_method', 'type'=>'CodeableConcept', 'path'=>'Quality.method', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/sequence-quality-method'}},
-          'truthTP' => {'type'=>'decimal', 'path'=>'Quality.truthTP', 'min'=>0, 'max'=>1},
-          'queryTP' => {'type'=>'decimal', 'path'=>'Quality.queryTP', 'min'=>0, 'max'=>1},
-          'truthFN' => {'type'=>'decimal', 'path'=>'Quality.truthFN', 'min'=>0, 'max'=>1},
-          'queryFP' => {'type'=>'decimal', 'path'=>'Quality.queryFP', 'min'=>0, 'max'=>1},
-          'gtFP' => {'type'=>'decimal', 'path'=>'Quality.gtFP', 'min'=>0, 'max'=>1},
-          'precision' => {'type'=>'decimal', 'path'=>'Quality.precision', 'min'=>0, 'max'=>1},
-          'recall' => {'type'=>'decimal', 'path'=>'Quality.recall', 'min'=>0, 'max'=>1},
-          'fScore' => {'type'=>'decimal', 'path'=>'Quality.fScore', 'min'=>0, 'max'=>1},
-          'roc' => {'type'=>'MolecularSequence::Quality::Roc', 'path'=>'Quality.roc', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Quality.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Quality.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Quality.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/quality-type'=>['indel', 'snp', 'unknown']}, 'path'=>'Quality.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/quality-type'}},
+          'standardSequence' => {'path'=>'Quality.standardSequence', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/sequence-quality-standardSequence'}},
+          'start' => {'path'=>'Quality.start', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'end' => {'path'=>'Quality.end', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'score' => {'path'=>'Quality.score', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'method' => {'local_name'=>'local_method', 'path'=>'Quality.method', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/sequence-quality-method'}},
+          'truthTP' => {'path'=>'Quality.truthTP', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'queryTP' => {'path'=>'Quality.queryTP', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'truthFN' => {'path'=>'Quality.truthFN', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'queryFP' => {'path'=>'Quality.queryFP', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'gtFP' => {'path'=>'Quality.gtFP', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'precision' => {'path'=>'Quality.precision', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'recall' => {'path'=>'Quality.recall', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'fScore' => {'path'=>'Quality.fScore', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+          'roc' => {'path'=>'Quality.roc', 'type'=>'MolecularSequence::Quality::Roc', 'min'=>0, 'max'=>1}
         }
 
         class Roc < Model
@@ -127,16 +127,16 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Roc.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Roc.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Roc.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'score' => {'type'=>'integer', 'path'=>'Roc.score', 'min'=>0, 'max'=>Float::INFINITY},
-            'numTP' => {'type'=>'integer', 'path'=>'Roc.numTP', 'min'=>0, 'max'=>Float::INFINITY},
-            'numFP' => {'type'=>'integer', 'path'=>'Roc.numFP', 'min'=>0, 'max'=>Float::INFINITY},
-            'numFN' => {'type'=>'integer', 'path'=>'Roc.numFN', 'min'=>0, 'max'=>Float::INFINITY},
-            'precision' => {'type'=>'decimal', 'path'=>'Roc.precision', 'min'=>0, 'max'=>Float::INFINITY},
-            'sensitivity' => {'type'=>'decimal', 'path'=>'Roc.sensitivity', 'min'=>0, 'max'=>Float::INFINITY},
-            'fMeasure' => {'type'=>'decimal', 'path'=>'Roc.fMeasure', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Roc.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Roc.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Roc.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'score' => {'path'=>'Roc.score', 'type'=>'integer', 'min'=>0, 'max'=>Float::INFINITY},
+            'numTP' => {'path'=>'Roc.numTP', 'type'=>'integer', 'min'=>0, 'max'=>Float::INFINITY},
+            'numFP' => {'path'=>'Roc.numFP', 'type'=>'integer', 'min'=>0, 'max'=>Float::INFINITY},
+            'numFN' => {'path'=>'Roc.numFN', 'type'=>'integer', 'min'=>0, 'max'=>Float::INFINITY},
+            'precision' => {'path'=>'Roc.precision', 'type'=>'decimal', 'min'=>0, 'max'=>Float::INFINITY},
+            'sensitivity' => {'path'=>'Roc.sensitivity', 'type'=>'decimal', 'min'=>0, 'max'=>Float::INFINITY},
+            'fMeasure' => {'path'=>'Roc.fMeasure', 'type'=>'decimal', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           attr_accessor :id                # 0-1 string
@@ -177,15 +177,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Repository.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Repository.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Repository.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/repository-type'=>['directlink', 'openapi', 'login', 'oauth', 'other']}, 'type'=>'code', 'path'=>'Repository.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/repository-type'}},
-          'url' => {'type'=>'uri', 'path'=>'Repository.url', 'min'=>0, 'max'=>1},
-          'name' => {'type'=>'string', 'path'=>'Repository.name', 'min'=>0, 'max'=>1},
-          'datasetId' => {'type'=>'string', 'path'=>'Repository.datasetId', 'min'=>0, 'max'=>1},
-          'variantsetId' => {'type'=>'string', 'path'=>'Repository.variantsetId', 'min'=>0, 'max'=>1},
-          'readsetId' => {'type'=>'string', 'path'=>'Repository.readsetId', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Repository.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Repository.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Repository.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/repository-type'=>['directlink', 'openapi', 'login', 'oauth', 'other']}, 'path'=>'Repository.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/repository-type'}},
+          'url' => {'path'=>'Repository.url', 'type'=>'uri', 'min'=>0, 'max'=>1},
+          'name' => {'path'=>'Repository.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'datasetId' => {'path'=>'Repository.datasetId', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'variantsetId' => {'path'=>'Repository.variantsetId', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'readsetId' => {'path'=>'Repository.readsetId', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -205,14 +205,14 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'StructureVariant.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'StructureVariant.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'StructureVariant.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'variantType' => {'type'=>'CodeableConcept', 'path'=>'StructureVariant.variantType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://loinc.org/vs/LL379-9'}},
-          'exact' => {'type'=>'boolean', 'path'=>'StructureVariant.exact', 'min'=>0, 'max'=>1},
-          'length' => {'type'=>'integer', 'path'=>'StructureVariant.length', 'min'=>0, 'max'=>1},
-          'outer' => {'type'=>'MolecularSequence::StructureVariant::Outer', 'path'=>'StructureVariant.outer', 'min'=>0, 'max'=>1},
-          'inner' => {'type'=>'MolecularSequence::StructureVariant::Inner', 'path'=>'StructureVariant.inner', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'StructureVariant.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'StructureVariant.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'StructureVariant.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'variantType' => {'path'=>'StructureVariant.variantType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://loinc.org/vs/LL379-9'}},
+          'exact' => {'path'=>'StructureVariant.exact', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'length' => {'path'=>'StructureVariant.length', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'outer' => {'path'=>'StructureVariant.outer', 'type'=>'MolecularSequence::StructureVariant::Outer', 'min'=>0, 'max'=>1},
+          'inner' => {'path'=>'StructureVariant.inner', 'type'=>'MolecularSequence::StructureVariant::Inner', 'min'=>0, 'max'=>1}
         }
 
         class Outer < Model
@@ -221,11 +221,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Outer.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Outer.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Outer.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'start' => {'type'=>'integer', 'path'=>'Outer.start', 'min'=>0, 'max'=>1},
-            'end' => {'type'=>'integer', 'path'=>'Outer.end', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Outer.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Outer.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Outer.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'start' => {'path'=>'Outer.start', 'type'=>'integer', 'min'=>0, 'max'=>1},
+            'end' => {'path'=>'Outer.end', 'type'=>'integer', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -241,11 +241,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Inner.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Inner.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Inner.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'start' => {'type'=>'integer', 'path'=>'Inner.start', 'min'=>0, 'max'=>1},
-            'end' => {'type'=>'integer', 'path'=>'Inner.end', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Inner.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Inner.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Inner.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'start' => {'path'=>'Inner.start', 'type'=>'integer', 'min'=>0, 'max'=>1},
+            'end' => {'path'=>'Inner.end', 'type'=>'integer', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string

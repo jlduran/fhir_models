@@ -7,24 +7,24 @@ module FHIR
 
       SEARCH_PARAMS = ['active', 'address', 'address-city', 'address-country', 'address-postalcode', 'address-state', 'address-use', 'endpoint', 'identifier', 'name', 'partof', 'phonetic', 'type']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Organization.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Organization.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Organization.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'Organization.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Organization.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Organization.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Organization.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Organization.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Organization.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'active' => {'type'=>'boolean', 'path'=>'Organization.active', 'min'=>0, 'max'=>1},
-        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/organization-type'=>['prov', 'dept', 'team', 'govt', 'ins', 'pay', 'edu', 'reli', 'crs', 'cg', 'bus', 'other']}, 'type'=>'CodeableConcept', 'path'=>'Organization.type', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/organization-type'}},
-        'name' => {'type'=>'string', 'path'=>'Organization.name', 'min'=>0, 'max'=>1},
-        'alias' => {'type'=>'string', 'path'=>'Organization.alias', 'min'=>0, 'max'=>Float::INFINITY},
-        'description' => {'type'=>'markdown', 'path'=>'Organization.description', 'min'=>0, 'max'=>1},
-        'contact' => {'type'=>'ExtendedContactDetail', 'path'=>'Organization.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Organization.partOf', 'min'=>0, 'max'=>1},
-        'endpoint' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'type'=>'Reference', 'path'=>'Organization.endpoint', 'min'=>0, 'max'=>Float::INFINITY},
-        'qualification' => {'type'=>'Organization::Qualification', 'path'=>'Organization.qualification', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'Organization.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Organization.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Organization.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'Organization.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'Organization.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Organization.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Organization.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Organization.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'Organization.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'active' => {'path'=>'Organization.active', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/organization-type'=>['prov', 'dept', 'team', 'govt', 'ins', 'pay', 'edu', 'reli', 'crs', 'cg', 'bus', 'other']}, 'path'=>'Organization.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/organization-type'}},
+        'name' => {'path'=>'Organization.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'alias' => {'path'=>'Organization.alias', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'description' => {'path'=>'Organization.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'contact' => {'path'=>'Organization.contact', 'type'=>'ExtendedContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Organization.partOf', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'endpoint' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'path'=>'Organization.endpoint', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'qualification' => {'path'=>'Organization.qualification', 'type'=>'Organization::Qualification', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Qualification < Model
@@ -33,13 +33,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Qualification.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Qualification.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Qualification.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'identifier' => {'type'=>'Identifier', 'path'=>'Qualification.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'type'=>'CodeableConcept', 'path'=>'Qualification.code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example'}},
-          'period' => {'type'=>'Period', 'path'=>'Qualification.period', 'min'=>0, 'max'=>1},
-          'issuer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Qualification.issuer', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Qualification.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Qualification.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Qualification.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'identifier' => {'path'=>'Qualification.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'path'=>'Qualification.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example'}},
+          'period' => {'path'=>'Qualification.period', 'type'=>'Period', 'min'=>0, 'max'=>1},
+          'issuer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Qualification.issuer', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

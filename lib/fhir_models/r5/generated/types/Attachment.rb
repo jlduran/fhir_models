@@ -7,21 +7,21 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Attachment.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Attachment.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'contentType' => {'type'=>'code', 'path'=>'Attachment.contentType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/mimetypes'}},
-        'language' => {'type'=>'code', 'path'=>'Attachment.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'data' => {'type'=>'base64Binary', 'path'=>'Attachment.data', 'min'=>0, 'max'=>1},
-        'url' => {'type'=>'url', 'path'=>'Attachment.url', 'min'=>0, 'max'=>1},
-        'size' => {'type'=>'integer64', 'path'=>'Attachment.size', 'min'=>0, 'max'=>1},
-        'hash' => {'type'=>'base64Binary', 'path'=>'Attachment.hash', 'min'=>0, 'max'=>1},
-        'title' => {'type'=>'string', 'path'=>'Attachment.title', 'min'=>0, 'max'=>1},
-        'creation' => {'type'=>'dateTime', 'path'=>'Attachment.creation', 'min'=>0, 'max'=>1},
-        'height' => {'type'=>'positiveInt', 'path'=>'Attachment.height', 'min'=>0, 'max'=>1},
-        'width' => {'type'=>'positiveInt', 'path'=>'Attachment.width', 'min'=>0, 'max'=>1},
-        'frames' => {'type'=>'positiveInt', 'path'=>'Attachment.frames', 'min'=>0, 'max'=>1},
-        'duration' => {'type'=>'decimal', 'path'=>'Attachment.duration', 'min'=>0, 'max'=>1},
-        'pages' => {'type'=>'positiveInt', 'path'=>'Attachment.pages', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Attachment.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Attachment.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'contentType' => {'path'=>'Attachment.contentType', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/mimetypes'}},
+        'language' => {'path'=>'Attachment.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'data' => {'path'=>'Attachment.data', 'type'=>'base64Binary', 'min'=>0, 'max'=>1},
+        'url' => {'path'=>'Attachment.url', 'type'=>'url', 'min'=>0, 'max'=>1},
+        'size' => {'path'=>'Attachment.size', 'type'=>'integer64', 'min'=>0, 'max'=>1},
+        'hash' => {'path'=>'Attachment.hash', 'type'=>'base64Binary', 'min'=>0, 'max'=>1},
+        'title' => {'path'=>'Attachment.title', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'creation' => {'path'=>'Attachment.creation', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'height' => {'path'=>'Attachment.height', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+        'width' => {'path'=>'Attachment.width', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+        'frames' => {'path'=>'Attachment.frames', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+        'duration' => {'path'=>'Attachment.duration', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+        'pages' => {'path'=>'Attachment.pages', 'type'=>'positiveInt', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id          # 0-1 string

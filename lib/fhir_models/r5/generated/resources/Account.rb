@@ -7,31 +7,31 @@ module FHIR
 
       SEARCH_PARAMS = ['guarantor', 'identifier', 'name', 'owner', 'patient', 'period', 'relatedaccount', 'status', 'subject', 'type']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Account.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Account.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Account.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'Account.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Account.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Account.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Account.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Account.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Account.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/account-status'=>['active', 'inactive', 'entered-in-error', 'on-hold', 'unknown']}, 'type'=>'code', 'path'=>'Account.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/account-status'}},
-        'billingStatus' => {'valid_codes'=>{'http://hl7.org/fhir/account-billing-status'=>['open', 'carecomplete-notbilled', 'billing', 'closed-baddebt', 'closed-voided', 'closed-completed', 'closed-combined']}, 'type'=>'CodeableConcept', 'path'=>'Account.billingStatus', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/account-billing-status'}},
-        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['_ActAccountCode', 'ACCTRECEIVABLE', 'CASH', 'CC', 'AE', 'DN', 'DV', 'MC', 'V', 'PBILLACCT', '_CreditCard']}, 'type'=>'CodeableConcept', 'path'=>'Account.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/account-type'}},
-        'name' => {'type'=>'string', 'path'=>'Account.name', 'min'=>0, 'max'=>1},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Account.subject', 'min'=>0, 'max'=>Float::INFINITY},
-        'servicePeriod' => {'type'=>'Period', 'path'=>'Account.servicePeriod', 'min'=>0, 'max'=>1},
-        'coverage' => {'type'=>'Account::Coverage', 'path'=>'Account.coverage', 'min'=>0, 'max'=>Float::INFINITY},
-        'owner' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Account.owner', 'min'=>0, 'max'=>1},
-        'description' => {'type'=>'markdown', 'path'=>'Account.description', 'min'=>0, 'max'=>1},
-        'guarantor' => {'type'=>'Account::Guarantor', 'path'=>'Account.guarantor', 'min'=>0, 'max'=>Float::INFINITY},
-        'diagnosis' => {'type'=>'Account::Diagnosis', 'path'=>'Account.diagnosis', 'min'=>0, 'max'=>Float::INFINITY},
-        'procedure' => {'type'=>'Account::Procedure', 'path'=>'Account.procedure', 'min'=>0, 'max'=>Float::INFINITY},
-        'relatedAccount' => {'type'=>'Account::RelatedAccount', 'path'=>'Account.relatedAccount', 'min'=>0, 'max'=>Float::INFINITY},
-        'currency' => {'valid_codes'=>{'urn:iso:std:iso:4217'=>['AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN', 'BAM', 'BBD', 'BDT', 'BGN', 'BHD', 'BIF', 'BMD', 'BND', 'BOB', 'BOV', 'BRL', 'BSD', 'BTN', 'BWP', 'BYN', 'BZD', 'CAD', 'CDF', 'CHE', 'CHF', 'CHW', 'CLF', 'CLP', 'CNY', 'COP', 'COU', 'CRC', 'CUC', 'CUP', 'CVE', 'CZK', 'DJF', 'DKK', 'DOP', 'DZD', 'EGP', 'ERN', 'ETB', 'EUR', 'FJD', 'FKP', 'GBP', 'GEL', 'GGP', 'GHS', 'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', 'HKD', 'HNL', 'HRK', 'HTG', 'HUF', 'IDR', 'ILS', 'IMP', 'INR', 'IQD', 'IRR', 'ISK', 'JEP', 'JMD', 'JOD', 'JPY', 'KES', 'KGS', 'KHR', 'KMF', 'KPW', 'KRW', 'KWD', 'KYD', 'KZT', 'LAK', 'LBP', 'LKR', 'LRD', 'LSL', 'LYD', 'MAD', 'MDL', 'MGA', 'MKD', 'MMK', 'MNT', 'MOP', 'MRU', 'MUR', 'MVR', 'MWK', 'MXN', 'MXV', 'MYR', 'MZN', 'NAD', 'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'OMR', 'PAB', 'PEN', 'PGK', 'PHP', 'PKR', 'PLN', 'PYG', 'QAR', 'RON', 'RSD', 'RUB', 'RWF', 'SAR', 'SBD', 'SCR', 'SDG', 'SEK', 'SGD', 'SHP', 'SLL', 'SOS', 'SRD', 'SSP', 'STN', 'SVC', 'SYP', 'SZL', 'THB', 'TJS', 'TMT', 'TND', 'TOP', 'TRY', 'TTD', 'TVD', 'TWD', 'TZS', 'UAH', 'UGX', 'USD', 'USN', 'UYI', 'UYU', 'UZS', 'VEF', 'VND', 'VUV', 'WST', 'XAF', 'XAG', 'XAU', 'XBA', 'XBB', 'XBC', 'XBD', 'XCD', 'XDR', 'XOF', 'XPD', 'XPF', 'XPT', 'XSU', 'XTS', 'XUA', 'XXX', 'YER', 'ZAR', 'ZMW', 'ZWL']}, 'type'=>'CodeableConcept', 'path'=>'Account.currency', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/currencies'}},
-        'balance' => {'type'=>'Account::Balance', 'path'=>'Account.balance', 'min'=>0, 'max'=>Float::INFINITY},
-        'calculatedAt' => {'type'=>'instant', 'path'=>'Account.calculatedAt', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Account.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Account.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Account.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'Account.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'Account.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Account.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Account.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Account.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'Account.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/account-status'=>['active', 'inactive', 'entered-in-error', 'on-hold', 'unknown']}, 'path'=>'Account.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/account-status'}},
+        'billingStatus' => {'valid_codes'=>{'http://hl7.org/fhir/account-billing-status'=>['open', 'carecomplete-notbilled', 'billing', 'closed-baddebt', 'closed-voided', 'closed-completed', 'closed-combined']}, 'path'=>'Account.billingStatus', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/account-billing-status'}},
+        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['_ActAccountCode', 'ACCTRECEIVABLE', 'CASH', 'CC', 'AE', 'DN', 'DV', 'MC', 'V', 'PBILLACCT', '_CreditCard']}, 'path'=>'Account.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/account-type'}},
+        'name' => {'path'=>'Account.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Account.subject', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'servicePeriod' => {'path'=>'Account.servicePeriod', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'coverage' => {'path'=>'Account.coverage', 'type'=>'Account::Coverage', 'min'=>0, 'max'=>Float::INFINITY},
+        'owner' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Account.owner', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'description' => {'path'=>'Account.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'guarantor' => {'path'=>'Account.guarantor', 'type'=>'Account::Guarantor', 'min'=>0, 'max'=>Float::INFINITY},
+        'diagnosis' => {'path'=>'Account.diagnosis', 'type'=>'Account::Diagnosis', 'min'=>0, 'max'=>Float::INFINITY},
+        'procedure' => {'path'=>'Account.procedure', 'type'=>'Account::Procedure', 'min'=>0, 'max'=>Float::INFINITY},
+        'relatedAccount' => {'path'=>'Account.relatedAccount', 'type'=>'Account::RelatedAccount', 'min'=>0, 'max'=>Float::INFINITY},
+        'currency' => {'valid_codes'=>{'urn:iso:std:iso:4217'=>['AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN', 'BAM', 'BBD', 'BDT', 'BGN', 'BHD', 'BIF', 'BMD', 'BND', 'BOB', 'BOV', 'BRL', 'BSD', 'BTN', 'BWP', 'BYN', 'BZD', 'CAD', 'CDF', 'CHE', 'CHF', 'CHW', 'CLF', 'CLP', 'CNY', 'COP', 'COU', 'CRC', 'CUC', 'CUP', 'CVE', 'CZK', 'DJF', 'DKK', 'DOP', 'DZD', 'EGP', 'ERN', 'ETB', 'EUR', 'FJD', 'FKP', 'GBP', 'GEL', 'GGP', 'GHS', 'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', 'HKD', 'HNL', 'HRK', 'HTG', 'HUF', 'IDR', 'ILS', 'IMP', 'INR', 'IQD', 'IRR', 'ISK', 'JEP', 'JMD', 'JOD', 'JPY', 'KES', 'KGS', 'KHR', 'KMF', 'KPW', 'KRW', 'KWD', 'KYD', 'KZT', 'LAK', 'LBP', 'LKR', 'LRD', 'LSL', 'LYD', 'MAD', 'MDL', 'MGA', 'MKD', 'MMK', 'MNT', 'MOP', 'MRU', 'MUR', 'MVR', 'MWK', 'MXN', 'MXV', 'MYR', 'MZN', 'NAD', 'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'OMR', 'PAB', 'PEN', 'PGK', 'PHP', 'PKR', 'PLN', 'PYG', 'QAR', 'RON', 'RSD', 'RUB', 'RWF', 'SAR', 'SBD', 'SCR', 'SDG', 'SEK', 'SGD', 'SHP', 'SLL', 'SOS', 'SRD', 'SSP', 'STN', 'SVC', 'SYP', 'SZL', 'THB', 'TJS', 'TMT', 'TND', 'TOP', 'TRY', 'TTD', 'TVD', 'TWD', 'TZS', 'UAH', 'UGX', 'USD', 'USN', 'UYI', 'UYU', 'UZS', 'VEF', 'VND', 'VUV', 'WST', 'XAF', 'XAG', 'XAU', 'XBA', 'XBB', 'XBC', 'XBD', 'XCD', 'XDR', 'XOF', 'XPD', 'XPF', 'XPT', 'XSU', 'XTS', 'XUA', 'XXX', 'YER', 'ZAR', 'ZMW', 'ZWL']}, 'path'=>'Account.currency', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/currencies'}},
+        'balance' => {'path'=>'Account.balance', 'type'=>'Account::Balance', 'min'=>0, 'max'=>Float::INFINITY},
+        'calculatedAt' => {'path'=>'Account.calculatedAt', 'type'=>'instant', 'min'=>0, 'max'=>1}
       }
 
       class Coverage < Model
@@ -40,11 +40,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Coverage.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Coverage.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Coverage.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'coverage' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Coverage'], 'type'=>'Reference', 'path'=>'Coverage.coverage', 'min'=>1, 'max'=>1},
-          'priority' => {'type'=>'positiveInt', 'path'=>'Coverage.priority', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Coverage.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Coverage.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Coverage.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'coverage' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Coverage'], 'path'=>'Coverage.coverage', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'priority' => {'path'=>'Coverage.priority', 'type'=>'positiveInt', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -60,12 +60,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Guarantor.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Guarantor.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Guarantor.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'party' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Guarantor.party', 'min'=>1, 'max'=>1},
-          'onHold' => {'type'=>'boolean', 'path'=>'Guarantor.onHold', 'min'=>0, 'max'=>1},
-          'period' => {'type'=>'Period', 'path'=>'Guarantor.period', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Guarantor.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Guarantor.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Guarantor.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'party' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Guarantor.party', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'onHold' => {'path'=>'Guarantor.onHold', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'period' => {'path'=>'Guarantor.period', 'type'=>'Period', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -82,15 +82,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Diagnosis.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Diagnosis.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Diagnosis.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'sequence' => {'type'=>'positiveInt', 'path'=>'Diagnosis.sequence', 'min'=>0, 'max'=>1},
-          'condition' => {'type'=>'CodeableReference', 'path'=>'Diagnosis.condition', 'min'=>1, 'max'=>1},
-          'dateOfDiagnosis' => {'type'=>'dateTime', 'path'=>'Diagnosis.dateOfDiagnosis', 'min'=>0, 'max'=>1},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-diagnosis-use'=>['working', 'final']}, 'type'=>'CodeableConcept', 'path'=>'Diagnosis.type', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-diagnosis-use'}},
-          'onAdmission' => {'type'=>'boolean', 'path'=>'Diagnosis.onAdmission', 'min'=>0, 'max'=>1},
-          'packageCode' => {'type'=>'CodeableConcept', 'path'=>'Diagnosis.packageCode', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example'}}
+          'id' => {'path'=>'Diagnosis.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Diagnosis.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Diagnosis.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'sequence' => {'path'=>'Diagnosis.sequence', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+          'condition' => {'path'=>'Diagnosis.condition', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1},
+          'dateOfDiagnosis' => {'path'=>'Diagnosis.dateOfDiagnosis', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/encounter-diagnosis-use'=>['working', 'final']}, 'path'=>'Diagnosis.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/encounter-diagnosis-use'}},
+          'onAdmission' => {'path'=>'Diagnosis.onAdmission', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'packageCode' => {'path'=>'Diagnosis.packageCode', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example'}}
         }
 
         attr_accessor :id                # 0-1 string
@@ -110,15 +110,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Procedure.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Procedure.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Procedure.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'sequence' => {'type'=>'positiveInt', 'path'=>'Procedure.sequence', 'min'=>0, 'max'=>1},
-          'code' => {'type'=>'CodeableReference', 'path'=>'Procedure.code', 'min'=>1, 'max'=>1},
-          'dateOfService' => {'type'=>'dateTime', 'path'=>'Procedure.dateOfService', 'min'=>0, 'max'=>1},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'Procedure.type', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example'}},
-          'packageCode' => {'type'=>'CodeableConcept', 'path'=>'Procedure.packageCode', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example'}},
-          'device' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Device'], 'type'=>'Reference', 'path'=>'Procedure.device', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Procedure.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Procedure.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Procedure.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'sequence' => {'path'=>'Procedure.sequence', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+          'code' => {'path'=>'Procedure.code', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1},
+          'dateOfService' => {'path'=>'Procedure.dateOfService', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'type' => {'path'=>'Procedure.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example'}},
+          'packageCode' => {'path'=>'Procedure.packageCode', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example'}},
+          'device' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Device'], 'path'=>'Procedure.device', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -138,11 +138,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'RelatedAccount.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'RelatedAccount.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'RelatedAccount.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'relationship' => {'valid_codes'=>{'http://hl7.org/fhir/account-relationship'=>['parent', 'guarantor']}, 'type'=>'CodeableConcept', 'path'=>'RelatedAccount.relationship', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/account-relationship'}},
-          'account' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Account'], 'type'=>'Reference', 'path'=>'RelatedAccount.account', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'RelatedAccount.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'RelatedAccount.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'RelatedAccount.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'relationship' => {'valid_codes'=>{'http://hl7.org/fhir/account-relationship'=>['parent', 'guarantor']}, 'path'=>'RelatedAccount.relationship', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/account-relationship'}},
+          'account' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Account'], 'path'=>'RelatedAccount.account', 'type'=>'Reference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -158,13 +158,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Balance.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Balance.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Balance.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'aggregate' => {'valid_codes'=>{'http://hl7.org/fhir/account-aggregate'=>['patient', 'insurance', 'total']}, 'type'=>'CodeableConcept', 'path'=>'Balance.aggregate', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/account-aggregate'}},
-          'term' => {'valid_codes'=>{'http://hl7.org/fhir/account-balance-term'=>['current', '30', '60', '90', '120']}, 'type'=>'CodeableConcept', 'path'=>'Balance.term', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/account-balance-term'}},
-          'estimate' => {'type'=>'boolean', 'path'=>'Balance.estimate', 'min'=>0, 'max'=>1},
-          'amount' => {'type'=>'Money', 'path'=>'Balance.amount', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Balance.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Balance.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Balance.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'aggregate' => {'valid_codes'=>{'http://hl7.org/fhir/account-aggregate'=>['patient', 'insurance', 'total']}, 'path'=>'Balance.aggregate', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/account-aggregate'}},
+          'term' => {'valid_codes'=>{'http://hl7.org/fhir/account-balance-term'=>['current', '30', '60', '90', '120']}, 'path'=>'Balance.term', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/account-balance-term'}},
+          'estimate' => {'path'=>'Balance.estimate', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'amount' => {'path'=>'Balance.amount', 'type'=>'Money', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

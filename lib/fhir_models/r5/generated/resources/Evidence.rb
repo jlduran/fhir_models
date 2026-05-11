@@ -11,47 +11,47 @@ module FHIR
       }
       SEARCH_PARAMS = ['context', 'context-quantity', 'context-type', 'context-type-quantity', 'context-type-value', 'date', 'description', 'identifier', 'publisher', 'status', 'title', 'url', 'version']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Evidence.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Evidence.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Evidence.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'Evidence.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Evidence.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Evidence.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Evidence.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Evidence.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'url' => {'type'=>'uri', 'path'=>'Evidence.url', 'min'=>0, 'max'=>1},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Evidence.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'version' => {'type'=>'string', 'path'=>'Evidence.version', 'min'=>0, 'max'=>1},
-        'versionAlgorithmString' => {'type'=>'string', 'path'=>'Evidence.versionAlgorithm[x]', 'min'=>0, 'max'=>1},
-        'versionAlgorithmCoding' => {'valid_codes'=>{'http://hl7.org/fhir/version-algorithm'=>['semver', 'integer', 'alpha', 'date', 'natural']}, 'type'=>'Coding', 'path'=>'Evidence.versionAlgorithm[x]', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/version-algorithm'}},
-        'name' => {'type'=>'string', 'path'=>'Evidence.name', 'min'=>0, 'max'=>1},
-        'title' => {'type'=>'string', 'path'=>'Evidence.title', 'min'=>0, 'max'=>1},
-        'citeAsReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Citation'], 'type'=>'Reference', 'path'=>'Evidence.citeAs[x]', 'min'=>0, 'max'=>1},
-        'citeAsMarkdown' => {'type'=>'markdown', 'path'=>'Evidence.citeAs[x]', 'min'=>0, 'max'=>1},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'type'=>'code', 'path'=>'Evidence.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
-        'experimental' => {'type'=>'boolean', 'path'=>'Evidence.experimental', 'min'=>0, 'max'=>1},
-        'date' => {'type'=>'dateTime', 'path'=>'Evidence.date', 'min'=>0, 'max'=>1},
-        'approvalDate' => {'type'=>'date', 'path'=>'Evidence.approvalDate', 'min'=>0, 'max'=>1},
-        'lastReviewDate' => {'type'=>'date', 'path'=>'Evidence.lastReviewDate', 'min'=>0, 'max'=>1},
-        'publisher' => {'type'=>'string', 'path'=>'Evidence.publisher', 'min'=>0, 'max'=>1},
-        'contact' => {'type'=>'ContactDetail', 'path'=>'Evidence.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'author' => {'type'=>'ContactDetail', 'path'=>'Evidence.author', 'min'=>0, 'max'=>Float::INFINITY},
-        'editor' => {'type'=>'ContactDetail', 'path'=>'Evidence.editor', 'min'=>0, 'max'=>Float::INFINITY},
-        'reviewer' => {'type'=>'ContactDetail', 'path'=>'Evidence.reviewer', 'min'=>0, 'max'=>Float::INFINITY},
-        'endorser' => {'type'=>'ContactDetail', 'path'=>'Evidence.endorser', 'min'=>0, 'max'=>Float::INFINITY},
-        'useContext' => {'type'=>'UsageContext', 'path'=>'Evidence.useContext', 'min'=>0, 'max'=>Float::INFINITY},
-        'purpose' => {'type'=>'markdown', 'path'=>'Evidence.purpose', 'min'=>0, 'max'=>1},
-        'copyright' => {'type'=>'markdown', 'path'=>'Evidence.copyright', 'min'=>0, 'max'=>1},
-        'copyrightLabel' => {'type'=>'string', 'path'=>'Evidence.copyrightLabel', 'min'=>0, 'max'=>1},
-        'relatedArtifact' => {'type'=>'RelatedArtifact', 'path'=>'Evidence.relatedArtifact', 'min'=>0, 'max'=>Float::INFINITY},
-        'description' => {'type'=>'markdown', 'path'=>'Evidence.description', 'min'=>0, 'max'=>1},
-        'assertion' => {'type'=>'markdown', 'path'=>'Evidence.assertion', 'min'=>0, 'max'=>1},
-        'note' => {'type'=>'Annotation', 'path'=>'Evidence.note', 'min'=>0, 'max'=>Float::INFINITY},
-        'variableDefinition' => {'type'=>'Evidence::VariableDefinition', 'path'=>'Evidence.variableDefinition', 'min'=>1, 'max'=>Float::INFINITY},
-        'synthesisType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/synthesis-type'=>['std-MA', 'IPD-MA', 'indirect-NMA', 'combined-NMA', 'range', 'classification', 'pooled']}, 'type'=>'CodeableConcept', 'path'=>'Evidence.synthesisType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://terminology.hl7.org/ValueSet/synthesis-type'}},
-        'studyDesign' => {'valid_codes'=>{'http://hl7.org/fhir/study-design'=>['SEVCO:01001', 'SEVCO:01003', 'SEVCO:01006', 'SEVCO:01007', 'SEVCO:01008', 'SEVCO:01009', 'SEVCO:01005', 'SEVCO:01004', 'SEVCO:01029', 'SEVCO:01041', 'SEVCO:01038', 'SEVCO:01030', 'SEVCO:01031', 'SEVCO:01032', 'SEVCO:01033', 'SEVCO:01034', 'SEVCO:01035', 'SEVCO:01036', 'SEVCO:01002', 'SEVCO:01037', 'SEVCO:01010', 'SEVCO:01011', 'SEVCO:01012', 'SEVCO:01024', 'SEVCO:01025', 'SEVCO:01013', 'SEVCO:01014', 'SEVCO:01020', 'SEVCO:01021', 'SEVCO:01015', 'SEVCO:01023', 'SEVCO:01016', 'SEVCO:01017', 'SEVCO:01022', 'SEVCO:01044', 'SEVCO:01027', 'SEVCO:01028', 'SEVCO:01018', 'SEVCO:01019', 'SEVCO:01045', 'SEVCO:01026', 'SEVCO:01039', 'SEVCO:01050', 'SEVCO:01040', 'SEVCO:01048', 'SEVCO:01046', 'SEVCO:01049', 'SEVCO:01042', 'SEVCO:01051', 'SEVCO:01086', 'SEVCO:01087', 'SEVCO:01060', 'SEVCO:01061', 'SEVCO:01062', 'SEVCO:01063', 'SEVCO:01064', 'SEVCO:01043', 'SEVCO:01052', 'SEVCO:01053', 'SEVCO:01054', 'SEVCO:01085', 'SEVCO:01089', 'SEVCO:01096', 'SEVCO:01097', 'SEVCO:01098', 'SEVCO:01088', 'SEVCO:01091', 'SEVCO:01090', 'SEVCO:01092', 'SEVCO:01093', 'SEVCO:01094', 'SEVCO:01095']}, 'type'=>'CodeableConcept', 'path'=>'Evidence.studyDesign', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/study-design'}},
-        'statistic' => {'type'=>'Evidence::Statistic', 'path'=>'Evidence.statistic', 'min'=>0, 'max'=>Float::INFINITY},
-        'certainty' => {'type'=>'Evidence::Certainty', 'path'=>'Evidence.certainty', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'Evidence.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Evidence.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Evidence.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'Evidence.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'Evidence.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Evidence.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Evidence.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Evidence.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'url' => {'path'=>'Evidence.url', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'identifier' => {'path'=>'Evidence.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'version' => {'path'=>'Evidence.version', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'versionAlgorithmString' => {'path'=>'Evidence.versionAlgorithm[x]', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'versionAlgorithmCoding' => {'valid_codes'=>{'http://hl7.org/fhir/version-algorithm'=>['semver', 'integer', 'alpha', 'date', 'natural']}, 'path'=>'Evidence.versionAlgorithm[x]', 'type'=>'Coding', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/version-algorithm'}},
+        'name' => {'path'=>'Evidence.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'title' => {'path'=>'Evidence.title', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'citeAsReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Citation'], 'path'=>'Evidence.citeAs[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'citeAsMarkdown' => {'path'=>'Evidence.citeAs[x]', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'path'=>'Evidence.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
+        'experimental' => {'path'=>'Evidence.experimental', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'date' => {'path'=>'Evidence.date', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'approvalDate' => {'path'=>'Evidence.approvalDate', 'type'=>'date', 'min'=>0, 'max'=>1},
+        'lastReviewDate' => {'path'=>'Evidence.lastReviewDate', 'type'=>'date', 'min'=>0, 'max'=>1},
+        'publisher' => {'path'=>'Evidence.publisher', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'contact' => {'path'=>'Evidence.contact', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'author' => {'path'=>'Evidence.author', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'editor' => {'path'=>'Evidence.editor', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'reviewer' => {'path'=>'Evidence.reviewer', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'endorser' => {'path'=>'Evidence.endorser', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'useContext' => {'path'=>'Evidence.useContext', 'type'=>'UsageContext', 'min'=>0, 'max'=>Float::INFINITY},
+        'purpose' => {'path'=>'Evidence.purpose', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'copyright' => {'path'=>'Evidence.copyright', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'copyrightLabel' => {'path'=>'Evidence.copyrightLabel', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'relatedArtifact' => {'path'=>'Evidence.relatedArtifact', 'type'=>'RelatedArtifact', 'min'=>0, 'max'=>Float::INFINITY},
+        'description' => {'path'=>'Evidence.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'assertion' => {'path'=>'Evidence.assertion', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'note' => {'path'=>'Evidence.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+        'variableDefinition' => {'path'=>'Evidence.variableDefinition', 'type'=>'Evidence::VariableDefinition', 'min'=>1, 'max'=>Float::INFINITY},
+        'synthesisType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/synthesis-type'=>['std-MA', 'IPD-MA', 'indirect-NMA', 'combined-NMA', 'range', 'classification', 'pooled']}, 'path'=>'Evidence.synthesisType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://terminology.hl7.org/ValueSet/synthesis-type'}},
+        'studyDesign' => {'valid_codes'=>{'http://hl7.org/fhir/study-design'=>['SEVCO:01001', 'SEVCO:01003', 'SEVCO:01006', 'SEVCO:01007', 'SEVCO:01008', 'SEVCO:01009', 'SEVCO:01005', 'SEVCO:01004', 'SEVCO:01029', 'SEVCO:01041', 'SEVCO:01038', 'SEVCO:01030', 'SEVCO:01031', 'SEVCO:01032', 'SEVCO:01033', 'SEVCO:01034', 'SEVCO:01035', 'SEVCO:01036', 'SEVCO:01002', 'SEVCO:01037', 'SEVCO:01010', 'SEVCO:01011', 'SEVCO:01012', 'SEVCO:01024', 'SEVCO:01025', 'SEVCO:01013', 'SEVCO:01014', 'SEVCO:01020', 'SEVCO:01021', 'SEVCO:01015', 'SEVCO:01023', 'SEVCO:01016', 'SEVCO:01017', 'SEVCO:01022', 'SEVCO:01044', 'SEVCO:01027', 'SEVCO:01028', 'SEVCO:01018', 'SEVCO:01019', 'SEVCO:01045', 'SEVCO:01026', 'SEVCO:01039', 'SEVCO:01050', 'SEVCO:01040', 'SEVCO:01048', 'SEVCO:01046', 'SEVCO:01049', 'SEVCO:01042', 'SEVCO:01051', 'SEVCO:01086', 'SEVCO:01087', 'SEVCO:01060', 'SEVCO:01061', 'SEVCO:01062', 'SEVCO:01063', 'SEVCO:01064', 'SEVCO:01043', 'SEVCO:01052', 'SEVCO:01053', 'SEVCO:01054', 'SEVCO:01085', 'SEVCO:01089', 'SEVCO:01096', 'SEVCO:01097', 'SEVCO:01098', 'SEVCO:01088', 'SEVCO:01091', 'SEVCO:01090', 'SEVCO:01092', 'SEVCO:01093', 'SEVCO:01094', 'SEVCO:01095']}, 'path'=>'Evidence.studyDesign', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/study-design'}},
+        'statistic' => {'path'=>'Evidence.statistic', 'type'=>'Evidence::Statistic', 'min'=>0, 'max'=>Float::INFINITY},
+        'certainty' => {'path'=>'Evidence.certainty', 'type'=>'Evidence::Certainty', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class VariableDefinition < Model
@@ -60,15 +60,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'VariableDefinition.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'VariableDefinition.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'VariableDefinition.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'description' => {'type'=>'markdown', 'path'=>'VariableDefinition.description', 'min'=>0, 'max'=>1},
-          'note' => {'type'=>'Annotation', 'path'=>'VariableDefinition.note', 'min'=>0, 'max'=>Float::INFINITY},
-          'variableRole' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/variable-role'=>['population', 'subpopulation', 'exposure', 'referenceExposure', 'measuredVariable', 'confounder']}, 'type'=>'CodeableConcept', 'path'=>'VariableDefinition.variableRole', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/variable-role'}},
-          'observed' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/EvidenceVariable'], 'type'=>'Reference', 'path'=>'VariableDefinition.observed', 'min'=>0, 'max'=>1},
-          'intended' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/EvidenceVariable'], 'type'=>'Reference', 'path'=>'VariableDefinition.intended', 'min'=>0, 'max'=>1},
-          'directnessMatch' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/directness'=>['low', 'moderate', 'high', 'exact']}, 'type'=>'CodeableConcept', 'path'=>'VariableDefinition.directnessMatch', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://terminology.hl7.org/ValueSet/directness'}}
+          'id' => {'path'=>'VariableDefinition.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'VariableDefinition.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'VariableDefinition.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'description' => {'path'=>'VariableDefinition.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+          'note' => {'path'=>'VariableDefinition.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+          'variableRole' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/variable-role'=>['population', 'subpopulation', 'exposure', 'referenceExposure', 'measuredVariable', 'confounder']}, 'path'=>'VariableDefinition.variableRole', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/variable-role'}},
+          'observed' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/EvidenceVariable'], 'path'=>'VariableDefinition.observed', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'intended' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/EvidenceVariable'], 'path'=>'VariableDefinition.intended', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'directnessMatch' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/directness'=>['low', 'moderate', 'high', 'exact']}, 'path'=>'VariableDefinition.directnessMatch', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://terminology.hl7.org/ValueSet/directness'}}
         }
 
         attr_accessor :id                # 0-1 string
@@ -88,19 +88,19 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Statistic.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Statistic.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Statistic.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'description' => {'type'=>'markdown', 'path'=>'Statistic.description', 'min'=>0, 'max'=>1},
-          'note' => {'type'=>'Annotation', 'path'=>'Statistic.note', 'min'=>0, 'max'=>Float::INFINITY},
-          'statisticType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/statistic-type'=>['absolute-MedianDiff', 'C25463', '0000301', 'predictedRisk', 'descriptive', 'C93150', 'C16726', 'rate-ratio', 'C25564', 'C53319', '0000457', 'C28007', 'C25570', 'C16932', 'C65172', 'C17010', 'C44256', '0000565', 'C93152', '0000424', 'C65171', '0000100']}, 'type'=>'CodeableConcept', 'path'=>'Statistic.statisticType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/statistic-type'}},
-          'category' => {'type'=>'CodeableConcept', 'path'=>'Statistic.category', 'min'=>0, 'max'=>1},
-          'quantity' => {'type'=>'Quantity', 'path'=>'Statistic.quantity', 'min'=>0, 'max'=>1},
-          'numberOfEvents' => {'type'=>'unsignedInt', 'path'=>'Statistic.numberOfEvents', 'min'=>0, 'max'=>1},
-          'numberAffected' => {'type'=>'unsignedInt', 'path'=>'Statistic.numberAffected', 'min'=>0, 'max'=>1},
-          'sampleSize' => {'type'=>'Evidence::Statistic::SampleSize', 'path'=>'Statistic.sampleSize', 'min'=>0, 'max'=>1},
-          'attributeEstimate' => {'type'=>'Evidence::Statistic::AttributeEstimate', 'path'=>'Statistic.attributeEstimate', 'min'=>0, 'max'=>Float::INFINITY},
-          'modelCharacteristic' => {'type'=>'Evidence::Statistic::ModelCharacteristic', 'path'=>'Statistic.modelCharacteristic', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Statistic.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Statistic.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Statistic.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'description' => {'path'=>'Statistic.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+          'note' => {'path'=>'Statistic.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+          'statisticType' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/statistic-type'=>['absolute-MedianDiff', 'C25463', '0000301', 'predictedRisk', 'descriptive', 'C93150', 'C16726', 'rate-ratio', 'C25564', 'C53319', '0000457', 'C28007', 'C25570', 'C16932', 'C65172', 'C17010', 'C44256', '0000565', 'C93152', '0000424', 'C65171', '0000100']}, 'path'=>'Statistic.statisticType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/statistic-type'}},
+          'category' => {'path'=>'Statistic.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'quantity' => {'path'=>'Statistic.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'numberOfEvents' => {'path'=>'Statistic.numberOfEvents', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+          'numberAffected' => {'path'=>'Statistic.numberAffected', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+          'sampleSize' => {'path'=>'Statistic.sampleSize', 'type'=>'Evidence::Statistic::SampleSize', 'min'=>0, 'max'=>1},
+          'attributeEstimate' => {'path'=>'Statistic.attributeEstimate', 'type'=>'Evidence::Statistic::AttributeEstimate', 'min'=>0, 'max'=>Float::INFINITY},
+          'modelCharacteristic' => {'path'=>'Statistic.modelCharacteristic', 'type'=>'Evidence::Statistic::ModelCharacteristic', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class SampleSize < Model
@@ -109,14 +109,14 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'SampleSize.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'SampleSize.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'SampleSize.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'description' => {'type'=>'markdown', 'path'=>'SampleSize.description', 'min'=>0, 'max'=>1},
-            'note' => {'type'=>'Annotation', 'path'=>'SampleSize.note', 'min'=>0, 'max'=>Float::INFINITY},
-            'numberOfStudies' => {'type'=>'unsignedInt', 'path'=>'SampleSize.numberOfStudies', 'min'=>0, 'max'=>1},
-            'numberOfParticipants' => {'type'=>'unsignedInt', 'path'=>'SampleSize.numberOfParticipants', 'min'=>0, 'max'=>1},
-            'knownDataCount' => {'type'=>'unsignedInt', 'path'=>'SampleSize.knownDataCount', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'SampleSize.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'SampleSize.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'SampleSize.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'description' => {'path'=>'SampleSize.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+            'note' => {'path'=>'SampleSize.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+            'numberOfStudies' => {'path'=>'SampleSize.numberOfStudies', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+            'numberOfParticipants' => {'path'=>'SampleSize.numberOfParticipants', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+            'knownDataCount' => {'path'=>'SampleSize.knownDataCount', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                   # 0-1 string
@@ -135,16 +135,16 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'AttributeEstimate.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'AttributeEstimate.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'AttributeEstimate.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'description' => {'type'=>'markdown', 'path'=>'AttributeEstimate.description', 'min'=>0, 'max'=>1},
-            'note' => {'type'=>'Annotation', 'path'=>'AttributeEstimate.note', 'min'=>0, 'max'=>Float::INFINITY},
-            'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/attribute-estimate-type'=>['0000419', 'C53324', '0000455', '0000420', 'C53245', 'C44185', 'C38013', 'C53322', '0000037', '0000421', 'C48918']}, 'type'=>'CodeableConcept', 'path'=>'AttributeEstimate.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/attribute-estimate-type'}},
-            'quantity' => {'type'=>'Quantity', 'path'=>'AttributeEstimate.quantity', 'min'=>0, 'max'=>1},
-            'level' => {'type'=>'decimal', 'path'=>'AttributeEstimate.level', 'min'=>0, 'max'=>1},
-            'range' => {'type'=>'Range', 'path'=>'AttributeEstimate.range', 'min'=>0, 'max'=>1},
-            'attributeEstimate' => {'type'=>'Evidence::Statistic::AttributeEstimate', 'path'=>'AttributeEstimate.attributeEstimate', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'AttributeEstimate.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'AttributeEstimate.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'AttributeEstimate.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'description' => {'path'=>'AttributeEstimate.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+            'note' => {'path'=>'AttributeEstimate.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+            'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/attribute-estimate-type'=>['0000419', 'C53324', '0000455', '0000420', 'C53245', 'C44185', 'C38013', 'C53322', '0000037', '0000421', 'C48918']}, 'path'=>'AttributeEstimate.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/attribute-estimate-type'}},
+            'quantity' => {'path'=>'AttributeEstimate.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+            'level' => {'path'=>'AttributeEstimate.level', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+            'range' => {'path'=>'AttributeEstimate.range', 'type'=>'Range', 'min'=>0, 'max'=>1},
+            'attributeEstimate' => {'path'=>'AttributeEstimate.attributeEstimate', 'type'=>'Evidence::Statistic::AttributeEstimate', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           attr_accessor :id                # 0-1 string
@@ -165,13 +165,13 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'ModelCharacteristic.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'ModelCharacteristic.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'ModelCharacteristic.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'code' => {'valid_codes'=>{'http://hl7.org/fhir/statistic-model-code'=>['oneTailedTest', 'twoTailedTest', 'zTest', 'oneSampleTTest', 'twoSampleTTest', 'pairedTTest', 'chiSquareTest', 'chiSquareTestTrend', 'pearsonCorrelation', 'anova', 'anovaOneWay', 'anovaTwoWay', 'anovaTwoWayReplication', 'manova', 'anovaThreeWay', 'signTest', 'wilcoxonSignedRankTest', 'wilcoxonRankSumTest', 'mannWhitneyUTest', 'fishersExactTest', 'mcnemarsTest', 'kruskalWallisTest', 'spearmanCorrelation', 'kendallCorrelation', 'friedmanTest', 'goodmanKruskasGamma', 'glm', 'glmProbit', 'glmLogit', 'glmIdentity', 'glmLog', 'glmGeneralizedLogit', 'glmm', 'glmmProbit', 'glmmLogit', 'glmmIdentity', 'glmmLog', 'glmmGeneralizedLogit', 'linearRegression', 'logisticRegression', 'polynomialRegression', 'coxProportionalHazards', 'binomialDistributionRegression', 'multinomialDistributionRegression', 'poissonRegression', 'negativeBinomialRegression', 'zeroCellConstant', 'zeroCellContinuityCorrection', 'adjusted', 'interactionTerm', 'manteHaenszelMethod', 'metaAnalysis', 'inverseVariance', 'petoMethod', 'hartungKnapp', 'modifiedHartungKnapp', 'effectsFixed', 'effectsRandom', 'chiSquareTestHomogeneity', 'dersimonianLairdMethod', 'pauleMandelMethod', 'restrictedLikelihood', 'maximumLikelihood', 'empiricalBayes', 'hunterSchmidt', 'sidikJonkman', 'hedgesMethod', 'tauDersimonianLaird', 'tauPauleMandel', 'tauRestrictedMaximumLikelihood', 'tauMaximumLikelihood', 'tauEmpiricalBayes', 'tauHunterSchmidt', 'tauSidikJonkman', 'tauHedges', 'poolMantelHaenzsel', 'poolInverseVariance', 'poolPeto', 'poolGeneralizedLinearMixedModel']}, 'type'=>'CodeableConcept', 'path'=>'ModelCharacteristic.code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/statistic-model-code'}},
-            'value' => {'type'=>'Quantity', 'path'=>'ModelCharacteristic.value', 'min'=>0, 'max'=>1},
-            'variable' => {'type'=>'Evidence::Statistic::ModelCharacteristic::Variable', 'path'=>'ModelCharacteristic.variable', 'min'=>0, 'max'=>Float::INFINITY},
-            'attributeEstimate' => {'type'=>'Evidence::Statistic::AttributeEstimate', 'path'=>'ModelCharacteristic.attributeEstimate', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'ModelCharacteristic.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'ModelCharacteristic.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'ModelCharacteristic.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'code' => {'valid_codes'=>{'http://hl7.org/fhir/statistic-model-code'=>['oneTailedTest', 'twoTailedTest', 'zTest', 'oneSampleTTest', 'twoSampleTTest', 'pairedTTest', 'chiSquareTest', 'chiSquareTestTrend', 'pearsonCorrelation', 'anova', 'anovaOneWay', 'anovaTwoWay', 'anovaTwoWayReplication', 'manova', 'anovaThreeWay', 'signTest', 'wilcoxonSignedRankTest', 'wilcoxonRankSumTest', 'mannWhitneyUTest', 'fishersExactTest', 'mcnemarsTest', 'kruskalWallisTest', 'spearmanCorrelation', 'kendallCorrelation', 'friedmanTest', 'goodmanKruskasGamma', 'glm', 'glmProbit', 'glmLogit', 'glmIdentity', 'glmLog', 'glmGeneralizedLogit', 'glmm', 'glmmProbit', 'glmmLogit', 'glmmIdentity', 'glmmLog', 'glmmGeneralizedLogit', 'linearRegression', 'logisticRegression', 'polynomialRegression', 'coxProportionalHazards', 'binomialDistributionRegression', 'multinomialDistributionRegression', 'poissonRegression', 'negativeBinomialRegression', 'zeroCellConstant', 'zeroCellContinuityCorrection', 'adjusted', 'interactionTerm', 'manteHaenszelMethod', 'metaAnalysis', 'inverseVariance', 'petoMethod', 'hartungKnapp', 'modifiedHartungKnapp', 'effectsFixed', 'effectsRandom', 'chiSquareTestHomogeneity', 'dersimonianLairdMethod', 'pauleMandelMethod', 'restrictedLikelihood', 'maximumLikelihood', 'empiricalBayes', 'hunterSchmidt', 'sidikJonkman', 'hedgesMethod', 'tauDersimonianLaird', 'tauPauleMandel', 'tauRestrictedMaximumLikelihood', 'tauMaximumLikelihood', 'tauEmpiricalBayes', 'tauHunterSchmidt', 'tauSidikJonkman', 'tauHedges', 'poolMantelHaenzsel', 'poolInverseVariance', 'poolPeto', 'poolGeneralizedLinearMixedModel']}, 'path'=>'ModelCharacteristic.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/statistic-model-code'}},
+            'value' => {'path'=>'ModelCharacteristic.value', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+            'variable' => {'path'=>'ModelCharacteristic.variable', 'type'=>'Evidence::Statistic::ModelCharacteristic::Variable', 'min'=>0, 'max'=>Float::INFINITY},
+            'attributeEstimate' => {'path'=>'ModelCharacteristic.attributeEstimate', 'type'=>'Evidence::Statistic::AttributeEstimate', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Variable < Model
@@ -180,14 +180,14 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Variable.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Variable.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Variable.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'variableDefinition' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/EvidenceVariable'], 'type'=>'Reference', 'path'=>'Variable.variableDefinition', 'min'=>1, 'max'=>1},
-              'handling' => {'valid_codes'=>{'http://hl7.org/fhir/variable-handling'=>['continuous', 'dichotomous', 'ordinal', 'polychotomous']}, 'type'=>'code', 'path'=>'Variable.handling', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/variable-handling'}},
-              'valueCategory' => {'type'=>'CodeableConcept', 'path'=>'Variable.valueCategory', 'min'=>0, 'max'=>Float::INFINITY},
-              'valueQuantity' => {'type'=>'Quantity', 'path'=>'Variable.valueQuantity', 'min'=>0, 'max'=>Float::INFINITY},
-              'valueRange' => {'type'=>'Range', 'path'=>'Variable.valueRange', 'min'=>0, 'max'=>Float::INFINITY}
+              'id' => {'path'=>'Variable.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Variable.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Variable.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'variableDefinition' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/EvidenceVariable'], 'path'=>'Variable.variableDefinition', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+              'handling' => {'valid_codes'=>{'http://hl7.org/fhir/variable-handling'=>['continuous', 'dichotomous', 'ordinal', 'polychotomous']}, 'path'=>'Variable.handling', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/variable-handling'}},
+              'valueCategory' => {'path'=>'Variable.valueCategory', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+              'valueQuantity' => {'path'=>'Variable.valueQuantity', 'type'=>'Quantity', 'min'=>0, 'max'=>Float::INFINITY},
+              'valueRange' => {'path'=>'Variable.valueRange', 'type'=>'Range', 'min'=>0, 'max'=>Float::INFINITY}
             }
 
             attr_accessor :id                 # 0-1 string
@@ -230,15 +230,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Certainty.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Certainty.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Certainty.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'description' => {'type'=>'markdown', 'path'=>'Certainty.description', 'min'=>0, 'max'=>1},
-          'note' => {'type'=>'Annotation', 'path'=>'Certainty.note', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://hl7.org/fhir/certainty-type'=>['Overall', 'RiskOfBias', 'Inconsistency', 'Indirectness', 'Imprecision', 'PublicationBias', 'DoseResponseGradient', 'PlausibleConfounding', 'LargeEffect']}, 'type'=>'CodeableConcept', 'path'=>'Certainty.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/certainty-type'}},
-          'rating' => {'valid_codes'=>{'http://hl7.org/fhir/certainty-rating'=>['high', 'moderate', 'low', 'very-low', 'no-concern', 'serious-concern', 'very-serious-concern', 'extremely-serious-concern', 'present', 'absent', 'no-change', 'downcode1', 'downcode2', 'downcode3', 'upcode1', 'upcode2']}, 'type'=>'CodeableConcept', 'path'=>'Certainty.rating', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/certainty-rating'}},
-          'rater' => {'type'=>'string', 'path'=>'Certainty.rater', 'min'=>0, 'max'=>1},
-          'subcomponent' => {'type'=>'Evidence::Certainty', 'path'=>'Certainty.subcomponent', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Certainty.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Certainty.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Certainty.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'description' => {'path'=>'Certainty.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+          'note' => {'path'=>'Certainty.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://hl7.org/fhir/certainty-type'=>['Overall', 'RiskOfBias', 'Inconsistency', 'Indirectness', 'Imprecision', 'PublicationBias', 'DoseResponseGradient', 'PlausibleConfounding', 'LargeEffect']}, 'path'=>'Certainty.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/certainty-type'}},
+          'rating' => {'valid_codes'=>{'http://hl7.org/fhir/certainty-rating'=>['high', 'moderate', 'low', 'very-low', 'no-concern', 'serious-concern', 'very-serious-concern', 'extremely-serious-concern', 'present', 'absent', 'no-change', 'downcode1', 'downcode2', 'downcode3', 'upcode1', 'upcode2']}, 'path'=>'Certainty.rating', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/certainty-rating'}},
+          'rater' => {'path'=>'Certainty.rater', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'subcomponent' => {'path'=>'Certainty.subcomponent', 'type'=>'Evidence::Certainty', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string

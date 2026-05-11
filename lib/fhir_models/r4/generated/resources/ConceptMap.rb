@@ -11,34 +11,34 @@ module FHIR
       }
       SEARCH_PARAMS = ['context', 'context-quantity', 'context-type', 'context-type-quantity', 'context-type-value', 'date', 'dependson', 'description', 'identifier', 'jurisdiction', 'name', 'other', 'product', 'publisher', 'source', 'source-code', 'source-system', 'source-uri', 'status', 'target', 'target-code', 'target-system', 'target-uri', 'title', 'url', 'version']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'ConceptMap.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'ConceptMap.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'ConceptMap.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'ConceptMap.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'ConceptMap.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'ConceptMap.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'ConceptMap.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'ConceptMap.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'url' => {'type'=>'uri', 'path'=>'ConceptMap.url', 'min'=>0, 'max'=>1},
-        'identifier' => {'type'=>'Identifier', 'path'=>'ConceptMap.identifier', 'min'=>0, 'max'=>1},
-        'version' => {'type'=>'string', 'path'=>'ConceptMap.version', 'min'=>0, 'max'=>1},
-        'name' => {'type'=>'string', 'path'=>'ConceptMap.name', 'min'=>0, 'max'=>1},
-        'title' => {'type'=>'string', 'path'=>'ConceptMap.title', 'min'=>0, 'max'=>1},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'type'=>'code', 'path'=>'ConceptMap.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
-        'experimental' => {'type'=>'boolean', 'path'=>'ConceptMap.experimental', 'min'=>0, 'max'=>1},
-        'date' => {'type'=>'dateTime', 'path'=>'ConceptMap.date', 'min'=>0, 'max'=>1},
-        'publisher' => {'type'=>'string', 'path'=>'ConceptMap.publisher', 'min'=>0, 'max'=>1},
-        'contact' => {'type'=>'ContactDetail', 'path'=>'ConceptMap.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'description' => {'type'=>'markdown', 'path'=>'ConceptMap.description', 'min'=>0, 'max'=>1},
-        'useContext' => {'type'=>'UsageContext', 'path'=>'ConceptMap.useContext', 'min'=>0, 'max'=>Float::INFINITY},
-        'jurisdiction' => {'type'=>'CodeableConcept', 'path'=>'ConceptMap.jurisdiction', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/jurisdiction'}},
-        'purpose' => {'type'=>'markdown', 'path'=>'ConceptMap.purpose', 'min'=>0, 'max'=>1},
-        'copyright' => {'type'=>'markdown', 'path'=>'ConceptMap.copyright', 'min'=>0, 'max'=>1},
-        'sourceUri' => {'type'=>'uri', 'path'=>'ConceptMap.source[x]', 'min'=>0, 'max'=>1},
-        'sourceCanonical' => {'type'=>'canonical', 'path'=>'ConceptMap.source[x]', 'min'=>0, 'max'=>1},
-        'targetUri' => {'type'=>'uri', 'path'=>'ConceptMap.target[x]', 'min'=>0, 'max'=>1},
-        'targetCanonical' => {'type'=>'canonical', 'path'=>'ConceptMap.target[x]', 'min'=>0, 'max'=>1},
-        'group' => {'type'=>'ConceptMap::Group', 'path'=>'ConceptMap.group', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'ConceptMap.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'ConceptMap.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'ConceptMap.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'ConceptMap.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'ConceptMap.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'ConceptMap.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'ConceptMap.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'ConceptMap.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'url' => {'path'=>'ConceptMap.url', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'identifier' => {'path'=>'ConceptMap.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+        'version' => {'path'=>'ConceptMap.version', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'name' => {'path'=>'ConceptMap.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'title' => {'path'=>'ConceptMap.title', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'path'=>'ConceptMap.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
+        'experimental' => {'path'=>'ConceptMap.experimental', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'date' => {'path'=>'ConceptMap.date', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'publisher' => {'path'=>'ConceptMap.publisher', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'contact' => {'path'=>'ConceptMap.contact', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'description' => {'path'=>'ConceptMap.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'useContext' => {'path'=>'ConceptMap.useContext', 'type'=>'UsageContext', 'min'=>0, 'max'=>Float::INFINITY},
+        'jurisdiction' => {'path'=>'ConceptMap.jurisdiction', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/jurisdiction'}},
+        'purpose' => {'path'=>'ConceptMap.purpose', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'copyright' => {'path'=>'ConceptMap.copyright', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'sourceUri' => {'path'=>'ConceptMap.source[x]', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'sourceCanonical' => {'path'=>'ConceptMap.source[x]', 'type'=>'canonical', 'min'=>0, 'max'=>1},
+        'targetUri' => {'path'=>'ConceptMap.target[x]', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'targetCanonical' => {'path'=>'ConceptMap.target[x]', 'type'=>'canonical', 'min'=>0, 'max'=>1},
+        'group' => {'path'=>'ConceptMap.group', 'type'=>'ConceptMap::Group', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Group < Model
@@ -47,15 +47,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Group.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Group.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Group.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'source' => {'type'=>'uri', 'path'=>'Group.source', 'min'=>0, 'max'=>1},
-          'sourceVersion' => {'type'=>'string', 'path'=>'Group.sourceVersion', 'min'=>0, 'max'=>1},
-          'target' => {'type'=>'uri', 'path'=>'Group.target', 'min'=>0, 'max'=>1},
-          'targetVersion' => {'type'=>'string', 'path'=>'Group.targetVersion', 'min'=>0, 'max'=>1},
-          'element' => {'type'=>'ConceptMap::Group::Element', 'path'=>'Group.element', 'min'=>1, 'max'=>Float::INFINITY},
-          'unmapped' => {'type'=>'ConceptMap::Group::Unmapped', 'path'=>'Group.unmapped', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Group.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Group.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Group.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'source' => {'path'=>'Group.source', 'type'=>'uri', 'min'=>0, 'max'=>1},
+          'sourceVersion' => {'path'=>'Group.sourceVersion', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'target' => {'path'=>'Group.target', 'type'=>'uri', 'min'=>0, 'max'=>1},
+          'targetVersion' => {'path'=>'Group.targetVersion', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'element' => {'path'=>'Group.element', 'type'=>'ConceptMap::Group::Element', 'min'=>1, 'max'=>Float::INFINITY},
+          'unmapped' => {'path'=>'Group.unmapped', 'type'=>'ConceptMap::Group::Unmapped', 'min'=>0, 'max'=>1}
         }
 
         class Element < Model
@@ -64,12 +64,12 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Element.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Element.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Element.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'code' => {'type'=>'code', 'path'=>'Element.code', 'min'=>0, 'max'=>1},
-            'display' => {'type'=>'string', 'path'=>'Element.display', 'min'=>0, 'max'=>1},
-            'target' => {'type'=>'ConceptMap::Group::Element::Target', 'path'=>'Element.target', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Element.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Element.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Element.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'code' => {'path'=>'Element.code', 'type'=>'code', 'min'=>0, 'max'=>1},
+            'display' => {'path'=>'Element.display', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'target' => {'path'=>'Element.target', 'type'=>'ConceptMap::Group::Element::Target', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Target < Model
@@ -78,15 +78,15 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Target.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Target.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Target.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'code' => {'type'=>'code', 'path'=>'Target.code', 'min'=>0, 'max'=>1},
-              'display' => {'type'=>'string', 'path'=>'Target.display', 'min'=>0, 'max'=>1},
-              'equivalence' => {'valid_codes'=>{'http://hl7.org/fhir/concept-map-equivalence'=>['relatedto', 'equivalent', 'equal', 'wider', 'subsumes', 'narrower', 'specializes', 'inexact', 'unmatched', 'disjoint']}, 'type'=>'code', 'path'=>'Target.equivalence', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/concept-map-equivalence'}},
-              'comment' => {'type'=>'string', 'path'=>'Target.comment', 'min'=>0, 'max'=>1},
-              'dependsOn' => {'type'=>'ConceptMap::Group::Element::Target::DependsOn', 'path'=>'Target.dependsOn', 'min'=>0, 'max'=>Float::INFINITY},
-              'product' => {'type'=>'ConceptMap::Group::Element::Target::DependsOn', 'path'=>'Target.product', 'min'=>0, 'max'=>Float::INFINITY}
+              'id' => {'path'=>'Target.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Target.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Target.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'code' => {'path'=>'Target.code', 'type'=>'code', 'min'=>0, 'max'=>1},
+              'display' => {'path'=>'Target.display', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'equivalence' => {'valid_codes'=>{'http://hl7.org/fhir/concept-map-equivalence'=>['relatedto', 'equivalent', 'equal', 'wider', 'subsumes', 'narrower', 'specializes', 'inexact', 'unmatched', 'disjoint']}, 'path'=>'Target.equivalence', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/concept-map-equivalence'}},
+              'comment' => {'path'=>'Target.comment', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'dependsOn' => {'path'=>'Target.dependsOn', 'type'=>'ConceptMap::Group::Element::Target::DependsOn', 'min'=>0, 'max'=>Float::INFINITY},
+              'product' => {'path'=>'Target.product', 'type'=>'ConceptMap::Group::Element::Target::DependsOn', 'min'=>0, 'max'=>Float::INFINITY}
             }
 
             class DependsOn < Model
@@ -95,13 +95,13 @@ module FHIR
               include FHIR::Xml
 
               METADATA = {
-                'id' => {'type'=>'string', 'path'=>'DependsOn.id', 'min'=>0, 'max'=>1},
-                'extension' => {'type'=>'Extension', 'path'=>'DependsOn.extension', 'min'=>0, 'max'=>Float::INFINITY},
-                'modifierExtension' => {'type'=>'Extension', 'path'=>'DependsOn.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-                'property' => {'type'=>'uri', 'path'=>'DependsOn.property', 'min'=>1, 'max'=>1},
-                'system' => {'type'=>'canonical', 'path'=>'DependsOn.system', 'min'=>0, 'max'=>1},
-                'value' => {'type'=>'string', 'path'=>'DependsOn.value', 'min'=>1, 'max'=>1},
-                'display' => {'type'=>'string', 'path'=>'DependsOn.display', 'min'=>0, 'max'=>1}
+                'id' => {'path'=>'DependsOn.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+                'extension' => {'path'=>'DependsOn.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'modifierExtension' => {'path'=>'DependsOn.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'property' => {'path'=>'DependsOn.property', 'type'=>'uri', 'min'=>1, 'max'=>1},
+                'system' => {'path'=>'DependsOn.system', 'type'=>'canonical', 'min'=>0, 'max'=>1},
+                'value' => {'path'=>'DependsOn.value', 'type'=>'string', 'min'=>1, 'max'=>1},
+                'display' => {'path'=>'DependsOn.display', 'type'=>'string', 'min'=>0, 'max'=>1}
               }
 
               attr_accessor :id                # 0-1 string
@@ -138,13 +138,13 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Unmapped.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Unmapped.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Unmapped.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'mode' => {'valid_codes'=>{'http://hl7.org/fhir/conceptmap-unmapped-mode'=>['provided', 'fixed', 'other-map']}, 'type'=>'code', 'path'=>'Unmapped.mode', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/conceptmap-unmapped-mode'}},
-            'code' => {'type'=>'code', 'path'=>'Unmapped.code', 'min'=>0, 'max'=>1},
-            'display' => {'type'=>'string', 'path'=>'Unmapped.display', 'min'=>0, 'max'=>1},
-            'url' => {'type'=>'canonical', 'path'=>'Unmapped.url', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Unmapped.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Unmapped.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Unmapped.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'mode' => {'valid_codes'=>{'http://hl7.org/fhir/conceptmap-unmapped-mode'=>['provided', 'fixed', 'other-map']}, 'path'=>'Unmapped.mode', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/conceptmap-unmapped-mode'}},
+            'code' => {'path'=>'Unmapped.code', 'type'=>'code', 'min'=>0, 'max'=>1},
+            'display' => {'path'=>'Unmapped.display', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'url' => {'path'=>'Unmapped.url', 'type'=>'canonical', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string

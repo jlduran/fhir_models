@@ -7,8 +7,8 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'DataType.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'DataType.extension', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'DataType.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'DataType.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       attr_accessor :id        # 0-1 string

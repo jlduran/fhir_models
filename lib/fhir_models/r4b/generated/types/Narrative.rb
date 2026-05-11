@@ -7,10 +7,10 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Narrative.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Narrative.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/narrative-status'=>['generated', 'extensions', 'additional', 'empty']}, 'type'=>'code', 'path'=>'Narrative.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/narrative-status'}},
-        'div' => {'type'=>'xhtml', 'path'=>'Narrative.div', 'min'=>1, 'max'=>1}
+        'id' => {'path'=>'Narrative.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Narrative.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/narrative-status'=>['generated', 'extensions', 'additional', 'empty']}, 'path'=>'Narrative.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/narrative-status'}},
+        'div' => {'path'=>'Narrative.div', 'type'=>'xhtml', 'min'=>1, 'max'=>1}
       }
 
       attr_accessor :id        # 0-1 string

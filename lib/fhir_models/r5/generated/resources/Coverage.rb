@@ -7,34 +7,34 @@ module FHIR
 
       SEARCH_PARAMS = ['beneficiary', 'class-type', 'class-value', 'dependent', 'identifier', 'insurer', 'patient', 'paymentby-party', 'policy-holder', 'status', 'subscriber', 'subscriberid', 'type']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'Coverage.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'Coverage.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'Coverage.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'Coverage.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'Coverage.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'Coverage.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'Coverage.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'Coverage.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'Coverage.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/fm-status'=>['active', 'cancelled', 'draft', 'entered-in-error']}, 'type'=>'code', 'path'=>'Coverage.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/fm-status'}},
-        'kind' => {'valid_codes'=>{'http://hl7.org/fhir/coverage-kind'=>['insurance', 'self-pay', 'other']}, 'type'=>'code', 'path'=>'Coverage.kind', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-kind'}},
-        'paymentBy' => {'type'=>'Coverage::PaymentBy', 'path'=>'Coverage.paymentBy', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/coverage-selfpay'=>['pay'], 'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['_ActCoverageTypeCode', '_ActInsurancePolicyCode', 'EHCPOL', 'HSAPOL', 'AUTOPOL', 'COL', 'UNINSMOT', 'PUBLICPOL', 'DENTPRG', 'DISEASEPRG', 'CANPRG', 'ENDRENAL', 'HIVAIDS', 'MANDPOL', 'MENTPRG', 'SAFNET', 'SUBPRG', 'SUBSIDIZ', 'SUBSIDMC', 'SUBSUPP', 'WCBPOL', '_ActInsuranceTypeCode', '_ActHealthInsuranceTypeCode', 'DENTAL', 'DISEASE', 'DRUGPOL', 'HIP', 'LTC', 'MCPOL', 'POS', 'HMO', 'PPO', 'MENTPOL', 'SUBPOL', 'VISPOL', 'DIS', 'EWB', 'FLEXP', 'LIFE', 'ANNU', 'TLIFE', 'ULIFE', 'PNC', 'REI', 'SURPL', 'UMBRL', '_ActProgramTypeCode', 'CHAR', 'CRIME', 'EAP', 'GOVEMP', 'HIRISK', 'IND', 'MILITARY', 'RETIRE', 'SOCIAL', 'VET']}, 'type'=>'CodeableConcept', 'path'=>'Coverage.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-type'}},
-        'policyHolder' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Coverage.policyHolder', 'min'=>0, 'max'=>1},
-        'subscriber' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'Coverage.subscriber', 'min'=>0, 'max'=>1},
-        'subscriberId' => {'type'=>'Identifier', 'path'=>'Coverage.subscriberId', 'min'=>0, 'max'=>Float::INFINITY},
-        'beneficiary' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'Coverage.beneficiary', 'min'=>1, 'max'=>1},
-        'dependent' => {'type'=>'string', 'path'=>'Coverage.dependent', 'min'=>0, 'max'=>1},
-        'relationship' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/subscriber-relationship'=>['child', 'parent', 'spouse', 'common', 'other', 'self', 'injured']}, 'type'=>'CodeableConcept', 'path'=>'Coverage.relationship', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/subscriber-relationship'}},
-        'period' => {'type'=>'Period', 'path'=>'Coverage.period', 'min'=>0, 'max'=>1},
-        'insurer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Coverage.insurer', 'min'=>0, 'max'=>1},
-        'class' => {'local_name'=>'local_class', 'type'=>'Coverage::Class', 'path'=>'Coverage.class', 'min'=>0, 'max'=>Float::INFINITY},
-        'order' => {'type'=>'positiveInt', 'path'=>'Coverage.order', 'min'=>0, 'max'=>1},
-        'network' => {'type'=>'string', 'path'=>'Coverage.network', 'min'=>0, 'max'=>1},
-        'costToBeneficiary' => {'type'=>'Coverage::CostToBeneficiary', 'path'=>'Coverage.costToBeneficiary', 'min'=>0, 'max'=>Float::INFINITY},
-        'subrogation' => {'type'=>'boolean', 'path'=>'Coverage.subrogation', 'min'=>0, 'max'=>1},
-        'contract' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Contract'], 'type'=>'Reference', 'path'=>'Coverage.contract', 'min'=>0, 'max'=>Float::INFINITY},
-        'insurancePlan' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/InsurancePlan'], 'type'=>'Reference', 'path'=>'Coverage.insurancePlan', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Coverage.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'Coverage.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'Coverage.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'Coverage.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'Coverage.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'Coverage.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'Coverage.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'Coverage.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'Coverage.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/fm-status'=>['active', 'cancelled', 'draft', 'entered-in-error']}, 'path'=>'Coverage.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/fm-status'}},
+        'kind' => {'valid_codes'=>{'http://hl7.org/fhir/coverage-kind'=>['insurance', 'self-pay', 'other']}, 'path'=>'Coverage.kind', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-kind'}},
+        'paymentBy' => {'path'=>'Coverage.paymentBy', 'type'=>'Coverage::PaymentBy', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/coverage-selfpay'=>['pay'], 'http://terminology.hl7.org/CodeSystem/v3-ActCode'=>['_ActCoverageTypeCode', '_ActInsurancePolicyCode', 'EHCPOL', 'HSAPOL', 'AUTOPOL', 'COL', 'UNINSMOT', 'PUBLICPOL', 'DENTPRG', 'DISEASEPRG', 'CANPRG', 'ENDRENAL', 'HIVAIDS', 'MANDPOL', 'MENTPRG', 'SAFNET', 'SUBPRG', 'SUBSIDIZ', 'SUBSIDMC', 'SUBSUPP', 'WCBPOL', '_ActInsuranceTypeCode', '_ActHealthInsuranceTypeCode', 'DENTAL', 'DISEASE', 'DRUGPOL', 'HIP', 'LTC', 'MCPOL', 'POS', 'HMO', 'PPO', 'MENTPOL', 'SUBPOL', 'VISPOL', 'DIS', 'EWB', 'FLEXP', 'LIFE', 'ANNU', 'TLIFE', 'ULIFE', 'PNC', 'REI', 'SURPL', 'UMBRL', '_ActProgramTypeCode', 'CHAR', 'CRIME', 'EAP', 'GOVEMP', 'HIRISK', 'IND', 'MILITARY', 'RETIRE', 'SOCIAL', 'VET']}, 'path'=>'Coverage.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-type'}},
+        'policyHolder' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Coverage.policyHolder', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'subscriber' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'Coverage.subscriber', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'subscriberId' => {'path'=>'Coverage.subscriberId', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'beneficiary' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'Coverage.beneficiary', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'dependent' => {'path'=>'Coverage.dependent', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'relationship' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/subscriber-relationship'=>['child', 'parent', 'spouse', 'common', 'other', 'self', 'injured']}, 'path'=>'Coverage.relationship', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/subscriber-relationship'}},
+        'period' => {'path'=>'Coverage.period', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'insurer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Coverage.insurer', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'class' => {'local_name'=>'local_class', 'path'=>'Coverage.class', 'type'=>'Coverage::Class', 'min'=>0, 'max'=>Float::INFINITY},
+        'order' => {'path'=>'Coverage.order', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+        'network' => {'path'=>'Coverage.network', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'costToBeneficiary' => {'path'=>'Coverage.costToBeneficiary', 'type'=>'Coverage::CostToBeneficiary', 'min'=>0, 'max'=>Float::INFINITY},
+        'subrogation' => {'path'=>'Coverage.subrogation', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'contract' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Contract'], 'path'=>'Coverage.contract', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'insurancePlan' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/InsurancePlan'], 'path'=>'Coverage.insurancePlan', 'type'=>'Reference', 'min'=>0, 'max'=>1}
       }
 
       class PaymentBy < Model
@@ -43,11 +43,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'PaymentBy.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'PaymentBy.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'PaymentBy.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'party' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'PaymentBy.party', 'min'=>1, 'max'=>1},
-          'responsibility' => {'type'=>'string', 'path'=>'PaymentBy.responsibility', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'PaymentBy.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'PaymentBy.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'PaymentBy.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'party' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'PaymentBy.party', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+          'responsibility' => {'path'=>'PaymentBy.responsibility', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -63,12 +63,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Class.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Class.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Class.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/coverage-class'=>['group', 'subgroup', 'plan', 'subplan', 'class', 'subclass', 'sequence', 'rxbin', 'rxpcn', 'rxid', 'rxgroup']}, 'type'=>'CodeableConcept', 'path'=>'Class.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-class'}},
-          'value' => {'type'=>'Identifier', 'path'=>'Class.value', 'min'=>1, 'max'=>1},
-          'name' => {'type'=>'string', 'path'=>'Class.name', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Class.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Class.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Class.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/coverage-class'=>['group', 'subgroup', 'plan', 'subplan', 'class', 'subclass', 'sequence', 'rxbin', 'rxpcn', 'rxid', 'rxgroup']}, 'path'=>'Class.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-class'}},
+          'value' => {'path'=>'Class.value', 'type'=>'Identifier', 'min'=>1, 'max'=>1},
+          'name' => {'path'=>'Class.name', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -88,17 +88,17 @@ module FHIR
           'value' => ['Quantity', 'Money']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'CostToBeneficiary.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'CostToBeneficiary.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'CostToBeneficiary.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/coverage-copay-type'=>['gpvisit', 'spvisit', 'emergency', 'inpthosp', 'televisit', 'urgentcare', 'copaypct', 'copay', 'deductible', 'maxoutofpocket']}, 'type'=>'CodeableConcept', 'path'=>'CostToBeneficiary.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-copay-type'}},
-          'category' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-benefitcategory'=>['1', '2', '3', '4', '5', '14', '23', '24', '25', '26', '27', '28', '30', '35', '36', '37', '49', '55', '56', '61', '62', '63', '69', '76', 'F1', 'F3', 'F4', 'F6']}, 'type'=>'CodeableConcept', 'path'=>'CostToBeneficiary.category', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/ex-benefitcategory'}},
-          'network' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/benefit-network'=>['in', 'out']}, 'type'=>'CodeableConcept', 'path'=>'CostToBeneficiary.network', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/benefit-network'}},
-          'unit' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/benefit-unit'=>['individual', 'family']}, 'type'=>'CodeableConcept', 'path'=>'CostToBeneficiary.unit', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/benefit-unit'}},
-          'term' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/benefit-term'=>['annual', 'day', 'lifetime']}, 'type'=>'CodeableConcept', 'path'=>'CostToBeneficiary.term', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/benefit-term'}},
-          'valueQuantity' => {'type'=>'Quantity', 'path'=>'CostToBeneficiary.value[x]', 'min'=>0, 'max'=>1},
-          'valueMoney' => {'type'=>'Money', 'path'=>'CostToBeneficiary.value[x]', 'min'=>0, 'max'=>1},
-          'exception' => {'type'=>'Coverage::CostToBeneficiary::Exception', 'path'=>'CostToBeneficiary.exception', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'CostToBeneficiary.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'CostToBeneficiary.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'CostToBeneficiary.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/coverage-copay-type'=>['gpvisit', 'spvisit', 'emergency', 'inpthosp', 'televisit', 'urgentcare', 'copaypct', 'copay', 'deductible', 'maxoutofpocket']}, 'path'=>'CostToBeneficiary.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-copay-type'}},
+          'category' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-benefitcategory'=>['1', '2', '3', '4', '5', '14', '23', '24', '25', '26', '27', '28', '30', '35', '36', '37', '49', '55', '56', '61', '62', '63', '69', '76', 'F1', 'F3', 'F4', 'F6']}, 'path'=>'CostToBeneficiary.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/ex-benefitcategory'}},
+          'network' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/benefit-network'=>['in', 'out']}, 'path'=>'CostToBeneficiary.network', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/benefit-network'}},
+          'unit' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/benefit-unit'=>['individual', 'family']}, 'path'=>'CostToBeneficiary.unit', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/benefit-unit'}},
+          'term' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/benefit-term'=>['annual', 'day', 'lifetime']}, 'path'=>'CostToBeneficiary.term', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/benefit-term'}},
+          'valueQuantity' => {'path'=>'CostToBeneficiary.value[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'valueMoney' => {'path'=>'CostToBeneficiary.value[x]', 'type'=>'Money', 'min'=>0, 'max'=>1},
+          'exception' => {'path'=>'CostToBeneficiary.exception', 'type'=>'Coverage::CostToBeneficiary::Exception', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Exception < Model
@@ -107,11 +107,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Exception.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Exception.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Exception.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception'=>['retired', 'foster']}, 'type'=>'CodeableConcept', 'path'=>'Exception.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-financial-exception'}},
-            'period' => {'type'=>'Period', 'path'=>'Exception.period', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Exception.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Exception.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Exception.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception'=>['retired', 'foster']}, 'path'=>'Exception.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/coverage-financial-exception'}},
+            'period' => {'path'=>'Exception.period', 'type'=>'Period', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string

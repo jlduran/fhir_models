@@ -7,38 +7,38 @@ module FHIR
 
       SEARCH_PARAMS = ['context', 'context-quantity', 'context-type', 'context-type-quantity', 'context-type-value', 'date', 'description', 'jurisdiction', 'name', 'publisher', 'status', 'title', 'url', 'version']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'TerminologyCapabilities.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'TerminologyCapabilities.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'TerminologyCapabilities.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'TerminologyCapabilities.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'TerminologyCapabilities.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'TerminologyCapabilities.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'TerminologyCapabilities.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'TerminologyCapabilities.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'url' => {'type'=>'uri', 'path'=>'TerminologyCapabilities.url', 'min'=>0, 'max'=>1},
-        'version' => {'type'=>'string', 'path'=>'TerminologyCapabilities.version', 'min'=>0, 'max'=>1},
-        'name' => {'type'=>'string', 'path'=>'TerminologyCapabilities.name', 'min'=>0, 'max'=>1},
-        'title' => {'type'=>'string', 'path'=>'TerminologyCapabilities.title', 'min'=>0, 'max'=>1},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'type'=>'code', 'path'=>'TerminologyCapabilities.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
-        'experimental' => {'type'=>'boolean', 'path'=>'TerminologyCapabilities.experimental', 'min'=>0, 'max'=>1},
-        'date' => {'type'=>'dateTime', 'path'=>'TerminologyCapabilities.date', 'min'=>1, 'max'=>1},
-        'publisher' => {'type'=>'string', 'path'=>'TerminologyCapabilities.publisher', 'min'=>0, 'max'=>1},
-        'contact' => {'type'=>'ContactDetail', 'path'=>'TerminologyCapabilities.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'description' => {'type'=>'markdown', 'path'=>'TerminologyCapabilities.description', 'min'=>0, 'max'=>1},
-        'useContext' => {'type'=>'UsageContext', 'path'=>'TerminologyCapabilities.useContext', 'min'=>0, 'max'=>Float::INFINITY},
-        'jurisdiction' => {'type'=>'CodeableConcept', 'path'=>'TerminologyCapabilities.jurisdiction', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/jurisdiction'}},
-        'purpose' => {'type'=>'markdown', 'path'=>'TerminologyCapabilities.purpose', 'min'=>0, 'max'=>1},
-        'copyright' => {'type'=>'markdown', 'path'=>'TerminologyCapabilities.copyright', 'min'=>0, 'max'=>1},
-        'kind' => {'valid_codes'=>{'http://hl7.org/fhir/capability-statement-kind'=>['instance', 'capability', 'requirements']}, 'type'=>'code', 'path'=>'TerminologyCapabilities.kind', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/capability-statement-kind'}},
-        'software' => {'type'=>'TerminologyCapabilities::Software', 'path'=>'TerminologyCapabilities.software', 'min'=>0, 'max'=>1},
-        'implementation' => {'type'=>'TerminologyCapabilities::Implementation', 'path'=>'TerminologyCapabilities.implementation', 'min'=>0, 'max'=>1},
-        'lockedDate' => {'type'=>'boolean', 'path'=>'TerminologyCapabilities.lockedDate', 'min'=>0, 'max'=>1},
-        'codeSystem' => {'type'=>'TerminologyCapabilities::CodeSystem', 'path'=>'TerminologyCapabilities.codeSystem', 'min'=>0, 'max'=>Float::INFINITY},
-        'expansion' => {'type'=>'TerminologyCapabilities::Expansion', 'path'=>'TerminologyCapabilities.expansion', 'min'=>0, 'max'=>1},
-        'codeSearch' => {'valid_codes'=>{'http://hl7.org/fhir/code-search-support'=>['explicit', 'all']}, 'type'=>'code', 'path'=>'TerminologyCapabilities.codeSearch', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/code-search-support'}},
-        'validateCode' => {'type'=>'TerminologyCapabilities::ValidateCode', 'path'=>'TerminologyCapabilities.validateCode', 'min'=>0, 'max'=>1},
-        'translation' => {'type'=>'TerminologyCapabilities::Translation', 'path'=>'TerminologyCapabilities.translation', 'min'=>0, 'max'=>1},
-        'closure' => {'type'=>'TerminologyCapabilities::Closure', 'path'=>'TerminologyCapabilities.closure', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'TerminologyCapabilities.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'TerminologyCapabilities.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'TerminologyCapabilities.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'TerminologyCapabilities.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'TerminologyCapabilities.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'TerminologyCapabilities.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'TerminologyCapabilities.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'TerminologyCapabilities.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'url' => {'path'=>'TerminologyCapabilities.url', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'version' => {'path'=>'TerminologyCapabilities.version', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'name' => {'path'=>'TerminologyCapabilities.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'title' => {'path'=>'TerminologyCapabilities.title', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'path'=>'TerminologyCapabilities.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
+        'experimental' => {'path'=>'TerminologyCapabilities.experimental', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'date' => {'path'=>'TerminologyCapabilities.date', 'type'=>'dateTime', 'min'=>1, 'max'=>1},
+        'publisher' => {'path'=>'TerminologyCapabilities.publisher', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'contact' => {'path'=>'TerminologyCapabilities.contact', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'description' => {'path'=>'TerminologyCapabilities.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'useContext' => {'path'=>'TerminologyCapabilities.useContext', 'type'=>'UsageContext', 'min'=>0, 'max'=>Float::INFINITY},
+        'jurisdiction' => {'path'=>'TerminologyCapabilities.jurisdiction', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/jurisdiction'}},
+        'purpose' => {'path'=>'TerminologyCapabilities.purpose', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'copyright' => {'path'=>'TerminologyCapabilities.copyright', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'kind' => {'valid_codes'=>{'http://hl7.org/fhir/capability-statement-kind'=>['instance', 'capability', 'requirements']}, 'path'=>'TerminologyCapabilities.kind', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/capability-statement-kind'}},
+        'software' => {'path'=>'TerminologyCapabilities.software', 'type'=>'TerminologyCapabilities::Software', 'min'=>0, 'max'=>1},
+        'implementation' => {'path'=>'TerminologyCapabilities.implementation', 'type'=>'TerminologyCapabilities::Implementation', 'min'=>0, 'max'=>1},
+        'lockedDate' => {'path'=>'TerminologyCapabilities.lockedDate', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'codeSystem' => {'path'=>'TerminologyCapabilities.codeSystem', 'type'=>'TerminologyCapabilities::CodeSystem', 'min'=>0, 'max'=>Float::INFINITY},
+        'expansion' => {'path'=>'TerminologyCapabilities.expansion', 'type'=>'TerminologyCapabilities::Expansion', 'min'=>0, 'max'=>1},
+        'codeSearch' => {'valid_codes'=>{'http://hl7.org/fhir/code-search-support'=>['explicit', 'all']}, 'path'=>'TerminologyCapabilities.codeSearch', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/code-search-support'}},
+        'validateCode' => {'path'=>'TerminologyCapabilities.validateCode', 'type'=>'TerminologyCapabilities::ValidateCode', 'min'=>0, 'max'=>1},
+        'translation' => {'path'=>'TerminologyCapabilities.translation', 'type'=>'TerminologyCapabilities::Translation', 'min'=>0, 'max'=>1},
+        'closure' => {'path'=>'TerminologyCapabilities.closure', 'type'=>'TerminologyCapabilities::Closure', 'min'=>0, 'max'=>1}
       }
 
       class Software < Model
@@ -47,11 +47,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Software.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Software.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Software.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'name' => {'type'=>'string', 'path'=>'Software.name', 'min'=>1, 'max'=>1},
-          'version' => {'type'=>'string', 'path'=>'Software.version', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Software.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Software.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Software.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'name' => {'path'=>'Software.name', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'version' => {'path'=>'Software.version', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -67,11 +67,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Implementation.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Implementation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Implementation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'description' => {'type'=>'string', 'path'=>'Implementation.description', 'min'=>1, 'max'=>1},
-          'url' => {'type'=>'url', 'path'=>'Implementation.url', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Implementation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Implementation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Implementation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'description' => {'path'=>'Implementation.description', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'url' => {'path'=>'Implementation.url', 'type'=>'url', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -87,12 +87,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'CodeSystem.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'CodeSystem.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'CodeSystem.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'uri' => {'type'=>'canonical', 'path'=>'CodeSystem.uri', 'min'=>0, 'max'=>1},
-          'version' => {'type'=>'TerminologyCapabilities::CodeSystem::Version', 'path'=>'CodeSystem.version', 'min'=>0, 'max'=>Float::INFINITY},
-          'subsumption' => {'type'=>'boolean', 'path'=>'CodeSystem.subsumption', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'CodeSystem.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'CodeSystem.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'CodeSystem.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'uri' => {'path'=>'CodeSystem.uri', 'type'=>'canonical', 'min'=>0, 'max'=>1},
+          'version' => {'path'=>'CodeSystem.version', 'type'=>'TerminologyCapabilities::CodeSystem::Version', 'min'=>0, 'max'=>Float::INFINITY},
+          'subsumption' => {'path'=>'CodeSystem.subsumption', 'type'=>'boolean', 'min'=>0, 'max'=>1}
         }
 
         class Version < Model
@@ -101,15 +101,15 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Version.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Version.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Version.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'code' => {'type'=>'string', 'path'=>'Version.code', 'min'=>0, 'max'=>1},
-            'isDefault' => {'type'=>'boolean', 'path'=>'Version.isDefault', 'min'=>0, 'max'=>1},
-            'compositional' => {'type'=>'boolean', 'path'=>'Version.compositional', 'min'=>0, 'max'=>1},
-            'language' => {'type'=>'code', 'path'=>'Version.language', 'min'=>0, 'max'=>Float::INFINITY},
-            'filter' => {'type'=>'TerminologyCapabilities::CodeSystem::Version::Filter', 'path'=>'Version.filter', 'min'=>0, 'max'=>Float::INFINITY},
-            'property' => {'type'=>'code', 'path'=>'Version.property', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Version.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Version.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Version.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'code' => {'path'=>'Version.code', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'isDefault' => {'path'=>'Version.isDefault', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+            'compositional' => {'path'=>'Version.compositional', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+            'language' => {'path'=>'Version.language', 'type'=>'code', 'min'=>0, 'max'=>Float::INFINITY},
+            'filter' => {'path'=>'Version.filter', 'type'=>'TerminologyCapabilities::CodeSystem::Version::Filter', 'min'=>0, 'max'=>Float::INFINITY},
+            'property' => {'path'=>'Version.property', 'type'=>'code', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Filter < Model
@@ -118,11 +118,11 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Filter.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Filter.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Filter.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'code' => {'type'=>'code', 'path'=>'Filter.code', 'min'=>1, 'max'=>1},
-              'op' => {'type'=>'code', 'path'=>'Filter.op', 'min'=>1, 'max'=>Float::INFINITY}
+              'id' => {'path'=>'Filter.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Filter.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Filter.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'code' => {'path'=>'Filter.code', 'type'=>'code', 'min'=>1, 'max'=>1},
+              'op' => {'path'=>'Filter.op', 'type'=>'code', 'min'=>1, 'max'=>Float::INFINITY}
             }
 
             attr_accessor :id                # 0-1 string
@@ -157,14 +157,14 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Expansion.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Expansion.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Expansion.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'hierarchical' => {'type'=>'boolean', 'path'=>'Expansion.hierarchical', 'min'=>0, 'max'=>1},
-          'paging' => {'type'=>'boolean', 'path'=>'Expansion.paging', 'min'=>0, 'max'=>1},
-          'incomplete' => {'type'=>'boolean', 'path'=>'Expansion.incomplete', 'min'=>0, 'max'=>1},
-          'parameter' => {'type'=>'TerminologyCapabilities::Expansion::Parameter', 'path'=>'Expansion.parameter', 'min'=>0, 'max'=>Float::INFINITY},
-          'textFilter' => {'type'=>'markdown', 'path'=>'Expansion.textFilter', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Expansion.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Expansion.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Expansion.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'hierarchical' => {'path'=>'Expansion.hierarchical', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'paging' => {'path'=>'Expansion.paging', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'incomplete' => {'path'=>'Expansion.incomplete', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+          'parameter' => {'path'=>'Expansion.parameter', 'type'=>'TerminologyCapabilities::Expansion::Parameter', 'min'=>0, 'max'=>Float::INFINITY},
+          'textFilter' => {'path'=>'Expansion.textFilter', 'type'=>'markdown', 'min'=>0, 'max'=>1}
         }
 
         class Parameter < Model
@@ -173,11 +173,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Parameter.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Parameter.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Parameter.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'name' => {'type'=>'code', 'path'=>'Parameter.name', 'min'=>1, 'max'=>1},
-            'documentation' => {'type'=>'string', 'path'=>'Parameter.documentation', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Parameter.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Parameter.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Parameter.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'name' => {'path'=>'Parameter.name', 'type'=>'code', 'min'=>1, 'max'=>1},
+            'documentation' => {'path'=>'Parameter.documentation', 'type'=>'string', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -203,10 +203,10 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'ValidateCode.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'ValidateCode.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'ValidateCode.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'translations' => {'type'=>'boolean', 'path'=>'ValidateCode.translations', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'ValidateCode.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'ValidateCode.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'ValidateCode.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'translations' => {'path'=>'ValidateCode.translations', 'type'=>'boolean', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -221,10 +221,10 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Translation.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Translation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Translation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'needsMap' => {'type'=>'boolean', 'path'=>'Translation.needsMap', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Translation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Translation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Translation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'needsMap' => {'path'=>'Translation.needsMap', 'type'=>'boolean', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -239,10 +239,10 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Closure.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Closure.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Closure.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'translation' => {'type'=>'boolean', 'path'=>'Closure.translation', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Closure.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Closure.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Closure.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'translation' => {'path'=>'Closure.translation', 'type'=>'boolean', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

@@ -7,21 +7,21 @@ module FHIR
 
       SEARCH_PARAMS = ['identifier', 'route', 'target-species']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MedicinalProductPharmaceutical.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MedicinalProductPharmaceutical.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MedicinalProductPharmaceutical.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'MedicinalProductPharmaceutical.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MedicinalProductPharmaceutical.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MedicinalProductPharmaceutical.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MedicinalProductPharmaceutical.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MedicinalProductPharmaceutical.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'MedicinalProductPharmaceutical.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'administrableDoseForm' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductPharmaceutical.administrableDoseForm', 'min'=>1, 'max'=>1},
-        'unitOfPresentation' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductPharmaceutical.unitOfPresentation', 'min'=>0, 'max'=>1},
-        'ingredient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductIngredient'], 'type'=>'Reference', 'path'=>'MedicinalProductPharmaceutical.ingredient', 'min'=>0, 'max'=>Float::INFINITY},
-        'device' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DeviceDefinition'], 'type'=>'Reference', 'path'=>'MedicinalProductPharmaceutical.device', 'min'=>0, 'max'=>Float::INFINITY},
-        'characteristics' => {'type'=>'MedicinalProductPharmaceutical::Characteristics', 'path'=>'MedicinalProductPharmaceutical.characteristics', 'min'=>0, 'max'=>Float::INFINITY},
-        'routeOfAdministration' => {'type'=>'MedicinalProductPharmaceutical::RouteOfAdministration', 'path'=>'MedicinalProductPharmaceutical.routeOfAdministration', 'min'=>1, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'MedicinalProductPharmaceutical.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MedicinalProductPharmaceutical.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MedicinalProductPharmaceutical.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'MedicinalProductPharmaceutical.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'MedicinalProductPharmaceutical.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MedicinalProductPharmaceutical.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MedicinalProductPharmaceutical.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MedicinalProductPharmaceutical.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'MedicinalProductPharmaceutical.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'administrableDoseForm' => {'path'=>'MedicinalProductPharmaceutical.administrableDoseForm', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+        'unitOfPresentation' => {'path'=>'MedicinalProductPharmaceutical.unitOfPresentation', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'ingredient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductIngredient'], 'path'=>'MedicinalProductPharmaceutical.ingredient', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'device' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DeviceDefinition'], 'path'=>'MedicinalProductPharmaceutical.device', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'characteristics' => {'path'=>'MedicinalProductPharmaceutical.characteristics', 'type'=>'MedicinalProductPharmaceutical::Characteristics', 'min'=>0, 'max'=>Float::INFINITY},
+        'routeOfAdministration' => {'path'=>'MedicinalProductPharmaceutical.routeOfAdministration', 'type'=>'MedicinalProductPharmaceutical::RouteOfAdministration', 'min'=>1, 'max'=>Float::INFINITY}
       }
 
       class Characteristics < Model
@@ -30,11 +30,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Characteristics.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Characteristics.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Characteristics.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'type'=>'CodeableConcept', 'path'=>'Characteristics.code', 'min'=>1, 'max'=>1},
-          'status' => {'type'=>'CodeableConcept', 'path'=>'Characteristics.status', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Characteristics.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Characteristics.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Characteristics.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'path'=>'Characteristics.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'status' => {'path'=>'Characteristics.status', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -50,16 +50,16 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'RouteOfAdministration.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'RouteOfAdministration.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'RouteOfAdministration.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'code' => {'type'=>'CodeableConcept', 'path'=>'RouteOfAdministration.code', 'min'=>1, 'max'=>1},
-          'firstDose' => {'type'=>'Quantity', 'path'=>'RouteOfAdministration.firstDose', 'min'=>0, 'max'=>1},
-          'maxSingleDose' => {'type'=>'Quantity', 'path'=>'RouteOfAdministration.maxSingleDose', 'min'=>0, 'max'=>1},
-          'maxDosePerDay' => {'type'=>'Quantity', 'path'=>'RouteOfAdministration.maxDosePerDay', 'min'=>0, 'max'=>1},
-          'maxDosePerTreatmentPeriod' => {'type'=>'Ratio', 'path'=>'RouteOfAdministration.maxDosePerTreatmentPeriod', 'min'=>0, 'max'=>1},
-          'maxTreatmentPeriod' => {'type'=>'Duration', 'path'=>'RouteOfAdministration.maxTreatmentPeriod', 'min'=>0, 'max'=>1},
-          'targetSpecies' => {'type'=>'MedicinalProductPharmaceutical::RouteOfAdministration::TargetSpecies', 'path'=>'RouteOfAdministration.targetSpecies', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'RouteOfAdministration.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'RouteOfAdministration.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'RouteOfAdministration.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'code' => {'path'=>'RouteOfAdministration.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'firstDose' => {'path'=>'RouteOfAdministration.firstDose', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'maxSingleDose' => {'path'=>'RouteOfAdministration.maxSingleDose', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'maxDosePerDay' => {'path'=>'RouteOfAdministration.maxDosePerDay', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'maxDosePerTreatmentPeriod' => {'path'=>'RouteOfAdministration.maxDosePerTreatmentPeriod', 'type'=>'Ratio', 'min'=>0, 'max'=>1},
+          'maxTreatmentPeriod' => {'path'=>'RouteOfAdministration.maxTreatmentPeriod', 'type'=>'Duration', 'min'=>0, 'max'=>1},
+          'targetSpecies' => {'path'=>'RouteOfAdministration.targetSpecies', 'type'=>'MedicinalProductPharmaceutical::RouteOfAdministration::TargetSpecies', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class TargetSpecies < Model
@@ -68,11 +68,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'TargetSpecies.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'TargetSpecies.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'TargetSpecies.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'code' => {'type'=>'CodeableConcept', 'path'=>'TargetSpecies.code', 'min'=>1, 'max'=>1},
-            'withdrawalPeriod' => {'type'=>'MedicinalProductPharmaceutical::RouteOfAdministration::TargetSpecies::WithdrawalPeriod', 'path'=>'TargetSpecies.withdrawalPeriod', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'TargetSpecies.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'TargetSpecies.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'TargetSpecies.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'code' => {'path'=>'TargetSpecies.code', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+            'withdrawalPeriod' => {'path'=>'TargetSpecies.withdrawalPeriod', 'type'=>'MedicinalProductPharmaceutical::RouteOfAdministration::TargetSpecies::WithdrawalPeriod', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class WithdrawalPeriod < Model
@@ -81,12 +81,12 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'WithdrawalPeriod.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'WithdrawalPeriod.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'WithdrawalPeriod.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'tissue' => {'type'=>'CodeableConcept', 'path'=>'WithdrawalPeriod.tissue', 'min'=>1, 'max'=>1},
-              'value' => {'type'=>'Quantity', 'path'=>'WithdrawalPeriod.value', 'min'=>1, 'max'=>1},
-              'supportingInformation' => {'type'=>'string', 'path'=>'WithdrawalPeriod.supportingInformation', 'min'=>0, 'max'=>1}
+              'id' => {'path'=>'WithdrawalPeriod.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'WithdrawalPeriod.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'WithdrawalPeriod.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'tissue' => {'path'=>'WithdrawalPeriod.tissue', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+              'value' => {'path'=>'WithdrawalPeriod.value', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+              'supportingInformation' => {'path'=>'WithdrawalPeriod.supportingInformation', 'type'=>'string', 'min'=>0, 'max'=>1}
             }
 
             attr_accessor :id                    # 0-1 string

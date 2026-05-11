@@ -7,27 +7,27 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'SubstanceSourceMaterial.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'SubstanceSourceMaterial.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'SubstanceSourceMaterial.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'SubstanceSourceMaterial.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'SubstanceSourceMaterial.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'SubstanceSourceMaterial.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'SubstanceSourceMaterial.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'SubstanceSourceMaterial.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'sourceMaterialClass' => {'type'=>'CodeableConcept', 'path'=>'SubstanceSourceMaterial.sourceMaterialClass', 'min'=>0, 'max'=>1},
-        'sourceMaterialType' => {'type'=>'CodeableConcept', 'path'=>'SubstanceSourceMaterial.sourceMaterialType', 'min'=>0, 'max'=>1},
-        'sourceMaterialState' => {'type'=>'CodeableConcept', 'path'=>'SubstanceSourceMaterial.sourceMaterialState', 'min'=>0, 'max'=>1},
-        'organismId' => {'type'=>'Identifier', 'path'=>'SubstanceSourceMaterial.organismId', 'min'=>0, 'max'=>1},
-        'organismName' => {'type'=>'string', 'path'=>'SubstanceSourceMaterial.organismName', 'min'=>0, 'max'=>1},
-        'parentSubstanceId' => {'type'=>'Identifier', 'path'=>'SubstanceSourceMaterial.parentSubstanceId', 'min'=>0, 'max'=>Float::INFINITY},
-        'parentSubstanceName' => {'type'=>'string', 'path'=>'SubstanceSourceMaterial.parentSubstanceName', 'min'=>0, 'max'=>Float::INFINITY},
-        'countryOfOrigin' => {'type'=>'CodeableConcept', 'path'=>'SubstanceSourceMaterial.countryOfOrigin', 'min'=>0, 'max'=>Float::INFINITY},
-        'geographicalLocation' => {'type'=>'string', 'path'=>'SubstanceSourceMaterial.geographicalLocation', 'min'=>0, 'max'=>Float::INFINITY},
-        'developmentStage' => {'type'=>'CodeableConcept', 'path'=>'SubstanceSourceMaterial.developmentStage', 'min'=>0, 'max'=>1},
-        'fractionDescription' => {'type'=>'SubstanceSourceMaterial::FractionDescription', 'path'=>'SubstanceSourceMaterial.fractionDescription', 'min'=>0, 'max'=>Float::INFINITY},
-        'organism' => {'type'=>'SubstanceSourceMaterial::Organism', 'path'=>'SubstanceSourceMaterial.organism', 'min'=>0, 'max'=>1},
-        'partDescription' => {'type'=>'SubstanceSourceMaterial::PartDescription', 'path'=>'SubstanceSourceMaterial.partDescription', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'SubstanceSourceMaterial.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'SubstanceSourceMaterial.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'SubstanceSourceMaterial.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'SubstanceSourceMaterial.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'SubstanceSourceMaterial.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'SubstanceSourceMaterial.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'SubstanceSourceMaterial.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'SubstanceSourceMaterial.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'sourceMaterialClass' => {'path'=>'SubstanceSourceMaterial.sourceMaterialClass', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'sourceMaterialType' => {'path'=>'SubstanceSourceMaterial.sourceMaterialType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'sourceMaterialState' => {'path'=>'SubstanceSourceMaterial.sourceMaterialState', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'organismId' => {'path'=>'SubstanceSourceMaterial.organismId', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+        'organismName' => {'path'=>'SubstanceSourceMaterial.organismName', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'parentSubstanceId' => {'path'=>'SubstanceSourceMaterial.parentSubstanceId', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'parentSubstanceName' => {'path'=>'SubstanceSourceMaterial.parentSubstanceName', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'countryOfOrigin' => {'path'=>'SubstanceSourceMaterial.countryOfOrigin', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+        'geographicalLocation' => {'path'=>'SubstanceSourceMaterial.geographicalLocation', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'developmentStage' => {'path'=>'SubstanceSourceMaterial.developmentStage', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'fractionDescription' => {'path'=>'SubstanceSourceMaterial.fractionDescription', 'type'=>'SubstanceSourceMaterial::FractionDescription', 'min'=>0, 'max'=>Float::INFINITY},
+        'organism' => {'path'=>'SubstanceSourceMaterial.organism', 'type'=>'SubstanceSourceMaterial::Organism', 'min'=>0, 'max'=>1},
+        'partDescription' => {'path'=>'SubstanceSourceMaterial.partDescription', 'type'=>'SubstanceSourceMaterial::PartDescription', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class FractionDescription < Model
@@ -36,11 +36,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'FractionDescription.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'FractionDescription.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'FractionDescription.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'fraction' => {'type'=>'string', 'path'=>'FractionDescription.fraction', 'min'=>0, 'max'=>1},
-          'materialType' => {'type'=>'CodeableConcept', 'path'=>'FractionDescription.materialType', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'FractionDescription.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'FractionDescription.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'FractionDescription.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'fraction' => {'path'=>'FractionDescription.fraction', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'materialType' => {'path'=>'FractionDescription.materialType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -56,17 +56,17 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Organism.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Organism.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Organism.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'family' => {'type'=>'CodeableConcept', 'path'=>'Organism.family', 'min'=>0, 'max'=>1},
-          'genus' => {'type'=>'CodeableConcept', 'path'=>'Organism.genus', 'min'=>0, 'max'=>1},
-          'species' => {'type'=>'CodeableConcept', 'path'=>'Organism.species', 'min'=>0, 'max'=>1},
-          'intraspecificType' => {'type'=>'CodeableConcept', 'path'=>'Organism.intraspecificType', 'min'=>0, 'max'=>1},
-          'intraspecificDescription' => {'type'=>'string', 'path'=>'Organism.intraspecificDescription', 'min'=>0, 'max'=>1},
-          'author' => {'type'=>'SubstanceSourceMaterial::Organism::Author', 'path'=>'Organism.author', 'min'=>0, 'max'=>Float::INFINITY},
-          'hybrid' => {'type'=>'SubstanceSourceMaterial::Organism::Hybrid', 'path'=>'Organism.hybrid', 'min'=>0, 'max'=>1},
-          'organismGeneral' => {'type'=>'SubstanceSourceMaterial::Organism::OrganismGeneral', 'path'=>'Organism.organismGeneral', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Organism.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Organism.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Organism.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'family' => {'path'=>'Organism.family', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'genus' => {'path'=>'Organism.genus', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'species' => {'path'=>'Organism.species', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'intraspecificType' => {'path'=>'Organism.intraspecificType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'intraspecificDescription' => {'path'=>'Organism.intraspecificDescription', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'author' => {'path'=>'Organism.author', 'type'=>'SubstanceSourceMaterial::Organism::Author', 'min'=>0, 'max'=>Float::INFINITY},
+          'hybrid' => {'path'=>'Organism.hybrid', 'type'=>'SubstanceSourceMaterial::Organism::Hybrid', 'min'=>0, 'max'=>1},
+          'organismGeneral' => {'path'=>'Organism.organismGeneral', 'type'=>'SubstanceSourceMaterial::Organism::OrganismGeneral', 'min'=>0, 'max'=>1}
         }
 
         class Author < Model
@@ -75,11 +75,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Author.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Author.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Author.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'authorType' => {'type'=>'CodeableConcept', 'path'=>'Author.authorType', 'min'=>0, 'max'=>1},
-            'authorDescription' => {'type'=>'string', 'path'=>'Author.authorDescription', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Author.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Author.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Author.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'authorType' => {'path'=>'Author.authorType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'authorDescription' => {'path'=>'Author.authorDescription', 'type'=>'string', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -95,14 +95,14 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Hybrid.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Hybrid.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Hybrid.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'maternalOrganismId' => {'type'=>'string', 'path'=>'Hybrid.maternalOrganismId', 'min'=>0, 'max'=>1},
-            'maternalOrganismName' => {'type'=>'string', 'path'=>'Hybrid.maternalOrganismName', 'min'=>0, 'max'=>1},
-            'paternalOrganismId' => {'type'=>'string', 'path'=>'Hybrid.paternalOrganismId', 'min'=>0, 'max'=>1},
-            'paternalOrganismName' => {'type'=>'string', 'path'=>'Hybrid.paternalOrganismName', 'min'=>0, 'max'=>1},
-            'hybridType' => {'type'=>'CodeableConcept', 'path'=>'Hybrid.hybridType', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Hybrid.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Hybrid.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Hybrid.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'maternalOrganismId' => {'path'=>'Hybrid.maternalOrganismId', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'maternalOrganismName' => {'path'=>'Hybrid.maternalOrganismName', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'paternalOrganismId' => {'path'=>'Hybrid.paternalOrganismId', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'paternalOrganismName' => {'path'=>'Hybrid.paternalOrganismName', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'hybridType' => {'path'=>'Hybrid.hybridType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                   # 0-1 string
@@ -121,13 +121,13 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'OrganismGeneral.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'OrganismGeneral.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'OrganismGeneral.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'kingdom' => {'type'=>'CodeableConcept', 'path'=>'OrganismGeneral.kingdom', 'min'=>0, 'max'=>1},
-            'phylum' => {'type'=>'CodeableConcept', 'path'=>'OrganismGeneral.phylum', 'min'=>0, 'max'=>1},
-            'class' => {'local_name'=>'local_class', 'type'=>'CodeableConcept', 'path'=>'OrganismGeneral.class', 'min'=>0, 'max'=>1},
-            'order' => {'type'=>'CodeableConcept', 'path'=>'OrganismGeneral.order', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'OrganismGeneral.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'OrganismGeneral.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'OrganismGeneral.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'kingdom' => {'path'=>'OrganismGeneral.kingdom', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'phylum' => {'path'=>'OrganismGeneral.phylum', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'class' => {'local_name'=>'local_class', 'path'=>'OrganismGeneral.class', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'order' => {'path'=>'OrganismGeneral.order', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -158,11 +158,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'PartDescription.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'PartDescription.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'PartDescription.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'part' => {'type'=>'CodeableConcept', 'path'=>'PartDescription.part', 'min'=>0, 'max'=>1},
-          'partLocation' => {'type'=>'CodeableConcept', 'path'=>'PartDescription.partLocation', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'PartDescription.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'PartDescription.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'PartDescription.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'part' => {'path'=>'PartDescription.part', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'partLocation' => {'path'=>'PartDescription.partLocation', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

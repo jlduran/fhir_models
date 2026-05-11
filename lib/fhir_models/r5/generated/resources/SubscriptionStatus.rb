@@ -7,21 +7,21 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'SubscriptionStatus.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'SubscriptionStatus.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'SubscriptionStatus.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'SubscriptionStatus.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'SubscriptionStatus.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'SubscriptionStatus.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'SubscriptionStatus.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'SubscriptionStatus.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/subscription-status'=>['requested', 'active', 'error', 'off', 'entered-in-error']}, 'type'=>'code', 'path'=>'SubscriptionStatus.status', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-status'}},
-        'type' => {'valid_codes'=>{'http://hl7.org/fhir/subscription-notification-type'=>['handshake', 'heartbeat', 'event-notification', 'query-status', 'query-event']}, 'type'=>'code', 'path'=>'SubscriptionStatus.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-notification-type'}},
-        'eventsSinceSubscriptionStart' => {'type'=>'integer64', 'path'=>'SubscriptionStatus.eventsSinceSubscriptionStart', 'min'=>0, 'max'=>1},
-        'notificationEvent' => {'type'=>'SubscriptionStatus::NotificationEvent', 'path'=>'SubscriptionStatus.notificationEvent', 'min'=>0, 'max'=>Float::INFINITY},
-        'subscription' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Subscription'], 'type'=>'Reference', 'path'=>'SubscriptionStatus.subscription', 'min'=>1, 'max'=>1},
-        'topic' => {'type'=>'canonical', 'path'=>'SubscriptionStatus.topic', 'min'=>0, 'max'=>1},
-        'error' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/subscription-error'=>['dns-resolution-error', 'no-response', 'error-response']}, 'type'=>'CodeableConcept', 'path'=>'SubscriptionStatus.error', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-error'}}
+        'id' => {'path'=>'SubscriptionStatus.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'SubscriptionStatus.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'SubscriptionStatus.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'SubscriptionStatus.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'SubscriptionStatus.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'SubscriptionStatus.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'SubscriptionStatus.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'SubscriptionStatus.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/subscription-status'=>['requested', 'active', 'error', 'off', 'entered-in-error']}, 'path'=>'SubscriptionStatus.status', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-status'}},
+        'type' => {'valid_codes'=>{'http://hl7.org/fhir/subscription-notification-type'=>['handshake', 'heartbeat', 'event-notification', 'query-status', 'query-event']}, 'path'=>'SubscriptionStatus.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-notification-type'}},
+        'eventsSinceSubscriptionStart' => {'path'=>'SubscriptionStatus.eventsSinceSubscriptionStart', 'type'=>'integer64', 'min'=>0, 'max'=>1},
+        'notificationEvent' => {'path'=>'SubscriptionStatus.notificationEvent', 'type'=>'SubscriptionStatus::NotificationEvent', 'min'=>0, 'max'=>Float::INFINITY},
+        'subscription' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Subscription'], 'path'=>'SubscriptionStatus.subscription', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'topic' => {'path'=>'SubscriptionStatus.topic', 'type'=>'canonical', 'min'=>0, 'max'=>1},
+        'error' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/subscription-error'=>['dns-resolution-error', 'no-response', 'error-response']}, 'path'=>'SubscriptionStatus.error', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/subscription-error'}}
       }
 
       class NotificationEvent < Model
@@ -30,13 +30,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'NotificationEvent.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'NotificationEvent.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'NotificationEvent.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'eventNumber' => {'type'=>'integer64', 'path'=>'NotificationEvent.eventNumber', 'min'=>1, 'max'=>1},
-          'timestamp' => {'type'=>'instant', 'path'=>'NotificationEvent.timestamp', 'min'=>0, 'max'=>1},
-          'focus' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'NotificationEvent.focus', 'min'=>0, 'max'=>1},
-          'additionalContext' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'NotificationEvent.additionalContext', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'NotificationEvent.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'NotificationEvent.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'NotificationEvent.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'eventNumber' => {'path'=>'NotificationEvent.eventNumber', 'type'=>'integer64', 'min'=>1, 'max'=>1},
+          'timestamp' => {'path'=>'NotificationEvent.timestamp', 'type'=>'instant', 'min'=>0, 'max'=>1},
+          'focus' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'NotificationEvent.focus', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'additionalContext' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'NotificationEvent.additionalContext', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string

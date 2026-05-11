@@ -7,24 +7,24 @@ module FHIR
 
       SEARCH_PARAMS = ['identifier', 'status']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'NutritionProduct.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'NutritionProduct.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'NutritionProduct.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'NutritionProduct.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'NutritionProduct.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'NutritionProduct.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'NutritionProduct.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'NutritionProduct.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/nutritionproduct-status'=>['active', 'inactive', 'entered-in-error']}, 'type'=>'code', 'path'=>'NutritionProduct.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/nutritionproduct-status'}},
-        'category' => {'type'=>'CodeableConcept', 'path'=>'NutritionProduct.category', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/nutrition-product-category'}},
-        'code' => {'type'=>'CodeableConcept', 'path'=>'NutritionProduct.code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/edible-substance-type'}},
-        'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'NutritionProduct.manufacturer', 'min'=>0, 'max'=>Float::INFINITY},
-        'nutrient' => {'type'=>'NutritionProduct::Nutrient', 'path'=>'NutritionProduct.nutrient', 'min'=>0, 'max'=>Float::INFINITY},
-        'ingredient' => {'type'=>'NutritionProduct::Ingredient', 'path'=>'NutritionProduct.ingredient', 'min'=>0, 'max'=>Float::INFINITY},
-        'knownAllergen' => {'type'=>'CodeableReference', 'path'=>'NutritionProduct.knownAllergen', 'min'=>0, 'max'=>Float::INFINITY},
-        'productCharacteristic' => {'type'=>'NutritionProduct::ProductCharacteristic', 'path'=>'NutritionProduct.productCharacteristic', 'min'=>0, 'max'=>Float::INFINITY},
-        'instance' => {'type'=>'NutritionProduct::Instance', 'path'=>'NutritionProduct.instance', 'min'=>0, 'max'=>1},
-        'note' => {'type'=>'Annotation', 'path'=>'NutritionProduct.note', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'NutritionProduct.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'NutritionProduct.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'NutritionProduct.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'NutritionProduct.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'NutritionProduct.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'NutritionProduct.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'NutritionProduct.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'NutritionProduct.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/nutritionproduct-status'=>['active', 'inactive', 'entered-in-error']}, 'path'=>'NutritionProduct.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/nutritionproduct-status'}},
+        'category' => {'path'=>'NutritionProduct.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/nutrition-product-category'}},
+        'code' => {'path'=>'NutritionProduct.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/edible-substance-type'}},
+        'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'NutritionProduct.manufacturer', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'nutrient' => {'path'=>'NutritionProduct.nutrient', 'type'=>'NutritionProduct::Nutrient', 'min'=>0, 'max'=>Float::INFINITY},
+        'ingredient' => {'path'=>'NutritionProduct.ingredient', 'type'=>'NutritionProduct::Ingredient', 'min'=>0, 'max'=>Float::INFINITY},
+        'knownAllergen' => {'path'=>'NutritionProduct.knownAllergen', 'type'=>'CodeableReference', 'min'=>0, 'max'=>Float::INFINITY},
+        'productCharacteristic' => {'path'=>'NutritionProduct.productCharacteristic', 'type'=>'NutritionProduct::ProductCharacteristic', 'min'=>0, 'max'=>Float::INFINITY},
+        'instance' => {'path'=>'NutritionProduct.instance', 'type'=>'NutritionProduct::Instance', 'min'=>0, 'max'=>1},
+        'note' => {'path'=>'NutritionProduct.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Nutrient < Model
@@ -33,11 +33,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Nutrient.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Nutrient.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Nutrient.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'item' => {'type'=>'CodeableReference', 'path'=>'Nutrient.item', 'min'=>0, 'max'=>1},
-          'amount' => {'type'=>'Ratio', 'path'=>'Nutrient.amount', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Nutrient.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Nutrient.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Nutrient.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'item' => {'path'=>'Nutrient.item', 'type'=>'CodeableReference', 'min'=>0, 'max'=>1},
+          'amount' => {'path'=>'Nutrient.amount', 'type'=>'Ratio', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -53,11 +53,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Ingredient.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Ingredient.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Ingredient.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'item' => {'type'=>'CodeableReference', 'path'=>'Ingredient.item', 'min'=>1, 'max'=>1},
-          'amount' => {'type'=>'Ratio', 'path'=>'Ingredient.amount', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Ingredient.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Ingredient.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Ingredient.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'item' => {'path'=>'Ingredient.item', 'type'=>'CodeableReference', 'min'=>1, 'max'=>1},
+          'amount' => {'path'=>'Ingredient.amount', 'type'=>'Ratio', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         attr_accessor :id                # 0-1 string
@@ -76,16 +76,16 @@ module FHIR
           'value' => ['CodeableConcept', 'string', 'Quantity', 'base64Binary', 'Attachment', 'boolean']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'ProductCharacteristic.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'ProductCharacteristic.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'ProductCharacteristic.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'ProductCharacteristic.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measurement-property'}},
-          'valueCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'ProductCharacteristic.value[x]', 'min'=>1, 'max'=>1},
-          'valueString' => {'type'=>'string', 'path'=>'ProductCharacteristic.value[x]', 'min'=>1, 'max'=>1},
-          'valueQuantity' => {'type'=>'Quantity', 'path'=>'ProductCharacteristic.value[x]', 'min'=>1, 'max'=>1},
-          'valueBase64Binary' => {'type'=>'base64Binary', 'path'=>'ProductCharacteristic.value[x]', 'min'=>1, 'max'=>1},
-          'valueAttachment' => {'type'=>'Attachment', 'path'=>'ProductCharacteristic.value[x]', 'min'=>1, 'max'=>1},
-          'valueBoolean' => {'type'=>'boolean', 'path'=>'ProductCharacteristic.value[x]', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'ProductCharacteristic.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'ProductCharacteristic.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'ProductCharacteristic.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'path'=>'ProductCharacteristic.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/measurement-property'}},
+          'valueCodeableConcept' => {'path'=>'ProductCharacteristic.value[x]', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'valueString' => {'path'=>'ProductCharacteristic.value[x]', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'valueQuantity' => {'path'=>'ProductCharacteristic.value[x]', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+          'valueBase64Binary' => {'path'=>'ProductCharacteristic.value[x]', 'type'=>'base64Binary', 'min'=>1, 'max'=>1},
+          'valueAttachment' => {'path'=>'ProductCharacteristic.value[x]', 'type'=>'Attachment', 'min'=>1, 'max'=>1},
+          'valueBoolean' => {'path'=>'ProductCharacteristic.value[x]', 'type'=>'boolean', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                   # 0-1 string
@@ -106,14 +106,14 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Instance.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Instance.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Instance.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'quantity' => {'type'=>'Quantity', 'path'=>'Instance.quantity', 'min'=>0, 'max'=>1},
-          'identifier' => {'type'=>'Identifier', 'path'=>'Instance.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-          'lotNumber' => {'type'=>'string', 'path'=>'Instance.lotNumber', 'min'=>0, 'max'=>1},
-          'expiry' => {'type'=>'dateTime', 'path'=>'Instance.expiry', 'min'=>0, 'max'=>1},
-          'useBy' => {'type'=>'dateTime', 'path'=>'Instance.useBy', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Instance.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Instance.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Instance.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'quantity' => {'path'=>'Instance.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'identifier' => {'path'=>'Instance.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+          'lotNumber' => {'path'=>'Instance.lotNumber', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'expiry' => {'path'=>'Instance.expiry', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'useBy' => {'path'=>'Instance.useBy', 'type'=>'dateTime', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

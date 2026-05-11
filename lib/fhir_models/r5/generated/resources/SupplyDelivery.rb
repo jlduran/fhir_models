@@ -10,27 +10,27 @@ module FHIR
       }
       SEARCH_PARAMS = ['identifier', 'patient', 'receiver', 'status', 'supplier']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'SupplyDelivery.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'SupplyDelivery.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'SupplyDelivery.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'SupplyDelivery.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'SupplyDelivery.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'SupplyDelivery.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'SupplyDelivery.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'SupplyDelivery.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'SupplyDelivery.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SupplyRequest'], 'type'=>'Reference', 'path'=>'SupplyDelivery.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SupplyDelivery', 'http://hl7.org/fhir/StructureDefinition/Contract'], 'type'=>'Reference', 'path'=>'SupplyDelivery.partOf', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/supplydelivery-status'=>['in-progress', 'completed', 'abandoned', 'entered-in-error']}, 'type'=>'code', 'path'=>'SupplyDelivery.status', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/supplydelivery-status'}},
-        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'SupplyDelivery.patient', 'min'=>0, 'max'=>1},
-        'type' => {'valid_codes'=>{'http://hl7.org/fhir/supplydelivery-supplyitemtype'=>['medication', 'device', 'biologicallyderivedproduct']}, 'type'=>'CodeableConcept', 'path'=>'SupplyDelivery.type', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/supplydelivery-supplyitemtype'}},
-        'suppliedItem' => {'type'=>'SupplyDelivery::SuppliedItem', 'path'=>'SupplyDelivery.suppliedItem', 'min'=>0, 'max'=>Float::INFINITY},
-        'occurrenceDateTime' => {'type'=>'dateTime', 'path'=>'SupplyDelivery.occurrence[x]', 'min'=>0, 'max'=>1},
-        'occurrencePeriod' => {'type'=>'Period', 'path'=>'SupplyDelivery.occurrence[x]', 'min'=>0, 'max'=>1},
-        'occurrenceTiming' => {'type'=>'Timing', 'path'=>'SupplyDelivery.occurrence[x]', 'min'=>0, 'max'=>1},
-        'supplier' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'SupplyDelivery.supplier', 'min'=>0, 'max'=>1},
-        'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'SupplyDelivery.destination', 'min'=>0, 'max'=>1},
-        'receiver' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'SupplyDelivery.receiver', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'SupplyDelivery.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'SupplyDelivery.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'SupplyDelivery.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'SupplyDelivery.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'SupplyDelivery.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'SupplyDelivery.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'SupplyDelivery.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'SupplyDelivery.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'SupplyDelivery.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SupplyRequest'], 'path'=>'SupplyDelivery.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/SupplyDelivery', 'http://hl7.org/fhir/StructureDefinition/Contract'], 'path'=>'SupplyDelivery.partOf', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/supplydelivery-status'=>['in-progress', 'completed', 'abandoned', 'entered-in-error']}, 'path'=>'SupplyDelivery.status', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/supplydelivery-status'}},
+        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'SupplyDelivery.patient', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'type' => {'valid_codes'=>{'http://hl7.org/fhir/supplydelivery-supplyitemtype'=>['medication', 'device', 'biologicallyderivedproduct']}, 'path'=>'SupplyDelivery.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/supplydelivery-supplyitemtype'}},
+        'suppliedItem' => {'path'=>'SupplyDelivery.suppliedItem', 'type'=>'SupplyDelivery::SuppliedItem', 'min'=>0, 'max'=>Float::INFINITY},
+        'occurrenceDateTime' => {'path'=>'SupplyDelivery.occurrence[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'occurrencePeriod' => {'path'=>'SupplyDelivery.occurrence[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'occurrenceTiming' => {'path'=>'SupplyDelivery.occurrence[x]', 'type'=>'Timing', 'min'=>0, 'max'=>1},
+        'supplier' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'SupplyDelivery.supplier', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'SupplyDelivery.destination', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'receiver' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'SupplyDelivery.receiver', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class SuppliedItem < Model
@@ -42,12 +42,12 @@ module FHIR
           'item' => ['CodeableConcept', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'SuppliedItem.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'SuppliedItem.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'SuppliedItem.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'quantity' => {'type'=>'Quantity', 'path'=>'SuppliedItem.quantity', 'min'=>0, 'max'=>1},
-          'itemCodeableConcept' => {'valid_codes'=>{'http://hl7.org/fhir/supplydelivery-supplyitemtype'=>['medication', 'device', 'biologicallyderivedproduct']}, 'type'=>'CodeableConcept', 'path'=>'SuppliedItem.item[x]', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/supplydelivery-supplyitemtype'}},
-          'itemReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Medication', 'http://hl7.org/fhir/StructureDefinition/Substance', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct', 'http://hl7.org/fhir/StructureDefinition/NutritionProduct', 'http://hl7.org/fhir/StructureDefinition/InventoryItem'], 'type'=>'Reference', 'path'=>'SuppliedItem.item[x]', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'SuppliedItem.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'SuppliedItem.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'SuppliedItem.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'quantity' => {'path'=>'SuppliedItem.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+          'itemCodeableConcept' => {'valid_codes'=>{'http://hl7.org/fhir/supplydelivery-supplyitemtype'=>['medication', 'device', 'biologicallyderivedproduct']}, 'path'=>'SuppliedItem.item[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/supplydelivery-supplyitemtype'}},
+          'itemReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Medication', 'http://hl7.org/fhir/StructureDefinition/Substance', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct', 'http://hl7.org/fhir/StructureDefinition/NutritionProduct', 'http://hl7.org/fhir/StructureDefinition/InventoryItem'], 'path'=>'SuppliedItem.item[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                  # 0-1 string

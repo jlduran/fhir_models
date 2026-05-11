@@ -7,23 +7,23 @@ module FHIR
 
       SEARCH_PARAMS = ['device', 'identifier', 'operator', 'patient', 'status', 'subject']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'DeviceAssociation.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'DeviceAssociation.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'DeviceAssociation.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'DeviceAssociation.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'DeviceAssociation.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'DeviceAssociation.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'DeviceAssociation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'DeviceAssociation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'DeviceAssociation.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'device' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Device'], 'type'=>'Reference', 'path'=>'DeviceAssociation.device', 'min'=>1, 'max'=>1},
-        'category' => {'type'=>'CodeableConcept', 'path'=>'DeviceAssociation.category', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/deviceassociation-status'=>['implanted', 'explanted', 'entered-in-error', 'attached', 'unknown']}, 'type'=>'CodeableConcept', 'path'=>'DeviceAssociation.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceassociation-status'}},
-        'statusReason' => {'valid_codes'=>{'http://hl7.org/fhir/deviceassociation-status-reason'=>['attached', 'disconnected', 'failed', 'placed', 'replaced']}, 'type'=>'CodeableConcept', 'path'=>'DeviceAssociation.statusReason', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceassociation-status-reason'}},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Device'], 'type'=>'Reference', 'path'=>'DeviceAssociation.subject', 'min'=>0, 'max'=>1},
-        'bodyStructure' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/BodyStructure'], 'type'=>'Reference', 'path'=>'DeviceAssociation.bodyStructure', 'min'=>0, 'max'=>1},
-        'period' => {'type'=>'Period', 'path'=>'DeviceAssociation.period', 'min'=>0, 'max'=>1},
-        'operation' => {'type'=>'DeviceAssociation::Operation', 'path'=>'DeviceAssociation.operation', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'DeviceAssociation.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'DeviceAssociation.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'DeviceAssociation.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'DeviceAssociation.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'DeviceAssociation.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'DeviceAssociation.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'DeviceAssociation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'DeviceAssociation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'DeviceAssociation.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'device' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Device'], 'path'=>'DeviceAssociation.device', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'category' => {'path'=>'DeviceAssociation.category', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/deviceassociation-status'=>['implanted', 'explanted', 'entered-in-error', 'attached', 'unknown']}, 'path'=>'DeviceAssociation.status', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceassociation-status'}},
+        'statusReason' => {'valid_codes'=>{'http://hl7.org/fhir/deviceassociation-status-reason'=>['attached', 'disconnected', 'failed', 'placed', 'replaced']}, 'path'=>'DeviceAssociation.statusReason', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceassociation-status-reason'}},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson', 'http://hl7.org/fhir/StructureDefinition/Device'], 'path'=>'DeviceAssociation.subject', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'bodyStructure' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/BodyStructure'], 'path'=>'DeviceAssociation.bodyStructure', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'period' => {'path'=>'DeviceAssociation.period', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'operation' => {'path'=>'DeviceAssociation.operation', 'type'=>'DeviceAssociation::Operation', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Operation < Model
@@ -32,12 +32,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Operation.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Operation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Operation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'status' => {'valid_codes'=>{'http://hl7.org/fhir/deviceassociation-operationstatus'=>['on', 'off', 'standby', 'defective', 'unknown']}, 'type'=>'CodeableConcept', 'path'=>'Operation.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceassociation-operationstatus'}},
-          'operator' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'type'=>'Reference', 'path'=>'Operation.operator', 'min'=>0, 'max'=>Float::INFINITY},
-          'period' => {'type'=>'Period', 'path'=>'Operation.period', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Operation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Operation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Operation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'status' => {'valid_codes'=>{'http://hl7.org/fhir/deviceassociation-operationstatus'=>['on', 'off', 'standby', 'defective', 'unknown']}, 'path'=>'Operation.status', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/deviceassociation-operationstatus'}},
+          'operator' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient', 'http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/RelatedPerson'], 'path'=>'Operation.operator', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+          'period' => {'path'=>'Operation.period', 'type'=>'Period', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

@@ -10,13 +10,13 @@ module FHIR
       }
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'UsageContext.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'UsageContext.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'code' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/usage-context-type'=>['gender', 'age', 'focus', 'user', 'workflow', 'task', 'venue', 'species', 'program']}, 'type'=>'Coding', 'path'=>'UsageContext.code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/usage-context-type'}},
-        'valueCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'UsageContext.value[x]', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/use-context'}},
-        'valueQuantity' => {'type'=>'Quantity', 'path'=>'UsageContext.value[x]', 'min'=>1, 'max'=>1},
-        'valueRange' => {'type'=>'Range', 'path'=>'UsageContext.value[x]', 'min'=>1, 'max'=>1},
-        'valueReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/PlanDefinition', 'http://hl7.org/fhir/StructureDefinition/ResearchStudy', 'http://hl7.org/fhir/StructureDefinition/InsurancePlan', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'UsageContext.value[x]', 'min'=>1, 'max'=>1}
+        'id' => {'path'=>'UsageContext.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'UsageContext.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'code' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/usage-context-type'=>['gender', 'age', 'focus', 'user', 'workflow', 'task', 'venue', 'species', 'program']}, 'path'=>'UsageContext.code', 'type'=>'Coding', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/usage-context-type'}},
+        'valueCodeableConcept' => {'path'=>'UsageContext.value[x]', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/use-context'}},
+        'valueQuantity' => {'path'=>'UsageContext.value[x]', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+        'valueRange' => {'path'=>'UsageContext.value[x]', 'type'=>'Range', 'min'=>1, 'max'=>1},
+        'valueReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/PlanDefinition', 'http://hl7.org/fhir/StructureDefinition/ResearchStudy', 'http://hl7.org/fhir/StructureDefinition/InsurancePlan', 'http://hl7.org/fhir/StructureDefinition/HealthcareService', 'http://hl7.org/fhir/StructureDefinition/Group', 'http://hl7.org/fhir/StructureDefinition/Location', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'UsageContext.value[x]', 'type'=>'Reference', 'min'=>1, 'max'=>1}
       }
 
       attr_accessor :id                   # 0-1 string

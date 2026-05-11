@@ -7,18 +7,18 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'SubstanceProtein.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'SubstanceProtein.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'SubstanceProtein.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'SubstanceProtein.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'SubstanceProtein.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'SubstanceProtein.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'SubstanceProtein.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'SubstanceProtein.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'sequenceType' => {'type'=>'CodeableConcept', 'path'=>'SubstanceProtein.sequenceType', 'min'=>0, 'max'=>1},
-        'numberOfSubunits' => {'type'=>'integer', 'path'=>'SubstanceProtein.numberOfSubunits', 'min'=>0, 'max'=>1},
-        'disulfideLinkage' => {'type'=>'string', 'path'=>'SubstanceProtein.disulfideLinkage', 'min'=>0, 'max'=>Float::INFINITY},
-        'subunit' => {'type'=>'SubstanceProtein::Subunit', 'path'=>'SubstanceProtein.subunit', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'SubstanceProtein.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'SubstanceProtein.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'SubstanceProtein.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'SubstanceProtein.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'SubstanceProtein.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'SubstanceProtein.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'SubstanceProtein.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'SubstanceProtein.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'sequenceType' => {'path'=>'SubstanceProtein.sequenceType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'numberOfSubunits' => {'path'=>'SubstanceProtein.numberOfSubunits', 'type'=>'integer', 'min'=>0, 'max'=>1},
+        'disulfideLinkage' => {'path'=>'SubstanceProtein.disulfideLinkage', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'subunit' => {'path'=>'SubstanceProtein.subunit', 'type'=>'SubstanceProtein::Subunit', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Subunit < Model
@@ -27,17 +27,17 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Subunit.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Subunit.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Subunit.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'subunit' => {'type'=>'integer', 'path'=>'Subunit.subunit', 'min'=>0, 'max'=>1},
-          'sequence' => {'type'=>'string', 'path'=>'Subunit.sequence', 'min'=>0, 'max'=>1},
-          'length' => {'type'=>'integer', 'path'=>'Subunit.length', 'min'=>0, 'max'=>1},
-          'sequenceAttachment' => {'type'=>'Attachment', 'path'=>'Subunit.sequenceAttachment', 'min'=>0, 'max'=>1},
-          'nTerminalModificationId' => {'type'=>'Identifier', 'path'=>'Subunit.nTerminalModificationId', 'min'=>0, 'max'=>1},
-          'nTerminalModification' => {'type'=>'string', 'path'=>'Subunit.nTerminalModification', 'min'=>0, 'max'=>1},
-          'cTerminalModificationId' => {'type'=>'Identifier', 'path'=>'Subunit.cTerminalModificationId', 'min'=>0, 'max'=>1},
-          'cTerminalModification' => {'type'=>'string', 'path'=>'Subunit.cTerminalModification', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Subunit.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Subunit.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Subunit.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'subunit' => {'path'=>'Subunit.subunit', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'sequence' => {'path'=>'Subunit.sequence', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'length' => {'path'=>'Subunit.length', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'sequenceAttachment' => {'path'=>'Subunit.sequenceAttachment', 'type'=>'Attachment', 'min'=>0, 'max'=>1},
+          'nTerminalModificationId' => {'path'=>'Subunit.nTerminalModificationId', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'nTerminalModification' => {'path'=>'Subunit.nTerminalModification', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'cTerminalModificationId' => {'path'=>'Subunit.cTerminalModificationId', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'cTerminalModification' => {'path'=>'Subunit.cTerminalModification', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                      # 0-1 string

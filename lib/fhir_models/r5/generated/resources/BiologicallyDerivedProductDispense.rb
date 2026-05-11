@@ -7,30 +7,30 @@ module FHIR
 
       SEARCH_PARAMS = ['identifier', 'patient', 'performer', 'product', 'status']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'BiologicallyDerivedProductDispense.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'BiologicallyDerivedProductDispense.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'BiologicallyDerivedProductDispense.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'BiologicallyDerivedProductDispense.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'BiologicallyDerivedProductDispense.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'BiologicallyDerivedProductDispense.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'BiologicallyDerivedProductDispense.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'BiologicallyDerivedProductDispense.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'BiologicallyDerivedProductDispense.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ServiceRequest'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProductDispense.basedOn', 'min'=>0, 'max'=>Float::INFINITY},
-        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProductDispense'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProductDispense.partOf', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/biologicallyderivedproductdispense-status'=>['preparation', 'in-progress', 'allocated', 'issued', 'unfulfilled', 'returned', 'entered-in-error', 'unknown']}, 'type'=>'code', 'path'=>'BiologicallyDerivedProductDispense.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-status'}},
-        'originRelationshipType' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-origin-relationship'=>['autologous', 'related', 'directed', 'allogeneic', 'xenogenic']}, 'type'=>'CodeableConcept', 'path'=>'BiologicallyDerivedProductDispense.originRelationshipType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-origin-relationship'}},
-        'product' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProductDispense.product', 'min'=>1, 'max'=>1},
-        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProductDispense.patient', 'min'=>1, 'max'=>1},
-        'matchStatus' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-match-status'=>['crossmatched', 'selected', 'unmatched', 'least-incompatible']}, 'type'=>'CodeableConcept', 'path'=>'BiologicallyDerivedProductDispense.matchStatus', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-match-status'}},
-        'performer' => {'type'=>'BiologicallyDerivedProductDispense::Performer', 'path'=>'BiologicallyDerivedProductDispense.performer', 'min'=>0, 'max'=>Float::INFINITY},
-        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProductDispense.location', 'min'=>0, 'max'=>1},
-        'quantity' => {'type'=>'Quantity', 'path'=>'BiologicallyDerivedProductDispense.quantity', 'min'=>0, 'max'=>1},
-        'preparedDate' => {'type'=>'dateTime', 'path'=>'BiologicallyDerivedProductDispense.preparedDate', 'min'=>0, 'max'=>1},
-        'whenHandedOver' => {'type'=>'dateTime', 'path'=>'BiologicallyDerivedProductDispense.whenHandedOver', 'min'=>0, 'max'=>1},
-        'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'BiologicallyDerivedProductDispense.destination', 'min'=>0, 'max'=>1},
-        'note' => {'type'=>'Annotation', 'path'=>'BiologicallyDerivedProductDispense.note', 'min'=>0, 'max'=>Float::INFINITY},
-        'usageInstruction' => {'type'=>'string', 'path'=>'BiologicallyDerivedProductDispense.usageInstruction', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'BiologicallyDerivedProductDispense.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'BiologicallyDerivedProductDispense.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'BiologicallyDerivedProductDispense.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'BiologicallyDerivedProductDispense.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'BiologicallyDerivedProductDispense.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'BiologicallyDerivedProductDispense.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'BiologicallyDerivedProductDispense.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'BiologicallyDerivedProductDispense.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'BiologicallyDerivedProductDispense.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'basedOn' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ServiceRequest'], 'path'=>'BiologicallyDerivedProductDispense.basedOn', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'partOf' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProductDispense'], 'path'=>'BiologicallyDerivedProductDispense.partOf', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/biologicallyderivedproductdispense-status'=>['preparation', 'in-progress', 'allocated', 'issued', 'unfulfilled', 'returned', 'entered-in-error', 'unknown']}, 'path'=>'BiologicallyDerivedProductDispense.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-status'}},
+        'originRelationshipType' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-origin-relationship'=>['autologous', 'related', 'directed', 'allogeneic', 'xenogenic']}, 'path'=>'BiologicallyDerivedProductDispense.originRelationshipType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-origin-relationship'}},
+        'product' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct'], 'path'=>'BiologicallyDerivedProductDispense.product', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'patient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Patient'], 'path'=>'BiologicallyDerivedProductDispense.patient', 'type'=>'Reference', 'min'=>1, 'max'=>1},
+        'matchStatus' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-match-status'=>['crossmatched', 'selected', 'unmatched', 'least-incompatible']}, 'path'=>'BiologicallyDerivedProductDispense.matchStatus', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-match-status'}},
+        'performer' => {'path'=>'BiologicallyDerivedProductDispense.performer', 'type'=>'BiologicallyDerivedProductDispense::Performer', 'min'=>0, 'max'=>Float::INFINITY},
+        'location' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'BiologicallyDerivedProductDispense.location', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'quantity' => {'path'=>'BiologicallyDerivedProductDispense.quantity', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'preparedDate' => {'path'=>'BiologicallyDerivedProductDispense.preparedDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'whenHandedOver' => {'path'=>'BiologicallyDerivedProductDispense.whenHandedOver', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'destination' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'BiologicallyDerivedProductDispense.destination', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'note' => {'path'=>'BiologicallyDerivedProductDispense.note', 'type'=>'Annotation', 'min'=>0, 'max'=>Float::INFINITY},
+        'usageInstruction' => {'path'=>'BiologicallyDerivedProductDispense.usageInstruction', 'type'=>'string', 'min'=>0, 'max'=>1}
       }
 
       class Performer < Model
@@ -39,11 +39,11 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Performer.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Performer.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Performer.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'function' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-performer-function'=>['group-and-type', 'antibody-screen', 'antibody-identification', 'crossmatch', 'release', 'transport', 'receipt']}, 'type'=>'CodeableConcept', 'path'=>'Performer.function', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-performer-function'}},
-          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner'], 'type'=>'Reference', 'path'=>'Performer.actor', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'Performer.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Performer.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Performer.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'function' => {'valid_codes'=>{'http://hl7.org/fhir/CodeSystem/biologicallyderivedproductdispense-performer-function'=>['group-and-type', 'antibody-screen', 'antibody-identification', 'crossmatch', 'release', 'transport', 'receipt']}, 'path'=>'Performer.function', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/biologicallyderivedproductdispense-performer-function'}},
+          'actor' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner'], 'path'=>'Performer.actor', 'type'=>'Reference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

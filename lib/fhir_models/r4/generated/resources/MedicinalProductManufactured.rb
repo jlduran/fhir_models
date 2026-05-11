@@ -7,21 +7,21 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MedicinalProductManufactured.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MedicinalProductManufactured.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MedicinalProductManufactured.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'MedicinalProductManufactured.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MedicinalProductManufactured.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MedicinalProductManufactured.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MedicinalProductManufactured.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MedicinalProductManufactured.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'manufacturedDoseForm' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductManufactured.manufacturedDoseForm', 'min'=>1, 'max'=>1},
-        'unitOfPresentation' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductManufactured.unitOfPresentation', 'min'=>0, 'max'=>1},
-        'quantity' => {'type'=>'Quantity', 'path'=>'MedicinalProductManufactured.quantity', 'min'=>1, 'max'=>1},
-        'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'MedicinalProductManufactured.manufacturer', 'min'=>0, 'max'=>Float::INFINITY},
-        'ingredient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductIngredient'], 'type'=>'Reference', 'path'=>'MedicinalProductManufactured.ingredient', 'min'=>0, 'max'=>Float::INFINITY},
-        'physicalCharacteristics' => {'type'=>'ProdCharacteristic', 'path'=>'MedicinalProductManufactured.physicalCharacteristics', 'min'=>0, 'max'=>1},
-        'otherCharacteristics' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductManufactured.otherCharacteristics', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'MedicinalProductManufactured.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MedicinalProductManufactured.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MedicinalProductManufactured.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'MedicinalProductManufactured.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'MedicinalProductManufactured.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MedicinalProductManufactured.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MedicinalProductManufactured.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MedicinalProductManufactured.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'manufacturedDoseForm' => {'path'=>'MedicinalProductManufactured.manufacturedDoseForm', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+        'unitOfPresentation' => {'path'=>'MedicinalProductManufactured.unitOfPresentation', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'quantity' => {'path'=>'MedicinalProductManufactured.quantity', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+        'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'MedicinalProductManufactured.manufacturer', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'ingredient' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductIngredient'], 'path'=>'MedicinalProductManufactured.ingredient', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'physicalCharacteristics' => {'path'=>'MedicinalProductManufactured.physicalCharacteristics', 'type'=>'ProdCharacteristic', 'min'=>0, 'max'=>1},
+        'otherCharacteristics' => {'path'=>'MedicinalProductManufactured.otherCharacteristics', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       attr_accessor :id                      # 0-1 id

@@ -7,12 +7,12 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'MonetaryComponent.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'MonetaryComponent.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'valid_codes'=>{'http://hl7.org/fhir/price-component-type'=>['base', 'surcharge', 'deduction', 'discount', 'tax', 'informational']}, 'type'=>'code', 'path'=>'MonetaryComponent.type', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/price-component-type'}},
-        'code' => {'type'=>'CodeableConcept', 'path'=>'MonetaryComponent.code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example'}},
-        'factor' => {'type'=>'decimal', 'path'=>'MonetaryComponent.factor', 'min'=>0, 'max'=>1},
-        'amount' => {'type'=>'Money', 'path'=>'MonetaryComponent.amount', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'MonetaryComponent.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'MonetaryComponent.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'valid_codes'=>{'http://hl7.org/fhir/price-component-type'=>['base', 'surcharge', 'deduction', 'discount', 'tax', 'informational']}, 'path'=>'MonetaryComponent.type', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/price-component-type'}},
+        'code' => {'path'=>'MonetaryComponent.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example'}},
+        'factor' => {'path'=>'MonetaryComponent.factor', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+        'amount' => {'path'=>'MonetaryComponent.amount', 'type'=>'Money', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id        # 0-1 string

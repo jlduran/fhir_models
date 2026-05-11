@@ -7,10 +7,10 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'CodeableReference.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'CodeableReference.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'concept' => {'type'=>'CodeableConcept', 'path'=>'CodeableReference.concept', 'min'=>0, 'max'=>1},
-        'reference' => {'type'=>'Reference', 'path'=>'CodeableReference.reference', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'CodeableReference.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'CodeableReference.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'concept' => {'path'=>'CodeableReference.concept', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'reference' => {'path'=>'CodeableReference.reference', 'type'=>'Reference', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id        # 0-1 string

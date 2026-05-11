@@ -10,25 +10,25 @@ module FHIR
       }
       SEARCH_PARAMS = ['author', 'code', 'destination', 'event', 'focus', 'receiver', 'response-id', 'responsible', 'sender', 'source', 'target']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MessageHeader.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MessageHeader.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MessageHeader.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'MessageHeader.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MessageHeader.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MessageHeader.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MessageHeader.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MessageHeader.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'eventCoding' => {'type'=>'Coding', 'path'=>'MessageHeader.event[x]', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example'}},
-        'eventCanonical' => {'type'=>'canonical', 'path'=>'MessageHeader.event[x]', 'min'=>1, 'max'=>1},
-        'destination' => {'type'=>'MessageHeader::Destination', 'path'=>'MessageHeader.destination', 'min'=>0, 'max'=>Float::INFINITY},
-        'sender' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'MessageHeader.sender', 'min'=>0, 'max'=>1},
-        'author' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'MessageHeader.author', 'min'=>0, 'max'=>1},
-        'source' => {'type'=>'MessageHeader::Source', 'path'=>'MessageHeader.source', 'min'=>1, 'max'=>1},
-        'responsible' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'MessageHeader.responsible', 'min'=>0, 'max'=>1},
-        'reason' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/message-reasons-encounter'=>['admit', 'discharge', 'absent', 'return', 'moved', 'edit']}, 'type'=>'CodeableConcept', 'path'=>'MessageHeader.reason', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/message-reason-encounter'}},
-        'response' => {'type'=>'MessageHeader::Response', 'path'=>'MessageHeader.response', 'min'=>0, 'max'=>1},
-        'focus' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'type'=>'Reference', 'path'=>'MessageHeader.focus', 'min'=>0, 'max'=>Float::INFINITY},
-        'definition' => {'type'=>'canonical', 'path'=>'MessageHeader.definition', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'MessageHeader.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MessageHeader.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MessageHeader.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'MessageHeader.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'MessageHeader.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MessageHeader.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MessageHeader.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MessageHeader.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'eventCoding' => {'path'=>'MessageHeader.event[x]', 'type'=>'Coding', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'example'}},
+        'eventCanonical' => {'path'=>'MessageHeader.event[x]', 'type'=>'canonical', 'min'=>1, 'max'=>1},
+        'destination' => {'path'=>'MessageHeader.destination', 'type'=>'MessageHeader::Destination', 'min'=>0, 'max'=>Float::INFINITY},
+        'sender' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'MessageHeader.sender', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'author' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Device', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'MessageHeader.author', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'source' => {'path'=>'MessageHeader.source', 'type'=>'MessageHeader::Source', 'min'=>1, 'max'=>1},
+        'responsible' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'MessageHeader.responsible', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'reason' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/message-reasons-encounter'=>['admit', 'discharge', 'absent', 'return', 'moved', 'edit']}, 'path'=>'MessageHeader.reason', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/message-reason-encounter'}},
+        'response' => {'path'=>'MessageHeader.response', 'type'=>'MessageHeader::Response', 'min'=>0, 'max'=>1},
+        'focus' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Resource'], 'path'=>'MessageHeader.focus', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'definition' => {'path'=>'MessageHeader.definition', 'type'=>'canonical', 'min'=>0, 'max'=>1}
       }
 
       class Destination < Model
@@ -40,14 +40,14 @@ module FHIR
           'endpoint' => ['url', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Destination.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Destination.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Destination.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'endpointUrl' => {'type'=>'url', 'path'=>'Destination.endpoint[x]', 'min'=>0, 'max'=>1},
-          'endpointReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'type'=>'Reference', 'path'=>'Destination.endpoint[x]', 'min'=>0, 'max'=>1},
-          'name' => {'type'=>'string', 'path'=>'Destination.name', 'min'=>0, 'max'=>1},
-          'target' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Device'], 'type'=>'Reference', 'path'=>'Destination.target', 'min'=>0, 'max'=>1},
-          'receiver' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Destination.receiver', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Destination.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Destination.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Destination.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'endpointUrl' => {'path'=>'Destination.endpoint[x]', 'type'=>'url', 'min'=>0, 'max'=>1},
+          'endpointReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'path'=>'Destination.endpoint[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'name' => {'path'=>'Destination.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'target' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Device'], 'path'=>'Destination.target', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'receiver' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Practitioner', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole', 'http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Destination.receiver', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -69,15 +69,15 @@ module FHIR
           'endpoint' => ['url', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Source.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Source.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Source.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'endpointUrl' => {'type'=>'url', 'path'=>'Source.endpoint[x]', 'min'=>0, 'max'=>1},
-          'endpointReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'type'=>'Reference', 'path'=>'Source.endpoint[x]', 'min'=>0, 'max'=>1},
-          'name' => {'type'=>'string', 'path'=>'Source.name', 'min'=>0, 'max'=>1},
-          'software' => {'type'=>'string', 'path'=>'Source.software', 'min'=>0, 'max'=>1},
-          'version' => {'type'=>'string', 'path'=>'Source.version', 'min'=>0, 'max'=>1},
-          'contact' => {'type'=>'ContactPoint', 'path'=>'Source.contact', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Source.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Source.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Source.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'endpointUrl' => {'path'=>'Source.endpoint[x]', 'type'=>'url', 'min'=>0, 'max'=>1},
+          'endpointReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'path'=>'Source.endpoint[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'name' => {'path'=>'Source.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'software' => {'path'=>'Source.software', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'version' => {'path'=>'Source.version', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'contact' => {'path'=>'Source.contact', 'type'=>'ContactPoint', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -97,12 +97,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Response.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Response.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Response.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'identifier' => {'type'=>'Identifier', 'path'=>'Response.identifier', 'min'=>1, 'max'=>1},
-          'code' => {'valid_codes'=>{'http://hl7.org/fhir/response-code'=>['ok', 'transient-error', 'fatal-error']}, 'type'=>'code', 'path'=>'Response.code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/response-code'}},
-          'details' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/OperationOutcome'], 'type'=>'Reference', 'path'=>'Response.details', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Response.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Response.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Response.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'identifier' => {'path'=>'Response.identifier', 'type'=>'Identifier', 'min'=>1, 'max'=>1},
+          'code' => {'valid_codes'=>{'http://hl7.org/fhir/response-code'=>['ok', 'transient-error', 'fatal-error']}, 'path'=>'Response.code', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/response-code'}},
+          'details' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/OperationOutcome'], 'path'=>'Response.details', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string

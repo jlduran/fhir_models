@@ -10,13 +10,13 @@ module FHIR
       }
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'ProductShelfLife.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'ProductShelfLife.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'ProductShelfLife.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'type'=>'CodeableConcept', 'path'=>'ProductShelfLife.type', 'min'=>0, 'max'=>1},
-        'periodDuration' => {'type'=>'Duration', 'path'=>'ProductShelfLife.period[x]', 'min'=>0, 'max'=>1},
-        'periodString' => {'type'=>'string', 'path'=>'ProductShelfLife.period[x]', 'min'=>0, 'max'=>1},
-        'specialPrecautionsForStorage' => {'type'=>'CodeableConcept', 'path'=>'ProductShelfLife.specialPrecautionsForStorage', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'ProductShelfLife.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'ProductShelfLife.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'ProductShelfLife.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'path'=>'ProductShelfLife.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'periodDuration' => {'path'=>'ProductShelfLife.period[x]', 'type'=>'Duration', 'min'=>0, 'max'=>1},
+        'periodString' => {'path'=>'ProductShelfLife.period[x]', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'specialPrecautionsForStorage' => {'path'=>'ProductShelfLife.specialPrecautionsForStorage', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       attr_accessor :id                           # 0-1 string

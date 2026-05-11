@@ -7,32 +7,32 @@ module FHIR
 
       SEARCH_PARAMS = ['context', 'context-quantity', 'context-type', 'context-type-quantity', 'context-type-value', 'date', 'description', 'identifier', 'jurisdiction', 'name', 'publisher', 'status', 'title', 'url', 'version']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'StructureMap.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'StructureMap.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'StructureMap.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'StructureMap.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'StructureMap.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'StructureMap.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'StructureMap.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'StructureMap.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'url' => {'type'=>'uri', 'path'=>'StructureMap.url', 'min'=>1, 'max'=>1},
-        'identifier' => {'type'=>'Identifier', 'path'=>'StructureMap.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'version' => {'type'=>'string', 'path'=>'StructureMap.version', 'min'=>0, 'max'=>1},
-        'name' => {'type'=>'string', 'path'=>'StructureMap.name', 'min'=>1, 'max'=>1},
-        'title' => {'type'=>'string', 'path'=>'StructureMap.title', 'min'=>0, 'max'=>1},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'type'=>'code', 'path'=>'StructureMap.status', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
-        'experimental' => {'type'=>'boolean', 'path'=>'StructureMap.experimental', 'min'=>0, 'max'=>1},
-        'date' => {'type'=>'dateTime', 'path'=>'StructureMap.date', 'min'=>0, 'max'=>1},
-        'publisher' => {'type'=>'string', 'path'=>'StructureMap.publisher', 'min'=>0, 'max'=>1},
-        'contact' => {'type'=>'ContactDetail', 'path'=>'StructureMap.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'description' => {'type'=>'markdown', 'path'=>'StructureMap.description', 'min'=>0, 'max'=>1},
-        'useContext' => {'type'=>'UsageContext', 'path'=>'StructureMap.useContext', 'min'=>0, 'max'=>Float::INFINITY},
-        'jurisdiction' => {'type'=>'CodeableConcept', 'path'=>'StructureMap.jurisdiction', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/jurisdiction'}},
-        'purpose' => {'type'=>'markdown', 'path'=>'StructureMap.purpose', 'min'=>0, 'max'=>1},
-        'copyright' => {'type'=>'markdown', 'path'=>'StructureMap.copyright', 'min'=>0, 'max'=>1},
-        'structure' => {'type'=>'StructureMap::Structure', 'path'=>'StructureMap.structure', 'min'=>0, 'max'=>Float::INFINITY},
-        'import' => {'type'=>'canonical', 'path'=>'StructureMap.import', 'min'=>0, 'max'=>Float::INFINITY},
-        'group' => {'type'=>'StructureMap::Group', 'path'=>'StructureMap.group', 'min'=>1, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'StructureMap.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'StructureMap.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'StructureMap.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'StructureMap.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'StructureMap.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'StructureMap.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'StructureMap.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'StructureMap.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'url' => {'path'=>'StructureMap.url', 'type'=>'uri', 'min'=>1, 'max'=>1},
+        'identifier' => {'path'=>'StructureMap.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'version' => {'path'=>'StructureMap.version', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'name' => {'path'=>'StructureMap.name', 'type'=>'string', 'min'=>1, 'max'=>1},
+        'title' => {'path'=>'StructureMap.title', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'path'=>'StructureMap.status', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
+        'experimental' => {'path'=>'StructureMap.experimental', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+        'date' => {'path'=>'StructureMap.date', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+        'publisher' => {'path'=>'StructureMap.publisher', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'contact' => {'path'=>'StructureMap.contact', 'type'=>'ContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'description' => {'path'=>'StructureMap.description', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'useContext' => {'path'=>'StructureMap.useContext', 'type'=>'UsageContext', 'min'=>0, 'max'=>Float::INFINITY},
+        'jurisdiction' => {'path'=>'StructureMap.jurisdiction', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/jurisdiction'}},
+        'purpose' => {'path'=>'StructureMap.purpose', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'copyright' => {'path'=>'StructureMap.copyright', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+        'structure' => {'path'=>'StructureMap.structure', 'type'=>'StructureMap::Structure', 'min'=>0, 'max'=>Float::INFINITY},
+        'import' => {'path'=>'StructureMap.import', 'type'=>'canonical', 'min'=>0, 'max'=>Float::INFINITY},
+        'group' => {'path'=>'StructureMap.group', 'type'=>'StructureMap::Group', 'min'=>1, 'max'=>Float::INFINITY}
       }
 
       class Structure < Model
@@ -41,13 +41,13 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Structure.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Structure.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Structure.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'url' => {'type'=>'canonical', 'path'=>'Structure.url', 'min'=>1, 'max'=>1},
-          'mode' => {'valid_codes'=>{'http://hl7.org/fhir/map-model-mode'=>['source', 'queried', 'target', 'produced']}, 'type'=>'code', 'path'=>'Structure.mode', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-model-mode'}},
-          'alias' => {'type'=>'string', 'path'=>'Structure.alias', 'min'=>0, 'max'=>1},
-          'documentation' => {'type'=>'string', 'path'=>'Structure.documentation', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'Structure.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Structure.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Structure.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'url' => {'path'=>'Structure.url', 'type'=>'canonical', 'min'=>1, 'max'=>1},
+          'mode' => {'valid_codes'=>{'http://hl7.org/fhir/map-model-mode'=>['source', 'queried', 'target', 'produced']}, 'path'=>'Structure.mode', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-model-mode'}},
+          'alias' => {'path'=>'Structure.alias', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'documentation' => {'path'=>'Structure.documentation', 'type'=>'string', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                # 0-1 string
@@ -65,15 +65,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Group.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Group.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Group.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'name' => {'type'=>'id', 'path'=>'Group.name', 'min'=>1, 'max'=>1},
-          'extends' => {'type'=>'id', 'path'=>'Group.extends', 'min'=>0, 'max'=>1},
-          'typeMode' => {'valid_codes'=>{'http://hl7.org/fhir/map-group-type-mode'=>['none', 'types', 'type-and-types']}, 'type'=>'code', 'path'=>'Group.typeMode', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-group-type-mode'}},
-          'documentation' => {'type'=>'string', 'path'=>'Group.documentation', 'min'=>0, 'max'=>1},
-          'input' => {'type'=>'StructureMap::Group::Input', 'path'=>'Group.input', 'min'=>1, 'max'=>Float::INFINITY},
-          'rule' => {'type'=>'StructureMap::Group::Rule', 'path'=>'Group.rule', 'min'=>1, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Group.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Group.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Group.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'name' => {'path'=>'Group.name', 'type'=>'id', 'min'=>1, 'max'=>1},
+          'extends' => {'path'=>'Group.extends', 'type'=>'id', 'min'=>0, 'max'=>1},
+          'typeMode' => {'valid_codes'=>{'http://hl7.org/fhir/map-group-type-mode'=>['none', 'types', 'type-and-types']}, 'path'=>'Group.typeMode', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-group-type-mode'}},
+          'documentation' => {'path'=>'Group.documentation', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'input' => {'path'=>'Group.input', 'type'=>'StructureMap::Group::Input', 'min'=>1, 'max'=>Float::INFINITY},
+          'rule' => {'path'=>'Group.rule', 'type'=>'StructureMap::Group::Rule', 'min'=>1, 'max'=>Float::INFINITY}
         }
 
         class Input < Model
@@ -82,13 +82,13 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Input.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Input.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Input.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'name' => {'type'=>'id', 'path'=>'Input.name', 'min'=>1, 'max'=>1},
-            'type' => {'type'=>'string', 'path'=>'Input.type', 'min'=>0, 'max'=>1},
-            'mode' => {'valid_codes'=>{'http://hl7.org/fhir/map-input-mode'=>['source', 'target']}, 'type'=>'code', 'path'=>'Input.mode', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-input-mode'}},
-            'documentation' => {'type'=>'string', 'path'=>'Input.documentation', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Input.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Input.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Input.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'name' => {'path'=>'Input.name', 'type'=>'id', 'min'=>1, 'max'=>1},
+            'type' => {'path'=>'Input.type', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'mode' => {'valid_codes'=>{'http://hl7.org/fhir/map-input-mode'=>['source', 'target']}, 'path'=>'Input.mode', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-input-mode'}},
+            'documentation' => {'path'=>'Input.documentation', 'type'=>'string', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -106,15 +106,15 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Rule.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Rule.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Rule.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'name' => {'type'=>'id', 'path'=>'Rule.name', 'min'=>1, 'max'=>1},
-            'source' => {'type'=>'StructureMap::Group::Rule::Source', 'path'=>'Rule.source', 'min'=>1, 'max'=>Float::INFINITY},
-            'target' => {'type'=>'StructureMap::Group::Rule::Target', 'path'=>'Rule.target', 'min'=>0, 'max'=>Float::INFINITY},
-            'rule' => {'type'=>'StructureMap::Group::Rule', 'path'=>'Rule.rule', 'min'=>0, 'max'=>Float::INFINITY},
-            'dependent' => {'type'=>'StructureMap::Group::Rule::Dependent', 'path'=>'Rule.dependent', 'min'=>0, 'max'=>Float::INFINITY},
-            'documentation' => {'type'=>'string', 'path'=>'Rule.documentation', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Rule.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Rule.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Rule.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'name' => {'path'=>'Rule.name', 'type'=>'id', 'min'=>1, 'max'=>1},
+            'source' => {'path'=>'Rule.source', 'type'=>'StructureMap::Group::Rule::Source', 'min'=>1, 'max'=>Float::INFINITY},
+            'target' => {'path'=>'Rule.target', 'type'=>'StructureMap::Group::Rule::Target', 'min'=>0, 'max'=>Float::INFINITY},
+            'rule' => {'path'=>'Rule.rule', 'type'=>'StructureMap::Group::Rule', 'min'=>0, 'max'=>Float::INFINITY},
+            'dependent' => {'path'=>'Rule.dependent', 'type'=>'StructureMap::Group::Rule::Dependent', 'min'=>0, 'max'=>Float::INFINITY},
+            'documentation' => {'path'=>'Rule.documentation', 'type'=>'string', 'min'=>0, 'max'=>1}
           }
 
           class Source < Model
@@ -126,69 +126,69 @@ module FHIR
               'defaultValue' => ['base64Binary', 'boolean', 'canonical', 'code', 'date', 'dateTime', 'decimal', 'id', 'instant', 'integer', 'markdown', 'oid', 'positiveInt', 'string', 'time', 'unsignedInt', 'uri', 'url', 'uuid', 'Address', 'Age', 'Annotation', 'Attachment', 'CodeableConcept', 'Coding', 'ContactPoint', 'Count', 'Distance', 'Duration', 'HumanName', 'Identifier', 'Money', 'Period', 'Quantity', 'Range', 'Ratio', 'Reference', 'SampledData', 'Signature', 'Timing', 'ContactDetail', 'Contributor', 'DataRequirement', 'Expression', 'ParameterDefinition', 'RelatedArtifact', 'TriggerDefinition', 'UsageContext', 'Dosage', 'Meta']
             }
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Source.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Source.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Source.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'context' => {'type'=>'id', 'path'=>'Source.context', 'min'=>1, 'max'=>1},
-              'min' => {'type'=>'integer', 'path'=>'Source.min', 'min'=>0, 'max'=>1},
-              'max' => {'type'=>'string', 'path'=>'Source.max', 'min'=>0, 'max'=>1},
-              'type' => {'type'=>'string', 'path'=>'Source.type', 'min'=>0, 'max'=>1},
-              'defaultValueBase64Binary' => {'type'=>'base64Binary', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueBoolean' => {'type'=>'boolean', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueCanonical' => {'type'=>'canonical', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueCode' => {'type'=>'code', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueDate' => {'type'=>'date', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueDateTime' => {'type'=>'dateTime', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueDecimal' => {'type'=>'decimal', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueId' => {'type'=>'id', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueInstant' => {'type'=>'instant', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueInteger' => {'type'=>'integer', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueMarkdown' => {'type'=>'markdown', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueOid' => {'type'=>'oid', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValuePositiveInt' => {'type'=>'positiveInt', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueString' => {'type'=>'string', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueTime' => {'type'=>'time', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueUnsignedInt' => {'type'=>'unsignedInt', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueUri' => {'type'=>'uri', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueUrl' => {'type'=>'url', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueUuid' => {'type'=>'uuid', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueAddress' => {'type'=>'Address', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueAge' => {'type'=>'Age', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueAnnotation' => {'type'=>'Annotation', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueAttachment' => {'type'=>'Attachment', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueCoding' => {'type'=>'Coding', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueContactPoint' => {'type'=>'ContactPoint', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueCount' => {'type'=>'Count', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueDistance' => {'type'=>'Distance', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueDuration' => {'type'=>'Duration', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueHumanName' => {'type'=>'HumanName', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueIdentifier' => {'type'=>'Identifier', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueMoney' => {'type'=>'Money', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValuePeriod' => {'type'=>'Period', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueQuantity' => {'type'=>'Quantity', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueRange' => {'type'=>'Range', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueRatio' => {'type'=>'Ratio', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueReference' => {'type'=>'Reference', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueSampledData' => {'type'=>'SampledData', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueSignature' => {'type'=>'Signature', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueTiming' => {'type'=>'Timing', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueContactDetail' => {'type'=>'ContactDetail', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueContributor' => {'type'=>'Contributor', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueDataRequirement' => {'type'=>'DataRequirement', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueExpression' => {'type'=>'Expression', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueParameterDefinition' => {'type'=>'ParameterDefinition', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueRelatedArtifact' => {'type'=>'RelatedArtifact', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueTriggerDefinition' => {'type'=>'TriggerDefinition', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueUsageContext' => {'type'=>'UsageContext', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueDosage' => {'type'=>'Dosage', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'defaultValueMeta' => {'type'=>'Meta', 'path'=>'Source.defaultValue[x]', 'min'=>0, 'max'=>1},
-              'element' => {'type'=>'string', 'path'=>'Source.element', 'min'=>0, 'max'=>1},
-              'listMode' => {'valid_codes'=>{'http://hl7.org/fhir/map-source-list-mode'=>['first', 'not_first', 'last', 'not_last', 'only_one']}, 'type'=>'code', 'path'=>'Source.listMode', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-source-list-mode'}},
-              'variable' => {'type'=>'id', 'path'=>'Source.variable', 'min'=>0, 'max'=>1},
-              'condition' => {'type'=>'string', 'path'=>'Source.condition', 'min'=>0, 'max'=>1},
-              'check' => {'type'=>'string', 'path'=>'Source.check', 'min'=>0, 'max'=>1},
-              'logMessage' => {'type'=>'string', 'path'=>'Source.logMessage', 'min'=>0, 'max'=>1}
+              'id' => {'path'=>'Source.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Source.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Source.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'context' => {'path'=>'Source.context', 'type'=>'id', 'min'=>1, 'max'=>1},
+              'min' => {'path'=>'Source.min', 'type'=>'integer', 'min'=>0, 'max'=>1},
+              'max' => {'path'=>'Source.max', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'type' => {'path'=>'Source.type', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'defaultValueBase64Binary' => {'path'=>'Source.defaultValue[x]', 'type'=>'base64Binary', 'min'=>0, 'max'=>1},
+              'defaultValueBoolean' => {'path'=>'Source.defaultValue[x]', 'type'=>'boolean', 'min'=>0, 'max'=>1},
+              'defaultValueCanonical' => {'path'=>'Source.defaultValue[x]', 'type'=>'canonical', 'min'=>0, 'max'=>1},
+              'defaultValueCode' => {'path'=>'Source.defaultValue[x]', 'type'=>'code', 'min'=>0, 'max'=>1},
+              'defaultValueDate' => {'path'=>'Source.defaultValue[x]', 'type'=>'date', 'min'=>0, 'max'=>1},
+              'defaultValueDateTime' => {'path'=>'Source.defaultValue[x]', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+              'defaultValueDecimal' => {'path'=>'Source.defaultValue[x]', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+              'defaultValueId' => {'path'=>'Source.defaultValue[x]', 'type'=>'id', 'min'=>0, 'max'=>1},
+              'defaultValueInstant' => {'path'=>'Source.defaultValue[x]', 'type'=>'instant', 'min'=>0, 'max'=>1},
+              'defaultValueInteger' => {'path'=>'Source.defaultValue[x]', 'type'=>'integer', 'min'=>0, 'max'=>1},
+              'defaultValueMarkdown' => {'path'=>'Source.defaultValue[x]', 'type'=>'markdown', 'min'=>0, 'max'=>1},
+              'defaultValueOid' => {'path'=>'Source.defaultValue[x]', 'type'=>'oid', 'min'=>0, 'max'=>1},
+              'defaultValuePositiveInt' => {'path'=>'Source.defaultValue[x]', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+              'defaultValueString' => {'path'=>'Source.defaultValue[x]', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'defaultValueTime' => {'path'=>'Source.defaultValue[x]', 'type'=>'time', 'min'=>0, 'max'=>1},
+              'defaultValueUnsignedInt' => {'path'=>'Source.defaultValue[x]', 'type'=>'unsignedInt', 'min'=>0, 'max'=>1},
+              'defaultValueUri' => {'path'=>'Source.defaultValue[x]', 'type'=>'uri', 'min'=>0, 'max'=>1},
+              'defaultValueUrl' => {'path'=>'Source.defaultValue[x]', 'type'=>'url', 'min'=>0, 'max'=>1},
+              'defaultValueUuid' => {'path'=>'Source.defaultValue[x]', 'type'=>'uuid', 'min'=>0, 'max'=>1},
+              'defaultValueAddress' => {'path'=>'Source.defaultValue[x]', 'type'=>'Address', 'min'=>0, 'max'=>1},
+              'defaultValueAge' => {'path'=>'Source.defaultValue[x]', 'type'=>'Age', 'min'=>0, 'max'=>1},
+              'defaultValueAnnotation' => {'path'=>'Source.defaultValue[x]', 'type'=>'Annotation', 'min'=>0, 'max'=>1},
+              'defaultValueAttachment' => {'path'=>'Source.defaultValue[x]', 'type'=>'Attachment', 'min'=>0, 'max'=>1},
+              'defaultValueCodeableConcept' => {'path'=>'Source.defaultValue[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+              'defaultValueCoding' => {'path'=>'Source.defaultValue[x]', 'type'=>'Coding', 'min'=>0, 'max'=>1},
+              'defaultValueContactPoint' => {'path'=>'Source.defaultValue[x]', 'type'=>'ContactPoint', 'min'=>0, 'max'=>1},
+              'defaultValueCount' => {'path'=>'Source.defaultValue[x]', 'type'=>'Count', 'min'=>0, 'max'=>1},
+              'defaultValueDistance' => {'path'=>'Source.defaultValue[x]', 'type'=>'Distance', 'min'=>0, 'max'=>1},
+              'defaultValueDuration' => {'path'=>'Source.defaultValue[x]', 'type'=>'Duration', 'min'=>0, 'max'=>1},
+              'defaultValueHumanName' => {'path'=>'Source.defaultValue[x]', 'type'=>'HumanName', 'min'=>0, 'max'=>1},
+              'defaultValueIdentifier' => {'path'=>'Source.defaultValue[x]', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+              'defaultValueMoney' => {'path'=>'Source.defaultValue[x]', 'type'=>'Money', 'min'=>0, 'max'=>1},
+              'defaultValuePeriod' => {'path'=>'Source.defaultValue[x]', 'type'=>'Period', 'min'=>0, 'max'=>1},
+              'defaultValueQuantity' => {'path'=>'Source.defaultValue[x]', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+              'defaultValueRange' => {'path'=>'Source.defaultValue[x]', 'type'=>'Range', 'min'=>0, 'max'=>1},
+              'defaultValueRatio' => {'path'=>'Source.defaultValue[x]', 'type'=>'Ratio', 'min'=>0, 'max'=>1},
+              'defaultValueReference' => {'path'=>'Source.defaultValue[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+              'defaultValueSampledData' => {'path'=>'Source.defaultValue[x]', 'type'=>'SampledData', 'min'=>0, 'max'=>1},
+              'defaultValueSignature' => {'path'=>'Source.defaultValue[x]', 'type'=>'Signature', 'min'=>0, 'max'=>1},
+              'defaultValueTiming' => {'path'=>'Source.defaultValue[x]', 'type'=>'Timing', 'min'=>0, 'max'=>1},
+              'defaultValueContactDetail' => {'path'=>'Source.defaultValue[x]', 'type'=>'ContactDetail', 'min'=>0, 'max'=>1},
+              'defaultValueContributor' => {'path'=>'Source.defaultValue[x]', 'type'=>'Contributor', 'min'=>0, 'max'=>1},
+              'defaultValueDataRequirement' => {'path'=>'Source.defaultValue[x]', 'type'=>'DataRequirement', 'min'=>0, 'max'=>1},
+              'defaultValueExpression' => {'path'=>'Source.defaultValue[x]', 'type'=>'Expression', 'min'=>0, 'max'=>1},
+              'defaultValueParameterDefinition' => {'path'=>'Source.defaultValue[x]', 'type'=>'ParameterDefinition', 'min'=>0, 'max'=>1},
+              'defaultValueRelatedArtifact' => {'path'=>'Source.defaultValue[x]', 'type'=>'RelatedArtifact', 'min'=>0, 'max'=>1},
+              'defaultValueTriggerDefinition' => {'path'=>'Source.defaultValue[x]', 'type'=>'TriggerDefinition', 'min'=>0, 'max'=>1},
+              'defaultValueUsageContext' => {'path'=>'Source.defaultValue[x]', 'type'=>'UsageContext', 'min'=>0, 'max'=>1},
+              'defaultValueDosage' => {'path'=>'Source.defaultValue[x]', 'type'=>'Dosage', 'min'=>0, 'max'=>1},
+              'defaultValueMeta' => {'path'=>'Source.defaultValue[x]', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+              'element' => {'path'=>'Source.element', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'listMode' => {'valid_codes'=>{'http://hl7.org/fhir/map-source-list-mode'=>['first', 'not_first', 'last', 'not_last', 'only_one']}, 'path'=>'Source.listMode', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-source-list-mode'}},
+              'variable' => {'path'=>'Source.variable', 'type'=>'id', 'min'=>0, 'max'=>1},
+              'condition' => {'path'=>'Source.condition', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'check' => {'path'=>'Source.check', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'logMessage' => {'path'=>'Source.logMessage', 'type'=>'string', 'min'=>0, 'max'=>1}
             }
 
             attr_accessor :id                              # 0-1 string
@@ -262,17 +262,17 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Target.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Target.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Target.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'context' => {'type'=>'id', 'path'=>'Target.context', 'min'=>0, 'max'=>1},
-              'contextType' => {'valid_codes'=>{'http://hl7.org/fhir/map-context-type'=>['type', 'variable']}, 'type'=>'code', 'path'=>'Target.contextType', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-context-type'}},
-              'element' => {'type'=>'string', 'path'=>'Target.element', 'min'=>0, 'max'=>1},
-              'variable' => {'type'=>'id', 'path'=>'Target.variable', 'min'=>0, 'max'=>1},
-              'listMode' => {'valid_codes'=>{'http://hl7.org/fhir/map-target-list-mode'=>['first', 'share', 'last', 'collate']}, 'type'=>'code', 'path'=>'Target.listMode', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-target-list-mode'}},
-              'listRuleId' => {'type'=>'id', 'path'=>'Target.listRuleId', 'min'=>0, 'max'=>1},
-              'transform' => {'valid_codes'=>{'http://hl7.org/fhir/map-transform'=>['create', 'copy', 'truncate', 'escape', 'cast', 'append', 'translate', 'reference', 'dateOp', 'uuid', 'pointer', 'evaluate', 'cc', 'c', 'qty', 'id', 'cp']}, 'type'=>'code', 'path'=>'Target.transform', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-transform'}},
-              'parameter' => {'type'=>'StructureMap::Group::Rule::Target::Parameter', 'path'=>'Target.parameter', 'min'=>0, 'max'=>Float::INFINITY}
+              'id' => {'path'=>'Target.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Target.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Target.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'context' => {'path'=>'Target.context', 'type'=>'id', 'min'=>0, 'max'=>1},
+              'contextType' => {'valid_codes'=>{'http://hl7.org/fhir/map-context-type'=>['type', 'variable']}, 'path'=>'Target.contextType', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-context-type'}},
+              'element' => {'path'=>'Target.element', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'variable' => {'path'=>'Target.variable', 'type'=>'id', 'min'=>0, 'max'=>1},
+              'listMode' => {'valid_codes'=>{'http://hl7.org/fhir/map-target-list-mode'=>['first', 'share', 'last', 'collate']}, 'path'=>'Target.listMode', 'type'=>'code', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-target-list-mode'}},
+              'listRuleId' => {'path'=>'Target.listRuleId', 'type'=>'id', 'min'=>0, 'max'=>1},
+              'transform' => {'valid_codes'=>{'http://hl7.org/fhir/map-transform'=>['create', 'copy', 'truncate', 'escape', 'cast', 'append', 'translate', 'reference', 'dateOp', 'uuid', 'pointer', 'evaluate', 'cc', 'c', 'qty', 'id', 'cp']}, 'path'=>'Target.transform', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/map-transform'}},
+              'parameter' => {'path'=>'Target.parameter', 'type'=>'StructureMap::Group::Rule::Target::Parameter', 'min'=>0, 'max'=>Float::INFINITY}
             }
 
             class Parameter < Model
@@ -284,14 +284,14 @@ module FHIR
                 'value' => ['id', 'string', 'boolean', 'integer', 'decimal']
               }
               METADATA = {
-                'id' => {'type'=>'string', 'path'=>'Parameter.id', 'min'=>0, 'max'=>1},
-                'extension' => {'type'=>'Extension', 'path'=>'Parameter.extension', 'min'=>0, 'max'=>Float::INFINITY},
-                'modifierExtension' => {'type'=>'Extension', 'path'=>'Parameter.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-                'valueId' => {'type'=>'id', 'path'=>'Parameter.value[x]', 'min'=>1, 'max'=>1},
-                'valueString' => {'type'=>'string', 'path'=>'Parameter.value[x]', 'min'=>1, 'max'=>1},
-                'valueBoolean' => {'type'=>'boolean', 'path'=>'Parameter.value[x]', 'min'=>1, 'max'=>1},
-                'valueInteger' => {'type'=>'integer', 'path'=>'Parameter.value[x]', 'min'=>1, 'max'=>1},
-                'valueDecimal' => {'type'=>'decimal', 'path'=>'Parameter.value[x]', 'min'=>1, 'max'=>1}
+                'id' => {'path'=>'Parameter.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+                'extension' => {'path'=>'Parameter.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'modifierExtension' => {'path'=>'Parameter.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'valueId' => {'path'=>'Parameter.value[x]', 'type'=>'id', 'min'=>1, 'max'=>1},
+                'valueString' => {'path'=>'Parameter.value[x]', 'type'=>'string', 'min'=>1, 'max'=>1},
+                'valueBoolean' => {'path'=>'Parameter.value[x]', 'type'=>'boolean', 'min'=>1, 'max'=>1},
+                'valueInteger' => {'path'=>'Parameter.value[x]', 'type'=>'integer', 'min'=>1, 'max'=>1},
+                'valueDecimal' => {'path'=>'Parameter.value[x]', 'type'=>'decimal', 'min'=>1, 'max'=>1}
               }
 
               attr_accessor :id                # 0-1 string
@@ -323,11 +323,11 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Dependent.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Dependent.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Dependent.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'name' => {'type'=>'id', 'path'=>'Dependent.name', 'min'=>1, 'max'=>1},
-              'variable' => {'type'=>'string', 'path'=>'Dependent.variable', 'min'=>1, 'max'=>Float::INFINITY}
+              'id' => {'path'=>'Dependent.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Dependent.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Dependent.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'name' => {'path'=>'Dependent.name', 'type'=>'id', 'min'=>1, 'max'=>1},
+              'variable' => {'path'=>'Dependent.variable', 'type'=>'string', 'min'=>1, 'max'=>Float::INFINITY}
             }
 
             attr_accessor :id                # 0-1 string

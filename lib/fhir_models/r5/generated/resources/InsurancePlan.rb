@@ -7,28 +7,28 @@ module FHIR
 
       SEARCH_PARAMS = ['address', 'address-city', 'address-country', 'address-postalcode', 'address-state', 'address-use', 'administered-by', 'endpoint', 'identifier', 'name', 'owned-by', 'phonetic', 'status', 'type']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'InsurancePlan.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'InsurancePlan.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'InsurancePlan.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'type'=>'code', 'path'=>'InsurancePlan.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'InsurancePlan.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'InsurancePlan.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'InsurancePlan.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'InsurancePlan.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'InsurancePlan.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'type'=>'code', 'path'=>'InsurancePlan.status', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
-        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/insurance-plan-type'=>['medical', 'dental', 'mental', 'subst-ab', 'vision', 'drug', 'short-term', 'long-term', 'hospice', 'home', 'Drug']}, 'type'=>'CodeableConcept', 'path'=>'InsurancePlan.type', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/insuranceplan-type'}},
-        'name' => {'type'=>'string', 'path'=>'InsurancePlan.name', 'min'=>0, 'max'=>1},
-        'alias' => {'type'=>'string', 'path'=>'InsurancePlan.alias', 'min'=>0, 'max'=>Float::INFINITY},
-        'period' => {'type'=>'Period', 'path'=>'InsurancePlan.period', 'min'=>0, 'max'=>1},
-        'ownedBy' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'InsurancePlan.ownedBy', 'min'=>0, 'max'=>1},
-        'administeredBy' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'InsurancePlan.administeredBy', 'min'=>0, 'max'=>1},
-        'coverageArea' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'InsurancePlan.coverageArea', 'min'=>0, 'max'=>Float::INFINITY},
-        'contact' => {'type'=>'ExtendedContactDetail', 'path'=>'InsurancePlan.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'endpoint' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'type'=>'Reference', 'path'=>'InsurancePlan.endpoint', 'min'=>0, 'max'=>Float::INFINITY},
-        'network' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'InsurancePlan.network', 'min'=>0, 'max'=>Float::INFINITY},
-        'coverage' => {'type'=>'InsurancePlan::Coverage', 'path'=>'InsurancePlan.coverage', 'min'=>0, 'max'=>Float::INFINITY},
-        'plan' => {'type'=>'InsurancePlan::Plan', 'path'=>'InsurancePlan.plan', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'InsurancePlan.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'InsurancePlan.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'InsurancePlan.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'path'=>'InsurancePlan.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'additional'=>[{'purpose'=>'starter', 'valueSet'=>'http://hl7.org/fhir/ValueSet/languages'}], 'uri'=>'http://hl7.org/fhir/ValueSet/all-languages'}},
+        'text' => {'path'=>'InsurancePlan.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'InsurancePlan.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'InsurancePlan.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'InsurancePlan.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'InsurancePlan.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'status' => {'valid_codes'=>{'http://hl7.org/fhir/publication-status'=>['draft', 'active', 'retired', 'unknown']}, 'path'=>'InsurancePlan.status', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/publication-status'}},
+        'type' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/insurance-plan-type'=>['medical', 'dental', 'mental', 'subst-ab', 'vision', 'drug', 'short-term', 'long-term', 'hospice', 'home', 'Drug']}, 'path'=>'InsurancePlan.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY, 'binding'=>{'strength'=>'example', 'uri'=>'http://hl7.org/fhir/ValueSet/insuranceplan-type'}},
+        'name' => {'path'=>'InsurancePlan.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'alias' => {'path'=>'InsurancePlan.alias', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'period' => {'path'=>'InsurancePlan.period', 'type'=>'Period', 'min'=>0, 'max'=>1},
+        'ownedBy' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'InsurancePlan.ownedBy', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'administeredBy' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'InsurancePlan.administeredBy', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+        'coverageArea' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'InsurancePlan.coverageArea', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'contact' => {'path'=>'InsurancePlan.contact', 'type'=>'ExtendedContactDetail', 'min'=>0, 'max'=>Float::INFINITY},
+        'endpoint' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Endpoint'], 'path'=>'InsurancePlan.endpoint', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'network' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'InsurancePlan.network', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'coverage' => {'path'=>'InsurancePlan.coverage', 'type'=>'InsurancePlan::Coverage', 'min'=>0, 'max'=>Float::INFINITY},
+        'plan' => {'path'=>'InsurancePlan.plan', 'type'=>'InsurancePlan::Plan', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Coverage < Model
@@ -37,12 +37,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Coverage.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Coverage.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Coverage.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'Coverage.type', 'min'=>1, 'max'=>1},
-          'network' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Coverage.network', 'min'=>0, 'max'=>Float::INFINITY},
-          'benefit' => {'type'=>'InsurancePlan::Coverage::Benefit', 'path'=>'Coverage.benefit', 'min'=>1, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Coverage.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Coverage.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Coverage.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'path'=>'Coverage.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'network' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Coverage.network', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+          'benefit' => {'path'=>'Coverage.benefit', 'type'=>'InsurancePlan::Coverage::Benefit', 'min'=>1, 'max'=>Float::INFINITY}
         }
 
         class Benefit < Model
@@ -51,12 +51,12 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Benefit.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Benefit.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Benefit.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'type' => {'type'=>'CodeableConcept', 'path'=>'Benefit.type', 'min'=>1, 'max'=>1},
-            'requirement' => {'type'=>'string', 'path'=>'Benefit.requirement', 'min'=>0, 'max'=>1},
-            'limit' => {'type'=>'InsurancePlan::Coverage::Benefit::Limit', 'path'=>'Benefit.limit', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'Benefit.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Benefit.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Benefit.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'type' => {'path'=>'Benefit.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+            'requirement' => {'path'=>'Benefit.requirement', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'limit' => {'path'=>'Benefit.limit', 'type'=>'InsurancePlan::Coverage::Benefit::Limit', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Limit < Model
@@ -65,11 +65,11 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Limit.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Limit.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Limit.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'value' => {'type'=>'Quantity', 'path'=>'Limit.value', 'min'=>0, 'max'=>1},
-              'code' => {'type'=>'CodeableConcept', 'path'=>'Limit.code', 'min'=>0, 'max'=>1}
+              'id' => {'path'=>'Limit.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Limit.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Limit.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'value' => {'path'=>'Limit.value', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+              'code' => {'path'=>'Limit.code', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
             }
 
             attr_accessor :id                # 0-1 string
@@ -101,15 +101,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Plan.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Plan.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Plan.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'identifier' => {'type'=>'Identifier', 'path'=>'Plan.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'Plan.type', 'min'=>0, 'max'=>1},
-          'coverageArea' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'type'=>'Reference', 'path'=>'Plan.coverageArea', 'min'=>0, 'max'=>Float::INFINITY},
-          'network' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'Plan.network', 'min'=>0, 'max'=>Float::INFINITY},
-          'generalCost' => {'type'=>'InsurancePlan::Plan::GeneralCost', 'path'=>'Plan.generalCost', 'min'=>0, 'max'=>Float::INFINITY},
-          'specificCost' => {'type'=>'InsurancePlan::Plan::SpecificCost', 'path'=>'Plan.specificCost', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Plan.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Plan.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Plan.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'identifier' => {'path'=>'Plan.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'path'=>'Plan.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'coverageArea' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Location'], 'path'=>'Plan.coverageArea', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+          'network' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'Plan.network', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+          'generalCost' => {'path'=>'Plan.generalCost', 'type'=>'InsurancePlan::Plan::GeneralCost', 'min'=>0, 'max'=>Float::INFINITY},
+          'specificCost' => {'path'=>'Plan.specificCost', 'type'=>'InsurancePlan::Plan::SpecificCost', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class GeneralCost < Model
@@ -118,13 +118,13 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'GeneralCost.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'GeneralCost.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'GeneralCost.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'type' => {'type'=>'CodeableConcept', 'path'=>'GeneralCost.type', 'min'=>0, 'max'=>1},
-            'groupSize' => {'type'=>'positiveInt', 'path'=>'GeneralCost.groupSize', 'min'=>0, 'max'=>1},
-            'cost' => {'type'=>'Money', 'path'=>'GeneralCost.cost', 'min'=>0, 'max'=>1},
-            'comment' => {'type'=>'string', 'path'=>'GeneralCost.comment', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'GeneralCost.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'GeneralCost.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'GeneralCost.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'type' => {'path'=>'GeneralCost.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'groupSize' => {'path'=>'GeneralCost.groupSize', 'type'=>'positiveInt', 'min'=>0, 'max'=>1},
+            'cost' => {'path'=>'GeneralCost.cost', 'type'=>'Money', 'min'=>0, 'max'=>1},
+            'comment' => {'path'=>'GeneralCost.comment', 'type'=>'string', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -142,11 +142,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'SpecificCost.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'SpecificCost.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'SpecificCost.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'category' => {'type'=>'CodeableConcept', 'path'=>'SpecificCost.category', 'min'=>1, 'max'=>1},
-            'benefit' => {'type'=>'InsurancePlan::Plan::SpecificCost::Benefit', 'path'=>'SpecificCost.benefit', 'min'=>0, 'max'=>Float::INFINITY}
+            'id' => {'path'=>'SpecificCost.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'SpecificCost.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'SpecificCost.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'category' => {'path'=>'SpecificCost.category', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+            'benefit' => {'path'=>'SpecificCost.benefit', 'type'=>'InsurancePlan::Plan::SpecificCost::Benefit', 'min'=>0, 'max'=>Float::INFINITY}
           }
 
           class Benefit < Model
@@ -155,11 +155,11 @@ module FHIR
             include FHIR::Xml
 
             METADATA = {
-              'id' => {'type'=>'string', 'path'=>'Benefit.id', 'min'=>0, 'max'=>1},
-              'extension' => {'type'=>'Extension', 'path'=>'Benefit.extension', 'min'=>0, 'max'=>Float::INFINITY},
-              'modifierExtension' => {'type'=>'Extension', 'path'=>'Benefit.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-              'type' => {'type'=>'CodeableConcept', 'path'=>'Benefit.type', 'min'=>1, 'max'=>1},
-              'cost' => {'type'=>'InsurancePlan::Plan::SpecificCost::Benefit::Cost', 'path'=>'Benefit.cost', 'min'=>0, 'max'=>Float::INFINITY}
+              'id' => {'path'=>'Benefit.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+              'extension' => {'path'=>'Benefit.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'modifierExtension' => {'path'=>'Benefit.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+              'type' => {'path'=>'Benefit.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+              'cost' => {'path'=>'Benefit.cost', 'type'=>'InsurancePlan::Plan::SpecificCost::Benefit::Cost', 'min'=>0, 'max'=>Float::INFINITY}
             }
 
             class Cost < Model
@@ -168,13 +168,13 @@ module FHIR
               include FHIR::Xml
 
               METADATA = {
-                'id' => {'type'=>'string', 'path'=>'Cost.id', 'min'=>0, 'max'=>1},
-                'extension' => {'type'=>'Extension', 'path'=>'Cost.extension', 'min'=>0, 'max'=>Float::INFINITY},
-                'modifierExtension' => {'type'=>'Extension', 'path'=>'Cost.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-                'type' => {'type'=>'CodeableConcept', 'path'=>'Cost.type', 'min'=>1, 'max'=>1},
-                'applicability' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/applicability'=>['in-network', 'out-of-network', 'other']}, 'type'=>'CodeableConcept', 'path'=>'Cost.applicability', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/insuranceplan-applicability'}},
-                'qualifiers' => {'type'=>'CodeableConcept', 'path'=>'Cost.qualifiers', 'min'=>0, 'max'=>Float::INFINITY},
-                'value' => {'type'=>'Quantity', 'path'=>'Cost.value', 'min'=>0, 'max'=>1}
+                'id' => {'path'=>'Cost.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+                'extension' => {'path'=>'Cost.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'modifierExtension' => {'path'=>'Cost.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+                'type' => {'path'=>'Cost.type', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+                'applicability' => {'valid_codes'=>{'http://terminology.hl7.org/CodeSystem/applicability'=>['in-network', 'out-of-network', 'other']}, 'path'=>'Cost.applicability', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'required', 'uri'=>'http://hl7.org/fhir/ValueSet/insuranceplan-applicability'}},
+                'qualifiers' => {'path'=>'Cost.qualifiers', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+                'value' => {'path'=>'Cost.value', 'type'=>'Quantity', 'min'=>0, 'max'=>1}
               }
 
               attr_accessor :id                # 0-1 string

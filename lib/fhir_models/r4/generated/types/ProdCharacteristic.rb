@@ -7,20 +7,20 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'ProdCharacteristic.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'ProdCharacteristic.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'ProdCharacteristic.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'height' => {'type'=>'Quantity', 'path'=>'ProdCharacteristic.height', 'min'=>0, 'max'=>1},
-        'width' => {'type'=>'Quantity', 'path'=>'ProdCharacteristic.width', 'min'=>0, 'max'=>1},
-        'depth' => {'type'=>'Quantity', 'path'=>'ProdCharacteristic.depth', 'min'=>0, 'max'=>1},
-        'weight' => {'type'=>'Quantity', 'path'=>'ProdCharacteristic.weight', 'min'=>0, 'max'=>1},
-        'nominalVolume' => {'type'=>'Quantity', 'path'=>'ProdCharacteristic.nominalVolume', 'min'=>0, 'max'=>1},
-        'externalDiameter' => {'type'=>'Quantity', 'path'=>'ProdCharacteristic.externalDiameter', 'min'=>0, 'max'=>1},
-        'shape' => {'type'=>'string', 'path'=>'ProdCharacteristic.shape', 'min'=>0, 'max'=>1},
-        'color' => {'type'=>'string', 'path'=>'ProdCharacteristic.color', 'min'=>0, 'max'=>Float::INFINITY},
-        'imprint' => {'type'=>'string', 'path'=>'ProdCharacteristic.imprint', 'min'=>0, 'max'=>Float::INFINITY},
-        'image' => {'type'=>'Attachment', 'path'=>'ProdCharacteristic.image', 'min'=>0, 'max'=>Float::INFINITY},
-        'scoring' => {'type'=>'CodeableConcept', 'path'=>'ProdCharacteristic.scoring', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'ProdCharacteristic.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'ProdCharacteristic.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'ProdCharacteristic.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'height' => {'path'=>'ProdCharacteristic.height', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'width' => {'path'=>'ProdCharacteristic.width', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'depth' => {'path'=>'ProdCharacteristic.depth', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'weight' => {'path'=>'ProdCharacteristic.weight', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'nominalVolume' => {'path'=>'ProdCharacteristic.nominalVolume', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'externalDiameter' => {'path'=>'ProdCharacteristic.externalDiameter', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'shape' => {'path'=>'ProdCharacteristic.shape', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'color' => {'path'=>'ProdCharacteristic.color', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'imprint' => {'path'=>'ProdCharacteristic.imprint', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'image' => {'path'=>'ProdCharacteristic.image', 'type'=>'Attachment', 'min'=>0, 'max'=>Float::INFINITY},
+        'scoring' => {'path'=>'ProdCharacteristic.scoring', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id                # 0-1 string

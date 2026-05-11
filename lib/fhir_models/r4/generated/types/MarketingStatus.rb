@@ -7,14 +7,14 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'MarketingStatus.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'MarketingStatus.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MarketingStatus.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'country' => {'type'=>'CodeableConcept', 'path'=>'MarketingStatus.country', 'min'=>1, 'max'=>1},
-        'jurisdiction' => {'type'=>'CodeableConcept', 'path'=>'MarketingStatus.jurisdiction', 'min'=>0, 'max'=>1},
-        'status' => {'type'=>'CodeableConcept', 'path'=>'MarketingStatus.status', 'min'=>1, 'max'=>1},
-        'dateRange' => {'type'=>'Period', 'path'=>'MarketingStatus.dateRange', 'min'=>1, 'max'=>1},
-        'restoreDate' => {'type'=>'dateTime', 'path'=>'MarketingStatus.restoreDate', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'MarketingStatus.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'MarketingStatus.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MarketingStatus.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'country' => {'path'=>'MarketingStatus.country', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+        'jurisdiction' => {'path'=>'MarketingStatus.jurisdiction', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'status' => {'path'=>'MarketingStatus.status', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+        'dateRange' => {'path'=>'MarketingStatus.dateRange', 'type'=>'Period', 'min'=>1, 'max'=>1},
+        'restoreDate' => {'path'=>'MarketingStatus.restoreDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id                # 0-1 string

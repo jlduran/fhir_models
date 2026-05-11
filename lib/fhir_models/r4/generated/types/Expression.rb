@@ -7,13 +7,13 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'Expression.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'Expression.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'description' => {'type'=>'string', 'path'=>'Expression.description', 'min'=>0, 'max'=>1},
-        'name' => {'type'=>'id', 'path'=>'Expression.name', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'http://hl7.org/fhir/expression-language'=>['text/cql', 'text/fhirpath', 'application/x-fhir-query']}, 'type'=>'code', 'path'=>'Expression.language', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/expression-language'}},
-        'expression' => {'type'=>'string', 'path'=>'Expression.expression', 'min'=>0, 'max'=>1},
-        'reference' => {'type'=>'uri', 'path'=>'Expression.reference', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'Expression.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'Expression.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'description' => {'path'=>'Expression.description', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'name' => {'path'=>'Expression.name', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'http://hl7.org/fhir/expression-language'=>['text/cql', 'text/fhirpath', 'application/x-fhir-query']}, 'path'=>'Expression.language', 'type'=>'code', 'min'=>1, 'max'=>1, 'binding'=>{'strength'=>'extensible', 'uri'=>'http://hl7.org/fhir/ValueSet/expression-language'}},
+        'expression' => {'path'=>'Expression.expression', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'reference' => {'path'=>'Expression.reference', 'type'=>'uri', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id          # 0-1 string

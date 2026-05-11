@@ -7,34 +7,34 @@ module FHIR
 
       SEARCH_PARAMS = ['identifier', 'name', 'name-language']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MedicinalProduct.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MedicinalProduct.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MedicinalProduct.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'MedicinalProduct.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MedicinalProduct.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MedicinalProduct.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MedicinalProduct.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MedicinalProduct.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'identifier' => {'type'=>'Identifier', 'path'=>'MedicinalProduct.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-        'type' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProduct.type', 'min'=>0, 'max'=>1},
-        'domain' => {'type'=>'Coding', 'path'=>'MedicinalProduct.domain', 'min'=>0, 'max'=>1},
-        'combinedPharmaceuticalDoseForm' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProduct.combinedPharmaceuticalDoseForm', 'min'=>0, 'max'=>1},
-        'legalStatusOfSupply' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProduct.legalStatusOfSupply', 'min'=>0, 'max'=>1},
-        'additionalMonitoringIndicator' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProduct.additionalMonitoringIndicator', 'min'=>0, 'max'=>1},
-        'specialMeasures' => {'type'=>'string', 'path'=>'MedicinalProduct.specialMeasures', 'min'=>0, 'max'=>Float::INFINITY},
-        'paediatricUseIndicator' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProduct.paediatricUseIndicator', 'min'=>0, 'max'=>1},
-        'productClassification' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProduct.productClassification', 'min'=>0, 'max'=>Float::INFINITY},
-        'marketingStatus' => {'type'=>'MarketingStatus', 'path'=>'MedicinalProduct.marketingStatus', 'min'=>0, 'max'=>Float::INFINITY},
-        'pharmaceuticalProduct' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductPharmaceutical'], 'type'=>'Reference', 'path'=>'MedicinalProduct.pharmaceuticalProduct', 'min'=>0, 'max'=>Float::INFINITY},
-        'packagedMedicinalProduct' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductPackaged'], 'type'=>'Reference', 'path'=>'MedicinalProduct.packagedMedicinalProduct', 'min'=>0, 'max'=>Float::INFINITY},
-        'attachedDocument' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'MedicinalProduct.attachedDocument', 'min'=>0, 'max'=>Float::INFINITY},
-        'masterFile' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'type'=>'Reference', 'path'=>'MedicinalProduct.masterFile', 'min'=>0, 'max'=>Float::INFINITY},
-        'contact' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'type'=>'Reference', 'path'=>'MedicinalProduct.contact', 'min'=>0, 'max'=>Float::INFINITY},
-        'clinicalTrial' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ResearchStudy'], 'type'=>'Reference', 'path'=>'MedicinalProduct.clinicalTrial', 'min'=>0, 'max'=>Float::INFINITY},
-        'name' => {'type'=>'MedicinalProduct::Name', 'path'=>'MedicinalProduct.name', 'min'=>1, 'max'=>Float::INFINITY},
-        'crossReference' => {'type'=>'Identifier', 'path'=>'MedicinalProduct.crossReference', 'min'=>0, 'max'=>Float::INFINITY},
-        'manufacturingBusinessOperation' => {'type'=>'MedicinalProduct::ManufacturingBusinessOperation', 'path'=>'MedicinalProduct.manufacturingBusinessOperation', 'min'=>0, 'max'=>Float::INFINITY},
-        'specialDesignation' => {'type'=>'MedicinalProduct::SpecialDesignation', 'path'=>'MedicinalProduct.specialDesignation', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'MedicinalProduct.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MedicinalProduct.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MedicinalProduct.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'MedicinalProduct.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'MedicinalProduct.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MedicinalProduct.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MedicinalProduct.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MedicinalProduct.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'identifier' => {'path'=>'MedicinalProduct.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'type' => {'path'=>'MedicinalProduct.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'domain' => {'path'=>'MedicinalProduct.domain', 'type'=>'Coding', 'min'=>0, 'max'=>1},
+        'combinedPharmaceuticalDoseForm' => {'path'=>'MedicinalProduct.combinedPharmaceuticalDoseForm', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'legalStatusOfSupply' => {'path'=>'MedicinalProduct.legalStatusOfSupply', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'additionalMonitoringIndicator' => {'path'=>'MedicinalProduct.additionalMonitoringIndicator', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'specialMeasures' => {'path'=>'MedicinalProduct.specialMeasures', 'type'=>'string', 'min'=>0, 'max'=>Float::INFINITY},
+        'paediatricUseIndicator' => {'path'=>'MedicinalProduct.paediatricUseIndicator', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'productClassification' => {'path'=>'MedicinalProduct.productClassification', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+        'marketingStatus' => {'path'=>'MedicinalProduct.marketingStatus', 'type'=>'MarketingStatus', 'min'=>0, 'max'=>Float::INFINITY},
+        'pharmaceuticalProduct' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductPharmaceutical'], 'path'=>'MedicinalProduct.pharmaceuticalProduct', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'packagedMedicinalProduct' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductPackaged'], 'path'=>'MedicinalProduct.packagedMedicinalProduct', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'attachedDocument' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'MedicinalProduct.attachedDocument', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'masterFile' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/DocumentReference'], 'path'=>'MedicinalProduct.masterFile', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'contact' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization', 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'], 'path'=>'MedicinalProduct.contact', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'clinicalTrial' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/ResearchStudy'], 'path'=>'MedicinalProduct.clinicalTrial', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'name' => {'path'=>'MedicinalProduct.name', 'type'=>'MedicinalProduct::Name', 'min'=>1, 'max'=>Float::INFINITY},
+        'crossReference' => {'path'=>'MedicinalProduct.crossReference', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+        'manufacturingBusinessOperation' => {'path'=>'MedicinalProduct.manufacturingBusinessOperation', 'type'=>'MedicinalProduct::ManufacturingBusinessOperation', 'min'=>0, 'max'=>Float::INFINITY},
+        'specialDesignation' => {'path'=>'MedicinalProduct.specialDesignation', 'type'=>'MedicinalProduct::SpecialDesignation', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Name < Model
@@ -43,12 +43,12 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Name.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Name.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Name.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'productName' => {'type'=>'string', 'path'=>'Name.productName', 'min'=>1, 'max'=>1},
-          'namePart' => {'type'=>'MedicinalProduct::Name::NamePart', 'path'=>'Name.namePart', 'min'=>0, 'max'=>Float::INFINITY},
-          'countryLanguage' => {'type'=>'MedicinalProduct::Name::CountryLanguage', 'path'=>'Name.countryLanguage', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Name.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Name.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Name.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'productName' => {'path'=>'Name.productName', 'type'=>'string', 'min'=>1, 'max'=>1},
+          'namePart' => {'path'=>'Name.namePart', 'type'=>'MedicinalProduct::Name::NamePart', 'min'=>0, 'max'=>Float::INFINITY},
+          'countryLanguage' => {'path'=>'Name.countryLanguage', 'type'=>'MedicinalProduct::Name::CountryLanguage', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class NamePart < Model
@@ -57,11 +57,11 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'NamePart.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'NamePart.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'NamePart.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'part' => {'type'=>'string', 'path'=>'NamePart.part', 'min'=>1, 'max'=>1},
-            'type' => {'type'=>'Coding', 'path'=>'NamePart.type', 'min'=>1, 'max'=>1}
+            'id' => {'path'=>'NamePart.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'NamePart.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'NamePart.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'part' => {'path'=>'NamePart.part', 'type'=>'string', 'min'=>1, 'max'=>1},
+            'type' => {'path'=>'NamePart.type', 'type'=>'Coding', 'min'=>1, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -77,12 +77,12 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'CountryLanguage.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'CountryLanguage.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'CountryLanguage.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'country' => {'type'=>'CodeableConcept', 'path'=>'CountryLanguage.country', 'min'=>1, 'max'=>1},
-            'jurisdiction' => {'type'=>'CodeableConcept', 'path'=>'CountryLanguage.jurisdiction', 'min'=>0, 'max'=>1},
-            'language' => {'type'=>'CodeableConcept', 'path'=>'CountryLanguage.language', 'min'=>1, 'max'=>1}
+            'id' => {'path'=>'CountryLanguage.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'CountryLanguage.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'CountryLanguage.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'country' => {'path'=>'CountryLanguage.country', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+            'jurisdiction' => {'path'=>'CountryLanguage.jurisdiction', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+            'language' => {'path'=>'CountryLanguage.language', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -107,15 +107,15 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'ManufacturingBusinessOperation.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'ManufacturingBusinessOperation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'ManufacturingBusinessOperation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'operationType' => {'type'=>'CodeableConcept', 'path'=>'ManufacturingBusinessOperation.operationType', 'min'=>0, 'max'=>1},
-          'authorisationReferenceNumber' => {'type'=>'Identifier', 'path'=>'ManufacturingBusinessOperation.authorisationReferenceNumber', 'min'=>0, 'max'=>1},
-          'effectiveDate' => {'type'=>'dateTime', 'path'=>'ManufacturingBusinessOperation.effectiveDate', 'min'=>0, 'max'=>1},
-          'confidentialityIndicator' => {'type'=>'CodeableConcept', 'path'=>'ManufacturingBusinessOperation.confidentialityIndicator', 'min'=>0, 'max'=>1},
-          'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'ManufacturingBusinessOperation.manufacturer', 'min'=>0, 'max'=>Float::INFINITY},
-          'regulator' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'type'=>'Reference', 'path'=>'ManufacturingBusinessOperation.regulator', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'ManufacturingBusinessOperation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'ManufacturingBusinessOperation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'ManufacturingBusinessOperation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'operationType' => {'path'=>'ManufacturingBusinessOperation.operationType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'authorisationReferenceNumber' => {'path'=>'ManufacturingBusinessOperation.authorisationReferenceNumber', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+          'effectiveDate' => {'path'=>'ManufacturingBusinessOperation.effectiveDate', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'confidentialityIndicator' => {'path'=>'ManufacturingBusinessOperation.confidentialityIndicator', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'manufacturer' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'ManufacturingBusinessOperation.manufacturer', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+          'regulator' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/Organization'], 'path'=>'ManufacturingBusinessOperation.regulator', 'type'=>'Reference', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                           # 0-1 string
@@ -138,17 +138,17 @@ module FHIR
           'indication' => ['CodeableConcept', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'SpecialDesignation.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'SpecialDesignation.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'SpecialDesignation.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'identifier' => {'type'=>'Identifier', 'path'=>'SpecialDesignation.identifier', 'min'=>0, 'max'=>Float::INFINITY},
-          'type' => {'type'=>'CodeableConcept', 'path'=>'SpecialDesignation.type', 'min'=>0, 'max'=>1},
-          'intendedUse' => {'type'=>'CodeableConcept', 'path'=>'SpecialDesignation.intendedUse', 'min'=>0, 'max'=>1},
-          'indicationCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'SpecialDesignation.indication[x]', 'min'=>0, 'max'=>1},
-          'indicationReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductIndication'], 'type'=>'Reference', 'path'=>'SpecialDesignation.indication[x]', 'min'=>0, 'max'=>1},
-          'status' => {'type'=>'CodeableConcept', 'path'=>'SpecialDesignation.status', 'min'=>0, 'max'=>1},
-          'date' => {'type'=>'dateTime', 'path'=>'SpecialDesignation.date', 'min'=>0, 'max'=>1},
-          'species' => {'type'=>'CodeableConcept', 'path'=>'SpecialDesignation.species', 'min'=>0, 'max'=>1}
+          'id' => {'path'=>'SpecialDesignation.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'SpecialDesignation.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'SpecialDesignation.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'identifier' => {'path'=>'SpecialDesignation.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>Float::INFINITY},
+          'type' => {'path'=>'SpecialDesignation.type', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'intendedUse' => {'path'=>'SpecialDesignation.intendedUse', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'indicationCodeableConcept' => {'path'=>'SpecialDesignation.indication[x]', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'indicationReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductIndication'], 'path'=>'SpecialDesignation.indication[x]', 'type'=>'Reference', 'min'=>0, 'max'=>1},
+          'status' => {'path'=>'SpecialDesignation.status', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'date' => {'path'=>'SpecialDesignation.date', 'type'=>'dateTime', 'min'=>0, 'max'=>1},
+          'species' => {'path'=>'SpecialDesignation.species', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1}
         }
 
         attr_accessor :id                        # 0-1 string

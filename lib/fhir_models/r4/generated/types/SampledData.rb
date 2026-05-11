@@ -7,15 +7,15 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'string', 'path'=>'SampledData.id', 'min'=>0, 'max'=>1},
-        'extension' => {'type'=>'Extension', 'path'=>'SampledData.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'origin' => {'type'=>'Quantity', 'path'=>'SampledData.origin', 'min'=>1, 'max'=>1},
-        'period' => {'type'=>'decimal', 'path'=>'SampledData.period', 'min'=>1, 'max'=>1},
-        'factor' => {'type'=>'decimal', 'path'=>'SampledData.factor', 'min'=>0, 'max'=>1},
-        'lowerLimit' => {'type'=>'decimal', 'path'=>'SampledData.lowerLimit', 'min'=>0, 'max'=>1},
-        'upperLimit' => {'type'=>'decimal', 'path'=>'SampledData.upperLimit', 'min'=>0, 'max'=>1},
-        'dimensions' => {'type'=>'positiveInt', 'path'=>'SampledData.dimensions', 'min'=>1, 'max'=>1},
-        'data' => {'type'=>'string', 'path'=>'SampledData.data', 'min'=>0, 'max'=>1}
+        'id' => {'path'=>'SampledData.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'extension' => {'path'=>'SampledData.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'origin' => {'path'=>'SampledData.origin', 'type'=>'Quantity', 'min'=>1, 'max'=>1},
+        'period' => {'path'=>'SampledData.period', 'type'=>'decimal', 'min'=>1, 'max'=>1},
+        'factor' => {'path'=>'SampledData.factor', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+        'lowerLimit' => {'path'=>'SampledData.lowerLimit', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+        'upperLimit' => {'path'=>'SampledData.upperLimit', 'type'=>'decimal', 'min'=>0, 'max'=>1},
+        'dimensions' => {'path'=>'SampledData.dimensions', 'type'=>'positiveInt', 'min'=>1, 'max'=>1},
+        'data' => {'path'=>'SampledData.data', 'type'=>'string', 'min'=>0, 'max'=>1}
       }
 
       attr_accessor :id         # 0-1 string

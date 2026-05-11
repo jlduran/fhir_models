@@ -7,19 +7,19 @@ module FHIR
 
       SEARCH_PARAMS = []
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'SubstanceNucleicAcid.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'SubstanceNucleicAcid.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'SubstanceNucleicAcid.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'SubstanceNucleicAcid.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'SubstanceNucleicAcid.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'SubstanceNucleicAcid.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'SubstanceNucleicAcid.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'SubstanceNucleicAcid.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'sequenceType' => {'type'=>'CodeableConcept', 'path'=>'SubstanceNucleicAcid.sequenceType', 'min'=>0, 'max'=>1},
-        'numberOfSubunits' => {'type'=>'integer', 'path'=>'SubstanceNucleicAcid.numberOfSubunits', 'min'=>0, 'max'=>1},
-        'areaOfHybridisation' => {'type'=>'string', 'path'=>'SubstanceNucleicAcid.areaOfHybridisation', 'min'=>0, 'max'=>1},
-        'oligoNucleotideType' => {'type'=>'CodeableConcept', 'path'=>'SubstanceNucleicAcid.oligoNucleotideType', 'min'=>0, 'max'=>1},
-        'subunit' => {'type'=>'SubstanceNucleicAcid::Subunit', 'path'=>'SubstanceNucleicAcid.subunit', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'SubstanceNucleicAcid.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'SubstanceNucleicAcid.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'SubstanceNucleicAcid.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'SubstanceNucleicAcid.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'SubstanceNucleicAcid.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'SubstanceNucleicAcid.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'SubstanceNucleicAcid.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'SubstanceNucleicAcid.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'sequenceType' => {'path'=>'SubstanceNucleicAcid.sequenceType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'numberOfSubunits' => {'path'=>'SubstanceNucleicAcid.numberOfSubunits', 'type'=>'integer', 'min'=>0, 'max'=>1},
+        'areaOfHybridisation' => {'path'=>'SubstanceNucleicAcid.areaOfHybridisation', 'type'=>'string', 'min'=>0, 'max'=>1},
+        'oligoNucleotideType' => {'path'=>'SubstanceNucleicAcid.oligoNucleotideType', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'subunit' => {'path'=>'SubstanceNucleicAcid.subunit', 'type'=>'SubstanceNucleicAcid::Subunit', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class Subunit < Model
@@ -28,17 +28,17 @@ module FHIR
         include FHIR::Xml
 
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'Subunit.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'Subunit.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'Subunit.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'subunit' => {'type'=>'integer', 'path'=>'Subunit.subunit', 'min'=>0, 'max'=>1},
-          'sequence' => {'type'=>'string', 'path'=>'Subunit.sequence', 'min'=>0, 'max'=>1},
-          'length' => {'type'=>'integer', 'path'=>'Subunit.length', 'min'=>0, 'max'=>1},
-          'sequenceAttachment' => {'type'=>'Attachment', 'path'=>'Subunit.sequenceAttachment', 'min'=>0, 'max'=>1},
-          'fivePrime' => {'type'=>'CodeableConcept', 'path'=>'Subunit.fivePrime', 'min'=>0, 'max'=>1},
-          'threePrime' => {'type'=>'CodeableConcept', 'path'=>'Subunit.threePrime', 'min'=>0, 'max'=>1},
-          'linkage' => {'type'=>'SubstanceNucleicAcid::Subunit::Linkage', 'path'=>'Subunit.linkage', 'min'=>0, 'max'=>Float::INFINITY},
-          'sugar' => {'type'=>'SubstanceNucleicAcid::Subunit::Sugar', 'path'=>'Subunit.sugar', 'min'=>0, 'max'=>Float::INFINITY}
+          'id' => {'path'=>'Subunit.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'Subunit.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'Subunit.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'subunit' => {'path'=>'Subunit.subunit', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'sequence' => {'path'=>'Subunit.sequence', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'length' => {'path'=>'Subunit.length', 'type'=>'integer', 'min'=>0, 'max'=>1},
+          'sequenceAttachment' => {'path'=>'Subunit.sequenceAttachment', 'type'=>'Attachment', 'min'=>0, 'max'=>1},
+          'fivePrime' => {'path'=>'Subunit.fivePrime', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'threePrime' => {'path'=>'Subunit.threePrime', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+          'linkage' => {'path'=>'Subunit.linkage', 'type'=>'SubstanceNucleicAcid::Subunit::Linkage', 'min'=>0, 'max'=>Float::INFINITY},
+          'sugar' => {'path'=>'Subunit.sugar', 'type'=>'SubstanceNucleicAcid::Subunit::Sugar', 'min'=>0, 'max'=>Float::INFINITY}
         }
 
         class Linkage < Model
@@ -47,13 +47,13 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Linkage.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Linkage.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Linkage.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'connectivity' => {'type'=>'string', 'path'=>'Linkage.connectivity', 'min'=>0, 'max'=>1},
-            'identifier' => {'type'=>'Identifier', 'path'=>'Linkage.identifier', 'min'=>0, 'max'=>1},
-            'name' => {'type'=>'string', 'path'=>'Linkage.name', 'min'=>0, 'max'=>1},
-            'residueSite' => {'type'=>'string', 'path'=>'Linkage.residueSite', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Linkage.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Linkage.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Linkage.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'connectivity' => {'path'=>'Linkage.connectivity', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'identifier' => {'path'=>'Linkage.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+            'name' => {'path'=>'Linkage.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'residueSite' => {'path'=>'Linkage.residueSite', 'type'=>'string', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string
@@ -71,12 +71,12 @@ module FHIR
           include FHIR::Xml
 
           METADATA = {
-            'id' => {'type'=>'string', 'path'=>'Sugar.id', 'min'=>0, 'max'=>1},
-            'extension' => {'type'=>'Extension', 'path'=>'Sugar.extension', 'min'=>0, 'max'=>Float::INFINITY},
-            'modifierExtension' => {'type'=>'Extension', 'path'=>'Sugar.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-            'identifier' => {'type'=>'Identifier', 'path'=>'Sugar.identifier', 'min'=>0, 'max'=>1},
-            'name' => {'type'=>'string', 'path'=>'Sugar.name', 'min'=>0, 'max'=>1},
-            'residueSite' => {'type'=>'string', 'path'=>'Sugar.residueSite', 'min'=>0, 'max'=>1}
+            'id' => {'path'=>'Sugar.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'extension' => {'path'=>'Sugar.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'modifierExtension' => {'path'=>'Sugar.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+            'identifier' => {'path'=>'Sugar.identifier', 'type'=>'Identifier', 'min'=>0, 'max'=>1},
+            'name' => {'path'=>'Sugar.name', 'type'=>'string', 'min'=>0, 'max'=>1},
+            'residueSite' => {'path'=>'Sugar.residueSite', 'type'=>'string', 'min'=>0, 'max'=>1}
           }
 
           attr_accessor :id                # 0-1 string

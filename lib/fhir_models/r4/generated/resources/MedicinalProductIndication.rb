@@ -7,23 +7,23 @@ module FHIR
 
       SEARCH_PARAMS = ['subject']
       METADATA = {
-        'id' => {'type'=>'id', 'path'=>'MedicinalProductIndication.id', 'min'=>0, 'max'=>1},
-        'meta' => {'type'=>'Meta', 'path'=>'MedicinalProductIndication.meta', 'min'=>0, 'max'=>1},
-        'implicitRules' => {'type'=>'uri', 'path'=>'MedicinalProductIndication.implicitRules', 'min'=>0, 'max'=>1},
-        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'type'=>'code', 'path'=>'MedicinalProductIndication.language', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
-        'text' => {'type'=>'Narrative', 'path'=>'MedicinalProductIndication.text', 'min'=>0, 'max'=>1},
-        'contained' => {'type'=>'Resource', 'path'=>'MedicinalProductIndication.contained', 'min'=>0, 'max'=>Float::INFINITY},
-        'extension' => {'type'=>'Extension', 'path'=>'MedicinalProductIndication.extension', 'min'=>0, 'max'=>Float::INFINITY},
-        'modifierExtension' => {'type'=>'Extension', 'path'=>'MedicinalProductIndication.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProduct', 'http://hl7.org/fhir/StructureDefinition/Medication'], 'type'=>'Reference', 'path'=>'MedicinalProductIndication.subject', 'min'=>0, 'max'=>Float::INFINITY},
-        'diseaseSymptomProcedure' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductIndication.diseaseSymptomProcedure', 'min'=>0, 'max'=>1},
-        'diseaseStatus' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductIndication.diseaseStatus', 'min'=>0, 'max'=>1},
-        'comorbidity' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductIndication.comorbidity', 'min'=>0, 'max'=>Float::INFINITY},
-        'intendedEffect' => {'type'=>'CodeableConcept', 'path'=>'MedicinalProductIndication.intendedEffect', 'min'=>0, 'max'=>1},
-        'duration' => {'type'=>'Quantity', 'path'=>'MedicinalProductIndication.duration', 'min'=>0, 'max'=>1},
-        'otherTherapy' => {'type'=>'MedicinalProductIndication::OtherTherapy', 'path'=>'MedicinalProductIndication.otherTherapy', 'min'=>0, 'max'=>Float::INFINITY},
-        'undesirableEffect' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductUndesirableEffect'], 'type'=>'Reference', 'path'=>'MedicinalProductIndication.undesirableEffect', 'min'=>0, 'max'=>Float::INFINITY},
-        'population' => {'type'=>'Population', 'path'=>'MedicinalProductIndication.population', 'min'=>0, 'max'=>Float::INFINITY}
+        'id' => {'path'=>'MedicinalProductIndication.id', 'type'=>'id', 'min'=>0, 'max'=>1},
+        'meta' => {'path'=>'MedicinalProductIndication.meta', 'type'=>'Meta', 'min'=>0, 'max'=>1},
+        'implicitRules' => {'path'=>'MedicinalProductIndication.implicitRules', 'type'=>'uri', 'min'=>0, 'max'=>1},
+        'language' => {'valid_codes'=>{'urn:ietf:bcp:47'=>['ar', 'bn', 'cs', 'da', 'de', 'de-AT', 'de-CH', 'de-DE', 'el', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-IN', 'en-NZ', 'en-SG', 'en-US', 'es', 'es-AR', 'es-ES', 'es-UY', 'fi', 'fr', 'fr-BE', 'fr-CH', 'fr-FR', 'fy', 'fy-NL', 'hi', 'hr', 'it', 'it-CH', 'it-IT', 'ja', 'ko', 'nl', 'nl-BE', 'nl-NL', 'no', 'no-NO', 'pa', 'pl', 'pt', 'pt-BR', 'ru', 'ru-RU', 'sr', 'sr-RS', 'sv', 'sv-SE', 'te', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW']}, 'path'=>'MedicinalProductIndication.language', 'type'=>'code', 'min'=>0, 'max'=>1, 'binding'=>{'strength'=>'preferred', 'uri'=>'http://hl7.org/fhir/ValueSet/languages'}},
+        'text' => {'path'=>'MedicinalProductIndication.text', 'type'=>'Narrative', 'min'=>0, 'max'=>1},
+        'contained' => {'path'=>'MedicinalProductIndication.contained', 'type'=>'Resource', 'min'=>0, 'max'=>Float::INFINITY},
+        'extension' => {'path'=>'MedicinalProductIndication.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'modifierExtension' => {'path'=>'MedicinalProductIndication.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+        'subject' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProduct', 'http://hl7.org/fhir/StructureDefinition/Medication'], 'path'=>'MedicinalProductIndication.subject', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'diseaseSymptomProcedure' => {'path'=>'MedicinalProductIndication.diseaseSymptomProcedure', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'diseaseStatus' => {'path'=>'MedicinalProductIndication.diseaseStatus', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'comorbidity' => {'path'=>'MedicinalProductIndication.comorbidity', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>Float::INFINITY},
+        'intendedEffect' => {'path'=>'MedicinalProductIndication.intendedEffect', 'type'=>'CodeableConcept', 'min'=>0, 'max'=>1},
+        'duration' => {'path'=>'MedicinalProductIndication.duration', 'type'=>'Quantity', 'min'=>0, 'max'=>1},
+        'otherTherapy' => {'path'=>'MedicinalProductIndication.otherTherapy', 'type'=>'MedicinalProductIndication::OtherTherapy', 'min'=>0, 'max'=>Float::INFINITY},
+        'undesirableEffect' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProductUndesirableEffect'], 'path'=>'MedicinalProductIndication.undesirableEffect', 'type'=>'Reference', 'min'=>0, 'max'=>Float::INFINITY},
+        'population' => {'path'=>'MedicinalProductIndication.population', 'type'=>'Population', 'min'=>0, 'max'=>Float::INFINITY}
       }
 
       class OtherTherapy < Model
@@ -35,12 +35,12 @@ module FHIR
           'medication' => ['CodeableConcept', 'Reference']
         }
         METADATA = {
-          'id' => {'type'=>'string', 'path'=>'OtherTherapy.id', 'min'=>0, 'max'=>1},
-          'extension' => {'type'=>'Extension', 'path'=>'OtherTherapy.extension', 'min'=>0, 'max'=>Float::INFINITY},
-          'modifierExtension' => {'type'=>'Extension', 'path'=>'OtherTherapy.modifierExtension', 'min'=>0, 'max'=>Float::INFINITY},
-          'therapyRelationshipType' => {'type'=>'CodeableConcept', 'path'=>'OtherTherapy.therapyRelationshipType', 'min'=>1, 'max'=>1},
-          'medicationCodeableConcept' => {'type'=>'CodeableConcept', 'path'=>'OtherTherapy.medication[x]', 'min'=>1, 'max'=>1},
-          'medicationReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProduct', 'http://hl7.org/fhir/StructureDefinition/Medication', 'http://hl7.org/fhir/StructureDefinition/Substance', 'http://hl7.org/fhir/StructureDefinition/SubstanceSpecification'], 'type'=>'Reference', 'path'=>'OtherTherapy.medication[x]', 'min'=>1, 'max'=>1}
+          'id' => {'path'=>'OtherTherapy.id', 'type'=>'string', 'min'=>0, 'max'=>1},
+          'extension' => {'path'=>'OtherTherapy.extension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'modifierExtension' => {'path'=>'OtherTherapy.modifierExtension', 'type'=>'Extension', 'min'=>0, 'max'=>Float::INFINITY},
+          'therapyRelationshipType' => {'path'=>'OtherTherapy.therapyRelationshipType', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'medicationCodeableConcept' => {'path'=>'OtherTherapy.medication[x]', 'type'=>'CodeableConcept', 'min'=>1, 'max'=>1},
+          'medicationReference' => {'type_profiles'=>['http://hl7.org/fhir/StructureDefinition/MedicinalProduct', 'http://hl7.org/fhir/StructureDefinition/Medication', 'http://hl7.org/fhir/StructureDefinition/Substance', 'http://hl7.org/fhir/StructureDefinition/SubstanceSpecification'], 'path'=>'OtherTherapy.medication[x]', 'type'=>'Reference', 'min'=>1, 'max'=>1}
         }
 
         attr_accessor :id                        # 0-1 string
