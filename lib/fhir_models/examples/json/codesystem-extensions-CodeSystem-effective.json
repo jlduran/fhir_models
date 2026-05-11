@@ -8,7 +8,9 @@
   "experimental": true,
   "description": "Optional Extensions Element",
   "code": "effective",
-  "base": [ "CodeSystem" ],
+  "base": [
+    "CodeSystem"
+  ],
   "type": "date",
   "xpath": "f:CodeSystem/f:extension[@url='http://hl7.org/fhir/StructureDefinition/codesystem-effectiveDate'] | /f:#effectiveDate",
   "xpathUsage": "normal"

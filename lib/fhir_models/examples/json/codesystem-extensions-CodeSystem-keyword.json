@@ -8,7 +8,9 @@
   "experimental": true,
   "description": "Optional Extensions Element",
   "code": "keyword",
-  "base": [ "CodeSystem" ],
+  "base": [
+    "CodeSystem"
+  ],
   "type": "string",
   "xpath": "f:CodeSystem/f:extension[@url='http://hl7.org/fhir/StructureDefinition/codesystem-keyWord'] | /f:#keyWord",
   "xpathUsage": "normal"

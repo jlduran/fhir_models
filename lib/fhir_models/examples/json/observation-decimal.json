@@ -38,7 +38,7 @@
         "text": "Component"
       },
       "valueQuantity": {
-        "value": 1.0e-22,
+        "value": 1e-22,
         "unit": "g"
       }
     },
@@ -56,7 +56,7 @@
         "text": "Component"
       },
       "valueQuantity": {
-        "value": 1.0e-245,
+        "value": 1e-245,
         "unit": "g"
       }
     },
@@ -65,7 +65,7 @@
         "text": "Component"
       },
       "valueQuantity": {
-        "value": -1.0e+245,
+        "value": -1e+245,
         "unit": "g"
       }
     }
